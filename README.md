@@ -25,7 +25,7 @@ ReactDOM.render(
 
 
 ## Documentation / examples
-Found [here](https://fa-repo.github.io/shard-docs/).
+Found [here](https://fa-repo.github.io/shard-docs/#/docs).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
