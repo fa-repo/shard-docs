@@ -44,8 +44,8 @@ ReactDOM.render(
 
 ![Usage example](./example.png "Usage example")
 
-## Documentation / examples
-Found [here](https://fa-repo.github.io/shard-docs/#/docs).
+## Docs / examples
+Discover api and use cases [here](https://fa-repo.github.io/shard-docs/#/docs).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
