@@ -2,11 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import slugify from "slugify";
-import { withRouter, NavLink } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import SidebarHeader from "./SidebarHeader";
 import SidebarMenu from "./SidebarMenu";
 import Viewer from "./Viewer";
 import ViewerFooter from "./ViewerFooter";
+
+import CollectionIndexShard from "./shards/CollectionIndexShard";
 
 import "./scss/shard-docs.scss";
 
@@ -52,24 +54,7 @@ class Documentation extends React.Component {
     function transformCollection(item, basePath, breadcrumbs = []) {
       const path = basePath + "/" + slugify(item.title, { lower: true });
       let composition = item.composition;
-      if (!composition) {
-        composition = [
-          <div className="shard-docs-markdown-shard">
-            <h1>{item.title} index</h1>
-            <ul>
-              {item.children
-                .filter(item => ["page", "collection"].includes(item.type))
-                .map((item, i) => (
-                  <li key={i}>
-                    <NavLink to={path + "/" + slugify(item.title, { lower: true })}>
-                      {item.title}
-                    </NavLink>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        ];
-      }
+
       return {
         type: "collection",
         path: path,
@@ -153,6 +138,8 @@ class Documentation extends React.Component {
     const prevDocument = this.prevDocument;
     const nextDocument = this.nextDocument;
 
+    const documents = this.docs;
+
     return (
       <div {...props} className="shard-docs">
         <div className="shard-docs-sidebar">
@@ -163,14 +150,21 @@ class Documentation extends React.Component {
         <div className="shard-docs-main">
           {baseDoc && <Viewer route={baseLink} breadcrumbs={[]} markdown={baseDoc} />}
 
-          {this.docs.map(({ path, breadcrumbs, composition }, i) => {
+          {documents.map(({ title, path, breadcrumbs, composition, type, children }, i) => {
+            /**
+             * Provide a default index page to collection when composition not provided
+             */
+            if (type === "collection" && !composition) {
+              composition = [<CollectionIndexShard title={title} pages={children} />];
+            }
+
             return (
               <Viewer
                 key={i}
                 basePath={basePath}
-                route={i === 0 ? [path, basePath] : path}
                 breadcrumbs={breadcrumbs}
-                composition={composition}
+                components={composition}
+                route={i === 0 ? [path, basePath] : path}
               />
             );
           })}

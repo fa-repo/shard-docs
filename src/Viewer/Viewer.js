@@ -9,15 +9,17 @@ Route.propTypes.path = PropTypes.oneOfType([PropTypes.array, PropTypes.string]);
  * Viewer
  */
 
-const Viewer = ({ route, composition, breadcrumbs }) => {
+const Viewer = ({ route, components = [], breadcrumbs = [] }) => {
   return (
     <Route
       path={route}
       exact
       render={props => (
         <>
-          {breadcrumbs && <ViewerBreadcrumbs breadcrumbs={breadcrumbs} />}
-          {composition && composition.map((component, i) => ({ ...component, key: i }))}
+          <ViewerBreadcrumbs breadcrumbs={breadcrumbs} />
+          {components.map((component, i) => {
+            return { ...component, key: i };
+          })}
         </>
       )}
     />
