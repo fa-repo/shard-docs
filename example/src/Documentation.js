@@ -13,6 +13,15 @@ import WithCustomStylesExample from "./docs/examples/with-custom-styles";
 import "./sanitize.css";
 import "shard-docs/dist/shard-docs.css";
 
+const getStartedMarkdown = raw("./docs/get-started.md");
+const apiReferenceMarkdown = raw("./docs/api-reference.md");
+const cssReferenceMarkdown = raw("./docs/css-reference.md");
+const basicExampleMarkdown = raw("./docs/examples/basic-example.md");
+const withDescriptionMarkdown = raw("./docs/examples/with-description.md");
+const withSidebarHeadingsMarkdown = raw("./docs/examples/with-sidebar-headings.md");
+const withSectionsMarkdown = raw("./docs/examples/with-sections.md");
+const withCustomStylesMarkdown = raw("./docs/examples/with-custom-styles.md");
+
 /**
  * ShardDocs
  */
@@ -31,17 +40,17 @@ const Documentation = props => (
             {
               type: "page",
               title: "Get started",
-              composition: [<MarkdownShard markdown={raw("./docs/get-started.md")} />]
+              composition: [<MarkdownShard markdown={getStartedMarkdown} />]
             },
             {
               type: "page",
               title: "API reference",
-              composition: [<MarkdownShard markdown={raw("./docs/api-reference.md")} />]
+              composition: [<MarkdownShard markdown={apiReferenceMarkdown} />]
             },
             {
               type: "page",
               title: "CSS reference",
-              composition: [<MarkdownShard markdown={raw("./docs/css-reference.md")} />]
+              composition: [<MarkdownShard markdown={cssReferenceMarkdown} />]
             },
             {
               type: "collection",
@@ -51,7 +60,7 @@ const Documentation = props => (
                   type: "page",
                   title: "Basic example",
                   composition: [
-                    <MarkdownShard markdown={raw("./docs/examples/basic-example.md")} />,
+                    <MarkdownShard markdown={basicExampleMarkdown} />,
                     <IframeShard path="#/examples/basic-example" />
                   ]
                 },
@@ -59,7 +68,7 @@ const Documentation = props => (
                   type: "page",
                   title: "With a description",
                   composition: [
-                    <MarkdownShard markdown={raw("./docs/examples/with-description.md")} />,
+                    <MarkdownShard markdown={withDescriptionMarkdown} />,
                     <IframeShard path="#/examples/with-description" />
                   ]
                 },
@@ -67,7 +76,7 @@ const Documentation = props => (
                   type: "page",
                   title: "With sidebar headings",
                   composition: [
-                    <MarkdownShard markdown={raw("./docs/examples/with-sidebar-headings.md")} />,
+                    <MarkdownShard markdown={withSidebarHeadingsMarkdown} />,
                     <IframeShard path="#/examples/with-sidebar-headings" />
                   ]
                 },
@@ -75,7 +84,7 @@ const Documentation = props => (
                   type: "page",
                   title: "With sections",
                   composition: [
-                    <MarkdownShard markdown={raw("./docs/examples/with-sections.md")} />,
+                    <MarkdownShard markdown={withSectionsMarkdown} />,
                     <IframeShard path="#/examples/with-sections" />
                   ]
                 },
@@ -83,7 +92,7 @@ const Documentation = props => (
                   type: "page",
                   title: "With custom styles",
                   composition: [
-                    <MarkdownShard markdown={raw("./docs/examples/with-custom-styles.md")} />,
+                    <MarkdownShard markdown={withCustomStylesMarkdown} />,
                     <IframeShard path="#/examples/with-custom-styles" />
                   ]
                 }
