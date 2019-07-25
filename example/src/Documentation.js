@@ -52,7 +52,7 @@ const Documentation = props => (
                   title: "Basic example",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/basic-example.md")} />,
-                    <IframeShard path="/#/examples/basic-example" />
+                    <IframeShard path="#/examples/basic-example" />
                   ]
                 },
                 {
@@ -60,7 +60,7 @@ const Documentation = props => (
                   title: "With a description",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-description.md")} />,
-                    <IframeShard path="/#/examples/with-description" />
+                    <IframeShard path="#/examples/with-description" />
                   ]
                 },
                 {
@@ -68,7 +68,7 @@ const Documentation = props => (
                   title: "With sidebar headings",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-sidebar-headings.md")} />,
-                    <IframeShard path="/#/examples/with-sidebar-headings" />
+                    <IframeShard path="#/examples/with-sidebar-headings" />
                   ]
                 },
                 {
@@ -76,7 +76,7 @@ const Documentation = props => (
                   title: "With sections",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-sections.md")} />,
-                    <IframeShard path="/#/examples/with-sections" />
+                    <IframeShard path="#/examples/with-sections" />
                   ]
                 },
                 {
@@ -84,7 +84,7 @@ const Documentation = props => (
                   title: "With custom styles",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-custom-styles.md")} />,
-                    <IframeShard path="/#/examples/with-custom-styles" />
+                    <IframeShard path="#/examples/with-custom-styles" />
                   ]
                 }
               ]
