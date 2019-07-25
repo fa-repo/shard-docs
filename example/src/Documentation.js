@@ -19,18 +19,14 @@ import "shard-docs/dist/shard-docs.css";
 
 const Documentation = props => (
   <>
+    <Route path="/" render={props => <NavLink to="/docs">Go to documentation</NavLink>} exact />
     <Route
-      path={["/", "/shard-docs"]}
-      render={props => <NavLink to="/shard-docs/documentation">Go to documentation</NavLink>}
-      exact
-    />
-    <Route
-      path="/shard-docs/documentation"
+      path="/docs"
       render={props => (
         <ShardDocs
           title="ShardDocs"
           description="A concise / extendable react component for handling documentation"
-          basePath="/shard-docs/documentation"
+          basePath="/docs"
           structure={[
             {
               type: "page",
@@ -56,7 +52,7 @@ const Documentation = props => (
                   title: "Basic example",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/basic-example.md")} />,
-                    <IframeShard path="/shard-docs/examples/basic-example" />
+                    <IframeShard path="/#/examples/basic-example" />
                   ]
                 },
                 {
@@ -64,7 +60,7 @@ const Documentation = props => (
                   title: "With a description",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-description.md")} />,
-                    <IframeShard path="/shard-docs/examples/with-description" />
+                    <IframeShard path="/#/examples/with-description" />
                   ]
                 },
                 {
@@ -72,7 +68,7 @@ const Documentation = props => (
                   title: "With sidebar headings",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-sidebar-headings.md")} />,
-                    <IframeShard path="/shard-docs/examples/with-sidebar-headings" />
+                    <IframeShard path="/#/examples/with-sidebar-headings" />
                   ]
                 },
                 {
@@ -80,7 +76,7 @@ const Documentation = props => (
                   title: "With sections",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-sections.md")} />,
-                    <IframeShard path="/shard-docs/examples/with-sections" />
+                    <IframeShard path="/#/examples/with-sections" />
                   ]
                 },
                 {
@@ -88,7 +84,7 @@ const Documentation = props => (
                   title: "With custom styles",
                   composition: [
                     <MarkdownShard markdown={raw("./docs/examples/with-custom-styles.md")} />,
-                    <IframeShard path="/shard-docs/examples/with-custom-styles" />
+                    <IframeShard path="/#/examples/with-custom-styles" />
                   ]
                 }
               ]
@@ -98,23 +94,14 @@ const Documentation = props => (
       )}
     />
     <Route
-      path="/shard-docs/examples"
+      path="/examples"
       render={props => (
         <Switch>
-          <Route path="/shard-docs/examples/basic-example" children={<BasicExample />} />
-          <Route
-            path="/shard-docs/examples/with-description"
-            children={<WithDescriptionExample />}
-          />
-          <Route
-            path="/shard-docs/examples/with-sidebar-headings"
-            children={<WithSidebarHeadingsExample />}
-          />
-          <Route path="/shard-docs/examples/with-sections" children={<WithSectionsExample />} />
-          <Route
-            path="/shard-docs/examples/with-custom-styles"
-            children={<WithCustomStylesExample />}
-          />
+          <Route path="/examples/basic-example" children={<BasicExample />} />
+          <Route path="/examples/with-description" children={<WithDescriptionExample />} />
+          <Route path="/examples/with-sidebar-headings" children={<WithSidebarHeadingsExample />} />
+          <Route path="/examples/with-sections" children={<WithSectionsExample />} />
+          <Route path="/examples/with-custom-styles" children={<WithCustomStylesExample />} />
         </Switch>
       )}
     />
