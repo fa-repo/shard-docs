@@ -1,4 +1,4 @@
-# ShardDocs
+# ![](./logo.svg) ShardDocs
 
 A concise / extendable react component for handling documentation
 
