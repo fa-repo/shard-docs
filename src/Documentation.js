@@ -10,6 +10,8 @@ import ViewerFooter from "./ViewerFooter";
 
 import CollectionIndexShard from "./shards/CollectionIndexShard";
 
+import transform from "./transformers";
+
 import "./scss/shard-docs.scss";
 
 /**
@@ -36,54 +38,26 @@ class Documentation extends React.Component {
     let structure = this.props.structure;
     const basePath = this.props.basePath;
 
-    function transformHeading(item) {
-      return { type: "heading", heading: item.heading };
-    }
-
-    function transformPage(item, basePath, breadcrumbs = []) {
-      const path = basePath + "/" + slugify(item.title, { lower: true });
-      return {
-        type: "page",
-        path: path,
-        title: item.title,
-        breadcrumbs: [...breadcrumbs, { text: item.title, link: path }],
-        composition: item.composition
-      };
-    }
-
-    function transformCollection(item, basePath, breadcrumbs = []) {
-      const path = basePath + "/" + slugify(item.title, { lower: true });
-      let composition = item.composition;
-
-      return {
-        type: "collection",
-        path: path,
-        title: item.title,
-        breadcrumbs: [...breadcrumbs, { text: item.title, link: path }],
-        composition: composition,
-        children: mapCollection(item.children, path, breadcrumbs)
-      };
-    }
-
-    function mapCollection(items, basePath, breadcrumbs = []) {
+    function transformStructure(items, basePath, breadcrumbs = []) {
       basePath = basePath.replace(/\/+$/, "");
 
       return items
         .map(item => {
           if (item.type === "heading") {
-            return transformHeading(item);
+            return transform.heading(item);
           } else if (item.type === "page") {
-            return transformPage(item, basePath, breadcrumbs);
+            return transform.page(item, basePath, breadcrumbs);
           } else if (item.type === "collection") {
-            return transformCollection(item, basePath, breadcrumbs);
+            const collection = transform.collection(item, basePath, breadcrumbs);
+            const { path, breadcrumbs } = collection;
+            collection.children = transformStructure(item.children, path, breadcrumbs);
+            return collection;
           } else return false;
         })
         .filter(Boolean);
     }
 
-    structure = mapCollection(structure, basePath);
-
-    return structure;
+    return transformStructure(structure, basePath);
   }
 
   get docs() {
