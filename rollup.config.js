@@ -23,6 +23,7 @@ export default {
       sourcemap: true
     }
   ],
+  exports: "named",
   plugins: [
     external(),
     postcss({

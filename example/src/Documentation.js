@@ -27,9 +27,13 @@ const getStartedMarkdown = raw("./docs/get-started.md");
 
 const Documentation = props => (
   <>
-    <Route path="/" exact render={props => <NavLink to="/docs">Go to documentation</NavLink>} />
     <Route
-      path="/docs"
+      path="/"
+      exact
+      render={props => <NavLink to="/shard-docs">Go to documentation</NavLink>}
+    />
+    <Route
+      path="/shard-docs"
       render={props => (
         <ShardDocs
           title="ShardDocs"
