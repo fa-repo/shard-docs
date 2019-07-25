@@ -24,7 +24,7 @@ const Documentation = props => (
       path="/docs"
       render={props => (
         <ShardDocs
-          title="ShardDocs"
+          title="shard-docs"
           description="A concise / extendable react component for handling documentation"
           basePath="/docs"
           structure={[
