@@ -7,18 +7,32 @@ import SidebarMenuHeading from "./SidebarMenuHeading";
  * SidebarMenuList
  */
 
-const SidebarMenuList = ({ items, ...props }) => {
+const SidebarMenuList = ({ items, basePath, ...props }) => {
   return (
     <ul {...props}>
       {items.map((item, i) => {
         if (item.type === "heading") {
           return <SidebarMenuHeading key={i} heading={item.heading} />;
         } else if (item.type === "page") {
-          return <SidebarMenuNode key={i} link={item.path} title={item.title} />;
+          return (
+            <SidebarMenuNode
+              key={i}
+              page={item}
+              link={item.path}
+              title={item.title}
+              basePath={basePath}
+            />
+          );
         } else if (item.type === "collection") {
           return (
-            <SidebarMenuNode key={i} link={item.path} title={item.title}>
-              <SidebarMenuList items={item.children} />
+            <SidebarMenuNode
+              key={i}
+              page={item}
+              link={item.path}
+              title={item.title}
+              basePath={basePath}
+            >
+              <SidebarMenuList items={item.children} basePath={basePath} />
             </SidebarMenuNode>
           );
         } else {

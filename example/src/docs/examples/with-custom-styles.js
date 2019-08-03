@@ -17,7 +17,6 @@ const WithCustomStylesExample = props => (
     <ShardDocs
       title="Documentation title"
       basePath="/examples/with-custom-styles"
-      baseComposition={[<h1>Overview</h1>]}
       structure={[
         { type: "heading", heading: "Essentials" },
         { type: "page", title: "Get started", composition: [<h1>Get started</h1>] }

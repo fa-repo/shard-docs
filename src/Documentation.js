@@ -1,18 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import slugify from "slugify";
 import { withRouter } from "react-router-dom";
-import SidebarHeader from "./SidebarHeader";
-import SidebarMenu from "./SidebarMenu";
-import Viewer from "./Viewer";
-import ViewerFooter from "./ViewerFooter";
 
-import CollectionIndexShard from "./shards/CollectionIndexShard";
-
+import Sidebar from "./Sidebar";
+import Footer from "./Footer";
+import IndexShard from "./shards/CollectionIndexShard";
 import transform from "./transformers";
-
 import "./scss/shard-docs.scss";
+import Breadcrumbs from "./Breadcrumbs";
 
 /**
  * Documentation
@@ -32,11 +28,12 @@ class Documentation extends React.Component {
   /* -- Getter methods -- */
 
   /**
-   * Parse structure property
+   * Build skeleton of documentation
    */
-  get structure() {
+  get skeleton() {
     let structure = this.props.structure;
     const basePath = this.props.basePath;
+    let pageIndex = 0;
 
     function transformStructure(items, basePath, breadcrumbs = []) {
       basePath = basePath.replace(/\/+$/, "");
@@ -46,11 +43,19 @@ class Documentation extends React.Component {
           if (item.type === "heading") {
             return transform.heading(item);
           } else if (item.type === "page") {
-            return transform.page(item, basePath, breadcrumbs);
+            let page = transform.page(item, basePath, breadcrumbs);
+            page.pageIndex = pageIndex;
+            pageIndex = pageIndex + 1;
+            return page;
           } else if (item.type === "collection") {
             const collection = transform.collection(item, basePath, breadcrumbs);
             const { path, breadcrumbs } = collection;
             collection.children = transformStructure(item.children, path, breadcrumbs);
+            /* Provide a default index page if none provided */
+            const { composition, title, children } = collection;
+            if (!composition) {
+              collection.composition = [<IndexShard title={title} pages={children} />];
+            }
             return collection;
           } else return false;
         })
@@ -60,33 +65,44 @@ class Documentation extends React.Component {
     return transformStructure(structure, basePath);
   }
 
-  get docs() {
-    let docs = [];
+  get pages() {
+    let pages = [];
 
     function mapAndFlatten(items) {
       return items.map(item => {
-        docs.push(item);
+        pages.push(item);
         if (item.type === "collection") mapAndFlatten(item.children);
       });
     }
 
-    mapAndFlatten(this.structure);
+    mapAndFlatten(this.skeleton);
 
-    return docs.filter(item => ["collection", "page"].includes(item.type));
+    return pages.filter(item => ["collection", "page"].includes(item.type));
   }
 
-  get prevDocument() {
-    const docs = this.docs;
+  get currentPage() {
+    const pages = this.pages;
     const urlPath = this.props.location.pathname;
-    const index = urlPath === this.props.basePath ? 0 : docs.findIndex(doc => doc.path === urlPath);
-    if (index > 0) return docs[index - 1];
+    const index =
+      urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
+    if (index >= 0) return pages[index];
+    else return {};
   }
 
-  get nextDocument() {
-    const docs = this.docs;
+  get prevPage() {
+    const pages = this.pages;
     const urlPath = this.props.location.pathname;
-    const index = urlPath === this.props.basePath ? 0 : docs.findIndex(doc => doc.path === urlPath);
-    if (index >= 0 && index < docs.length - 1) return docs[index + 1];
+    const index =
+      urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
+    if (index > 0) return pages[index - 1];
+  }
+
+  get nextPage() {
+    const pages = this.pages;
+    const urlPath = this.props.location.pathname;
+    const index =
+      urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
+    if (index >= 0 && index < pages.length - 1) return pages[index + 1];
   }
 
   /* -- Action methods -- */
@@ -97,9 +113,7 @@ class Documentation extends React.Component {
     const {
       title,
       description,
-      baseDoc,
       baseLink,
-      baseComposition,
       basePath,
       structure,
       staticContext,
@@ -109,45 +123,29 @@ class Documentation extends React.Component {
       ...props
     } = this.props;
 
-    const prevDocument = this.prevDocument;
-    const nextDocument = this.nextDocument;
-
-    const documents = this.docs;
-
     return (
       <div {...props} className="shard-docs">
-        <div className="shard-docs-sidebar">
-          <SidebarHeader title={title} description={description} basePath={basePath} />
-          <SidebarMenu items={this.structure} />
-        </div>
+        <Sidebar
+          title={title}
+          description={description}
+          basePath={basePath}
+          skeleton={this.skeleton}
+        />
 
         <div className="shard-docs-main">
-          {baseDoc && <Viewer route={baseLink} breadcrumbs={[]} markdown={baseDoc} />}
+          <Breadcrumbs breadcrumbs={(this.currentPage && this.currentPage.breadcrumbs) || []} />
 
-          {documents.map(({ title, path, breadcrumbs, composition, type, children }, i) => {
-            /**
-             * Provide a default index page to collection when composition not provided
-             */
-            if (type === "collection" && !composition) {
-              composition = [<CollectionIndexShard title={title} pages={children} />];
-            }
+          <div className="shard-docs-document">
+            {(this.currentPage.composition || []).map((component, i) => {
+              return { ...component, key: i };
+            })}
+          </div>
 
-            return (
-              <Viewer
-                key={i}
-                basePath={basePath}
-                breadcrumbs={breadcrumbs}
-                components={composition}
-                route={i === 0 ? [path, basePath] : path}
-              />
-            );
-          })}
-
-          <ViewerFooter
-            prevText={prevDocument && prevDocument.title}
-            prevLink={prevDocument && prevDocument.path}
-            nextText={nextDocument && nextDocument.title}
-            nextLink={nextDocument && nextDocument.path}
+          <Footer
+            prevText={this.prevPage && this.prevPage.title}
+            prevLink={this.prevPage && this.prevPage.path}
+            nextText={this.nextPage && this.nextPage.title}
+            nextLink={this.nextPage && this.nextPage.path}
           />
         </div>
       </div>

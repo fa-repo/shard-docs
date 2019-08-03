@@ -7,7 +7,13 @@ import SidebarMenuList from "./SidebarMenuList";
  */
 
 const SidebarMenu = props => {
-  return <SidebarMenuList className="shard-docs-sidebar-menu" items={props.items} />;
+  return (
+    <SidebarMenuList
+      className="shard-docs-sidebar-menu"
+      items={props.items}
+      basePath={props.basePath}
+    />
+  );
 };
 
 SidebarMenu.propTypes = {

@@ -9,7 +9,6 @@ const WithSidebarHeadings = props => (
   <ShardDocs
     title="Documentation title"
     basePath="/examples/with-sidebar-headings"
-    baseComposition={[<h1>Overview</h1>]}
     structure={[
       { type: "heading", heading: "Sidebar heading A" },
       { type: "page", title: "Page A", composition: [<h1>Page A</h1>] },

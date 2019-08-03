@@ -70,6 +70,7 @@
     "dist"
   ],
   "dependencies": {
+    "classnames": "^2.2.6",
     "markdown-it": "^9.0.1",
     "markdown-it-toc-and-anchor": "^4.2.0",
     "node-sass": "^4.12.0",

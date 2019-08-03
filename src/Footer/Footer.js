@@ -3,41 +3,41 @@ import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 /**
- * ViewerFooter
+ * Footer
  */
 
-const ViewerFooter = props => (
-  <footer className="shard-docs-page-nav">
-    <div className="shard-docs-page-nav-next">
-      {props.prevLink && (
+const Footer = props => (
+  <footer className="shard-docs-nav-footer">
+    {props.prevLink && (
+      <div className="shard-docs-nav-next">
         <NavLink to={props.prevLink} exact>
           ⟵ {props.prevText}
         </NavLink>
-      )}
-    </div>
-    <div className="shard-docs-page-spacer" />
-    <div className="shard-docs-page-nav-prev">
-      {props.nextLink && (
+      </div>
+    )}
+    <div className="spacer" />
+    {props.nextLink && (
+      <div className="shard-docs-nav-prev">
         <NavLink to={props.nextLink} exact>
           {props.nextText} ⟶
         </NavLink>
-      )}
-    </div>
+      </div>
+    )}
   </footer>
 );
 
-ViewerFooter.propTypes = {
+Footer.propTypes = {
   prevText: PropTypes.string,
   prevLink: PropTypes.string,
   nextText: PropTypes.string,
   nextLink: PropTypes.string
 };
 
-ViewerFooter.defaultProps = {
+Footer.defaultProps = {
   prevText: "",
   prevLink: "",
   nextText: "",
   nextLink: ""
 };
 
-export default ViewerFooter;
+export default Footer;

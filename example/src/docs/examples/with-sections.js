@@ -9,7 +9,6 @@ const WithSectionsExample = props => (
   <ShardDocs
     title="Documentation title"
     basePath="/examples/with-sections"
-    baseComposition={[<h1>Overview</h1>]}
     structure={[
       {
         type: "collection",

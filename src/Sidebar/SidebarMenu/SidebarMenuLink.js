@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom";
  */
 
 const SidebarMenuLink = props => (
-  <NavLink to={props.link} exact>
+  <NavLink className={props.className} to={props.link} exact>
     {props.title}
   </NavLink>
 );

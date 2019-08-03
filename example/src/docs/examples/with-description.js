@@ -10,10 +10,9 @@ const WithDescriptionExample = props => (
     title="WithDescriptionExample title"
     description="A description describing your documentation"
     basePath="/examples/with-description"
-    baseComposition={[<h1>Overview</h1>]}
     structure={[
       { type: "heading", heading: "Essentials" },
-      { type: "page", title: "Get started", shards: [<h1>Get started</h1>] }
+      { type: "page", title: "Get started", composition: [<h1>Get started</h1>] }
     ]}
   />
 );
