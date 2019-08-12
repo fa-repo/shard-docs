@@ -42,6 +42,8 @@ class Documentation extends React.Component {
         .map(item => {
           if (item.type === "heading") {
             return transform.heading(item);
+          } else if (item.type === "external") {
+            return transform.external(item);
           } else if (item.type === "page") {
             let page = transform.page(item, basePath, breadcrumbs);
             page.pageIndex = pageIndex;
@@ -122,7 +124,7 @@ class Documentation extends React.Component {
       match,
       ...props
     } = this.props;
-
+    console.log(this.skeleton);
     return (
       <div {...props} className="shard-docs">
         <Sidebar

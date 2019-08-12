@@ -24,6 +24,7 @@ const structure = [
       { type: "page", title: "Use case B", composition: [ <h1>Use case B</h1> ] }
     ]
   },
+  { type: "external", title: "Github", link: "https://github.com" },
 ]
 ```
 
@@ -52,3 +53,11 @@ An object that displays a heading in the sidebar menu.
 |------------|--------|---------|----------|------------------------------------------------------------------------|
 | `type`     | string | `""`    | Required | Must be `"heading"`.                                                   |
 | `heading`  | string | `""`  | Required | The heading text.                                                        |
+
+#### External object properties
+An object that represents an external link in the sidebar menu.
+| Name       | Type   | Default | Required | Description                                                            |
+|------------|--------|---------|----------|------------------------------------------------------------------------|
+| `type`     | string | `""`    | Required | Must be `"external"`.                                                  |
+| `title`    | string | `""`  | Required | The link title.                                                          |
+| `link`     | string | `""`  | Required | The link destination.                                                    |

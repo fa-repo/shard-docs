@@ -4,6 +4,10 @@ function transformHeading({ heading }) {
   return { type: "heading", heading: heading };
 }
 
+function transformExternal({ title, link }) {
+  return { type: "external", title: title, link: link };
+}
+
 function transformPage(item, basePath, breadcrumbs) {
   const path = basePath + "/" + slugify(item.title, { lower: true });
   return {
@@ -30,6 +34,7 @@ function transformCollection(item, basePath, breadcrumbs = []) {
 
 export default {
   heading: transformHeading,
+  external: transformExternal,
   page: transformPage,
   collection: transformCollection
 };

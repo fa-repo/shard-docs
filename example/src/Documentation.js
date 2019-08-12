@@ -8,6 +8,7 @@ import BasicExample from "./docs/examples/basic-example";
 import WithDescriptionExample from "./docs/examples/with-description";
 import WithSectionsExample from "./docs/examples/with-sections";
 import WithSidebarHeadingsExample from "./docs/examples/with-sidebar-headings";
+import WithSidebarExternalLinkExample from "./docs/examples/with-sidebar-external-link";
 import WithCustomStylesExample from "./docs/examples/with-custom-styles";
 
 import "./sanitize.css";
@@ -19,6 +20,7 @@ const cssReferenceMarkdown = raw("./docs/css-reference.md");
 const basicExampleMarkdown = raw("./docs/examples/basic-example.md");
 const withDescriptionMarkdown = raw("./docs/examples/with-description.md");
 const withSidebarHeadingsMarkdown = raw("./docs/examples/with-sidebar-headings.md");
+const withSidebarExternalLinkMarkdown = raw("./docs/examples/with-sidebar-external-link.md");
 const withSectionsMarkdown = raw("./docs/examples/with-sections.md");
 const withCustomStylesMarkdown = raw("./docs/examples/with-custom-styles.md");
 
@@ -82,6 +84,14 @@ const Documentation = props => (
                 },
                 {
                   type: "page",
+                  title: "With sidebar external link",
+                  composition: [
+                    <MarkdownShard markdown={withSidebarExternalLinkMarkdown} />,
+                    <IframeShard path="#/examples/with-sidebar-external-link" />
+                  ]
+                },
+                {
+                  type: "page",
                   title: "With sections",
                   composition: [
                     <MarkdownShard markdown={withSectionsMarkdown} />,
@@ -109,6 +119,10 @@ const Documentation = props => (
           <Route path="/examples/basic-example" children={<BasicExample />} />
           <Route path="/examples/with-description" children={<WithDescriptionExample />} />
           <Route path="/examples/with-sidebar-headings" children={<WithSidebarHeadingsExample />} />
+          <Route
+            path="/examples/with-sidebar-external-link"
+            children={<WithSidebarExternalLinkExample />}
+          />
           <Route path="/examples/with-sections" children={<WithSectionsExample />} />
           <Route path="/examples/with-custom-styles" children={<WithCustomStylesExample />} />
         </Switch>
