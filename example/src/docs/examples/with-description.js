@@ -1,5 +1,5 @@
 import React from "react";
-import ShardDocs from "shard-docs";
+import ShardDocs from "@fa-repo/shard-docs";
 
 /**
  * WithDescriptionExample

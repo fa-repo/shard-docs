@@ -2,7 +2,7 @@ import React from "react";
 
 import { Switch, Route, NavLink } from "react-router-dom";
 import raw from "raw.macro";
-import ShardDocs, { MarkdownShard, IframeShard } from "shard-docs";
+import ShardDocs, { MarkdownShard, IframeShard } from "@fa-repo/shard-docs";
 
 import BasicExample from "./docs/examples/basic-example";
 import WithDescriptionExample from "./docs/examples/with-description";
@@ -12,7 +12,7 @@ import WithSidebarExternalLinkExample from "./docs/examples/with-sidebar-externa
 import WithCustomStylesExample from "./docs/examples/with-custom-styles";
 
 import "./sanitize.css";
-import "shard-docs/dist/shard-docs.css";
+import "@fa-repo/shard-docs/dist/shard-docs.css";
 
 const getStartedMarkdown = raw("./docs/get-started.md");
 const apiReferenceMarkdown = raw("./docs/api-reference.md");
