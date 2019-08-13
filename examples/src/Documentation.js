@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Switch, Route, NavLink } from "react-router-dom";
-import raw from "raw.macro";
+
 import ShardDocs, { MarkdownShard, IframeShard } from "@fa-repo/shard-docs";
 
 import BasicExample from "./docs/examples/basic-example";
@@ -14,15 +14,24 @@ import WithCustomStylesExample from "./docs/examples/with-custom-styles";
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
 
-const getStartedMarkdown = raw("./docs/get-started.md");
-const apiReferenceMarkdown = raw("./docs/api-reference.md");
-const cssReferenceMarkdown = raw("./docs/css-reference.md");
-const basicExampleMarkdown = raw("./docs/examples/basic-example.md");
-const withDescriptionMarkdown = raw("./docs/examples/with-description.md");
-const withSidebarHeadingsMarkdown = raw("./docs/examples/with-sidebar-headings.md");
-const withSidebarExternalLinkMarkdown = raw("./docs/examples/with-sidebar-external-link.md");
-const withSectionsMarkdown = raw("./docs/examples/with-sections.md");
-const withCustomStylesMarkdown = raw("./docs/examples/with-custom-styles.md");
+import getStartedMarkdown from "./docs/get-started.md";
+// const getStartedMarkdown = raw("./docs/get-started.md");
+import apiReferenceMarkdown from "./docs/api-reference.md";
+// const apiReferenceMarkdown = raw("./docs/api-reference.md");
+import cssReferenceMarkdown from "./docs/css-reference.md";
+// const cssReferenceMarkdown = raw("./docs/css-reference.md");
+import basicExampleMarkdown from "./docs/examples/basic-example.md";
+// const basicExampleMarkdown = raw("./docs/examples/basic-example.md");
+import withDescriptionMarkdown from "./docs/examples/with-description.md";
+// const withDescriptionMarkdown = raw("./docs/examples/with-description.md");
+import withSidebarHeadingsMarkdown from "./docs/examples/with-sidebar-headings.md";
+// const withSidebarHeadingsMarkdown = raw("./docs/examples/with-sidebar-headings.md");
+import withSidebarExternalLinkMarkdown from "./docs/examples/with-sidebar-external-link.md";
+// const withSidebarExternalLinkMarkdown = raw("./docs/examples/with-sidebar-external-link.md");
+import withSectionsMarkdown from "./docs/examples/with-sections.md";
+// const withSectionsMarkdown = raw("./docs/examples/with-sections.md");
+import withCustomStylesMarkdown from "./docs/examples/with-custom-styles.md";
+// const withCustomStylesMarkdown = raw("./docs/examples/with-custom-styles.md");
 
 /**
  * ShardDocs
