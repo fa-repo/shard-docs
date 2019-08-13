@@ -15,15 +15,16 @@ export default {
     {
       file: pkg.main,
       format: "cjs",
-      sourcemap: true
+      sourcemap: true,
+      exports: "named"
     },
     {
       file: pkg.module,
       format: "es",
-      sourcemap: true
+      sourcemap: true,
+      exports: "named"
     }
   ],
-  exports: "named",
   plugins: [
     external(),
     postcss({
