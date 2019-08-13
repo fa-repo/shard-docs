@@ -1,15 +1,19 @@
-import MarkdownIt from "markdown-it";
-import markdownItTocAndAnchor from "markdown-it-toc-and-anchor";
+import { Remarkable } from "remarkable";
 import Prism from "./prism";
 
-let markdownParser = new MarkdownIt("default", {
-  html: true,
+var md = new Remarkable({
+  html: true, // Enable HTML tags in source
+  breaks: true, // Convert '\n' in paragraphs into <br>
+  langPrefix: "language-", // CSS language prefix for fenced blocks
+
+  // Highlighter function. Should return escaped HTML,
+  // or '' if the source string is not changed
   highlight: function(str, lang) {
     try {
       return Prism.highlight(str, Prism.languages[lang]);
     } catch (error) {}
     return ""; // use external default escaping
   }
-}).use(markdownItTocAndAnchor, { anchorLink: false });
+});
 
-export default markdown => markdownParser.render(markdown || "");
+export default markdown => md.render(markdown || "");
