@@ -6,13 +6,13 @@ import Sidebar from "../Sidebar";
 import Footer from "../Footer";
 import IndexShard from "../shards/CollectionIndexShard";
 import transform from "../transformers";
-import "./App.scss";
+import "./ShardDocs.scss";
 
 /**
- * App
+ * ShardDocs
  */
 
-class App extends React.Component {
+class ShardDocs extends React.Component {
   static propTypes = {};
 
   static defaultProps = {};
@@ -153,18 +153,18 @@ class App extends React.Component {
   }
 }
 
-App.propTypes = {
+ShardDocs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   structure: PropTypes.array,
   basePath: PropTypes.string
 };
 
-App.defaultProps = {
+ShardDocs.defaultProps = {
   title: "",
   description: "",
   structure: [],
   basePath: "/docs"
 };
 
-export default withRouter(App);
+export default withRouter(ShardDocs);
