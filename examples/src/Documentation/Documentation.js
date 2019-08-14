@@ -4,22 +4,22 @@ import { Switch, Route, NavLink } from "react-router-dom";
 
 import ShardDocs from "@fa-repo/shard-docs";
 
-import GetStartedPage from "./01GetStarted";
-import APIReferencePage from "./02APIReference";
-import CSSReferencePage from "./03CSSReference";
-import BasicExamplePage from "./04ExamplesBasicExample";
-import WithADescriptionPage from "./05ExamplesWithADescription";
-import WithSidebarHeadingsPage from "./06ExamplesWithSidebarHeadings";
-import WithExternalLinkPage from "./07ExamplesWithExternalLink";
-import WithSectionsPage from "./08ExamplesWithSections";
-import WithCustomStylesPage from "./09ExamplesWithCustomStyles";
+import GetStartedPage from "../01GetStarted";
+import APIReferencePage from "../02APIReference";
+import CSSReferencePage from "../03CSSReference";
+import BasicExamplePage from "../04ExamplesBasicExample";
+import WithADescriptionPage from "../05ExamplesWithADescription";
+import WithSidebarHeadingsPage from "../06ExamplesWithSidebarHeadings";
+import WithExternalLinkPage from "../07ExamplesWithExternalLink";
+import WithSectionsPage from "../08ExamplesWithSections";
+import WithCustomStylesPage from "../09ExamplesWithCustomStyles";
 
-import BasicExample from "./04ExamplesBasicExample/example";
-import WithDescriptionExample from "./05ExamplesWithADescription/example";
-import WithSidebarHeadingsExample from "./06ExamplesWithSidebarHeadings/example";
-import WithSidebarExternalLinkExample from "./07ExamplesWithExternalLink/example";
-import WithSectionsExample from "./08ExamplesWithSections/example";
-import WithCustomStylesExample from "./09ExamplesWithCustomStyles/example";
+import BasicExample from "../04ExamplesBasicExample/example";
+import WithDescriptionExample from "../05ExamplesWithADescription/example";
+import WithSidebarHeadingsExample from "../06ExamplesWithSidebarHeadings/example";
+import WithSidebarExternalLinkExample from "../07ExamplesWithExternalLink/example";
+import WithSectionsExample from "../08ExamplesWithSections/example";
+import WithCustomStylesExample from "../09ExamplesWithCustomStyles/example";
 
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
