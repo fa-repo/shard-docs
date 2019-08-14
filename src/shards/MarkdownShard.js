@@ -8,19 +8,14 @@ import "./MarkdownShard.scss";
  */
 
 const MarkdownShard = props => {
-  return (
-    <div
-      className="shard-docs-markdown-shard"
-      dangerouslySetInnerHTML={{
-        __html: parseMarkdown(props.markdown)
-      }}
-    />
-  );
+  const html = parseMarkdown(props.markdown);
+  return <div className="shard-docs-markdown-shard" dangerouslySetInnerHTML={{ __html: html }} />;
 };
 
 MarkdownShard.propTypes = {
   markdown: PropTypes.string
 };
+
 MarkdownShard.defaultProps = {
   markdown: ""
 };
