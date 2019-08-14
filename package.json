@@ -27,7 +27,7 @@
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish",
     "prepublishOnly": "npm run build",
-    "analyze": "npm run build && npx source-map-explorer ./dist/shard-docs.js"
+    "analyse": "npm run build && npx source-map-explorer ./dist/shard-docs.js"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
