@@ -8,6 +8,7 @@ import withSidebarHeadingsMarkdown from "./with-sidebar-headings.md";
  */
 
 export default [
-  <MarkdownShard markdown={withSidebarHeadingsMarkdown} />,
-  <IframeShard path="#/examples/with-sidebar-headings" />
+  <h1>With sidebar headings</h1>,
+  <IframeShard path="#/examples/with-sidebar-headings" />,
+  <MarkdownShard markdown={withSidebarHeadingsMarkdown} />
 ];

@@ -8,6 +8,7 @@ import withSectionsMarkdown from "./with-sections.md";
  */
 
 export default [
-  <MarkdownShard markdown={withSectionsMarkdown} />,
-  <IframeShard path="#/examples/with-sections" />
+  <h1>With sections</h1>,
+  <IframeShard path="#/examples/with-sections" />,
+  <MarkdownShard markdown={withSectionsMarkdown} />
 ];

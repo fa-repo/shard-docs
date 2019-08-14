@@ -1,5 +1,4 @@
-# With sections
-
+[Source code](https://github.com/fa-repo/shard-docs/tree/master/examples/src/08ExamplesWithSections)
 ```jsx
 ReactDOM.render(
   <ShardDocs

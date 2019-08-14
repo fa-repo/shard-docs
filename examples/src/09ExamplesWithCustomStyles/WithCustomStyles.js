@@ -8,6 +8,7 @@ import withCustomStylesMarkdown from "./with-custom-styles.md";
  */
 
 export default [
-  <MarkdownShard markdown={withCustomStylesMarkdown} />,
-  <IframeShard path="#/examples/with-custom-styles" />
+  <h1>With custom styles</h1>,
+  <IframeShard path="#/examples/with-custom-styles" />,
+  <MarkdownShard markdown={withCustomStylesMarkdown} />
 ];

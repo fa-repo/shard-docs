@@ -8,6 +8,7 @@ import withDescriptionMarkdown from "./with-description.md";
  */
 
 export default [
-  <MarkdownShard markdown={withDescriptionMarkdown} />,
-  <IframeShard path="#/examples/with-description" />
+  <h1>With a description</h1>,
+  <IframeShard path="#/examples/with-description" />,
+  <MarkdownShard markdown={withDescriptionMarkdown} />
 ];

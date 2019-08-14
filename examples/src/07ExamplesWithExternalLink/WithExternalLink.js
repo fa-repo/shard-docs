@@ -8,6 +8,7 @@ import withSidebarExternalLinkMarkdown from "./with-sidebar-external-link.md";
  */
 
 export default [
-  <MarkdownShard markdown={withSidebarExternalLinkMarkdown} />,
-  <IframeShard path="#/examples/with-sidebar-external-link" />
+  <h1>With sidebar external link</h1>,
+  <IframeShard path="#/examples/with-sidebar-external-link" />,
+  <MarkdownShard markdown={withSidebarExternalLinkMarkdown} />
 ];

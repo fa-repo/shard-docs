@@ -1,4 +1,4 @@
-<a href="">Source code</a>
+[Source code](https://github.com/fa-repo/shard-docs/tree/master/examples/src/04ExamplesBasicExample)
 ```jsx
 ReactDOM.render(
   <ShardDocs

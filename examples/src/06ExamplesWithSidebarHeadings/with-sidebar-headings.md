@@ -1,5 +1,4 @@
-# With sidebar headings
-
+[Source code](https://github.com/fa-repo/shard-docs/tree/master/examples/src/06ExamplesWithSidebarHeadings)
 ```jsx
 ReactDOM.render(
   <ShardDocs
