@@ -25,6 +25,7 @@ import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
 import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";
 import "@fa-repo/shard-docs/dist/shards/iframe-shard.css";
+import "@fa-repo/shard-docs/dist/shards/external-link.css";
 
 /**
  * ShardDocs
