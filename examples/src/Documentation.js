@@ -2,7 +2,9 @@ import React from "react";
 
 import { Switch, Route, NavLink } from "react-router-dom";
 
-import ShardDocs, { MarkdownShard, IframeShard } from "@fa-repo/shard-docs";
+import ShardDocs from "@fa-repo/shard-docs";
+import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
+import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 
 import BasicExample from "./docs/examples/basic-example";
 import WithDescriptionExample from "./docs/examples/with-description";
