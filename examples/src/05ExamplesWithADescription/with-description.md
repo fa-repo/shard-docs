@@ -1,4 +1,3 @@
-[Source code](https://github.com/fa-repo/shard-docs/tree/master/examples/src/05ExamplesWithADescription)
 ```jsx
 ReactDOM.render(
   <ShardDocs
@@ -9,6 +8,6 @@ ReactDOM.render(
       { type: "page", title: "Get started", shards: [ <h1>Get started</h1> ] }
     ]}
   />,
-    document.getElementById('app')
+  document.getElementById('app')
 );
 ```

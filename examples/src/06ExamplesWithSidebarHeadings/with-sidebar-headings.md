@@ -1,4 +1,3 @@
-[Source code](https://github.com/fa-repo/shard-docs/tree/master/examples/src/06ExamplesWithSidebarHeadings)
 ```jsx
 ReactDOM.render(
   <ShardDocs
@@ -14,6 +13,6 @@ ReactDOM.render(
       { type: "page", title: "Page F", composition: [ <h1>Page F</h1> ] },
     ]}
   />,
-    document.getElementById('app')
+  document.getElementById('app')
 );
 ```

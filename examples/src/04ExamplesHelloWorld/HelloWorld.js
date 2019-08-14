@@ -15,9 +15,6 @@ const Documentation = [
   <ExternalLink href="https://github.com/fa-repo/shard-docs/tree/master/examples/src/04ExamplesBasicExample">
     Source code
   </ExternalLink>,
-  // <a href="https://github.com/fa-repo/shard-docs/tree/master/examples/src/04ExamplesBasicExample">
-  //   Source code
-  // </a>,
   <MarkdownShard markdown={HelloWorldMarkdown} />
 ];
 
