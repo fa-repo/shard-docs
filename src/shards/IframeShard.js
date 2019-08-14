@@ -7,7 +7,11 @@ import "./IframeShard.scss";
  */
 
 const IframeShard = ({ path, ...props }) => {
-  return <iframe src={path} className="shard-docs-iframe-shard" {...props} />;
+  return (
+    <div className="shard-docs-iframe-shard">
+      <iframe src={path} {...props} />
+    </div>
+  );
 };
 
 IframeShard.propTypes = {

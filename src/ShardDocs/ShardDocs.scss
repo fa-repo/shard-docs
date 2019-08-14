@@ -15,14 +15,15 @@
 }
 
 .shard-docs-document {
-  width: 840px;
-  margin: 0 15px 15px 0;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 15px 0 0;
   vertical-align: top;
   background: white;
 
-  > * {
-    cursor: initial;
-  }
+  // > * {
+  //   cursor: initial;
+  // }
 
   > :first-child {
     margin-top: 15px;
@@ -72,6 +73,10 @@
 
   a {
     color: #0000ee;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   table {
@@ -112,6 +117,10 @@
 
   table tbody tr:nth-child(even) {
     background: white;
+  }
+
+  img {
+    width: 100%;
   }
 }
 

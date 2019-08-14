@@ -7,25 +7,26 @@ import "./Footer.scss";
  * Footer
  */
 
-const Footer = props => (
-  <footer className="shard-docs-nav-footer">
-    {props.prevLink && (
-      <div className="shard-docs-nav-next">
-        <NavLink to={props.prevLink} exact>
-          ⟵ {props.prevText}
-        </NavLink>
-      </div>
-    )}
-    <div className="spacer" />
-    {props.nextLink && (
-      <div className="shard-docs-nav-prev">
-        <NavLink to={props.nextLink} exact>
-          {props.nextText} ⟶
-        </NavLink>
-      </div>
-    )}
-  </footer>
-);
+const Footer = props =>
+  (props.prevLink || props.nextLink) && (
+    <footer className="shard-docs-nav-footer">
+      {props.prevLink && (
+        <div className="shard-docs-nav-next">
+          <NavLink to={props.prevLink} exact>
+            ⟵ {props.prevText}
+          </NavLink>
+        </div>
+      )}
+      <div className="spacer" />
+      {props.nextLink && (
+        <div className="shard-docs-nav-prev">
+          <NavLink to={props.nextLink} exact>
+            {props.nextText} ⟶
+          </NavLink>
+        </div>
+      )}
+    </footer>
+  );
 
 Footer.propTypes = {
   prevText: PropTypes.string,
