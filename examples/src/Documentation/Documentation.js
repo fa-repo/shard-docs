@@ -7,14 +7,14 @@ import ShardDocs from "@fa-repo/shard-docs";
 import GetStartedPage from "../01GetStarted";
 import APIReferencePage from "../02APIReference";
 import CSSReferencePage from "../03CSSReference";
-import BasicExamplePage from "../04ExamplesBasicExample";
+import HelloWorldPage from "../04ExamplesHelloWorld";
 import WithADescriptionPage from "../05ExamplesWithADescription";
 import WithSidebarHeadingsPage from "../06ExamplesWithSidebarHeadings";
 import WithExternalLinkPage from "../07ExamplesWithExternalLink";
 import WithSectionsPage from "../08ExamplesWithSections";
 import WithCustomStylesPage from "../09ExamplesWithCustomStyles";
 
-import BasicExample from "../04ExamplesBasicExample/example";
+import HelloWorldExample from "../04ExamplesHelloWorld/example";
 import WithDescriptionExample from "../05ExamplesWithADescription/example";
 import WithSidebarHeadingsExample from "../06ExamplesWithSidebarHeadings/example";
 import WithSidebarExternalLinkExample from "../07ExamplesWithExternalLink/example";
@@ -48,7 +48,7 @@ const Documentation = props => (
               type: "collection",
               title: "Examples",
               children: [
-                { type: "page", title: "Basic example", composition: BasicExamplePage },
+                { type: "page", title: "Hello world", composition: HelloWorldPage },
                 { type: "page", title: "With a description", composition: WithADescriptionPage },
                 {
                   type: "page",
@@ -70,7 +70,7 @@ const Documentation = props => (
     />
 
     <Switch>
-      <Route path="/examples/basic-example" children={<BasicExample />} />
+      <Route path="/examples/hello-world" children={<HelloWorldExample />} />
       <Route path="/examples/with-description" children={<WithDescriptionExample />} />
       <Route path="/examples/with-sidebar-headings" children={<WithSidebarHeadingsExample />} />
       <Route
