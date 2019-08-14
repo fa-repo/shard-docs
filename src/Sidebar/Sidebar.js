@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SidebarHeader from "./SidebarHeader";
-import SidebarMenu from "./SidebarMenu";
+import SidebarHeader from "../SidebarHeader";
+import SidebarMenu from "../SidebarMenu";
+import "./Sidebar.scss";
 
 /**
  * Sidebar

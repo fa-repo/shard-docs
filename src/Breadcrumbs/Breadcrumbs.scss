@@ -1,0 +1,29 @@
+.shard-docs-breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  border-bottom: thin solid #dddddd;
+  padding-bottom: 15px;
+  > * {
+    cursor: initial;
+  }
+  a {
+    color: rgb(0, 0, 238);
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
+.shard-docs-breadcrumbs li {
+  display: inline-block;
+  &:not(:last-child):after {
+    content: " / ";
+    margin-right: 4px;
+  }
+}
+.shard-docs-breadcrumbs li:last-child a.active {
+  color: black;
+  text-decoration: none;
+  cursor: text;
+}

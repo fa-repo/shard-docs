@@ -6,7 +6,7 @@ import Sidebar from "../Sidebar";
 import Footer from "../Footer";
 import IndexShard from "../shards/CollectionIndexShard";
 import transform from "../transformers";
-import "../scss/shard-docs.scss";
+import "./App.scss";
 
 /**
  * App
