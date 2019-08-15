@@ -1,1 +1,1 @@
-export { default } from "./WithCustomStyles";
+export { default } from "./CustomStyles";

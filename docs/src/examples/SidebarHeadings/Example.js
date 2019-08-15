@@ -2,13 +2,13 @@ import React from "react";
 import ShardDocs from "@fa-repo/shard-docs";
 
 /**
- * WithSidebarHeadings
+ * SidebarHeadingsExample
  */
 
-const WithSidebarHeadings = props => (
+const SidebarHeadingsExample = props => (
   <ShardDocs
     title="Documentation title"
-    basePath="/examples/with-sidebar-headings"
+    basePath="/examples/sidebar-headings"
     structure={[
       { type: "heading", heading: "Sidebar heading A" },
       { type: "page", title: "Page A", composition: [<h1>Page A</h1>] },
@@ -22,7 +22,7 @@ const WithSidebarHeadings = props => (
   />
 );
 
-WithSidebarHeadings.propTypes = {};
-WithSidebarHeadings.defaultProps = {};
+SidebarHeadingsExample.propTypes = {};
+SidebarHeadingsExample.defaultProps = {};
 
-export default WithSidebarHeadings;
+export default SidebarHeadingsExample;

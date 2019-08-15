@@ -1,1 +1,1 @@
-export { default } from "./WithADescription.js";
+export { default } from "./SidebarDescription.js";

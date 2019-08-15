@@ -1,1 +1,1 @@
-export { default } from "./WithSections.js";
+export { default } from "./SidebarSections.js";

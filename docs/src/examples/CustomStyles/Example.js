@@ -2,10 +2,10 @@ import React from "react";
 import ShardDocs from "@fa-repo/shard-docs";
 
 /**
- * WithCustomStylesExample
+ * CustomStylesExample
  */
 
-const WithCustomStylesExample = props => (
+const CustomStylesExample = props => (
   <>
     <style
       dangerouslySetInnerHTML={{
@@ -25,7 +25,7 @@ const WithCustomStylesExample = props => (
   </>
 );
 
-WithCustomStylesExample.propTypes = {};
-WithCustomStylesExample.defaultProps = {};
+CustomStylesExample.propTypes = {};
+CustomStylesExample.defaultProps = {};
 
-export default WithCustomStylesExample;
+export default CustomStylesExample;

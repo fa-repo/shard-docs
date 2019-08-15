@@ -2,13 +2,13 @@ import React from "react";
 import ShardDocs from "@fa-repo/shard-docs";
 
 /**
- * WithSectionsExample
+ * SidebarSectionsExample
  */
 
-const WithSectionsExample = props => (
+const SidebarSectionsExample = props => (
   <ShardDocs
     title="Documentation title"
-    basePath="/examples/with-sections"
+    basePath="/examples/sidebar-sections"
     structure={[
       {
         type: "collection",
@@ -30,7 +30,7 @@ const WithSectionsExample = props => (
   />
 );
 
-WithSectionsExample.propTypes = {};
-WithSectionsExample.defaultProps = {};
+SidebarSectionsExample.propTypes = {};
+SidebarSectionsExample.defaultProps = {};
 
-export default WithSectionsExample;
+export default SidebarSectionsExample;

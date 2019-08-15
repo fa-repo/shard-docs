@@ -2,22 +2,23 @@ import React from "react";
 import ShardDocs from "@fa-repo/shard-docs";
 
 /**
- * WithDescriptionExample
+ * SidebarDescriptionExample
  */
 
-const WithDescriptionExample = props => (
+const SidebarDescriptionExample = props => (
   <ShardDocs
-    title="WithDescriptionExample title"
+    title="SidebarDescriptionExample title"
     description="A description describing your documentation"
-    basePath="/examples/with-description"
+    basePath="/examples/sidebar-description"
     structure={[
-      { type: "heading", heading: "Essentials" },
-      { type: "page", title: "Get started", composition: [<h1>Get started</h1>] }
+      { type: "page", title: "Getting started", composition: [<h1>Getting started</h1>] },
+      { type: "page", title: "API reference", composition: [<h1>API reference</h1>] },
+      { type: "page", title: "Basic example", composition: [<h1>Basic example</h1>] }
     ]}
   />
 );
 
-WithDescriptionExample.propTypes = {};
-WithDescriptionExample.defaultProps = {};
+SidebarDescriptionExample.propTypes = {};
+SidebarDescriptionExample.defaultProps = {};
 
-export default WithDescriptionExample;
+export default SidebarDescriptionExample;

@@ -2,10 +2,10 @@ import React from "react";
 import ShardDocs from "@fa-repo/shard-docs";
 
 /**
- * WithSidebarHeadings
+ * SidebarExternalLinkExample
  */
 
-const WithSidebarHeadings = props => (
+const SidebarExternalLinkExample = props => (
   <ShardDocs
     title="Documentation title"
     basePath="/examples/with-sidebar-external-link"
@@ -18,7 +18,7 @@ const WithSidebarHeadings = props => (
   />
 );
 
-WithSidebarHeadings.propTypes = {};
-WithSidebarHeadings.defaultProps = {};
+SidebarExternalLinkExample.propTypes = {};
+SidebarExternalLinkExample.defaultProps = {};
 
-export default WithSidebarHeadings;
+export default SidebarExternalLinkExample;

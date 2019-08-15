@@ -1,1 +1,1 @@
-export { default } from "./WithExternalLink.js";
+export { default } from "./SidebarExternalLink.js";

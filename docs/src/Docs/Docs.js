@@ -15,11 +15,11 @@ import APIReferencePage from "../reference/APIReference";
 import CSSReferencePage from "../reference/CSSReference";
 
 import HelloWorldExample from "../examples/HelloWorld/example";
-import WithDescriptionExample from "../examples/SidebarDescription/example";
-import WithSidebarHeadingsExample from "../examples/SidebarHeadings/example";
-import WithSidebarExternalLinkExample from "../examples/SidebarExternalLink/example";
-import WithSectionsExample from "../examples/SidebarSections/example";
-import WithCustomStylesExample from "../examples/CustomStyles/example";
+import SidebarDescriptionExample from "../examples/SidebarDescription/example";
+import SidebarHeadingsExample from "../examples/SidebarHeadings/example";
+import SidebarExternalLinkExample from "../examples/SidebarExternalLink/example";
+import SidebarSectionsExample from "../examples/SidebarSections/example";
+import SidebarCustomStylesExample from "../examples/CustomStyles/example";
 
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
@@ -63,14 +63,11 @@ const Docs = props => (
 
     <Switch>
       <Route path="/examples/hello-world" children={<HelloWorldExample />} />
-      <Route path="/examples/with-description" children={<WithDescriptionExample />} />
-      <Route path="/examples/with-sidebar-headings" children={<WithSidebarHeadingsExample />} />
-      <Route
-        path="/examples/with-sidebar-external-link"
-        children={<WithSidebarExternalLinkExample />}
-      />
-      <Route path="/examples/with-sections" children={<WithSectionsExample />} />
-      <Route path="/examples/with-custom-styles" children={<WithCustomStylesExample />} />
+      <Route path="/examples/sidebar-description" children={<SidebarDescriptionExample />} />
+      <Route path="/examples/sidebar-headings" children={<SidebarHeadingsExample />} />
+      <Route path="/examples/sidebar-external-link" children={<SidebarExternalLinkExample />} />
+      <Route path="/examples/sidebar-sections" children={<SidebarSectionsExample />} />
+      <Route path="/examples/custom-styles" children={<SidebarCustomStylesExample />} />
     </Switch>
   </>
 );

@@ -4,7 +4,7 @@ import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 import HelloWorldMarkdown from "./hello-world.md";
 
 /**
- * ShardDocs
+ * HelloWorld
  */
 
 const sourceCodeLink =
