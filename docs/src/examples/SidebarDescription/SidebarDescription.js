@@ -8,7 +8,7 @@ import SidebarDescriptionMarkdown from "./sidebar-description.md";
  */
 
 const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/examples/src/05ExamplesWithADescription";
+  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarDescription";
 
 export default [
   <h1>Sidebar description</h1>,

@@ -8,7 +8,7 @@ import sidebarExternalLinkMarkdown from "./sidebar-external-link.md";
  */
 
 const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/examples/src/07ExamplesWithExternalLink";
+  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarExternalLink";
 
 export default [
   <h1>Sidebar external link</h1>,

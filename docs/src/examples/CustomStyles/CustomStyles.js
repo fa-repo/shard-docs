@@ -8,7 +8,7 @@ import customStylesMarkdown from "./custom-styles.md";
  */
 
 const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/examples/src/09ExamplesWithCustomStyles";
+  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/CustomStyles";
 
 export default [
   <h1>Custom styles</h1>,

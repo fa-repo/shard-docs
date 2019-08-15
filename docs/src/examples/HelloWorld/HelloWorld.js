@@ -8,7 +8,7 @@ import HelloWorldMarkdown from "./hello-world.md";
  */
 
 const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/examples/src/04ExamplesBasicExample";
+  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HelloWorld";
 
 const Documentation = [
   <h1>Hello world</h1>,

@@ -8,7 +8,7 @@ import sectionsMarkdown from "./sidebar-sections.md";
  */
 
 const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/examples/src/08ExamplesWithSections";
+  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarSections";
 
 export default [
   <h1>Sidebar sections</h1>,

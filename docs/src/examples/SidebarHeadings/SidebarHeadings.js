@@ -8,7 +8,7 @@ import sidebarHeadingsMarkdown from "./sidebar-headings.md";
  */
 
 const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/examples/src/06ExamplesWithSidebarHeadings";
+  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarHeadings";
 
 export default [
   <h1>Sidebar headings</h1>,
