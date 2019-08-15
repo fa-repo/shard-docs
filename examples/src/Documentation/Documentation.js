@@ -43,28 +43,19 @@ const Documentation = props => (
           basePath="/docs"
           structure={[
             { type: "page", title: "Get started", composition: GetStartedPage },
+            { type: "heading", heading: "Examples" },
+            { type: "page", title: "Hello world", composition: HelloWorldPage },
+            { type: "page", title: "Sidebar description", composition: WithADescriptionPage },
+            { type: "page", title: "Sidebar headings", composition: WithSidebarHeadingsPage },
+            { type: "page", title: "Sidebar external link", composition: WithExternalLinkPage },
+            { type: "page", title: "Sidebar sections", composition: WithSectionsPage },
+            { type: "page", title: "Custom styles", composition: WithCustomStylesPage },
+            { type: "heading", heading: "Shards" },
+            { type: "page", title: "MarkdownShard", composition: [] },
+            { type: "page", title: "IframeShard", composition: [] },
+            { type: "heading", heading: "Reference" },
             { type: "page", title: "API reference", composition: APIReferencePage },
-            { type: "page", title: "CSS reference", composition: CSSReferencePage },
-            {
-              type: "collection",
-              title: "Examples",
-              children: [
-                { type: "page", title: "Hello world", composition: HelloWorldPage },
-                { type: "page", title: "With a description", composition: WithADescriptionPage },
-                {
-                  type: "page",
-                  title: "With sidebar headings",
-                  composition: WithSidebarHeadingsPage
-                },
-                {
-                  type: "page",
-                  title: "With sidebar external link",
-                  composition: WithExternalLinkPage
-                },
-                { type: "page", title: "With sections", composition: WithSectionsPage },
-                { type: "page", title: "With custom styles", composition: WithCustomStylesPage }
-              ]
-            }
+            { type: "page", title: "CSS reference", composition: CSSReferencePage }
           ]}
         />
       )}
