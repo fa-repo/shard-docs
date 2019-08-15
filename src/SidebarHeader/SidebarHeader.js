@@ -12,7 +12,9 @@ const SidebarHeader = ({ title, description, basePath, ...props }) => {
     <header className="shard-docs-sidebar-header">
       {title && (
         <NavLink to={basePath}>
-          <h2 className="shard-docs-sidebar-heading">{title}</h2>
+          <h2 className="shard-docs-sidebar-heading" title={title}>
+            {title}
+          </h2>
         </NavLink>
       )}
       {description && <p className="shard-docs-sidebar-description">{description}</p>}
