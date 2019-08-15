@@ -11,7 +11,7 @@ const sourceCodeLink =
   "https://github.com/fa-repo/shard-docs/tree/master/examples/src/09ExamplesWithCustomStyles";
 
 export default [
-  <h1>With custom styles</h1>,
+  <h1>Custom styles</h1>,
   <IframeShard path="#/examples/custom-styles" />,
   <br />,
   <a href={sourceCodeLink} target="_blank">

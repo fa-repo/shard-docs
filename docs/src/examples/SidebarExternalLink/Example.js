@@ -8,7 +8,7 @@ import ShardDocs from "@fa-repo/shard-docs";
 const SidebarExternalLinkExample = props => (
   <ShardDocs
     title="Documentation title"
-    basePath="/examples/with-sidebar-external-link"
+    basePath="/examples/sidebar-external-link"
     structure={[
       { type: "page", title: "Getting started", composition: [<h1>Getting started</h1>] },
       { type: "page", title: "API reference", composition: [<h1>API reference</h1>] },
