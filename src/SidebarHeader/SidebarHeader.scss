@@ -16,6 +16,9 @@
     color: #673ab6;
     font-size: 14px;
     font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   p {
