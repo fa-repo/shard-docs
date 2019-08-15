@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "react-dom";
 import { HashRouter } from "react-router-dom";
-import Documentation from "./Documentation";
+import Docs from "./Docs";
 
 render(
   <HashRouter>
-    <Documentation />
+    <Docs />
   </HashRouter>,
   document.getElementById("root")
 );
