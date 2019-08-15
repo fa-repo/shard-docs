@@ -14,6 +14,7 @@ import CustomStylesPage from "../examples/CustomStyles";
 
 import MarkdownShardPage from "../shards/MarkdownShard";
 import IframeShardPage from "../shards/IframeShard";
+import ShowcaseShardPage from "../shards/ShowcaseShard";
 
 import APIReferencePage from "../reference/APIReference";
 import CSSReferencePage from "../reference/CSSReference";
@@ -55,8 +56,9 @@ const Docs = props => (
             { type: "page", title: "Sidebar sections", composition: SidebarSectionsPage },
             { type: "page", title: "Custom styles", composition: CustomStylesPage },
             { type: "heading", heading: "Shards" },
-            { type: "page", title: "MarkdownShard", composition: MarkdownShardPage },
             { type: "page", title: "IframeShard", composition: IframeShardPage },
+            { type: "page", title: "MarkdownShard", composition: MarkdownShardPage },
+            { type: "page", title: "ShowcaseShard", composition: ShowcaseShardPage },
             { type: "heading", heading: "Reference" },
             { type: "page", title: "API reference", composition: APIReferencePage },
             { type: "page", title: "CSS reference", composition: CSSReferencePage }
