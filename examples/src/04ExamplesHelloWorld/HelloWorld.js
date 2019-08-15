@@ -1,20 +1,22 @@
 import React from "react";
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
 import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
-import ExternalLink from "@fa-repo/shard-docs/dist/shards/external-link";
 import HelloWorldMarkdown from "./hello-world.md";
 
 /**
  * ShardDocs
  */
 
+const sourceCodeLink =
+  "https://github.com/fa-repo/shard-docs/tree/master/examples/src/04ExamplesBasicExample";
+
 const Documentation = [
   <h1>Hello world</h1>,
   <IframeShard path="#/examples/hello-world" />,
   <br />,
-  <ExternalLink href="https://github.com/fa-repo/shard-docs/tree/master/examples/src/04ExamplesBasicExample">
+  <a href={sourceCodeLink} target="_blank">
     Source code
-  </ExternalLink>,
+  </a>,
   <MarkdownShard markdown={HelloWorldMarkdown} />
 ];
 

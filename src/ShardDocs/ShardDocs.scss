@@ -74,8 +74,24 @@
   a {
     color: #0000ee;
     text-decoration: none;
+    position: relative;
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  a[target="_blank"] {
+    padding-right: 19px;
+    &::after {
+      content: "";
+      position: absolute;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' width='24' fill='rgb(0, 0, 238)' stroke='none'><path d='M13 3L16.293 6.293 9.293 13.293 10.707 14.707 17.707 7.707 21 11 21 3z'/><path d='M19,19H5V5h7l-2-2H5C3.897,3,3,3.897,3,5v14c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2v-5l-2-2V19z'/></svg>")
+        no-repeat;
+      background-size: 14px;
+      height: 14px;
+      width: 14px;
+      right: 0;
+      top: 3px;
     }
   }
 
