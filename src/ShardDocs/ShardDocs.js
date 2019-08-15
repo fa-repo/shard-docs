@@ -85,7 +85,7 @@ class ShardDocs extends React.Component {
     const urlPath = this.props.location.pathname;
     const index =
       urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
-    if (index >= 0) return pages[index];
+    if (index >= 0 && pages[index]) return pages[index];
     else return {};
   }
 
