@@ -1,21 +1,17 @@
 ```jsx
-ReactDOM.render(
   <>
     <style
       dangerouslySetInnerHTML={{
-        __html: `.shard-docs-sidebar {
-            background: red;
-          }`
+        __html: `.shard-docs-sidebar { background: red; }`
       }}
     />
     <ShardDocs
       title="Documentation title"
+      basePath="/examples/custom-styles"
       structure={[
-        { heading: "Sidebar heading" },
-        { title: "Get started", shards: [ <h1>Get started</h1> ] }
+        { type: "heading", heading: "Essentials" },
+        { type: "page", title: "Get started", composition: [<h1>Get started</h1>] }
       ]}
     />
-  </>,
-  document.getElementById('app')
-);
+  </>
 ```

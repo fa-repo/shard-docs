@@ -7,7 +7,7 @@ import ShardDocs from "@fa-repo/shard-docs";
 
 const SidebarDescriptionExample = props => (
   <ShardDocs
-    title="SidebarDescriptionExample title"
+    title="Documentation title"
     description="A description describing your documentation"
     basePath="/examples/sidebar-description"
   />

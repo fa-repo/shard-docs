@@ -9,9 +9,7 @@ const CustomStylesExample = props => (
   <>
     <style
       dangerouslySetInnerHTML={{
-        __html: `.shard-docs-sidebar {
-        background: red;
-      }`
+        __html: `.shard-docs-sidebar { background: red; }`
       }}
     />
     <ShardDocs
