@@ -23,7 +23,7 @@ export default [
   <h3>Example</h3>,
   <ShowcaseShard>
     <SourceCodeShard
-      lang="abc"
+      lang="markdown"
       code={`
 # Aquarum inrita
 
