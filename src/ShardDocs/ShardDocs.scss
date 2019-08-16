@@ -47,7 +47,8 @@
   code {
     padding: 2px 6px;
     border-radius: 2px;
-    font-size: 12px;
+    // Font-size used to be 12px (and remains so in body) but was changed to percentage to stay proportional with varying text sizes such as headings.
+    font-size: 86%;
     font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
       Bitstream Vera Sans Mono, Courier New;
     background: #f5f5f5;
