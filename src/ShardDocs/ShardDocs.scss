@@ -21,12 +21,8 @@
   vertical-align: top;
   background: white;
 
-  // > * {
-  //   cursor: initial;
-  // }
-
   > :first-child {
-    margin-top: 15px;
+    margin-top: 0;
   }
 
   h1,
