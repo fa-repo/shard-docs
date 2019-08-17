@@ -121,6 +121,11 @@
     padding: 7px;
     line-height: 1.8;
     vertical-align: top;
+
+    &:last-child {
+      width: 99%;
+      padding-right: 0;
+    }
   }
 
   table td.param {
