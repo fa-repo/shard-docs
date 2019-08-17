@@ -14,7 +14,18 @@ ${props.sourceCode.trim()}
 
   return (
     <div className="shard-docs-example-shard">
-      <header>{props.header}</header>
+      <header className="shard-docs-example-shard-header">
+        <h3 className="shard-docs-example-shard-title">{props.title}</h3>
+        {props.sourceCodeLink && (
+          <a
+            className="shard-docs-example-shard-source-link"
+            href={props.sourceCodeLink}
+            target="_blank"
+          >
+            Source code
+          </a>
+        )}
+      </header>
       <div>{props.children}</div>
       <footer dangerouslySetInnerHTML={{ __html: parseMarkdown(sourceCode) }} />
     </div>
@@ -22,15 +33,17 @@ ${props.sourceCode.trim()}
 };
 
 ExampleShard.propTypes = {
-  header: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   lang: PropTypes.string,
-  sourceCode: PropTypes.string
+  sourceCode: PropTypes.string,
+  sourceCodeLink: PropTypes.string
 };
 
 ExampleShard.defaultProps = {
-  header: "",
+  title: "",
   lang: "",
-  sourceCode: ""
+  sourceCode: "",
+  sourceCodeLink: ""
 };
 
 export default ExampleShard;

@@ -69,7 +69,7 @@
   }
 
   p {
-    margin-top: 5px;
+    margin-top: 0;
   }
 
   a {
@@ -101,11 +101,10 @@
     line-height: 1.4;
     font-size: 14px;
     margin-bottom: 25px;
-    margin-top: 10px;
+    margin-top: 0;
   }
 
   table thead {
-    background: #f5f5f5;
     white-space: nowrap;
     font-weight: bold;
   }
@@ -113,12 +112,14 @@
   table thead th {
     font-weight: 600;
     text-align: left;
+    border-bottom: thin solid #616161;
+    padding-top: 0;
   }
 
   table th,
   table td {
     border: thin solid white;
-    padding: 7px;
+    padding: 6px 20px 6px 0;
     line-height: 1.8;
     vertical-align: top;
 
@@ -131,14 +132,6 @@
   table td.param {
     color: #008000;
     font-family: "Courier New", Courier, monospace;
-  }
-
-  table tbody tr {
-    background: #f5f5f5;
-  }
-
-  table tbody tr:nth-child(even) {
-    background: white;
   }
 
   img {

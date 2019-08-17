@@ -1,5 +1,8 @@
-.shard-docs-markdown-shard {
-  > :first-child {
-    margin-top: 15px;
-  }
+.shard-docs-markdown-shard,
+.shard-docs-markdown-shard pre {
+  margin: 0 0 2rem 0;
+}
+
+.shard-docs-markdown-shard > :last-child {
+  margin-bottom: 0;
 }

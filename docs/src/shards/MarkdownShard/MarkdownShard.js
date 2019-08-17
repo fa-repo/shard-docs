@@ -1,9 +1,40 @@
 import React from "react";
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
-import markdownShardMarkdown from "./markdown-shard.md";
+import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
+import "@fa-repo/shard-docs/dist/shards/section-shard.css";
+import SourceCodeShard from "@fa-repo/shard-docs/dist/shards/source-code-shard";
+import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
+import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
+import "@fa-repo/shard-docs/dist/shards/example-shard.css";
 
 /**
  * MarkdownShard
  */
 
-export default [<MarkdownShard markdown={markdownShardMarkdown} />];
+export default [
+  <SectionShard title="Import">
+    <SourceCodeShard
+      lang="bash"
+      code={`
+import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
+import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";`}
+    />
+  </SectionShard>,
+  <SectionShard title="Properties">
+    <MarkdownShard
+      markdown={`
+| Name          | Type    | Default   | Required  | Description                 |
+|---------------|---------|-----------|-----------|-----------------------------|
+| markdown      | string | \`""\`    |  required  | Provide markdown. Code blocks support the following languages: \`bash\`, \`css\`, \`html\`, \`http\`, \`javascript\`, \`js\`, \`json\`, \`jsx\`,  \`markdown\`, \`mathml\`, \`md\`, \`php\`, \`regex\`, \`sass\`, \`scss\`, \`shell\`, \`sql\`, \`svg\`, \`ts\`, \`tsx\`, \`typescript\`, \`xml\`, \`yaml\`, \`yml\`. |`}
+    />
+  </SectionShard>,
+  <SectionShard title="Usage">
+    <ExampleShard
+      title="Hello world"
+      lang="jsx"
+      sourceCode={`<MarkdownShard markdown="## Hello world" />`}
+    >
+      <MarkdownShard markdown="## Hello world" />
+    </ExampleShard>
+  </SectionShard>
+];

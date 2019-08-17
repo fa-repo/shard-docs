@@ -1,32 +1,3 @@
-## ShardDocs properties
-
-| Name          | Type   | Default   | Description                                                                  |
-|---------------|--------|-----------|------------------------------------------------------------------------------|
-| `title`       | string | `""`      | A title for your documentation. Appears at the top of the sidebar.           |
-| `description` | string | `""`      | A description for your documentation. Appears below the title in the sidebar.|
-| `structure`   | array  | `[]`      | An array of objects representing each page in docs. See below for help.      |
-| `basePath`    | string | `"/docs"` | A path prepended to every page.                                              |
-| `baseComposition`  | string | `[]` | A doc that appears at the base path. Defaults to first doc in `structure` if not set.                                |
-
-### Configuring ShardDocs structure
-
-The structure of ShardDocs is organised as a tree to indicate the relationship between each page and the indentation levels in the sidebar.
-
-```js
-const structure = [
-  { type: "page", title: "Install", composition: [ <h1>Install</h1> ] },
-  { type: "page", title: "Basic usage", composition: [ <h1>Basic usage</h1> ] },
-  {
-    type: "collection",
-    title: "Examples",
-    children: [
-      { type: "page", title: "Use case A", composition: [ <h1>Use case A</h1> ] },
-      { type: "page", title: "Use case B", composition: [ <h1>Use case B</h1> ] }
-    ]
-  },
-  { type: "external", title: "Github", link: "https://github.com" },
-]
-```
 
 #### Page object properties
 An object representing a page in the documentation structure.

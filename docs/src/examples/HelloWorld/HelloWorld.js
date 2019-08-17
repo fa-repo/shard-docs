@@ -1,7 +1,7 @@
 import React from "react";
-import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
 import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
-import HelloWorldMarkdown from "./hello-world.md";
+import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
+import "@fa-repo/shard-docs/dist/shards/example-shard.css";
 
 /**
  * HelloWorld
@@ -11,13 +11,25 @@ const sourceCodeLink =
   "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HelloWorld";
 
 const Documentation = [
-  <h1>Hello world</h1>,
-  <IframeShard path="#/examples/hello-world" />,
-  <br />,
-  <a href={sourceCodeLink} target="_blank">
-    Source code
-  </a>,
-  <MarkdownShard markdown={HelloWorldMarkdown} />
+  <ExampleShard
+    title="Hello world"
+    lang="jsx"
+    sourceCodeLink={sourceCodeLink}
+    sourceCode={`
+<ShardDocs
+  title="Package name"
+  structure={[
+    {
+      type: "page",
+      title: "Hello world",
+      composition: [ <img src="/images/hello-world.jpg" alt="hello world" /> ]
+    }
+  ]}
+/>
+`}
+  >
+    <IframeShard path="#/examples/hello-world" />
+  </ExampleShard>
 ];
 
 Documentation.propTypes = {};

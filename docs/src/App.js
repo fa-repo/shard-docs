@@ -5,7 +5,7 @@ import { HashRouter } from "react-router-dom";
 
 import ShardDocs from "@fa-repo/shard-docs";
 
-import GetStartedPage from "./introduction/GetStarted";
+import GetStartedPage from "./introduction/get-started";
 import HelloWorldPage from "./examples/HelloWorld";
 import SidebarDescriptionPage from "./examples/SidebarDescription";
 import SidebarHeadingsPage from "./examples/SidebarHeadings";
