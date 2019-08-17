@@ -1,0 +1,22 @@
+.shard-docs-section-shard {
+  h2 {
+    margin: 0 0 1rem 0;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    font-size: 15px;
+    text-transform: uppercase;
+    transition: border-bottom 150ms ease-out;
+    &:hover {
+      border-bottom: 2px solid black;
+    }
+  }
+
+  h2 a {
+    color: #212121;
+    text-decoration: none !important;
+    padding-bottom: 0.2rem;
+    display: inline-block;
+  }
+}

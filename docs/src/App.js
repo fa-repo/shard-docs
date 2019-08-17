@@ -16,6 +16,7 @@ import CustomStylesPage from "./examples/CustomStyles";
 import ExampleShardPage from "./shards/ExampleShard";
 import MarkdownShardPage from "./shards/MarkdownShard";
 import IframeShardPage from "./shards/IframeShard";
+import SectionShardPage from "./shards/SectionShard";
 import ShowcaseShardPage from "./shards/ShowcaseShard";
 import SourceCodeShardPage from "./shards/SourceCodeShard";
 
@@ -67,6 +68,7 @@ const Docs = props => (
               { type: "page", title: "ExampleShard", composition: ExampleShardPage },
               { type: "page", title: "IframeShard", composition: IframeShardPage },
               { type: "page", title: "MarkdownShard", composition: MarkdownShardPage },
+              { type: "page", title: "SectionShard", composition: SectionShardPage },
               { type: "page", title: "ShowcaseShard", composition: ShowcaseShardPage },
               { type: "page", title: "SourceCodeShard", composition: SourceCodeShardPage },
               { type: "heading", heading: "Reference" },
