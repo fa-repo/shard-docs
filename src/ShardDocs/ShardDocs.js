@@ -164,7 +164,7 @@ ShardDocs.defaultProps = {
   title: "",
   description: "",
   structure: [],
-  basePath: "/docs"
+  basePath: "/"
 };
 
 export default withRouter(ShardDocs);
