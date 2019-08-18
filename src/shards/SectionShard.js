@@ -10,12 +10,12 @@ import "./SectionShard.scss";
 class SectionShard extends React.Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
-    persistCollapsedState: PropTypes.string
+    persistState: PropTypes.string
   };
 
   static defaultProps = {
     title: "",
-    persistCollapsedState: null
+    persistState: null
   };
 
   state = {
@@ -23,8 +23,8 @@ class SectionShard extends React.Component {
   };
 
   componentDidMount() {
-    if (this.props.persistCollapsedState) {
-      let isOpen = localStorage.getItem("section-shard-state-" + this.props.persistCollapsedState);
+    if (this.props.persistState) {
+      let isOpen = localStorage.getItem("section-shard-state-" + this.props.persistState);
       this.setState({
         isOpen: isOpen === null ? true : isOpen == "true"
       });
@@ -34,17 +34,18 @@ class SectionShard extends React.Component {
   handleToggle = e => {
     e.preventDefault();
     this.setState({ isOpen: !this.state.isOpen });
-    if (this.props.persistCollapsedState) {
-      localStorage.setItem(
-        "section-shard-state-" + this.props.persistCollapsedState,
-        !this.state.isOpen
-      );
+    if (this.props.persistState) {
+      localStorage.setItem("section-shard-state-" + this.props.persistState, !this.state.isOpen);
     }
   };
 
-  render() {
-    const { title, persistCollapsedState, ...props } = this.props;
+  isCollapsed = () => {
+    let collapsed = localStorage.getItem("section-shard-state-" + this.props.persistState);
+    return collapsed === null ? true : collapsed == "true";
+  };
 
+  render() {
+    const { title, persistState, ...props } = this.props;
     return (
       <div {...props} className={classnames("shard-docs-section-shard", props.className)}>
         <h2 className="shard-docs-section-shard-title">
@@ -52,7 +53,7 @@ class SectionShard extends React.Component {
             {title}
           </a>
         </h2>
-        {this.state.isOpen && <div className="shard-docs-section-shard">{props.children}</div>}
+        {this.isCollapsed() && <div className="shard-docs-section-shard">{props.children}</div>}
       </div>
     );
   }

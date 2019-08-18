@@ -12,7 +12,7 @@ import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
  */
 
 export default [
-  <SectionShard title="Import">
+  <SectionShard title="Import" persistState="39129">
     <SourceCodeShard
       lang="bash"
       code={`
@@ -21,7 +21,7 @@ import "@fa-repo/shard-docs/dist/shards/example-shard.css";`}
     />
   </SectionShard>,
 
-  <SectionShard title="Properties">
+  <SectionShard title="Properties" persistState="53231">
     <MarkdownShard
       markdown={`
 | Name          | Type    | Default   | Required  | Description                 |
@@ -32,7 +32,7 @@ import "@fa-repo/shard-docs/dist/shards/example-shard.css";`}
 | lang      | string | \`undefined\`    | Required  | Language parser: \`bash\`, \`css\`, \`html\`, \`http\`, \`javascript\`, \`js\`, \`json\`, \`jsx\`,  \`markdown\`, \`mathml\`, \`md\`, \`php\`, \`regex\`, \`sass\`, \`scss\`, \`shell\`, \`sql\`, \`svg\`, \`ts\`, \`tsx\`, \`typescript\`, \`xml\`, \`yaml\`, \`yml\`. |`}
     />
   </SectionShard>,
-  <SectionShard title="Usage">
+  <SectionShard title="Usage" persistState="32912">
     <ExampleShard
       title="Example shard title"
       lang="jsx"

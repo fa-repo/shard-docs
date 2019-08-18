@@ -14,7 +14,7 @@ import "@fa-repo/shard-docs/dist/shards/example-shard.css";
  */
 
 export default [
-  <SectionShard title="Import">
+  <SectionShard title="Import" persistState="98699">
     <SourceCodeShard
       lang="bash"
       code={`
@@ -22,7 +22,7 @@ import ShowCaseShard from "@fa-repo/shard-docs/dist/shards/showcase-shard";
 import "@fa-repo/shard-docs/dist/shards/showcase-shard.css";`}
     />
   </SectionShard>,
-  <SectionShard title="Properties">
+  <SectionShard title="Properties" persistState="09099">
     <MarkdownShard
       markdown={`
 | Name      | Type    | Default | Required   | Description                     |
@@ -31,7 +31,7 @@ import "@fa-repo/shard-docs/dist/shards/showcase-shard.css";`}
 | \`noPad\` | boolean | \`""\`  | sometimes  | Remove all padding.             |`}
     />
   </SectionShard>,
-  <SectionShard title="Usage">
+  <SectionShard title="Usage" persistState="12223">
     <ExampleShard
       title="Hello world"
       lang="jsx"

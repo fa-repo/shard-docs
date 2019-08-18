@@ -12,7 +12,7 @@ import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
  */
 
 export default [
-  <SectionShard title="Import">
+  <SectionShard title="Import" persistState="22190">
     <SourceCodeShard
       lang="bash"
       code={`
@@ -20,17 +20,17 @@ import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
 import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
     />
   </SectionShard>,
-  <SectionShard title="Properties">
+  <SectionShard title="Properties" persistState="99912">
     <MarkdownShard
       markdown={`
 | Name       | Type    | Default  | Required  | Description           |
 |------------|---------|----------|-----------|-----------------------|
 | \`title\`  | string  | \`""\`   | required  | Title of the section. |
-| \`persistCollapsedState\`  | string  | \`""\`   | sometimes  | Provide a custom id to this property to persist collapsed state on page refresh. |
+| \`persistState\`  | string  | \`""\`   | sometimes  | Provide a custom id to this property to persist collapsed state on page refresh. |
 `}
     />
   </SectionShard>,
-  <SectionShard title="Usage">
+  <SectionShard title="Usage" persistState="84882">
     <ExampleShard
       title="Hello world"
       lang="jsx"
@@ -43,13 +43,13 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
       </SectionShard>
     </ExampleShard>
     <ExampleShard
-      title="Remember collapsed state by assigning a custom ID to `persistCollapsedState`."
+      title="Remember collapsed state by assigning a custom ID to `persistState`."
       lang="jsx"
-      sourceCode={`<SectionShard title="Section shard title" persistCollapsedState="abcdef">
+      sourceCode={`<SectionShard title="Section shard title" persistState="abcdef">
   Click \`Section shard title\` to toggle content.
 </SectionShard>`}
     >
-      <SectionShard title="Section shard title" persistCollapsedState="abcdef">
+      <SectionShard title="Section shard title" persistState="abcdef">
         Remember collapsed state when toggling content. Refresh page to see persisted state.
       </SectionShard>
     </ExampleShard>
