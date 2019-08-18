@@ -1,4 +1,5 @@
 import slugify from "slugify";
+import kebabCase from "lodash/kebabCase";
 
 function transformHeading({ heading }) {
   return { type: "heading", heading: heading };
@@ -9,7 +10,7 @@ function transformExternal({ title, link }) {
 }
 
 function transformPage(item, basePath, breadcrumbs) {
-  const path = basePath + "/" + slugify(item.title, { lower: true });
+  const path = basePath + "/" + slugify(kebabCase(item.title), { lower: true });
   return {
     type: "page",
     path: path,
