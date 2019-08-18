@@ -3,9 +3,17 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import "./SectionShard.scss";
 
-/**
- * SectionShard
- */
+const Link = props => (
+  <a
+    href={props.href}
+    onClick={e => {
+      e.preventDefault();
+      props.onClick(e);
+    }}
+  >
+    {props.text}
+  </a>
+);
 
 class SectionShard extends React.Component {
   static propTypes = {
@@ -19,29 +27,26 @@ class SectionShard extends React.Component {
   };
 
   state = {
-    isOpen: true
+    collapsed: true
   };
 
   componentDidMount() {
     if (this.props.persistState) {
-      let isOpen = localStorage.getItem("section-shard-state-" + this.props.persistState);
-      this.setState({
-        isOpen: isOpen === null ? true : isOpen == "true"
-      });
+      let collapsed = this.isCollapsed();
+      this.setState({ collapsed });
     }
   }
 
-  handleToggle = e => {
-    e.preventDefault();
-    this.setState({ isOpen: !this.state.isOpen });
-    if (this.props.persistState) {
-      localStorage.setItem("section-shard-state-" + this.props.persistState, !this.state.isOpen);
-    }
+  isCollapsed = () => {
+    let collapsed = localStorage.getItem("fa-repo-section-shard-state-" + this.props.persistState);
+    return collapsed === null ? true : collapsed == "true";
   };
 
-  isCollapsed = () => {
-    let collapsed = localStorage.getItem("section-shard-state-" + this.props.persistState);
-    return collapsed === null ? true : collapsed == "true";
+  setCollapsed = collapsed => {
+    if (this.props.persistState) {
+      localStorage.setItem("fa-repo-section-shard-state-" + this.props.persistState, collapsed);
+    }
+    this.setState({ collapsed });
   };
 
   render() {
@@ -49,9 +54,7 @@ class SectionShard extends React.Component {
     return (
       <div {...props} className={classnames("shard-docs-section-shard", props.className)}>
         <h2 className="shard-docs-section-shard-title">
-          <a href="#" onClick={this.handleToggle}>
-            {title}
-          </a>
+          <Link href="#" onClick={e => this.setCollapsed(!this.isCollapsed())} text={title} />
         </h2>
         {this.isCollapsed() && <div className="shard-docs-section-shard">{props.children}</div>}
       </div>
