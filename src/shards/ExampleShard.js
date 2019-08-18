@@ -15,7 +15,9 @@ ${props.sourceCode.trim()}
   return (
     <div className="shard-docs-example-shard">
       <header className="shard-docs-example-shard-header">
-        <h3 className="shard-docs-example-shard-title">{props.title}</h3>
+        <h3 className="shard-docs-example-shard-title" title={props.title}>
+          {props.title}
+        </h3>
         {props.sourceCodeLink && (
           <a
             className="shard-docs-example-shard-source-link"

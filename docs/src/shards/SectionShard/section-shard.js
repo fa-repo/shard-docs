@@ -25,7 +25,9 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
       markdown={`
 | Name       | Type    | Default  | Required  | Description           |
 |------------|---------|----------|-----------|-----------------------|
-| \`title\`  | string  | \`""\`   | required  | Title of the section. |`}
+| \`title\`  | string  | \`""\`   | required  | Title of the section. |
+| \`persistCollapsedState\`  | string  | \`""\`   | sometimes  | Provide a custom id to this property to persist collapsed state on page refresh. |
+`}
     />
   </SectionShard>,
   <SectionShard title="Usage">
@@ -38,6 +40,17 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
     >
       <SectionShard title="Section shard title">
         Click `Section shard title` to toggle its content.
+      </SectionShard>
+    </ExampleShard>
+    <ExampleShard
+      title="Remember collapsed state by assigning a custom ID to `persistCollapsedState`."
+      lang="jsx"
+      sourceCode={`<SectionShard title="Section shard title" persistCollapsedState="abcdef">
+  Click \`Section shard title\` to toggle content.
+</SectionShard>`}
+    >
+      <SectionShard title="Section shard title" persistCollapsedState="abcdef">
+        Remember collapsed state when toggling content. Refresh page to see persisted state.
       </SectionShard>
     </ExampleShard>
   </SectionShard>

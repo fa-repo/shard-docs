@@ -9,24 +9,41 @@ import "./SectionShard.scss";
 
 class SectionShard extends React.Component {
   static propTypes = {
-    title: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    persistCollapsedState: PropTypes.string
   };
 
   static defaultProps = {
-    title: ""
+    title: "",
+    persistCollapsedState: null
   };
 
   state = {
     isOpen: true
   };
 
+  componentDidMount() {
+    if (this.props.persistCollapsedState) {
+      let isOpen = localStorage.getItem("section-shard-state-" + this.props.persistCollapsedState);
+      this.setState({
+        isOpen: isOpen === null ? true : isOpen == "true"
+      });
+    }
+  }
+
   handleToggle = e => {
     e.preventDefault();
     this.setState({ isOpen: !this.state.isOpen });
+    if (this.props.persistCollapsedState) {
+      localStorage.setItem(
+        "section-shard-state-" + this.props.persistCollapsedState,
+        !this.state.isOpen
+      );
+    }
   };
 
   render() {
-    const { title, ...props } = this.props;
+    const { title, persistCollapsedState, ...props } = this.props;
 
     return (
       <div {...props} className={classnames("shard-docs-section-shard", props.className)}>
