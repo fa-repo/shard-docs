@@ -11,6 +11,7 @@ import SidebarDescriptionPage from "./examples/SidebarDescription";
 import SidebarHeadingsPage from "./examples/SidebarHeadings";
 import SidebarExternalLinkPage from "./examples/SidebarExternalLink";
 import SidebarSectionsPage from "./examples/SidebarSections";
+import HideSidebarFooterPage from "./examples/HideSidebarFooter";
 import CustomStylesPage from "./examples/CustomStyles";
 
 import ExampleShardPage from "./shards/ExampleShard";
@@ -29,6 +30,7 @@ import SidebarHeadingsExample from "./examples/SidebarHeadings/example";
 import SidebarExternalLinkExample from "./examples/SidebarExternalLink/example";
 import SidebarSectionsExample from "./examples/SidebarSections/example";
 import SidebarCustomStylesExample from "./examples/CustomStyles/example";
+import HideSidebarFooterExample from "./examples/HideSidebarFooter/example";
 
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
@@ -63,6 +65,7 @@ const Docs = props => (
                 composition: SidebarExternalLinkPage
               },
               { type: "page", title: "Sidebar sections", composition: SidebarSectionsPage },
+              { type: "page", title: "Hide sidebar footer", composition: HideSidebarFooterPage },
               { type: "page", title: "Custom styles", composition: CustomStylesPage },
               { type: "heading", heading: "Shards" },
               { type: "page", title: "ExampleShard", composition: ExampleShardPage },
@@ -85,6 +88,7 @@ const Docs = props => (
         <Route path="/examples/sidebar-headings" children={<SidebarHeadingsExample />} />
         <Route path="/examples/sidebar-external-link" children={<SidebarExternalLinkExample />} />
         <Route path="/examples/sidebar-sections" children={<SidebarSectionsExample />} />
+        <Route path="/examples/hide-sidebar-footer" children={<HideSidebarFooterExample />} />
         <Route path="/examples/custom-styles" children={<SidebarCustomStylesExample />} />
       </Switch>
     </>

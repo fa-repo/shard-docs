@@ -1,0 +1,19 @@
+.shard-docs-sidebar-footer {
+  margin-top: auto;
+  padding: 5px;
+  border-top: thin solid rgba(255, 255, 255, 0.5);
+  border-top-style: dashed;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 150ms ease-out;
+    &:hover {
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}

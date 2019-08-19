@@ -120,6 +120,7 @@ class ShardDocs extends React.Component {
       history,
       location,
       match,
+      showSidebarFooter,
       ...props
     } = this.props;
 
@@ -130,6 +131,7 @@ class ShardDocs extends React.Component {
           description={description}
           basePath={basePath}
           skeleton={this.skeleton}
+          showSidebarFooter={this.props.showSidebarFooter}
         />
 
         <div className="shard-docs-main">
@@ -157,14 +159,16 @@ ShardDocs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   structure: PropTypes.array,
-  basePath: PropTypes.string
+  basePath: PropTypes.string,
+  showSidebarFooter: PropTypes.bool
 };
 
 ShardDocs.defaultProps = {
   title: "",
   description: "",
   structure: [],
-  basePath: "/"
+  basePath: "/",
+  showSidebarFooter: true
 };
 
 export default withRouter(ShardDocs);
