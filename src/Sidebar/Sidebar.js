@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SidebarHeader from "../SidebarHeader";
+import SidebarDescription from "../SidebarDescription";
 import SidebarMenu from "../SidebarMenu";
 import SidebarFooter from "../SidebarFooter";
 import "./Sidebar.scss";
@@ -12,6 +13,7 @@ import "./Sidebar.scss";
 const Sidebar = props => (
   <aside className="shard-docs-sidebar">
     <SidebarHeader title={props.title} description={props.description} basePath={props.basePath} />
+    {props.description && <SidebarDescription description={props.description} />}
     <SidebarMenu items={props.skeleton} basePath={props.basePath} />
     {props.showSidebarFooter && <SidebarFooter />}
   </aside>

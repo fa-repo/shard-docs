@@ -7,9 +7,9 @@ import "./SidebarHeader.scss";
  * SidebarHeader
  */
 
-const SidebarHeader = ({ title, description, basePath, ...props }) => {
+const SidebarHeader = ({ title, basePath, ...props }) => {
   return (
-    <header className="shard-docs-sidebar-header">
+    <header className="shard-docs-sidebar-header" {...props}>
       {title && (
         <NavLink to={basePath}>
           <h2 className="shard-docs-sidebar-heading" title={title}>
@@ -17,7 +17,6 @@ const SidebarHeader = ({ title, description, basePath, ...props }) => {
           </h2>
         </NavLink>
       )}
-      {description && <p className="shard-docs-sidebar-description">{description}</p>}
     </header>
   );
 };
