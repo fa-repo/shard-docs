@@ -14,20 +14,22 @@ ${props.sourceCode.trim()}
 
   return (
     <div className="shard-docs-example-shard">
-      <header className="shard-docs-example-shard-header">
-        <h3 className="shard-docs-example-shard-title" title={props.title}>
-          {props.title}
-        </h3>
-        {props.sourceCodeLink && (
-          <a
-            className="shard-docs-example-shard-source-link"
-            href={props.sourceCodeLink}
-            target="_blank"
-          >
-            Source code
-          </a>
-        )}
-      </header>
+      {(props.title || props.sourceCodeLink) && (
+        <header className="shard-docs-example-shard-header">
+          <h3 className="shard-docs-example-shard-title" title={props.title}>
+            {props.title}
+          </h3>
+          {props.sourceCodeLink && (
+            <a
+              className="shard-docs-example-shard-source-link"
+              href={props.sourceCodeLink}
+              target="_blank"
+            >
+              Source code
+            </a>
+          )}
+        </header>
+      )}
       <div>{props.children}</div>
       <footer dangerouslySetInnerHTML={{ __html: parseMarkdown(sourceCode) }} />
     </div>
