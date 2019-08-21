@@ -1,8 +1,6 @@
 import React from "react";
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
-import "@fa-repo/shard-docs/dist/shards/section-shard.css";
-import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
 
 /**
  * API reference

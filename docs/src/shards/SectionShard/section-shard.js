@@ -1,11 +1,8 @@
 import React from "react";
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
-import "@fa-repo/shard-docs/dist/shards/section-shard.css";
 import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
-import "@fa-repo/shard-docs/dist/shards/example-shard.css";
-import SourceCodeShard from "@fa-repo/shard-docs/dist/shards/source-code-shard";
-import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
+import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
 /**
  * SectionShard
@@ -13,9 +10,10 @@ import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
 
 export default [
   <SectionShard title="Import" persistState="22190">
-    <SourceCodeShard
+    <CodeExampleShard
+      noShadow
       lang="bash"
-      code={`
+      sourceCode={`
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
 import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
     />

@@ -1,8 +1,6 @@
 import React from "react";
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
-import SourceCodeShard from "@fa-repo/shard-docs/dist/shards/source-code-shard";
-import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
-import "@fa-repo/shard-docs/dist/shards/section-shard.css";
+import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
 /**
  * Get started page
@@ -10,16 +8,16 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";
 
 const GetStartedPage = [
   <SectionShard title="Installation" persistState="35759">
-    <SourceCodeShard lang="bash" code="npm install @fa-repo/shard-docs" />
+    <CodeExampleShard lang="bash" noShadow sourceCode="npm install @fa-repo/shard-docs" />
   </SectionShard>,
   <SectionShard title="Dependencies" persistState="57226">
     <p>
       ShardDocs makes use of React Router V4. Ensure that an instance of this component is wrapped
       by a router provider further up the tree. Example:
     </p>
-    <SourceCodeShard
-      lang="jsx"
-      code={`import { BrowserRouter } from "react-router-dom";
+    <CodeExampleShard
+      noShadow
+      sourceCode={`import { BrowserRouter } from "react-router-dom";
 
 render(
   <BrowserRouter>
@@ -30,9 +28,9 @@ render(
     />
   </SectionShard>,
   <SectionShard title="Basic usage" persistState="33306">
-    <SourceCodeShard
-      lang="jsx"
-      code={`ReactDOM.render(
+    <CodeExampleShard
+      noShadow
+      sourceCode={`ReactDOM.render(
   <ShardDocs
     title="Documentation title"
     structure={[
