@@ -22,6 +22,7 @@ import CodeExampleShardPage from "./shards/code-example-shard";
 
 import APIReferencePage from "./reference/APIReference";
 import CSSReferencePage from "./reference/CSSReference";
+import ChangeLogPage from "./reference/changelog";
 
 import HelloWorldExample from "./examples/HelloWorld/example";
 import SidebarDescriptionExample from "./examples/SidebarDescription/example";
@@ -84,9 +85,7 @@ const Docs = () => (
                   { page: "CSS reference", composition: CSSReferencePage }
                 ]
               },
-              {
-                page: "Changelog"
-              }
+              { page: "Changelog", composition: ChangeLogPage }
             ]}
           />
         )}
