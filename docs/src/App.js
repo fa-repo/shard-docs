@@ -17,7 +17,6 @@ import ExampleShardPage from "./shards/example-shard";
 import MarkdownShardPage from "./shards/markdown-shard";
 import IframeShardPage from "./shards/iframe-shard";
 import SectionShardPage from "./shards/section-shard";
-import ShowcaseShardPage from "./shards/showcase-shard";
 import CodeExampleShardPage from "./shards/code-example-shard";
 
 import APIReferencePage from "./reference/APIReference";
@@ -74,8 +73,7 @@ const Docs = () => (
                   { page: "ExampleShard", composition: ExampleShardPage },
                   { page: "IframeShard", composition: IframeShardPage },
                   { page: "MarkdownShard", composition: MarkdownShardPage },
-                  { page: "SectionShard", composition: SectionShardPage },
-                  { page: "ShowcaseShard", composition: ShowcaseShardPage }
+                  { page: "SectionShard", composition: SectionShardPage }
                 ]
               },
               {

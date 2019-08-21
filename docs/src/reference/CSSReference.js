@@ -33,7 +33,6 @@ export default [
 .shard-docs-iframe-shard
 .shard-docs-markdown-shard
 .shard-docs-section-shard
-.shard-docs-showcase-shard
 .shard-docs-source-code-shard
 `}
     />
