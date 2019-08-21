@@ -13,7 +13,6 @@ import SidebarGroupsPage from "./examples/SidebarGroups";
 import HideSidebarFooterPage from "./examples/HideSidebarFooter";
 import CustomStylesPage from "./examples/CustomStyles";
 
-import ExampleShardPage from "./shards/example-shard";
 import MarkdownShardPage from "./shards/markdown-shard";
 import IframeShardPage from "./shards/iframe-shard";
 import SectionShardPage from "./shards/section-shard";
@@ -70,7 +69,6 @@ const Docs = () => (
                 group: "Shards",
                 pages: [
                   { page: "CodeExampleShard", composition: CodeExampleShardPage },
-                  { page: "ExampleShard", composition: ExampleShardPage },
                   { page: "IframeShard", composition: IframeShardPage },
                   { page: "MarkdownShard", composition: MarkdownShardPage },
                   { page: "SectionShard", composition: SectionShardPage }

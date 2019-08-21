@@ -1,7 +1,6 @@
 import React from "react";
 import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
-import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
-import "@fa-repo/shard-docs/dist/shards/example-shard.css";
+import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
 /**
  * HelloWorld
@@ -11,10 +10,9 @@ const sourceCodeLink =
   "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HelloWorld";
 
 const Documentation = [
-  <ExampleShard
+  <CodeExampleShard
     title="Hello world"
-    lang="jsx"
-    sourceCodeLink={sourceCodeLink}
+    repository={sourceCodeLink}
     sourceCode={`
 <ShardDocs
   title="Package name"
@@ -29,7 +27,7 @@ const Documentation = [
 `}
   >
     <IframeShard path="#/examples/hello-world" />
-  </ExampleShard>
+  </CodeExampleShard>
 ];
 
 Documentation.propTypes = {};

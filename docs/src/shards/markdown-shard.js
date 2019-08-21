@@ -1,7 +1,6 @@
 import React from "react";
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
-import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
 /**
@@ -27,12 +26,11 @@ import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";`}
     />
   </SectionShard>,
   <SectionShard title="Usage" persistState="11742">
-    <ExampleShard
+    <CodeExampleShard
       title="Hello world"
-      lang="jsx"
       sourceCode={`<MarkdownShard markdown="## Hello world" />`}
     >
       <MarkdownShard markdown="## Hello world" />
-    </ExampleShard>
+    </CodeExampleShard>
   </SectionShard>
 ];

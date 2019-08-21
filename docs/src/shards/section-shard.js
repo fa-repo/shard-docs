@@ -1,7 +1,6 @@
 import React from "react";
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
-import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
 /**
@@ -29,9 +28,8 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
     />
   </SectionShard>,
   <SectionShard title="Usage" persistState="84882">
-    <ExampleShard
+    <CodeExampleShard
       title="Hello world"
-      lang="jsx"
       sourceCode={`<SectionShard title="Section shard title">
   Click \`Section shard title\` to toggle its content.
 </SectionShard>`}
@@ -39,10 +37,9 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
       <SectionShard title="Section shard title">
         Click `Section shard title` to toggle its content.
       </SectionShard>
-    </ExampleShard>
-    <ExampleShard
+    </CodeExampleShard>
+    <CodeExampleShard
       title="Remember collapsed state by assigning a custom ID to `persistState`."
-      lang="jsx"
       sourceCode={`<SectionShard title="Section shard title" persistState="abcdef">
   Click \`Section shard title\` to toggle content.
 </SectionShard>`}
@@ -50,6 +47,6 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";`}
       <SectionShard title="Section shard title" persistState="abcdef">
         Remember collapsed state when toggling content. Refresh page to see persisted state.
       </SectionShard>
-    </ExampleShard>
+    </CodeExampleShard>
   </SectionShard>
 ];

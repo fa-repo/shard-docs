@@ -1,20 +1,15 @@
 import React from "react";
 import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
-import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
-import "@fa-repo/shard-docs/dist/shards/example-shard.css";
+import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
 /**
  * SidebarSections
  */
 
-const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarSections";
-
 export default [
-  <ExampleShard
+  <CodeExampleShard
     title="Sidebar sections"
-    lang="jsx"
-    sourceCodeLink={sourceCodeLink}
+    repository="https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarSections"
     sourceCode={`
 <ShardDocs
   title="Documentation title"
@@ -37,5 +32,5 @@ export default [
 />`}
   >
     <IframeShard path="#/examples/sidebar-groups" />
-  </ExampleShard>
+  </CodeExampleShard>
 ];

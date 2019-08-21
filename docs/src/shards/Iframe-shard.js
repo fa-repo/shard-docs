@@ -1,7 +1,6 @@
 import React from "react";
 import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
-import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
@@ -29,7 +28,7 @@ import "@fa-repo/shard-docs/dist/shards/iframe-shard.css";`}
     />
   </SectionShard>,
   <SectionShard title="Usage" persistState="12321">
-    <ExampleShard
+    <CodeExampleShard
       title="Iframe shard"
       lang="jsx"
       sourceCode={`import ShardDocs from "@fa-repo/shard-docs"
@@ -47,6 +46,6 @@ import "@fa-repo/shard-docs/dist/shards/iframe-shard.css"
 />`}
     >
       <IframeShard path="#/docs/hello-world" />
-    </ExampleShard>
+    </CodeExampleShard>
   </SectionShard>
 ];
