@@ -93,12 +93,13 @@ class ShardDocs extends React.Component {
       return items.map(item => {
         pages.push(item);
         if (item.type === "group") mapAndFlatten(item.pages);
+        else if (item.type === "discrete-group") mapAndFlatten(item.pages);
       });
     }
 
     mapAndFlatten(this.tree);
 
-    return pages.filter(item => ["group", "page", "root-page"].includes(item.type));
+    return pages.filter(item => ["group", "page"].includes(item.type));
   }
 
   get currentPage() {
@@ -106,6 +107,7 @@ class ShardDocs extends React.Component {
     const urlPath = this.props.location.pathname;
     const index =
       urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
+
     if (index >= 0 && pages[index]) return pages[index];
     else return {};
   }

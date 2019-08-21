@@ -2,7 +2,6 @@
 
 - Add github corner feature
 - Add search feature
-- Fix discrete groups not displaying
 - Combine all top level adjacent pages into discrete groups by default.
 - Add ability to set max height of CodeExampleShard example container.
 - Add ability to set IframeShard height.
