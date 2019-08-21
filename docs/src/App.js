@@ -13,12 +13,12 @@ import SidebarGroupsPage from "./examples/SidebarGroups";
 import HideSidebarFooterPage from "./examples/HideSidebarFooter";
 import CustomStylesPage from "./examples/CustomStyles";
 
-import ExampleShardPage from "./shards/ExampleShard";
-import MarkdownShardPage from "./shards/MarkdownShard";
-import IframeShardPage from "./shards/IframeShard";
-import SectionShardPage from "./shards/SectionShard";
-import ShowcaseShardPage from "./shards/ShowcaseShard";
-import CodeExampleShardPage from "./shards/CodeExampleShard";
+import ExampleShardPage from "./shards/example-shard";
+import MarkdownShardPage from "./shards/markdown-shard";
+import IframeShardPage from "./shards/iframe-shard";
+import SectionShardPage from "./shards/section-shard";
+import ShowcaseShardPage from "./shards/showcase-shard";
+import CodeExampleShardPage from "./shards/code-example-shard";
 
 import APIReferencePage from "./reference/APIReference";
 import CSSReferencePage from "./reference/CSSReference";
@@ -83,6 +83,9 @@ const Docs = () => (
                   { page: "API reference", composition: APIReferencePage },
                   { page: "CSS reference", composition: CSSReferencePage }
                 ]
+              },
+              {
+                page: "Changelog"
               }
             ]}
           />
