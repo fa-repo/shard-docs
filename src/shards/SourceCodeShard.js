@@ -14,7 +14,7 @@ ${props.code.trim()}
   const html = parseMarkdown(code);
   return (
     <div
-      className="shard-docs-markdown-shard shard-docs-code-shard"
+      className="shard-docs-markdown-shard shard-docs-source-code-shard"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

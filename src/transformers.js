@@ -5,37 +5,47 @@ function transformHeading({ heading }) {
   return { type: "heading", heading: heading };
 }
 
-function transformExternal({ title, link }) {
-  return { type: "external", title: title, link: link };
+function transformExternal({ external, link }, depth) {
+  return { type: "external", title: external, link, depth };
 }
 
-function transformPage(item, basePath, breadcrumbs) {
-  const path = basePath + "/" + slugify(kebabCase(item.title), { lower: true });
+function transformPage(item, basePath, breadcrumbs, depth) {
+  const slug = item.slug || slugify(kebabCase(item.page), { lower: true });
+  const path = `${basePath}/${slug}`;
+
   return {
     type: "page",
     path: path,
-    title: item.title,
-    breadcrumbs: [...breadcrumbs, { text: item.title, link: path }],
-    composition: item.composition
+    title: item.page,
+    breadcrumbs: [...breadcrumbs, { text: item.page, link: path }],
+    composition: item.composition,
+    depth
   };
 }
 
-function transformCollection(item, basePath, breadcrumbs = []) {
-  const path = basePath + "/" + slugify(item.title, { lower: true });
-  let composition = item.composition;
+function transformGroup(item, basePath, breadcrumbs = [], depth) {
+  const slug = item.slug || slugify(kebabCase(item.page), { lower: true });
+  const path = `${basePath}/${slug}`;
 
   return {
-    type: "collection",
+    type: "group",
     path: path,
-    title: item.title,
-    breadcrumbs: [...breadcrumbs, { text: item.title, link: path }],
-    composition: composition
+    title: item.group,
+    breadcrumbs: [...breadcrumbs, { text: item.group, link: path }],
+    composition: item.composition,
+    depth
   };
+}
+
+function transformDiscreteGroup(item, basePath, breadcrumbs = [], depth) {
+  const path = item.slug ? `${basePath}/${item.slug}` : basePath;
+  return { type: "discrete-group", depth, path };
 }
 
 export default {
   heading: transformHeading,
   external: transformExternal,
   page: transformPage,
-  collection: transformCollection
+  group: transformGroup,
+  discreteGroup: transformDiscreteGroup
 };

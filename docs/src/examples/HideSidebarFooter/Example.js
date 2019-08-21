@@ -10,10 +10,9 @@ const HideSidebarFooter = props => (
     title="Documentation title"
     basePath="/examples/hide-sidebar-footer"
     showSidebarFooter={false}
-    structure={[
+    tree={[
       {
-        type: "page",
-        title: "Hide sidebar footer",
+        page: "Hide sidebar footer",
         composition: [<h1>Hide sidebar footer</h1>]
       }
     ]}

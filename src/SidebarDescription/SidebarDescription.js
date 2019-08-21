@@ -6,7 +6,9 @@ import "./SidebarDescription.scss";
  * SidebarDescription
  */
 
-const SidebarDescription = props => <p className="shard-docs-description">{props.description}</p>;
+const SidebarDescription = props => (
+  <p className="shard-docs-sidebar-description">{props.description}</p>
+);
 
 SidebarDescription.propTypes = {};
 SidebarDescription.defaultProps = {};

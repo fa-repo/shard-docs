@@ -9,10 +9,9 @@ const HelloWorldExample = props => (
   <ShardDocs
     title="Package name"
     basePath="/examples/hello-world"
-    structure={[
+    tree={[
       {
-        type: "page",
-        title: "Hello world",
+        page: "Hello world",
         composition: [<img src="/images/hello-world.jpg" alt="Turtle" />]
       }
     ]}

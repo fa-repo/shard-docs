@@ -14,7 +14,7 @@ const Sidebar = props => (
   <aside className="shard-docs-sidebar">
     <SidebarHeader title={props.title} description={props.description} basePath={props.basePath} />
     {props.description && <SidebarDescription description={props.description} />}
-    <SidebarMenu items={props.skeleton} basePath={props.basePath} />
+    <SidebarMenu items={props.tree} basePath={props.basePath} />
     {props.showSidebarFooter && <SidebarFooter />}
   </aside>
 );
@@ -23,14 +23,14 @@ Sidebar.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   basePath: PropTypes.string,
-  skeleton: PropTypes.array,
+  tree: PropTypes.array,
   showSidebarFooter: PropTypes.bool
 };
 
 Sidebar.defaultProps = {
   title: "",
   description: "",
-  skeleton: [],
+  tree: [],
   showSidebarFooter: true
 };
 

@@ -18,11 +18,11 @@ const Documentation = [
     sourceCode={`
 <ShardDocs
   title="Package name"
-  structure={[
+  basePath="/examples/hello-world"
+  tree={[
     {
-      type: "page",
-      title: "Hello world",
-      composition: [ <img src="/images/hello-world.jpg" alt="hello world" /> ]
+      page: "Hello world",
+      composition: [ <img src="/images/hello-world.jpg" alt="Turtle" /> ]
     }
   ]}
 />

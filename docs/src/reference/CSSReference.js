@@ -9,7 +9,7 @@ import "@fa-repo/shard-docs/dist/shards/source-code-shard.css";
  */
 
 export default [
-  <SectionShard title="CSS classes">
+  <SectionShard title="CSS classes" persistState="49429">
     <SourceCodeShard
       lang="markdown"
       code={`.shard-docs
@@ -21,17 +21,22 @@ export default [
 .shard-docs-sidebar-description
 .shard-docs-sidebar-menu
 
-// Viewer
+// Main
 .shard-docs-main
 .shard-docs-breadcrumbs
-.shard-docs-page-nav
-.shard-docs-page-nav-next
-.shard-docs-page-nav-spacer
-.shard-docs-page-nav-prev
+.shard-docs-document
+.shard-docs-nav-footer
+.shard-docs-nav-next
+.shard-docs-nav-prev
 
 // Built in shards
+.shard-docs-example-shard
+.shard-docs-iframe-shard
 .shard-docs-markdown-shard
-.shard-docs-iframe-shard`}
+.shard-docs-section-shard
+.shard-docs-showcase-shard
+.shard-docs-source-code-shard
+`}
     />
   </SectionShard>
 ];

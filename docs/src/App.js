@@ -8,9 +8,8 @@ import ShardDocs from "@fa-repo/shard-docs";
 import GetStartedPage from "./introduction/get-started";
 import HelloWorldPage from "./examples/HelloWorld";
 import SidebarDescriptionPage from "./examples/SidebarDescription";
-import SidebarHeadingsPage from "./examples/SidebarHeadings";
 import SidebarExternalLinkPage from "./examples/SidebarExternalLink";
-import SidebarSectionsPage from "./examples/SidebarSections";
+import SidebarGroupsPage from "./examples/SidebarGroups";
 import HideSidebarFooterPage from "./examples/HideSidebarFooter";
 import CustomStylesPage from "./examples/CustomStyles";
 
@@ -26,9 +25,8 @@ import CSSReferencePage from "./reference/CSSReference";
 
 import HelloWorldExample from "./examples/HelloWorld/example";
 import SidebarDescriptionExample from "./examples/SidebarDescription/example";
-import SidebarHeadingsExample from "./examples/SidebarHeadings/example";
 import SidebarExternalLinkExample from "./examples/SidebarExternalLink/example";
-import SidebarSectionsExample from "./examples/SidebarSections/example";
+import SidebarGroupsExample from "./examples/SidebarGroups/example";
 import SidebarCustomStylesExample from "./examples/CustomStyles/example";
 import HideSidebarFooterExample from "./examples/HideSidebarFooter/example";
 
@@ -42,7 +40,7 @@ import "@fa-repo/shard-docs/dist/shards/external-link.css";
  * Docs
  */
 
-const Docs = props => (
+const Docs = () => (
   <HashRouter>
     <>
       <Route path="/" render={props => <NavLink to="/docs">Go to documentation</NavLink>} exact />
@@ -53,30 +51,37 @@ const Docs = props => (
             title="@fa-repo/shard-docs"
             description="A concise / extendable react component for handling documentation"
             basePath="/docs"
-            structure={[
-              { type: "page", title: "Get started", composition: GetStartedPage },
-              { type: "heading", heading: "Examples" },
-              { type: "page", title: "Hello world", composition: HelloWorldPage },
-              { type: "page", title: "Sidebar description", composition: SidebarDescriptionPage },
-              { type: "page", title: "Sidebar headings", composition: SidebarHeadingsPage },
+            tree={[
+              { page: "Get started", composition: GetStartedPage },
               {
-                type: "page",
-                title: "Sidebar external link",
-                composition: SidebarExternalLinkPage
+                group: "Examples",
+                pages: [
+                  { page: "Hello world", composition: HelloWorldPage },
+                  { page: "Sidebar description", composition: SidebarDescriptionPage },
+                  { page: "Sidebar external link", composition: SidebarExternalLinkPage },
+                  { page: "Sidebar groups", composition: SidebarGroupsPage },
+                  { page: "Hide sidebar footer", composition: HideSidebarFooterPage },
+                  { page: "Custom styles", composition: CustomStylesPage }
+                ]
               },
-              { type: "page", title: "Sidebar sections", composition: SidebarSectionsPage },
-              { type: "page", title: "Hide sidebar footer", composition: HideSidebarFooterPage },
-              { type: "page", title: "Custom styles", composition: CustomStylesPage },
-              { type: "heading", heading: "Shards" },
-              { type: "page", title: "ExampleShard", composition: ExampleShardPage },
-              { type: "page", title: "IframeShard", composition: IframeShardPage },
-              { type: "page", title: "MarkdownShard", composition: MarkdownShardPage },
-              { type: "page", title: "SectionShard", composition: SectionShardPage },
-              { type: "page", title: "ShowcaseShard", composition: ShowcaseShardPage },
-              { type: "page", title: "SourceCodeShard", composition: SourceCodeShardPage },
-              { type: "heading", heading: "Reference" },
-              { type: "page", title: "API reference", composition: APIReferencePage },
-              { type: "page", title: "CSS reference", composition: CSSReferencePage }
+              {
+                group: "Shards",
+                pages: [
+                  { page: "ExampleShard", composition: ExampleShardPage },
+                  { page: "IframeShard", composition: IframeShardPage },
+                  { page: "MarkdownShard", composition: MarkdownShardPage },
+                  { page: "SectionShard", composition: SectionShardPage },
+                  { page: "ShowcaseShard", composition: ShowcaseShardPage },
+                  { page: "SourceCodeShard", composition: SourceCodeShardPage }
+                ]
+              },
+              {
+                group: "Reference",
+                pages: [
+                  { page: "API reference", composition: APIReferencePage },
+                  { page: "CSS reference", composition: CSSReferencePage }
+                ]
+              }
             ]}
           />
         )}
@@ -85,9 +90,8 @@ const Docs = props => (
       <Switch>
         <Route path="/examples/hello-world" children={<HelloWorldExample />} />
         <Route path="/examples/sidebar-description" children={<SidebarDescriptionExample />} />
-        <Route path="/examples/sidebar-headings" children={<SidebarHeadingsExample />} />
         <Route path="/examples/sidebar-external-link" children={<SidebarExternalLinkExample />} />
-        <Route path="/examples/sidebar-sections" children={<SidebarSectionsExample />} />
+        <Route path="/examples/sidebar-groups" children={<SidebarGroupsExample />} />
         <Route path="/examples/hide-sidebar-footer" children={<HideSidebarFooterExample />} />
         <Route path="/examples/custom-styles" children={<SidebarCustomStylesExample />} />
       </Switch>

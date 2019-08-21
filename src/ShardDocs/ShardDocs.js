@@ -26,43 +26,64 @@ class ShardDocs extends React.Component {
   /* -- Getter methods -- */
 
   /**
-   * Build skeleton of documentation
+   * Parse documentation tree
    */
-  get skeleton() {
-    let structure = this.props.structure;
+  get tree() {
+    let tree = this.props.tree;
     const basePath = this.props.basePath;
+    const locationPath = this.props.location.pathname;
     let pageIndex = 0;
+    let depth = 0;
 
-    function transformStructure(items, basePath, breadcrumbs = []) {
+    const transformTree = (items, basePath, breadcrumbs = [], depth = 0) => {
       basePath = basePath.replace(/\/+$/, "");
 
       return items
         .map(item => {
-          if (item.type === "heading") {
-            return transform.heading(item);
-          } else if (item.type === "external") {
-            return transform.external(item);
-          } else if (item.type === "page") {
-            let page = transform.page(item, basePath, breadcrumbs);
+          const isExternal = Boolean(item.external);
+          const isPage = Boolean(item.page);
+          const isGroup = Boolean(item.group);
+          const isDiscreteGroup = item.group === null;
+
+          if (isExternal) {
+            return transform.external(item, depth);
+          }
+
+          if (isGroup) {
+            const group = transform.group(item, basePath, breadcrumbs, depth);
+            const { path, breadcrumbs } = group;
+            group.pages = transformTree(item.pages, path, breadcrumbs, depth + 1);
+            /* Provide a default index page if none provided */
+            const { composition, title, pages } = group;
+            if (!composition) {
+              group.composition = [
+                <IndexShard title={title} pages={pages.filter(page => page.type === "page")} />
+              ];
+            }
+            return group;
+          }
+
+          if (isDiscreteGroup) {
+            const group = transform.discreteGroup(item, basePath, breadcrumbs, depth);
+            const { path, breadcrumbs } = group;
+            group.pages = transformTree(item.pages, path, breadcrumbs, depth + 1);
+            return group;
+          }
+
+          if (isPage) {
+            let page = transform.page(item, basePath, breadcrumbs, depth);
             page.pageIndex = pageIndex;
             pageIndex = pageIndex + 1;
+            page.isActive = pageIndex === 0 && basePath === locationPath && "active";
             return page;
-          } else if (item.type === "collection") {
-            const collection = transform.collection(item, basePath, breadcrumbs);
-            const { path, breadcrumbs } = collection;
-            collection.children = transformStructure(item.children, path, breadcrumbs);
-            /* Provide a default index page if none provided */
-            const { composition, title, children } = collection;
-            if (!composition) {
-              collection.composition = [<IndexShard title={title} pages={children} />];
-            }
-            return collection;
-          } else return false;
+          }
+
+          return null;
         })
         .filter(Boolean);
-    }
+    };
 
-    return transformStructure(structure, basePath);
+    return transformTree(tree, basePath);
   }
 
   get pages() {
@@ -71,13 +92,13 @@ class ShardDocs extends React.Component {
     function mapAndFlatten(items) {
       return items.map(item => {
         pages.push(item);
-        if (item.type === "collection") mapAndFlatten(item.children);
+        if (item.type === "group") mapAndFlatten(item.pages);
       });
     }
 
-    mapAndFlatten(this.skeleton);
+    mapAndFlatten(this.tree);
 
-    return pages.filter(item => ["collection", "page"].includes(item.type));
+    return pages.filter(item => ["group", "page", "root-page"].includes(item.type));
   }
 
   get currentPage() {
@@ -115,7 +136,7 @@ class ShardDocs extends React.Component {
       description,
       baseLink,
       basePath,
-      structure,
+      tree,
       staticContext,
       history,
       location,
@@ -130,7 +151,7 @@ class ShardDocs extends React.Component {
           title={title}
           description={description}
           basePath={basePath}
-          skeleton={this.skeleton}
+          tree={this.tree}
           showSidebarFooter={this.props.showSidebarFooter}
         />
 
@@ -158,7 +179,7 @@ class ShardDocs extends React.Component {
 ShardDocs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  structure: PropTypes.array,
+  tree: PropTypes.array,
   basePath: PropTypes.string,
   showSidebarFooter: PropTypes.bool
 };
@@ -166,7 +187,7 @@ ShardDocs.propTypes = {
 ShardDocs.defaultProps = {
   title: "",
   description: "",
-  structure: [],
+  tree: [],
   basePath: "/",
   showSidebarFooter: true
 };

@@ -17,7 +17,8 @@ export default [
     title="Custom styles"
     lang="jsx"
     sourceCodeLink={sourceCodeLink}
-    sourceCode={`<>
+    sourceCode={`
+<>
   <style
     dangerouslySetInnerHTML={{
       __html: \`.shard-docs-sidebar { background: red; }\`
@@ -25,10 +26,12 @@ export default [
   />
   <ShardDocs
     title="Documentation title"
-    basePath="/examples/custom-styles"
-    structure={[
-      { type: "heading", heading: "Essentials" },
-      { type: "page", title: "Get started", composition: [<h1>Get started</h1>] }
+    basePath="/examples/custom-styles/essentials/get-started"
+    tree={[
+      {
+        group: "Essentials",
+        pages: [{ page: "Get started", composition: [<h1>Get started</h1>] }]
+      }
     ]}
   />
 </>`}

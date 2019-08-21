@@ -9,10 +9,10 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";
  */
 
 const GetStartedPage = [
-  <SectionShard title="Installation">
+  <SectionShard title="Installation" persistState="35759">
     <SourceCodeShard lang="bash" code="npm install @fa-repo/shard-docs" />
   </SectionShard>,
-  <SectionShard title="Dependencies">
+  <SectionShard title="Dependencies" persistState="57226">
     <p>
       ShardDocs makes use of React Router V4. Ensure that an instance of this component is wrapped
       by a router provider further up the tree. Example:
@@ -29,7 +29,7 @@ render(
 );`}
     />
   </SectionShard>,
-  <SectionShard title="Basic usage">
+  <SectionShard title="Basic usage" persistState="33306">
     <SourceCodeShard
       lang="jsx"
       code={`ReactDOM.render(

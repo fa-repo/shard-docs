@@ -42,8 +42,7 @@ import "@fa-repo/shard-docs/dist/shards/iframe-shard.css"
   title="Iframe shard"
   structure={[
     {
-      type: "page",
-      title: "Hello world",
+      page: "Hello world",
       composition: [ <IframeShard path="#/docs/hello-world" /> ]
     }
   ]}

@@ -14,10 +14,12 @@ const CustomStylesExample = props => (
     />
     <ShardDocs
       title="Documentation title"
-      basePath="/examples/custom-styles"
-      structure={[
-        { type: "heading", heading: "Essentials" },
-        { type: "page", title: "Get started", composition: [<h1>Get started</h1>] }
+      basePath="/examples/custom-styles/essentials/get-started"
+      tree={[
+        {
+          group: "Essentials",
+          pages: [{ page: "Get started", composition: [<h1>Get started</h1>] }]
+        }
       ]}
     />
   </>

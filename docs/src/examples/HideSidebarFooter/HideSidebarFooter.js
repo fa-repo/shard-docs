@@ -15,18 +15,19 @@ export default [
     title="Sidebar sections"
     lang="jsx"
     sourceCodeLink={sourceCodeLink}
-    sourceCode={`<ShardDocs
+    sourceCode={`
+<ShardDocs
   title="Documentation title"
-  basePath="/examples/sidebar-sections"
+  basePath="/examples/hide-sidebar-footer"
   showSidebarFooter={false}
-  structure={[
+  tree={[
     {
-      type: "page",
-      title: "Hide built with ShardDocs",
-      composition: [<h1>Hide built with ShardDocs</h1>]
+      page: "Hide sidebar footer",
+      composition: [<h1>Hide sidebar footer</h1>]
     }
   ]}
-/>`}
+/>
+`}
   >
     <IframeShard path="#/examples/hide-sidebar-footer" />
   </ExampleShard>

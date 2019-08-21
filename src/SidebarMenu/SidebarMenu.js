@@ -9,19 +9,19 @@ import "./SidebarMenu.scss";
 
 const SidebarMenu = props => {
   return (
-    <SidebarMenuList
-      className="shard-docs-sidebar-menu"
-      items={props.items}
-      basePath={props.basePath}
-    />
+    <div className="shard-docs-sidebar-menu">
+      <SidebarMenuList items={props.items} basePath={props.basePath} />
+    </div>
   );
 };
 
 SidebarMenu.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  basePath: PropTypes.string
 };
 SidebarMenu.defaultProps = {
-  items: []
+  items: [],
+  items: ""
 };
 
 export default SidebarMenu;

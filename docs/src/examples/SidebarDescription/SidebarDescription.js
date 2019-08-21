@@ -15,10 +15,12 @@ export default [
     title="Sidebar description"
     lang="jsx"
     sourceCodeLink={sourceCodeLink}
-    sourceCode={`<ShardDocs
+    sourceCode={`
+<ShardDocs
   title="Documentation title"
   description="A description describing your documentation"
-/>`}
+/>
+`}
   >
     <IframeShard path="#/examples/sidebar-description" />
   </ExampleShard>

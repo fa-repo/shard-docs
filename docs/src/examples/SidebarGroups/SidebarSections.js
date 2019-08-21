@@ -15,29 +15,27 @@ export default [
     title="Sidebar sections"
     lang="jsx"
     sourceCodeLink={sourceCodeLink}
-    sourceCode={`<ShardDocs
+    sourceCode={`
+<ShardDocs
   title="Documentation title"
-  basePath="/examples/sidebar-sections"
-  structure={[
+  tree={[
     {
-      type: "collection",
-      title: "Section A",
-      children: [
-        { type: "page", title: "Page A", composition: [<h1>Page A</h1>] },
-        { type: "page", title: "Page B", composition: [<h1>Page B</h1>] }
+      group: "Section A",
+      pages: [
+        { page: "Page A", composition: [<h1>Page A</h1>] },
+        { page: "Page B", composition: [<h1>Page B</h1>] }
       ]
     },
     {
-      type: "collection",
-      title: "Section B",
-      children: [
-        { type: "page", title: "Page C", composition: [<h1>Page C</h1>] },
-        { type: "page", title: "Page D", composition: [<h1>Page D</h1>] }
+      group: "Section B",
+      pages: [
+        { page: "Page C", composition: [<h1>Page C</h1>] },
+        { page: "Page D", composition: [<h1>Page D</h1>] }
       ]
     }
   ]}
 />`}
   >
-    <IframeShard path="#/examples/sidebar-sections" />
+    <IframeShard path="#/examples/sidebar-groups" />
   </ExampleShard>
 ];
