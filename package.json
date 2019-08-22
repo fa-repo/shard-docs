@@ -27,7 +27,7 @@
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish",
     "prepublishOnly": "npm run build",
-    "postpublish": "git tag \"v$(npm run version --silent)\" && git push --tags",
+    "postpublish": "git push --tags",
     "analyse": "npm run build && npx source-map-explorer ./dist/shard-docs.js",
     "version": "node -p \"require('./package.json').version\""
   },
