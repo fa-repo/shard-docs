@@ -39,7 +39,7 @@ class ShardDocs extends React.Component {
 
     let tree2 = [];
     tree.map((item, i) => {
-      if (Boolean(item.page)) {
+      if (Boolean(item.page) || Boolean(item.external)) {
         const lastItem = tree2[tree2.length - 1] || {};
 
         if (lastItem._discrete_group === null) {
