@@ -7,11 +7,12 @@ import ShardDocs from "@fa-repo/shard-docs";
 
 const SidebarStructureBasicExample = props => (
   <ShardDocs
+    title="Basic example"
     basePath="/examples/sidebar-structure-basic"
     tree={[
-      { page: "Page A", composition: [<h1>Page A</h1>] },
-      { page: "Page B", composition: [<h1>Page B</h1>] },
-      { page: "Page C", composition: [<h1>Page C</h1>] }
+      { page: "Mangos", composition: [<h1>Mangos</h1>] },
+      { page: "Plums", composition: [<h1>Plums</h1>] },
+      { page: "Avacadoes", composition: [<h1>Avacadoes</h1>] }
     ]}
   />
 );

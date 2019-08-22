@@ -7,32 +7,27 @@ import ShardDocs from "@fa-repo/shard-docs";
 
 const SidebarStructureIndentationExample = props => (
   <ShardDocs
+    title="Indentation example"
     basePath="/examples/sidebar-structure-indentation"
     tree={[
       {
-        group: "Group A",
+        group: "Europe bucket list:",
         pages: [
-          { page: "Page B", composition: [<h1>Page B</h1>] },
-          { page: "Page C", composition: [<h1>Page C</h1>] },
           {
-            group: "Group B",
+            group: null,
             pages: [
-              { page: "Page D", composition: [<h1>Page D</h1>] },
-              { page: "Page E", composition: [<h1>Page E</h1>] }
-            ]
-          }
-        ]
-      },
-      {
-        group: null /* discrete group */,
-        pages: [
-          { page: "Page G", composition: [<h1>Page F</h1>] },
-          { page: "Page G", composition: [<h1>Page G</h1>] },
-          {
-            group: null /* discrete group */,
-            pages: [
-              { page: "Page H", composition: [<h1>Page H</h1>] },
-              { page: "Page I", composition: [<h1>Page I</h1>] }
+              {
+                page: "- France: Scale Mont Blanc",
+                composition: [<h1>Scale Mont Blanc</h1>]
+              },
+              {
+                page: "- Italy: Dine at a Tuscan restaurent",
+                composition: [<h1>Dine at a Tuscan restaurent</h1>]
+              },
+              {
+                page: "- Spain: Walk the Camino de Santiago",
+                composition: [<h1>Dine at a rustic Tuscan restaurent</h1>]
+              }
             ]
           }
         ]

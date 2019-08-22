@@ -35,6 +35,32 @@ class ShardDocs extends React.Component {
     let pageIndex = 0;
     let depth = 0;
 
+    /* Combine all top level adjacent groups into discrete groups. */
+
+    let tree2 = [];
+    tree.map((item, i) => {
+      if (Boolean(item.page)) {
+        const lastItem = tree2[tree2.length - 1] || {};
+
+        if (lastItem._discrete_group === null) {
+          tree2[tree2.length - 1].pages.push(item);
+        } else {
+          tree2[tree2.length] = { _discrete_group: null, pages: [item] };
+        }
+      } else {
+        tree2.push(item);
+      }
+      return item;
+    });
+
+    tree = tree2.map(item => {
+      if (item._discrete_group === null) {
+        return { ...item, group: null };
+      } else {
+        return item;
+      }
+    });
+
     const transformTree = (items, basePath, breadcrumbs = [], depth = 0) => {
       basePath = basePath.replace(/\/+$/, "");
 

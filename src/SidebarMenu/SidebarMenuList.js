@@ -60,12 +60,8 @@ const SidebarMenuList = ({ items, basePath }) => {
     <>
       {items.map((item, i) => {
         const { type, title, link, path, isActive, pages, depth } = item;
-        if (type === "page" && depth === 0) {
-          return <TopLevelPageNode key={i} title={title} path={path} isActive={isActive} />;
-        } else if (type === "page") {
+        if (type === "page") {
           return <PageNode key={i} title={title} path={path} isActive={isActive} />;
-        } else if (type === "external" && depth === 0) {
-          return <TopLevelExternalLinkNode key={i} title={title} link={link} />;
         } else if (type === "external") {
           return <ExternalLinkNode key={i} title={title} link={link} />;
         } else if (type === "group" || type === "discrete-group") {
