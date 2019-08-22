@@ -1,5 +1,6 @@
 import slugify from "slugify";
 import kebabCase from "lodash/kebabCase";
+import isArray from "lodash/isArray";
 
 function transformHeading({ heading }) {
   return { type: "heading", heading: heading };
@@ -19,6 +20,7 @@ function transformPage(item, basePath, breadcrumbs, depth) {
     title: item.page,
     breadcrumbs: [...breadcrumbs, { text: item.page, link: path }],
     composition: item.composition,
+    isEmpty: !isArray(item.composition) || item.composition.length <= 0,
     depth
   };
 }

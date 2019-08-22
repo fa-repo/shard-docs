@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pages not showing up in discrete groups
 ### Changed
 - Combine all top level adjacent pages into discrete groups by default.
+- Disable pages with empty compositions in sidebar.
 
 ## [4.0.0] - 2019-08-21
 ### Added

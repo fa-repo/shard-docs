@@ -22,25 +22,21 @@ const ExternalLinkNode = ({ title, link, ...props }) => (
   </li>
 );
 
-const TopLevelExternalLinkNode = ({ title, link, ...props }) => (
-  <ul {...props}>
-    <ExternalLinkNode title={title} link={link} />
-  </ul>
-);
-
-const PageNode = ({ title, path, isActive, ...props }) => (
-  <li {...props}>
-    <NavLink className={classnames(isActive && "active")} to={path} exact>
-      {title}
-    </NavLink>
-  </li>
-);
-
-const TopLevelPageNode = ({ title, path, isActive, ...props }) => (
-  <ul {...props}>
-    <PageNode title={title} path={path} isActive={isActive} />
-  </ul>
-);
+const PageNode = ({ title, path, isActive, isEmpty, ...props }) => {
+  return (
+    <li {...props}>
+      <NavLink
+        className={classnames(isActive && "active")}
+        to={path}
+        onClick={e => isEmpty && e.preventDefault()}
+        disabled={isEmpty}
+        exact
+      >
+        {title}
+      </NavLink>
+    </li>
+  );
+};
 
 const HeadingNode = ({ title, ...props }) => (
   <li {...props}>
@@ -59,9 +55,11 @@ const SidebarMenuList = ({ items, basePath }) => {
   return (
     <>
       {items.map((item, i) => {
-        const { type, title, link, path, isActive, pages, depth } = item;
+        const { type, title, link, path, isActive, pages, isEmpty } = item;
         if (type === "page") {
-          return <PageNode key={i} title={title} path={path} isActive={isActive} />;
+          return (
+            <PageNode key={i} title={title} path={path} isActive={isActive} isEmpty={isEmpty} />
+          );
         } else if (type === "external") {
           return <ExternalLinkNode key={i} title={title} link={link} />;
         } else if (type === "group" || type === "discrete-group") {

@@ -4,5 +4,4 @@
 - Add search feature
 - Add ability to set max height of CodeExampleShard example container.
 - Add ability to set IframeShard height.
-- Grey out pages with empty compositions in sidebar menu.
 - Extend the composition key to support objects as well as arrays.
