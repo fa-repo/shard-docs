@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import { NavLink } from "react-router-dom";
 import "./CollectionIndexShard.scss";
 
@@ -7,9 +8,9 @@ import "./CollectionIndexShard.scss";
  * CollectionIndexShard
  */
 
-const CollectionIndexShard = ({ title, pages }) => {
+const CollectionIndexShard = ({ title, pages, ...props }) => {
   return (
-    <div className="shard-docs-markdown-shard">
+    <div className={classnames("shard-docs-markdown-shard", props.className)}>
       <h1>{title} index</h1>
       <ul>
         {pages.map((page, i) => (

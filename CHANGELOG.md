@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.3] - 2019-08-24
+### Add
+- ability to add classes to shards
+
 ## [4.0.2] - 2019-08-22
 ### Fixed
 - Top level external links not getting combined into discrete groups
@@ -22,7 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CHANGELOG to document the development of @fa-repo/shard-docs.
 - Github release tagging
 
-[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v4.0.2...HEAD
+[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v4.0.3...HEAD
+[4.0.3]: https://github.com/fa-repo/shard-docs/compare/v4.0.2...v4.0.3
 [4.0.2]: https://github.com/fa-repo/shard-docs/compare/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/fa-repo/shard-docs/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/fa-repo/shard-docs/compare/v3.1.0...v4.0.0

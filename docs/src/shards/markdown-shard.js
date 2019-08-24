@@ -19,6 +19,7 @@ import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";`}
   </SectionShard>,
   <SectionShard title="Properties" persistState="91201">
     <MarkdownShard
+      className="as"
       markdown={`
 | Name          | Type    | Default   | Required  | Description                 |
 |---------------|---------|-----------|-----------|-----------------------------|

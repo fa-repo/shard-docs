@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import parseMarkdown from "./lib/parseMarkdown";
 import "./MarkdownShard.scss";
 
@@ -9,7 +10,13 @@ import "./MarkdownShard.scss";
 
 const MarkdownShard = props => {
   const html = parseMarkdown(props.markdown);
-  return <div className="shard-docs-markdown-shard" dangerouslySetInnerHTML={{ __html: html }} />;
+  console.log(classnames("shard-docs-markdown-shard", props.className));
+  return (
+    <div
+      className={classnames("shard-docs-markdown-shard", props.className)}
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
+  );
 };
 
 MarkdownShard.propTypes = {

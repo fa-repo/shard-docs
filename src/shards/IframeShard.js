@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import "./IframeShard.scss";
 
 /**
@@ -8,7 +9,7 @@ import "./IframeShard.scss";
 
 const IframeShard = ({ path, ...props }) => {
   return (
-    <div className="shard-docs-iframe-shard">
+    <div className={classnames("shard-docs-iframe-shard", props.className)}>
       <iframe src={path} {...props} />
     </div>
   );

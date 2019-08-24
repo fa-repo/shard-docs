@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import parseMarkdown from "./lib/parseMarkdown";
 import "./CodeExampleShard.scss";
 
@@ -17,7 +18,7 @@ ${props.sourceCode.trim()}
   const style = props.noShadow ? { boxShadow: "none" } : {};
 
   return (
-    <div className="shard-docs-code-example-shard" style={style}>
+    <div className={classnames("shard-docs-code-example-shard", props.className)} style={style}>
       {(props.title || props.repository) && (
         <header className="shard-docs-code-example-shard-header">
           <h3 className="shard-docs-code-example-shard-title" title={props.title}>
