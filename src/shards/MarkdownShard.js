@@ -10,7 +10,6 @@ import "./MarkdownShard.scss";
 
 const MarkdownShard = props => {
   const html = parseMarkdown(props.markdown);
-  console.log(classnames("shard-docs-markdown-shard", props.className));
   return (
     <div
       className={classnames("shard-docs-markdown-shard", props.className)}
