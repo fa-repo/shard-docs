@@ -35,7 +35,15 @@ ${props.sourceCode.trim()}
           )}
         </header>
       )}
-      {props.children && <div>{props.children}</div>}
+
+      {props.children && (
+        <div>
+          <props.children.type
+            {...props.children.props}
+            key={Math.floor(Math.random() * 10000000)}
+          />
+        </div>
+      )}
       {sourceCode && <footer dangerouslySetInnerHTML={{ __html: parseMarkdown(sourceCode) }} />}
     </div>
   );
