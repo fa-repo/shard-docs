@@ -1,6 +1,6 @@
 {
   "name": "@fa-repo/shard-docs",
-  "version": "4.0.5",
+  "version": "4.0.6",
   "description": "A concise / extendable react component for handling documentation",
   "author": "fa-repo",
   "license": "",
