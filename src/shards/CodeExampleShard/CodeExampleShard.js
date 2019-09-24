@@ -5,6 +5,7 @@ import parseMarkdown from "../lib/parseMarkdown";
 import "./CodeExampleShard.scss";
 import GithubIcon from "./GithubIcon";
 import CodeIcon from "./CodeIcon";
+import uniqid from "uniqid";
 
 /**
  * CodeExampleShard
@@ -26,7 +27,8 @@ class CodeExampleShard extends React.Component {
   };
 
   state = {
-    displayCode: false
+    displayCode: false,
+    id: uniqid()
   };
 
   toggleCode = () => this.setState({ displayCode: !this.state.displayCode });
@@ -76,10 +78,7 @@ class CodeExampleShard extends React.Component {
 
         {this.props.children && (
           <div>
-            <this.props.children.type
-              {...this.props.children.props}
-              key={Math.floor(Math.random() * 10000000)}
-            />
+            <this.props.children.type {...this.props.children.props} key={this.state.id} />
           </div>
         )}
       </div>
