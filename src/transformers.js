@@ -26,7 +26,7 @@ function transformPage(item, basePath, breadcrumbs, depth) {
 }
 
 function transformGroup(item, basePath, breadcrumbs = [], depth) {
-  const slug = item.slug || slugify(kebabCase(item.page), { lower: true });
+  const slug = item.slug || slugify(kebabCase(item.group), { lower: true });
   const path = `${basePath}/${slug}`;
 
   return {
@@ -35,6 +35,7 @@ function transformGroup(item, basePath, breadcrumbs = [], depth) {
     title: item.group,
     breadcrumbs: [...breadcrumbs, { text: item.group, link: path }],
     composition: item.composition,
+    isEmpty: !item.pages.length,
     depth
   };
 }

@@ -37,12 +37,12 @@
   }
 
   h3 {
-    cursor: text;
     font-size: 15px;
-    font-weight: 600;
-    color: white;
     margin: 0;
-    display: inline-block;
+  }
+
+  h3 a {
+    font-weight: 600;
   }
 
   .active {

@@ -86,6 +86,7 @@ class ShardDocs extends React.Component {
                 <IndexShard title={title} pages={pages.filter(page => page.type === "page")} />
               ];
             }
+            group.isActive = pageIndex === 0 && basePath === locationPath && "active";
             return group;
           }
 
