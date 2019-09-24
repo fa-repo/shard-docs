@@ -10,12 +10,13 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
 
 export default [
   <SectionShard title="Import" persistState="93209">
-    <CodeExampleShard
+    <MarkdownShard
       lang="bash"
-      noShadow
-      sourceCode={`
+      markdown={`\`\`\`jsx
 import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
-import "@fa-repo/shard-docs/dist/shards/iframe-shard.css";`}
+import "@fa-repo/shard-docs/dist/shards/iframe-shard.css";
+\`\`\`
+`}
     />
   </SectionShard>,
   <SectionShard title="Properties" persistState="32232">

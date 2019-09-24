@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - sidebar-structure doc crashing on load
+### Remove
+- box shadow from CodeExampleShard as well as noShadow prop
 
 ## [4.0.6] - 2019-09-03
 ### Fixed

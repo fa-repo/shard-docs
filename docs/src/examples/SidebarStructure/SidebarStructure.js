@@ -13,8 +13,8 @@ export default [
     <i>a few more exist, see API reference</i>). <code>group</code>s will enable you to organise
     indent or space out your content while <code>page</code>s represent documentation endpoints.
   </p>,
-  <h3>Basic usage</h3>,
   <CodeExampleShard
+    title="Basic usage"
     sourceCode={`
 <ShardDocs
   title="Basic example"
@@ -27,8 +27,8 @@ export default [
   >
     <IframeShard path="#/examples/sidebar-structure-basic" />
   </CodeExampleShard>,
-  <h3>With groups</h3>,
   <CodeExampleShard
+    title="With groups"
     sourceCode={`
 <ShardDocs
   title="Groups example"
@@ -57,8 +57,8 @@ export default [
   >
     <IframeShard path="#/examples/sidebar-structure-groups" />
   </CodeExampleShard>,
-  <h3>With indentation</h3>,
   <CodeExampleShard
+    title="With indentation"
     sourceCode={`
 <ShardDocs
   title="Indentation example"

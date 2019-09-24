@@ -10,7 +10,6 @@ export default [
   <SectionShard title="CSS classes" persistState="49429">
     <CodeExampleShard
       lang="markdown"
-      noShadow
       sourceCode={`.shard-docs
 
 // Sidebar

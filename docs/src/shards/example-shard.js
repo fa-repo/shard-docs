@@ -11,7 +11,6 @@ export default [
   <SectionShard title="Import" persistState="39129">
     <CodeExampleShard
       lang="bash"
-      noShadow
       sourceCode={`
 import ExampleShard from "@fa-repo/shard-docs/dist/shards/example-shard";
 import "@fa-repo/shard-docs/dist/shards/example-shard.css";`}

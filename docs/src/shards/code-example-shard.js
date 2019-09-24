@@ -9,12 +9,13 @@ import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
 
 export default [
   <SectionShard title="Import" persistState="39129">
-    <CodeExampleShard
+    <MarkdownShard
       lang="bash"
-      noShadow
-      sourceCode={`
+      markdown={`\`\`\`jsx
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
-import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";`}
+import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";
+\`\`\`
+`}
     />
   </SectionShard>,
 
@@ -27,7 +28,6 @@ import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";`}
 | sourceCode | string | \`""\`   | Required  | The example source code.                            |
 | repository | string | \`""\`   |           | Link to external source code.                       |
 | lang       | string | \`jsx\`  |           | Language parser: \`bash\`, \`css\`, \`html\`, \`http\`, \`javascript\`, \`js\`, \`json\`, \`jsx\`,  \`markdown\`, \`mathml\`, \`md\`, \`php\`, \`regex\`, \`sass\`, \`scss\`, \`shell\`, \`sql\`, \`svg\`, \`ts\`, \`tsx\`, \`typescript\`, \`xml\`, \`yaml\`, \`yml\`. |
-| noShadow | boolean  | false   |           | Disable the shadow.                             |
 `}
     />
   </SectionShard>,
@@ -46,13 +46,6 @@ import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";`}
       >
         <button onClick={e => alert("The game")}>Click me</button>
       </CodeExampleShard>
-    </CodeExampleShard>
-    <CodeExampleShard title="Disable shadow" sourceCode={`<CodeExampleShard ... noShadow />`}>
-      <CodeExampleShard
-        title="Example shard without shadow"
-        noShadow
-        sourceCode={`# Oh look! No shadow`}
-      />
     </CodeExampleShard>
     <CodeExampleShard
       title="Headless CodeExampleShard"
