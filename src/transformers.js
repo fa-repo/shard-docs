@@ -34,7 +34,6 @@ function transformGroup(item, basePath, breadcrumbs = [], depth) {
     path: path,
     title: item.group,
     breadcrumbs: [...breadcrumbs, { text: item.group, link: path }],
-    composition: item.composition,
     isEmpty: !item.pages.length,
     depth
   };

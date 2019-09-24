@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 import Breadcrumbs from "../Breadcrumbs";
 import Sidebar from "../Sidebar";
 import Footer from "../Footer";
-import IndexShard from "../shards/CollectionIndexShard";
 import transform from "../transformers";
 import "./ShardDocs.scss";
 
@@ -79,13 +78,6 @@ class ShardDocs extends React.Component {
             const group = transform.group(item, basePath, breadcrumbs, depth);
             const { path, breadcrumbs } = group;
             group.pages = transformTree(item.pages, path, breadcrumbs, depth + 1);
-            /* Provide a default index page if none provided */
-            const { composition, title, pages } = group;
-            if (!composition) {
-              group.composition = [
-                <IndexShard title={title} pages={pages.filter(page => page.type === "page")} />
-              ];
-            }
             group.isActive = pageIndex === 0 && basePath === locationPath && "active";
             return group;
           }
