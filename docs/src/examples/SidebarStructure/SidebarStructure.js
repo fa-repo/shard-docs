@@ -55,7 +55,6 @@ export default [
   ]}
 />`}
   >
-    {" "}
     <IframeShard path="#/examples/sidebar-structure-groups" />
   </CodeExampleShard>,
   <h3>With indentation</h3>,
