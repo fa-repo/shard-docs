@@ -182,23 +182,25 @@ class ShardDocs extends React.Component {
         />
 
         <div className="shard-docs-main">
-          {this.documents.map((document, i) => {
-            return (
-              <React.Fragment key={i}>
-                <Breadcrumbs breadcrumbs={document.breadcrumbs} />
-                <div className="shard-docs-document">
-                  {(document.composition || []).map((component, i) => ({ ...component, key: i }))}
-                </div>
-              </React.Fragment>
-            );
-          })}
+          <div className="shard-docs-main-inner">
+            {this.documents.map((document, i) => {
+              return (
+                <React.Fragment key={i}>
+                  <Breadcrumbs breadcrumbs={document.breadcrumbs} />
+                  <div className="shard-docs-document">
+                    {(document.composition || []).map((component, i) => ({ ...component, key: i }))}
+                  </div>
+                </React.Fragment>
+              );
+            })}
 
-          <Footer
-            prevText={this.prevPage && this.prevPage.title}
-            prevLink={this.prevPage && this.prevPage.path}
-            nextText={this.nextPage && this.nextPage.title}
-            nextLink={this.nextPage && this.nextPage.path}
-          />
+            <Footer
+              prevText={this.prevPage && this.prevPage.title}
+              prevLink={this.prevPage && this.prevPage.path}
+              nextText={this.nextPage && this.nextPage.title}
+              nextLink={this.nextPage && this.nextPage.path}
+            />
+          </div>
         </div>
       </div>
     );
