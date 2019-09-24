@@ -121,6 +121,11 @@ class ShardDocs extends React.Component {
     return pages.filter(item => ["group", "page"].includes(item.type));
   }
 
+  get documents() {
+    const urlPath = this.props.location.pathname;
+    return this.pages.filter(page => page.type === "page" && page.path.startsWith(urlPath));
+  }
+
   get currentPage() {
     const pages = this.pages;
     const urlPath = this.props.location.pathname;
@@ -177,13 +182,16 @@ class ShardDocs extends React.Component {
         />
 
         <div className="shard-docs-main">
-          <Breadcrumbs breadcrumbs={(this.currentPage && this.currentPage.breadcrumbs) || []} />
-
-          <div className="shard-docs-document">
-            {(this.currentPage.composition || []).map((component, i) => {
-              return { ...component, key: i };
-            })}
-          </div>
+          {this.documents.map((document, i) => {
+            return (
+              <React.Fragment key={i}>
+                <Breadcrumbs breadcrumbs={document.breadcrumbs} />
+                <div className="shard-docs-document">
+                  {(document.composition || []).map((component, i) => ({ ...component, key: i }))}
+                </div>
+              </React.Fragment>
+            );
+          })}
 
           <Footer
             prevText={this.prevPage && this.prevPage.title}
