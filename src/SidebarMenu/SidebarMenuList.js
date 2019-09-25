@@ -28,6 +28,7 @@ const PageNode = ({ title, path, isActive, isEmpty, ...props }) => {
       <NavLink
         className={classnames(isActive && "active")}
         to={path}
+        replace={!isActive} // suppress "Warning: Hash history cannot PUSH the same path"
         onClick={e => isEmpty && e.preventDefault()}
         disabled={isEmpty}
         exact
@@ -44,6 +45,7 @@ const HeadingNode = ({ title, path, isActive, isEmpty, ...props }) => (
       <NavLink
         className={classnames(isActive && "active")}
         to={path}
+        replace={!isActive} // suppress "Warning: Hash history cannot PUSH the same path"
         onClick={e => isEmpty && e.preventDefault()}
         disabled={isEmpty}
         exact
