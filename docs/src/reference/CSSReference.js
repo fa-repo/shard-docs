@@ -1,6 +1,7 @@
 import React from "react";
 import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
+import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
 
 /**
  * CSS reference
@@ -8,9 +9,10 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
 
 export default [
   <SectionShard title="CSS classes" persistState="49429">
-    <CodeExampleShard
-      lang="markdown"
-      sourceCode={`.shard-docs
+    <MarkdownShard
+      markdown={`
+\`\`\`jsx
+.shard-docs
 
 // Sidebar
 .shard-docs-sidebar
@@ -33,7 +35,8 @@ export default [
 .shard-docs-markdown-shard
 .shard-docs-section-shard
 .shard-docs-source-code-shard
-`}
+\`\`\`
+    `}
     />
   </SectionShard>
 ];
