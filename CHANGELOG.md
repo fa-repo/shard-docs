@@ -6,9 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Fixed
-- sidebar-structure doc crashing on load
+- Sidebar-structure doc crashing on load
 ### Remove
-- box shadow from CodeExampleShard as well as noShadow prop
+- Box shadow from CodeExampleShard as well as noShadow prop
+### Changed
+- Instead of one page per route, changed to a refinement system where all pages below the current path are shown
+- Turned sidebar group headings into links
+- Add icons to CodeExampleShard menu
+- Hide source code by default in CodeExampleShard. Toggles from a button in the menu
+- Update CodeExampleShard styles
+- Update ShardDocs styles
+- Made responsive
 
 ## [4.0.6] - 2019-09-03
 ### Fixed
@@ -16,15 +24,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.0.5] - 2019-08-31
 ### Changed
-- table th/td lineheight from 1.8 to 1.6
+- Table th/td lineheight from 1.8 to 1.6
 
 ## [4.0.4] - 2019-08-24
 ### Remove
-- elusive console.log
+- Elusive console.log
 
 ## [4.0.3] - 2019-08-24
 ### Add
-- ability to add classes to shards
+- Ability to add classes to shards
 
 ## [4.0.2] - 2019-08-22
 ### Fixed

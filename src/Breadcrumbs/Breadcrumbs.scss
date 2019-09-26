@@ -4,29 +4,31 @@
   max-width: 960px;
   font-size: 16px;
   margin: 0 0 2px 0;
+
   > * {
     cursor: initial;
   }
+
   a {
     color: #212121;
     text-decoration: none;
-  }
-  a.active {
     font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
-  a:hover {
-    text-decoration: underline;
+
+  li {
+    display: inline-block;
+    &:not(:last-child):after {
+      content: " / ";
+      margin-right: 4px;
+    }
   }
-}
-.shard-docs-breadcrumbs li {
-  display: inline-block;
-  &:not(:last-child):after {
-    content: " / ";
-    margin-right: 4px;
+
+  li:last-child a {
+    color: black;
+    font-weight: normal;
   }
-}
-.shard-docs-breadcrumbs li:last-child a.active {
-  color: black;
-  text-decoration: none;
-  cursor: text;
 }

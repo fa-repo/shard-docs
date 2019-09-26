@@ -10,28 +10,47 @@ import "./Sidebar.scss";
  * Sidebar
  */
 
-const Sidebar = props => (
-  <aside className="shard-docs-sidebar">
-    <SidebarHeader title={props.title} description={props.description} basePath={props.basePath} />
-    {props.description && <SidebarDescription description={props.description} />}
-    <SidebarMenu items={props.tree} basePath={props.basePath} />
-    {props.showSidebarFooter && <SidebarFooter />}
-  </aside>
-);
+class Sidebar extends React.Component {
+  static propTypes = {
+    title: PropTypes.string,
+    description: PropTypes.string,
+    basePath: PropTypes.string,
+    tree: PropTypes.array,
+    showSidebarFooter: PropTypes.bool
+  };
 
-Sidebar.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  basePath: PropTypes.string,
-  tree: PropTypes.array,
-  showSidebarFooter: PropTypes.bool
-};
+  static defaultProps = {
+    title: "",
+    description: "",
+    tree: [],
+    showSidebarFooter: true
+  };
 
-Sidebar.defaultProps = {
-  title: "",
-  description: "",
-  tree: [],
-  showSidebarFooter: true
-};
+  state = {
+    showMenuOnMobile: false
+  };
+
+  render() {
+    const { title, description, basePath, tree, showSidebarFooter } = this.props;
+    return (
+      <aside className="shard-docs-sidebar">
+        <SidebarHeader
+          title={title}
+          description={description}
+          basePath={basePath}
+          onToggleMenu={() => this.setState({ showMenuOnMobile: !this.state.showMenuOnMobile })}
+        />
+        {description && <SidebarDescription description={description} />}
+        <SidebarMenu
+          items={tree}
+          basePath={basePath}
+          showMenuOnMobile={this.state.showMenuOnMobile}
+          onNavigate={() => this.setState({ showMenuOnMobile: false })}
+        />
+        {showSidebarFooter && <SidebarFooter />}
+      </aside>
+    );
+  }
+}
 
 export default Sidebar;

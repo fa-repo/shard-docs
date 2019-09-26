@@ -1,22 +1,49 @@
 .shard-docs-sidebar-header {
   margin: 15px 15px 15px 0;
+  display: flex;
 
   a {
+    flex: 1;
     text-decoration: none;
+    overflow: hidden;
     &:hover {
       text-decoration: underline;
     }
   }
 
   .shard-docs-sidebar-heading {
-    background: white;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
     margin: 0;
     padding: 3px 15px;
-    color: #673ab6;
-    font-size: 14px;
-    font-weight: 700;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    @media (min-width: 1200px) {
+      background: white;
+      color: #673ab6;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+
+  .shard-docs-toggle-menu {
+    background: transparent;
+    color: white;
+    border: 1px solid transparent;
+    margin: -1px 0;
+    outline: none;
+    cursor: pointer;
+    &:focus {
+      border-color: white;
+    }
+    svg {
+      width: 27px;
+      height: 27px;
+    }
+    @media (min-width: 1200px) {
+      display: none;
+    }
   }
 }
