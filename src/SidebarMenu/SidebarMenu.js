@@ -9,7 +9,7 @@ import "./SidebarMenu.scss";
 
 const SidebarMenu = props => {
   return (
-    <div className="shard-docs-sidebar-menu">
+    <div className="shard-docs-sidebar-menu" data-show-menu-on-mobile={props.showMenuOnMobile}>
       <SidebarMenuList items={props.items} basePath={props.basePath} />
     </div>
   );
@@ -17,11 +17,13 @@ const SidebarMenu = props => {
 
 SidebarMenu.propTypes = {
   items: PropTypes.array,
-  basePath: PropTypes.string
+  basePath: PropTypes.string,
+  showMenuOnMobile: PropTypes.bool
 };
 SidebarMenu.defaultProps = {
   items: [],
-  items: ""
+  items: "",
+  showMenuOnMobile: false
 };
 
 export default SidebarMenu;
