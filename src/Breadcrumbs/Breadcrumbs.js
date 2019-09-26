@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
-import classnames from "classnames";
 import "./Breadcrumbs.scss";
 
 /**
@@ -14,11 +13,7 @@ const Breadcrumbs = ({ breadcrumbs = [] }) => {
       {breadcrumbs.map(({ text, link }, i) => {
         return (
           <li key={i}>
-            {link && (
-              <NavLink className={classnames(breadcrumbs.length === 1 && "active")} to={link}>
-                {text}
-              </NavLink>
-            )}
+            {link && <NavLink to={link}>{text}</NavLink>}
             {!link && text}
           </li>
         );
