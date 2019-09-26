@@ -22,14 +22,17 @@ const ExternalLinkNode = ({ title, link, ...props }) => (
   </li>
 );
 
-const PageNode = ({ title, path, isActive, isEmpty, ...props }) => {
+const PageNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) => {
   return (
     <li {...props}>
       <NavLink
         className={classnames(isActive && "active")}
         to={path}
         replace={!isActive} // suppress "Warning: Hash history cannot PUSH the same path"
-        onClick={e => isEmpty && e.preventDefault()}
+        onClick={e => {
+          if (isEmpty) e.preventDefault();
+          onNavigate();
+        }}
         disabled={isEmpty}
         exact
       >
@@ -39,14 +42,17 @@ const PageNode = ({ title, path, isActive, isEmpty, ...props }) => {
   );
 };
 
-const HeadingNode = ({ title, path, isActive, isEmpty, ...props }) => (
+const HeadingNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) => (
   <li {...props}>
     <h3>
       <NavLink
         className={classnames(isActive && "active")}
         to={path}
         replace={!isActive} // suppress "Warning: Hash history cannot PUSH the same path"
-        onClick={e => isEmpty && e.preventDefault()}
+        onClick={e => {
+          if (isEmpty) e.preventDefault();
+          onNavigate();
+        }}
         disabled={isEmpty}
         exact
       >
@@ -56,21 +62,36 @@ const HeadingNode = ({ title, path, isActive, isEmpty, ...props }) => (
   </li>
 );
 
-const GroupNode = ({ title, pages, path, isActive, isEmpty, basePath, ...props }) => (
+const GroupNode = ({ title, pages, path, isActive, isEmpty, basePath, onNavigate, ...props }) => (
   <ul {...props}>
-    {title && <HeadingNode title={title} path={path} isActive={isActive} isEmpty={isEmpty} />}
-    <SidebarMenuList items={pages} basePath={basePath} />
+    {title && (
+      <HeadingNode
+        title={title}
+        path={path}
+        isActive={isActive}
+        isEmpty={isEmpty}
+        onNavigate={onNavigate}
+      />
+    )}
+    <SidebarMenuList items={pages} basePath={basePath} onNavigate={onNavigate} />
   </ul>
 );
 
-const SidebarMenuList = ({ items, basePath }) => {
+const SidebarMenuList = ({ items, basePath, onNavigate }) => {
   return (
     <>
       {items.map((item, i) => {
         const { type, title, link, path, isActive, pages, isEmpty } = item;
         if (type === "page") {
           return (
-            <PageNode key={i} title={title} path={path} isActive={isActive} isEmpty={isEmpty} />
+            <PageNode
+              key={i}
+              title={title}
+              path={path}
+              isActive={isActive}
+              isEmpty={isEmpty}
+              onNavigate={onNavigate}
+            />
           );
         } else if (type === "external") {
           return <ExternalLinkNode key={i} title={title} link={link} />;
@@ -79,11 +100,12 @@ const SidebarMenuList = ({ items, basePath }) => {
             <GroupNode
               key={i}
               path={item.path}
-              isActive={isActive}
-              isEmpty={isEmpty}
               title={title}
               pages={pages}
               basePath={basePath}
+              isActive={isActive}
+              isEmpty={isEmpty}
+              onNavigate={onNavigate}
             />
           );
         } else {
@@ -95,10 +117,14 @@ const SidebarMenuList = ({ items, basePath }) => {
 };
 
 SidebarMenuList.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.array,
+  basePath: PropTypes.string,
+  onNavigate: PropTypes.func
 };
 SidebarMenuList.defaultProps = {
-  items: []
+  items: [],
+  basePath: "",
+  onNavigate: () => {}
 };
 
 export default SidebarMenuList;
