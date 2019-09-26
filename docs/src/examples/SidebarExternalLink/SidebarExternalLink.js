@@ -27,6 +27,6 @@ export default [
 />
 `}
   >
-    <IframeShard path="#/examples/sidebar-external-link" />
+    <IframeShard path="#/examples/sidebar-external-link" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];

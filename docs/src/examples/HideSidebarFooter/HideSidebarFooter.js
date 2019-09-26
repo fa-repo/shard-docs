@@ -27,6 +27,6 @@ export default [
 />
 `}
   >
-    <IframeShard path="#/examples/hide-sidebar-footer" />
+    <IframeShard path="#/examples/hide-sidebar-footer" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];

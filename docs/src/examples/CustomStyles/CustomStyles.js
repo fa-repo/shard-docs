@@ -32,6 +32,6 @@ export default [
   />
 </>`}
   >
-    <IframeShard path="#/examples/custom-styles" />
+    <IframeShard path="#/examples/custom-styles" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];

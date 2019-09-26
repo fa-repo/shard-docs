@@ -46,7 +46,7 @@ import "@fa-repo/shard-docs/dist/shards/iframe-shard.css"
   ]}
 />`}
     >
-      <IframeShard path="#/docs/hello-world" />
+      <IframeShard path="#/docs/hello-world" style={{ width: "1200px" }} />
     </CodeExampleShard>
   </SectionShard>
 ];

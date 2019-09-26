@@ -26,7 +26,7 @@ const Documentation = [
 />
 `}
   >
-    <IframeShard path="#/examples/hello-world" />
+    <IframeShard path="#/examples/hello-world" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];
 

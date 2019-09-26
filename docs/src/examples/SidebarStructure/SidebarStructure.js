@@ -25,7 +25,7 @@ export default [
   ]}
 />`}
   >
-    <IframeShard path="#/examples/sidebar-structure-basic" />
+    <IframeShard path="#/examples/sidebar-structure-basic" style={{ width: "1200px" }} />
   </CodeExampleShard>,
   <CodeExampleShard
     title="With groups"
@@ -55,7 +55,7 @@ export default [
   ]}
 />`}
   >
-    <IframeShard path="#/examples/sidebar-structure-groups" />
+    <IframeShard path="#/examples/sidebar-structure-groups" style={{ width: "1200px" }} />
   </CodeExampleShard>,
   <CodeExampleShard
     title="With indentation"
@@ -88,6 +88,6 @@ export default [
   ]}
 />`}
   >
-    <IframeShard path="#/examples/sidebar-structure-indentation" />
+    <IframeShard path="#/examples/sidebar-structure-indentation" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];
