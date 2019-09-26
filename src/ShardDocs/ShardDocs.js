@@ -184,9 +184,10 @@ class ShardDocs extends React.Component {
         <div className="shard-docs-main">
           <div className="shard-docs-main-inner">
             {this.documents.map((document, i) => {
+              const breadcrumbs = [{ link: basePath, text: "~" }, ...document.breadcrumbs];
               return (
                 <React.Fragment key={i}>
-                  <Breadcrumbs breadcrumbs={document.breadcrumbs} />
+                  <Breadcrumbs breadcrumbs={breadcrumbs} />
                   <div className="shard-docs-document">
                     {(document.composition || []).map((component, i) => ({ ...component, key: i }))}
                   </div>
