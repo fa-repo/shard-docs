@@ -10,14 +10,15 @@
 
   @media (min-width: 1200px) {
     flex-direction: row;
-    min-height: auto;
-    height: 100vh;
   }
 }
 
 .shard-docs-main {
   flex: 1;
   overflow: scroll;
+  @media (min-width: 1200px) {
+    padding-left: 300px;
+  }
 }
 
 .shard-docs-main-inner {

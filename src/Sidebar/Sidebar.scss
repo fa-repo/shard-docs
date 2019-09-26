@@ -1,6 +1,5 @@
 .shard-docs-sidebar {
   margin: 0;
-  border-right: thin solid #dddddd;
   overflow-y: scroll;
   background: #673ab7;
   color: rgba(255, 255, 255, 0.5);
@@ -11,5 +10,7 @@
 
   @media (min-width: 1200px) {
     width: 300px;
+    height: 100vh;
+    position: fixed;
   }
 }
