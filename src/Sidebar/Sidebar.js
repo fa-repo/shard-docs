@@ -45,6 +45,7 @@ class Sidebar extends React.Component {
           items={tree}
           basePath={basePath}
           showMenuOnMobile={this.state.showMenuOnMobile}
+          onNavigate={() => this.setState({ showMenuOnMobile: false })}
         />
         {showSidebarFooter && <SidebarFooter />}
       </aside>
