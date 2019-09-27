@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import MenuIcon from "boxicons/svg/regular/bx-menu.svg";
 import "./SidebarHeader.scss";
 
 /**
@@ -18,9 +19,7 @@ const SidebarHeader = ({ title, basePath, onToggleMenu, ...props }) => {
         </NavLink>
       )}
       <button className="shard-docs-toggle-menu" onClick={onToggleMenu}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z" />
-        </svg>
+        <MenuIcon />
       </button>
     </header>
   );
