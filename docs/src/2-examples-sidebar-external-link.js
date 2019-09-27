@@ -12,7 +12,7 @@ const github =
 const sourceCode = `
 <ShardDocs
   title="Documentation title"
-  tree={[
+  source={[
     {
       group: null,
       pages: [

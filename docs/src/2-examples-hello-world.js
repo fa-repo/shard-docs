@@ -12,7 +12,7 @@ const sourceCode = `
 <ShardDocs
   title="Package name"
   basePath="/examples/hello-world"
-  tree={[
+  source={[
     {
       page: "Hello world",
       composition: [ <img src="/images/hello-world.jpg" alt="Turtle" /> ]

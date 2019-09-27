@@ -13,5 +13,5 @@ const source = [
 ];
 
 export default () => (
-  <ShardDocs title="Package name" basePath="/examples/hello-world" tree={source} />
+  <ShardDocs title="Package name" basePath="/examples/hello-world" source={source} />
 );

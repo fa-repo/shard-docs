@@ -28,5 +28,5 @@ const source = [
 ];
 
 export default () => (
-  <ShardDocs title="Groups example" basePath="/examples/sidebar-structure-groups" tree={source} />
+  <ShardDocs title="Groups example" basePath="/examples/sidebar-structure-groups" source={source} />
 );
