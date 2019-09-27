@@ -6,15 +6,9 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
  * CustomStyles
  */
 
-const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/CustomStyles";
+const github = "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/CustomStyles";
 
-export default [
-  <CodeExampleShard
-    title="Custom styles"
-    repository={sourceCodeLink}
-    sourceCode={`
-<>
+const sourceCode = `<>
   <style
     dangerouslySetInnerHTML={{
       __html: \`.shard-docs-sidebar { background: red; }\`
@@ -30,8 +24,10 @@ export default [
       }
     ]}
   />
-</>`}
-  >
+</>`;
+
+export default [
+  <CodeExampleShard title="Custom styles" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/custom-styles" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];

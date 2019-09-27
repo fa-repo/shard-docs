@@ -6,14 +6,10 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
  * HideSidebarFooter
  */
 
-const sourceCodeLink =
+const github =
   "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HideSidebarFooter";
 
-export default [
-  <CodeExampleShard
-    title="Sidebar sections"
-    repository={sourceCodeLink}
-    sourceCode={`
+const sourceCode = `
 <ShardDocs
   title="Documentation title"
   basePath="/examples/hide-sidebar-footer"
@@ -24,9 +20,10 @@ export default [
       composition: [<h1>Hide sidebar footer</h1>]
     }
   ]}
-/>
-`}
-  >
+/>`;
+
+export default [
+  <CodeExampleShard title="Sidebar sections" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/hide-sidebar-footer" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];

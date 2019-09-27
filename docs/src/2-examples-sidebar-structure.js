@@ -10,8 +10,11 @@ export default [
   <p>
     Formulating documentation structure is quite visual and handily reflected on the sidebar. All
     you need are two types of objects: <code>group</code>s and <code>page</code>s (
-    <i>a few more exist, see API reference</i>). <code>group</code>s will enable you to organise
-    indent or space out your content while <code>page</code>s represent documentation endpoints.
+    <i>
+      a few more exist, see <a href="/#/docs/reference/api-reference">API reference</a>
+    </i>
+    ). <code>group</code>s will enable you to organise indent or space out your content while{" "}
+    <code>page</code>s represent documentation endpoints.
   </p>,
   <CodeExampleShard
     title="Basic usage"
