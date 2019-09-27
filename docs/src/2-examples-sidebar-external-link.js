@@ -6,11 +6,10 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
  * SidebarExternalLink
  */
 
-export default [
-  <CodeExampleShard
-    title="Sidebar external link"
-    repository='https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarExternalLink"'
-    sourceCode={`
+const github =
+  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/SidebarExternalLink";
+
+const sourceCode = `
 <ShardDocs
   title="Documentation title"
   tree={[
@@ -24,9 +23,10 @@ export default [
       ]
     }
   ]}
-/>
-`}
-  >
+/>`;
+
+export default [
+  <CodeExampleShard title="Sidebar external link" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/sidebar-external-link" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];

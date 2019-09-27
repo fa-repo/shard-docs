@@ -6,14 +6,9 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
  * HelloWorld
  */
 
-const sourceCodeLink =
-  "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HelloWorld";
+const github = "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HelloWorld";
 
-const Documentation = [
-  <CodeExampleShard
-    title="Hello world"
-    repository={sourceCodeLink}
-    sourceCode={`
+const sourceCode = `
 <ShardDocs
   title="Package name"
   basePath="/examples/hello-world"
@@ -23,14 +18,10 @@ const Documentation = [
       composition: [ <img src="/images/hello-world.jpg" alt="Turtle" /> ]
     }
   ]}
-/>
-`}
-  >
+/>`;
+
+export default [
+  <CodeExampleShard title="Hello world" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/hello-world" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];
-
-Documentation.propTypes = {};
-Documentation.defaultProps = {};
-
-export default Documentation;

@@ -5,31 +5,37 @@ import { HashRouter } from "react-router-dom";
 
 import ShardDocs from "@fa-repo/shard-docs";
 
-import GetStartedPage from "./introduction/get-started";
-import HelloWorldPage from "./examples/HelloWorld";
-import SidebarDescriptionPage from "./examples/SidebarDescription";
-import SidebarExternalLinkPage from "./examples/SidebarExternalLink";
-import SidebarStructurePage from "./examples/SidebarStructure";
-import HideSidebarFooterPage from "./examples/HideSidebarFooter";
-import CustomStylesPage from "./examples/CustomStyles";
+// Introduction
+import GetStartedPage from "./1-introduction-get-started";
 
-import MarkdownShardPage from "./shards/markdown-shard";
-import IframeShardPage from "./shards/iframe-shard";
-import SectionShardPage from "./shards/section-shard";
-import CodeExampleShardPage from "./shards/code-example-shard";
+// Examples
+import HelloWorldPage from "./2-examples-hello-world";
+import SidebarStructurePage from "./2-examples-sidebar-structure";
+import SidebarDescriptionPage from "./2-examples-sidebar-description";
+import SidebarExternalLinkPage from "./2-examples-sidebar-external-link";
+import HideSidebarFooterPage from "./2-examples-hide-sidebar-footer";
+import CustomStylesPage from "./2-examples-custom-styles";
 
-import APIReferencePage from "./reference/APIReference";
-import CSSReferencePage from "./reference/CSSReference";
+// Shards
+import MarkdownShardPage from "./3-shards-markdown";
+import IframeShardPage from "./3-shards-iframe";
+import SectionShardPage from "./3-shards-section";
+import CodeExampleShardPage from "./3-shards-code-example";
 
-import HelloWorldExample from "./examples/HelloWorld/example";
-import SidebarDescriptionExample from "./examples/SidebarDescription/example";
-import SidebarExternalLinkExample from "./examples/SidebarExternalLink/example";
-import SidebarStructureBasicExample from "./examples/SidebarStructure/BasicExample";
-import SidebarStructureGroupsExample from "./examples/SidebarStructure/GroupsExample";
-import SidebarStructureIndentationExample from "./examples/SidebarStructure/IndentationExample";
+// Reference material
+import APIReferencePage from "./4-reference-api";
+import CSSReferencePage from "./4-reference-css";
 
-import SidebarCustomStylesExample from "./examples/CustomStyles/example";
-import HideSidebarFooterExample from "./examples/HideSidebarFooter/example";
+// Examples
+import HelloWorldExample from "./examples/2-hello-world-a";
+import SidebarDescriptionExample from "./examples/2-sidebar-description-a";
+import SidebarExternalLinkExample from "./examples/2-sidebar-external-link-a";
+import SidebarStructureBasicExample from "./examples/2-sidebar-structure-a";
+import SidebarStructureGroupsExample from "./examples/2-sidebar-structure-b";
+import SidebarStructureIndentationExample from "./examples/2-sidebar-structure-c";
+
+import SidebarCustomStylesExample from "./examples/2-custom-styles-a";
+import HideSidebarFooterExample from "./examples/2-hide-sidebar-footer-a";
 
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
