@@ -78,7 +78,7 @@ class ShardDocs extends React.Component {
             const group = transform.group(item, basePath, breadcrumbs, depth);
             const { path, breadcrumbs } = group;
             group.pages = transformTree(item.pages, path, breadcrumbs, depth + 1);
-            group.isActive = pageIndex === 0 && basePath === locationPath && "active";
+            group.isActive = group.path === locationPath && "active";
             return group;
           }
 
@@ -93,7 +93,7 @@ class ShardDocs extends React.Component {
             let page = transform.page(item, basePath, breadcrumbs, depth);
             page.pageIndex = pageIndex;
             pageIndex = pageIndex + 1;
-            page.isActive = pageIndex === 0 && basePath === locationPath && "active";
+            page.isActive = page.path === locationPath && "active";
             return page;
           }
 
