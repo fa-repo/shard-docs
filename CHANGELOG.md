@@ -5,11 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [4.1.0] - 2019-09-27
 ### Fixed
 - Sidebar-structure doc crashing on load
 ### Remove
 - Box shadow from CodeExampleShard as well as noShadow prop
 ### Changed
+- [BREAKING CHANGE] Renamed tree prop to source
 - Instead of one page per route, changed to a refinement system where all pages below the current path are shown
 - Turned sidebar group headings into links
 - Add icons to CodeExampleShard menu
@@ -17,8 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update CodeExampleShard styles
 - Update ShardDocs styles
 - Made responsive
-- [Breaking change] Renamed tree prop to source
-- [Breaking changes] A few class names changed
 - Update table style
 
 ## [4.0.6] - 2019-09-03
@@ -53,7 +54,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CHANGELOG to document the development of @fa-repo/shard-docs.
 - Github release tagging
 
-[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v4.0.6...HEAD
+[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v4.1.0...HEAD
+[4.1.0]: https://github.com/fa-repo/shard-docs/compare/v4.0.6...v4.1.0
 [4.0.6]: https://github.com/fa-repo/shard-docs/compare/v4.0.5...v4.0.6
 [4.0.5]: https://github.com/fa-repo/shard-docs/compare/v4.0.4...v4.0.5
 [4.0.4]: https://github.com/fa-repo/shard-docs/compare/v4.0.3...v4.0.4
