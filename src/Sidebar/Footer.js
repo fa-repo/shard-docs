@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./SidebarFooter.scss";
+import "./Footer.scss";
 
 /**
  * SidebarFooter

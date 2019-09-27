@@ -17,7 +17,7 @@ export default () => (
     <ShardDocs
       title="Documentation title"
       basePath="/examples/custom-styles/essentials/get-started"
-      tree={source}
+      source={source}
     />
     <style dangerouslySetInnerHTML={{ __html: `.shard-docs-sidebar { background: red; }` }} />
   </>

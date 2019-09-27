@@ -59,7 +59,7 @@ const Docs = () => (
             title="@fa-repo/shard-docs"
             description="A concise / extendable react component for handling documentation"
             basePath="/docs"
-            tree={[
+            source={[
               { page: "Get started", composition: GetStartedPage },
               {
                 group: "Examples",

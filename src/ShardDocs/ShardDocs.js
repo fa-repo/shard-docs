@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import Breadcrumbs from "../Breadcrumbs";
+import Document from "../Document";
+import Main from "../Main";
 import Sidebar from "../Sidebar";
-import Footer from "../Footer";
-import transform from "../transformers";
+import transform from "./transformers";
 import "./ShardDocs.scss";
 
 /**
@@ -28,7 +28,7 @@ class ShardDocs extends React.Component {
    * Parse documentation tree
    */
   get tree() {
-    let tree = this.props.tree;
+    let tree = this.props.source;
     const basePath = this.props.basePath;
     const locationPath = this.props.location.pathname;
     let pageIndex = 0;
@@ -123,7 +123,13 @@ class ShardDocs extends React.Component {
 
   get documents() {
     const urlPath = this.props.location.pathname;
-    return this.pages.filter(page => page.type === "page" && page.path.startsWith(urlPath));
+
+    return this.pages
+      .filter(page => page.type === "page" && page.path.startsWith(urlPath))
+      .map(document => {
+        document.breadcrumbs = [{ link: this.props.basePath, text: "~" }, ...document.breadcrumbs];
+        return document;
+      });
   }
 
   get currentPage() {
@@ -171,6 +177,8 @@ class ShardDocs extends React.Component {
       ...props
     } = this.props;
 
+    const documents = this.documents;
+
     return (
       <div {...props} className="shard-docs">
         <Sidebar
@@ -181,28 +189,11 @@ class ShardDocs extends React.Component {
           showSidebarFooter={this.props.showSidebarFooter}
         />
 
-        <div className="shard-docs-main">
-          <div className="shard-docs-main-inner">
-            {this.documents.map((document, i) => {
-              const breadcrumbs = [{ link: basePath, text: "~" }, ...document.breadcrumbs];
-              return (
-                <React.Fragment key={i}>
-                  <Breadcrumbs breadcrumbs={breadcrumbs} />
-                  <div className="shard-docs-document">
-                    {(document.composition || []).map((component, i) => ({ ...component, key: i }))}
-                  </div>
-                </React.Fragment>
-              );
-            })}
-
-            <Footer
-              prevText={this.prevPage && this.prevPage.title}
-              prevLink={this.prevPage && this.prevPage.path}
-              nextText={this.nextPage && this.nextPage.title}
-              nextLink={this.nextPage && this.nextPage.path}
-            />
-          </div>
-        </div>
+        <Main prevPage={this.prevPage} nextPage={this.nextPage}>
+          {documents.map((document, i) => (
+            <Document key={i} document={document} />
+          ))}
+        </Main>
       </div>
     );
   }
@@ -211,7 +202,7 @@ class ShardDocs extends React.Component {
 ShardDocs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  tree: PropTypes.array,
+  source: PropTypes.array,
   basePath: PropTypes.string,
   showSidebarFooter: PropTypes.bool
 };
@@ -219,7 +210,7 @@ ShardDocs.propTypes = {
 ShardDocs.defaultProps = {
   title: "",
   description: "",
-  tree: [],
+  source: [],
   basePath: "/",
   showSidebarFooter: true
 };
