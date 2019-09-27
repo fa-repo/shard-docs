@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 import parseMarkdown from "../lib/parseMarkdown";
-import "./CodeExampleShard.scss";
-import GithubIcon from "./GithubIcon";
-import CodeIcon from "./CodeIcon";
+import CodeIcon from "boxicons/svg/regular/bx-code.svg";
+import GithubIcon from "boxicons/svg/logos/bxl-github.svg";
 import uniqid from "uniqid";
+import "./CodeExampleShard.scss";
 
 /**
  * CodeExampleShard

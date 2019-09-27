@@ -41,7 +41,6 @@ import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
 import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";
 import "@fa-repo/shard-docs/dist/shards/iframe-shard.css";
-import "@fa-repo/shard-docs/dist/shards/external-link.css";
 import "@fa-repo/shard-docs/dist/shards/section-shard.css";
 import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";
 
