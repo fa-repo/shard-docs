@@ -50,15 +50,14 @@ class CodeExampleShard extends React.Component {
   render() {
     const { title, repository } = this.props;
     const sourceCode = this.getSourceCode();
-    const className = classnames("shard-docs-code-example-shard", this.props.className);
     const showHeader = title || sourceCode || repository;
     const displayCode = this.state.displayCode;
 
     return (
-      <div className={className}>
+      <section className={classnames("code-example-shard", this.props.className)}>
         {showHeader && (
-          <header className="shard-docs-code-example-shard-header">
-            <h3 className="shard-docs-code-example-shard-title" title={title}>
+          <header className="code-example-shard-header">
+            <h3 className="title" title={title}>
               {title}
             </h3>
             <menu>
@@ -73,15 +72,19 @@ class CodeExampleShard extends React.Component {
             </menu>
           </header>
         )}
+        <div className="code-example-shard-body">
+          {displayCode && (
+            <div
+              className="source-code"
+              dangerouslySetInnerHTML={{ __html: parseMarkdown(sourceCode) }}
+            />
+          )}
 
-        {displayCode && <footer dangerouslySetInnerHTML={{ __html: parseMarkdown(sourceCode) }} />}
-
-        {this.props.children && (
-          <div>
+          {this.props.children && (
             <this.props.children.type {...this.props.children.props} key={this.state.id} />
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </section>
     );
   }
 }
