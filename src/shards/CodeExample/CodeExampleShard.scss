@@ -1,72 +1,74 @@
-.shard-docs-code-example-shard {
-  border-radius: 4px;
+.code-example-shard {
   margin-bottom: 2rem;
 }
 
-.shard-docs-code-example-shard > header {
-  padding: 0 0 5px 0;
+.code-example-shard .code-example-shard-header {
+  margin-bottom: 5px;
   font-size: 14px;
-  border-radius: 4px 5px 0 0;
   display: flex;
   align-items: center;
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-right: 15px;
+  }
+
+  menu {
+    margin-left: auto;
+    white-space: nowrap;
+    margin: 0 0 0 auto;
+    display: inline-flex;
+  }
+
+  menu a {
+    color: black;
+    padding: 10px;
+    transition: opacity 150ms ease-out;
+    border-radius: 50%;
+    display: inline-flex;
+
+    &:hover {
+      background: #e0e0e0;
+    }
+
+    a:after {
+      display: none;
+    }
+
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
 }
 
-.shard-docs-code-example-shard > header > h3 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 500;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  margin-right: 15px;
-}
-
-.shard-docs-code-example-shard > header menu {
-  margin-left: auto;
-  white-space: nowrap;
-  margin: 0 0 0 auto;
-  display: inline-flex;
-}
-
-.shard-docs-code-example-shard > header menu a {
-  color: black !important;
-  padding: 10px !important;
-  transition: opacity 150ms ease-out;
-  border-radius: 50%;
-  display: inline-grid;
-}
-
-.shard-docs-code-example-shard > header menu a:hover {
-  background: #e0e0e0;
-}
-
-.shard-docs-code-example-shard > header menu a svg {
-  height: 20px;
-  width: 20px;
-}
-
-.shard-docs-code-example-shard > header menu a:after {
-  display: none;
-}
-
-.shard-docs-code-example-shard > div {
+.code-example-shard .code-example-shard-body {
   padding: 15px;
-  background: #eee;
+  background: #a8a9aa;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
 
-.shard-docs-code-example-shard > div > :first-child {
-  margin-top: 0;
-}
+.code-example-shard .source-code {
+  margin-bottom: 15px;
 
-.shard-docs-code-example-shard > div > :last-child {
-  margin-bottom: 0;
-}
+  pre {
+    margin: 0;
+    border-radius: 0 !important;
+  }
 
-.shard-docs-code-example-shard > footer > pre {
-  margin: 0;
-  border-radius: 4px 4px 0 0;
-}
-
-.shard-docs-code-example-shard > footer > pre code {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) inset, 0 0 4px rgba(0, 0, 0, 0.3) inset;
+  pre code {
+    border-radius: 0 !important;
+  }
 }
