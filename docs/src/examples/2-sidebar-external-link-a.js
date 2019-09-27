@@ -18,5 +18,9 @@ const source = [
 ];
 
 export default () => (
-  <ShardDocs title="Documentation title" basePath="/examples/sidebar-external-link" tree={source} />
+  <ShardDocs
+    title="Documentation title"
+    basePath="/examples/sidebar-external-link"
+    source={source}
+  />
 );

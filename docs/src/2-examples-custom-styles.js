@@ -17,7 +17,7 @@ const sourceCode = `<>
   <ShardDocs
     title="Documentation title"
     basePath="/examples/custom-styles/essentials/get-started"
-    tree={[
+    source={[
       {
         group: "Essentials",
         pages: [{ page: "Get started", composition: [<h1>Get started</h1>] }]

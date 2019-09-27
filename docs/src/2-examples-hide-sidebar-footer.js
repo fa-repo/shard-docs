@@ -14,7 +14,7 @@ const sourceCode = `
   title="Documentation title"
   basePath="/examples/hide-sidebar-footer"
   showSidebarFooter={false}
-  tree={[
+  source={[
     {
       page: "Hide sidebar footer",
       composition: [<h1>Hide sidebar footer</h1>]

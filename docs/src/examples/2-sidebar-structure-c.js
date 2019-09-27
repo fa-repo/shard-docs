@@ -31,6 +31,6 @@ export default () => (
   <ShardDocs
     title="Indentation example"
     basePath="/examples/sidebar-structure-indentation"
-    tree={source}
+    source={source}
   />
 );

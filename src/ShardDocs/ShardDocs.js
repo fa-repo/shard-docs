@@ -28,7 +28,7 @@ class ShardDocs extends React.Component {
    * Parse documentation tree
    */
   get tree() {
-    let tree = this.props.tree;
+    let tree = this.props.source;
     const basePath = this.props.basePath;
     const locationPath = this.props.location.pathname;
     let pageIndex = 0;
@@ -202,7 +202,7 @@ class ShardDocs extends React.Component {
 ShardDocs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  tree: PropTypes.array,
+  source: PropTypes.array,
   basePath: PropTypes.string,
   showSidebarFooter: PropTypes.bool
 };
@@ -210,7 +210,7 @@ ShardDocs.propTypes = {
 ShardDocs.defaultProps = {
   title: "",
   description: "",
-  tree: [],
+  source: [],
   basePath: "/",
   showSidebarFooter: true
 };

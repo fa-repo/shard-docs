@@ -21,7 +21,7 @@ export default [
     sourceCode={`
 <ShardDocs
   title="Basic example"
-  tree={[
+  source={[
     { page: "Mangos", composition: [<h1>Mangos</h1>] },
     { page: "Plums", composition: [<h1>Plums</h1>] },
     { page: "Avacadoes", composition: [<h1>Avacadoes</h1>] },
@@ -35,7 +35,7 @@ export default [
     sourceCode={`
 <ShardDocs
   title="Groups example"
-  tree={[
+  source={[
     { page: "Camels", composition: [<h1>Camels</h1>] },
     { page: "Hippos", composition: [<h1>Hippos</h1>] },
     { page: "Baboons", composition: [<h1>Baboons</h1>] },
@@ -65,7 +65,7 @@ export default [
     sourceCode={`
 <ShardDocs
   title="Indentation example"
-  tree={[
+  source={[
     {
       group: "Europe bucket list:",
       pages: [

@@ -11,14 +11,14 @@ const shardDocsReference = `
 | \`title\` | string | \`""\` | A title for your documentation. Appears at the top of the sidebar. |
 | \`description\` | string | \`""\` | A description for your documentation. Appears below the title in the sidebar. |
 | \`basePath\` | string | \`"/docs"\` | A path prepended to every page.                            |
-| \`tree\`  | array  | \`[]\` |Documentation data organised as a tree. See below for help.         |
+| \`source\`  | array  | \`[]\` |Documentation data organised as a tree. See below for help.         |
 
 #### Configuring Shard-Docs structure
 
 The structure of ShardDocs is organised as a tree to indicate the relationship between each page and the indentation levels in the sidebar.
 
 ~~~js
-const tree = [
+const source = [
   { page: "Install", composition: [ <h1>Install</h1> ] },
   { page: "Basic usage", composition: [ <h1>Basic usage</h1> ] },
   {

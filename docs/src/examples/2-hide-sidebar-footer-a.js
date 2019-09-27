@@ -17,6 +17,6 @@ export default () => (
     title="Documentation title"
     basePath="/examples/hide-sidebar-footer"
     showSidebarFooter={false}
-    tree={source}
+    source={source}
   />
 );
