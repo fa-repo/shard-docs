@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update CodeExampleShard styles
 - Update ShardDocs styles
 - Made responsive
+- [Breaking change] Renamed tree prop to source
+- [Breaking changes] A few class names changed
+- Update table style
 
 ## [4.0.6] - 2019-09-03
 ### Fixed
