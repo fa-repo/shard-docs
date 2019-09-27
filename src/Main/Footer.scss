@@ -3,7 +3,6 @@
   margin-top: 40px;
   border-top: thin solid #dddddd;
   padding: 15px 0 45px 0;
-  display: flex;
 
   a {
     color: #0000ee;
@@ -14,7 +13,7 @@
     }
   }
 
-  .spacer {
-    flex: 1;
+  .shard-docs-nav-prev {
+    margin-left: auto;
   }
 }

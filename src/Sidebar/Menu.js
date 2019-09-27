@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SidebarMenuList from "./SidebarMenuList";
-import "./SidebarMenu.scss";
+import SidebarMenuList from "./MenuList";
+import "./Menu.scss";
 
 /**
  * SidebarMenu

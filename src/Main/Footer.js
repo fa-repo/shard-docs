@@ -17,7 +17,6 @@ const Footer = props =>
           </NavLink>
         </div>
       )}
-      <div className="spacer" />
       {props.nextLink && (
         <div className="shard-docs-nav-prev">
           <NavLink to={props.nextLink} exact>

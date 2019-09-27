@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./SidebarDescription.scss";
+import "./Description.scss";
 
 /**
  * SidebarDescription
