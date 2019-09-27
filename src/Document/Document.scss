@@ -133,11 +133,12 @@
 
     table th,
     table td {
-      border: thin solid white;
-      padding: 6px 20px 6px 0;
+      border: thin solid #bdbdbd !important;
+      padding: 5px !important;
       line-height: 1.6;
       vertical-align: top;
       width: 12%;
+      font-size: 13px !important;
 
       &:last-child {
         width: 99%;
