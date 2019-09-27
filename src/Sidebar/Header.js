@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import MenuIcon from "boxicons/svg/regular/bx-menu.svg";
-import "./SidebarHeader.scss";
+import "./Header.scss";
 
 /**
  * SidebarHeader
