@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Terminology: Groups are now referred to as folders. Pages are now referred to as documents.
 - Source data is now prepared in an adapter file.
 - Remove support for custom doc / folder slugs
+- Adjusted styles
 
 ## [4.1.0] - 2019-09-27
 ### Fixed
