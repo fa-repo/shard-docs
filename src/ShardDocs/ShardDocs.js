@@ -17,7 +17,7 @@ class ShardDocs extends React.Component {
   static defaultProps = {};
 
   state = {
-    source: fromSource(this.props.source, this.props.basePath, this.props.location.pathname)
+    source: fromSource(this.props.source, this.props.basePath)
   };
 
   /* -- Lifecycle methods -- */

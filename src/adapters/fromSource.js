@@ -2,10 +2,10 @@ import slugify from "slugify";
 import kebabCase from "lodash/kebabCase";
 import isArray from "lodash/isArray";
 
-export default function fromSource(source, basePath, locationPath) {
+export default function fromSource(source, basePath) {
   source = source.map(injectType);
   source = groupAdjacentTopLevelDocuments(source);
-  source = transformItems(source, basePath, [], 0, locationPath);
+  source = prepareItems(source, basePath, [], 0);
   return source;
 }
 
@@ -42,77 +42,38 @@ function groupAdjacentTopLevelDocuments(source) {
   return result.map(item => (item.type === "_folder" ? { ...item, type: "folder" } : item));
 }
 
-function transformItems(items, basePath, breadcrumbs = [], depth = 0, locationPath) {
-  basePath = basePath.replace(/\/+$/, "");
-
+function prepareItems(items, basePath, breadcrumbs = []) {
   return items
     .map(item => {
-      if (item.type === "external") {
-        return transformExternal(item, depth);
+      const { type, title } = item;
+      const slug = slugify(kebabCase(title), { lower: true });
+      const path = `${basePath}/${slug}`.replace(/\/+$/, "");
+      const breadcrumb = { text: title, link: path };
+
+      if (type === "external") {
+        return { type, title, link: item.externalLink };
       }
 
-      if (item.type === "folder" && item.title) {
-        const folder = transformFolder(item, basePath, breadcrumbs, depth);
-        const { path, breadcrumbs } = folder;
-        console.log();
-        folder.children = transformItems(item.children, path, breadcrumbs, depth + 1, locationPath);
-        folder.isActive = folder.path === locationPath && "active";
-        return folder;
+      if (type === "folder") {
+        const isEmpty = !item.children.length;
+
+        if (title) {
+          const children = prepareItems(item.children, path, [...breadcrumbs, breadcrumb]);
+          return { type, path, title, isEmpty, children };
+        } else {
+          const children = prepareItems(item.children, path, breadcrumbs);
+          return { type, path, children };
+        }
       }
 
-      if (item.type === "folder" && !item.title) {
-        const folder = transformDiscreteFolder(item, basePath, breadcrumbs, depth);
-        const { path, breadcrumbs } = folder;
-        folder.children = transformItems(item.children, path, breadcrumbs, depth + 1, locationPath);
-        return folder;
-      }
+      if (type === "document") {
+        const isEmpty = !isArray(item.document) || item.document.length <= 0;
+        const document = item.document;
 
-      if (item.type === "document") {
-        let document = transformDocument(item, basePath, breadcrumbs, depth);
-        document.isActive = document.path === locationPath && "active";
-        return document;
+        return { type, path, title, breadcrumbs: [...breadcrumbs, breadcrumb], isEmpty, document };
       }
 
       return null;
     })
     .filter(Boolean);
-}
-
-function transformExternal(item, depth) {
-  return { type: "external", title: item.title, link: item.externalLink, depth };
-}
-
-function transformDocument(item, basePath, breadcrumbs, depth) {
-  const slug = item.slug || slugify(kebabCase(item.title), { lower: true });
-  const path = `${basePath}/${slug}`;
-
-  return {
-    type: "document",
-    path: path,
-    title: item.title,
-    breadcrumbs: [...breadcrumbs, { text: item.title, link: path }],
-    document: item.document,
-    isEmpty: !isArray(item.document) || item.document.length <= 0,
-    depth
-  };
-}
-
-function transformFolder(item, basePath, breadcrumbs = [], depth) {
-  const slug = item.slug || slugify(kebabCase(item.title), { lower: true });
-  const path = `${basePath}/${slug}`;
-
-  return {
-    type: "folder",
-    path: path,
-    title: item.title,
-    breadcrumbs: [...breadcrumbs, { text: item.title, link: path }],
-    isEmpty: !item.children.length,
-    depth
-  };
-}
-
-function transformDiscreteFolder(item, basePath, breadcrumbs = [], depth) {
-  const path = item.slug ? `${basePath}/${item.slug}` : basePath;
-
-  return { type: "folder", depth, path };
 }
