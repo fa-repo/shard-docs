@@ -2,6 +2,7 @@ import React from "react";
 
 import { Switch, Route, NavLink } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
+import ScrollMemory from "react-router-scroll-memory";
 
 import ShardDocs from "@fa-repo/shard-docs";
 
@@ -83,6 +84,7 @@ const source = [
 const Docs = () => (
   <HashRouter>
     <>
+      <ScrollMemory />
       <Route path="/" render={() => <NavLink to="/docs">Go to documentation</NavLink>} exact />
       <Route
         path="/docs"
