@@ -14,8 +14,8 @@ const sourceCode = `
   basePath="/examples/hello-world"
   source={[
     {
-      page: "Hello world",
-      composition: [ <img src="/images/hello-world.jpg" alt="Turtle" /> ]
+      title: "Hello world",
+      document: [ <img src="/images/hello-world.jpg" alt="Turtle" /> ]
     }
   ]}
 />`;

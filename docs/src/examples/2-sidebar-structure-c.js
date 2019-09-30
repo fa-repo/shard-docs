@@ -7,19 +7,22 @@ import ShardDocs from "@fa-repo/shard-docs";
 
 const source = [
   {
-    group: "Europe bucket list:",
-    pages: [
+    title: "Europe bucket list:",
+    children: [
       {
-        group: null,
-        pages: [
-          { page: "- France: Scale Mont Blanc", composition: [<h1>Scale Mont Blanc</h1>] },
+        title: null,
+        children: [
           {
-            page: "- Italy: Dine at a Tuscan restaurent",
-            composition: [<h1>Dine at a Tuscan restaurent</h1>]
+            title: "- France: Scale Mont Blanc",
+            document: [<h1>Scale Mont Blanc</h1>]
           },
           {
-            page: "- Spain: Walk the Camino de Santiago",
-            composition: [<h1>Dine at a rustic Tuscan restaurent</h1>]
+            title: "- Italy: Dine at a Tuscan restaurent",
+            document: [<h1>Dine at a Tuscan restaurent</h1>]
+          },
+          {
+            title: "- Spain: Walk the Camino de Santiago",
+            document: [<h1>Dine at a rustic Tuscan restaurent</h1>]
           }
         ]
       }

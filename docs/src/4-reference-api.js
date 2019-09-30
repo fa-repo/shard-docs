@@ -19,44 +19,42 @@ The structure of ShardDocs is organised as a tree to indicate the relationship b
 
 ~~~js
 const source = [
-  { page: "Install", composition: [ <h1>Install</h1> ] },
-  { page: "Basic usage", composition: [ <h1>Basic usage</h1> ] },
+  { title: "Install", document: [ <h1>Install</h1> ] },
+  { title: "Basic usage", document: [ <h1>Basic usage</h1> ] },
   {
-    group: "Examples",
-    pages: [
-      { page: "Use case A", composition: [ <h1>Use case A</h1> ] },
-      { page: "Use case B", composition: [ <h1>Use case B</h1> ] }
+    title: "Examples",
+    children: [
+      { title: "Use case A", document: [ <h1>Use case A</h1> ] },
+      { title: "Use case B", document: [ <h1>Use case B</h1> ] }
     ]
   },
-  { external: "Github", link: "https://github.com" },
+  { title: "Github", externalLink: "https://github.com" },
 ]
 ~~~
 
-#### Page object properties
+#### Document object properties
 
-An object representing a page in the documentation tree.
-| Name      | Type   | Default | Required | Description                                            |
-|-----------|--------|---------|----------|--------------------------------------------------------|
-| \`page\`  | string | \`""\`  | Required | Define the object as a page and set the page title.    |
-| \`slug\`  | string | \`""\`  |          | A custom slug. Defaults to slugified version of title. |
-| \`composition\` | array | \`[]\` |      | An array of components that will be rendered in order when viewing this page. |
+An object representing a document in the documentation tree.
+| Name         | Type   | Default | Required | Description                                         |
+|--------------|--------|---------|----------|-----------------------------------------------------|
+| \`title\`    | string | \`""\`  | Required | Set the document title.                             |
+| \`document\` | array  | \`[]\`  |          | An array of components that will be rendered in order when viewing this document. |
 
 #### Group object properties
 
-An object containing an array of pages in the documentation tree.
-| Name      | Type   | Default | Required | Description                                            |
-|-----------|--------|---------|----------|--------------------------------------------------------|
-| \`group\` | string | \`""\`  | Required | Define the object as a group and set the group title.  |
-| \`slug\`  | string | \`""\`  |          | A custom slug. Defaults to slugified version of title. |
-| \`pages\` | array  | \`[]\`  |          | An array of pages in the group.                      |
+An object containing an array of documents in the documentation tree.
+| Name         | Type   | Default | Required | Description                                         |
+|--------------|--------|---------|----------|-----------------------------------------------------|
+| \`title\`    | string | \`""\`  |          | Set the group title.                                |
+| \`children\` | array  | \`[]\`  | Required | An array of pages in the group.                     |
 
 #### External object properties
 
 An object displaying an external link in the sidebar menu.
-| Name      | Type   | Default | Required | Description                                            |
-|-----------|--------|---------|----------|--------------------------------------------------------|
-| \`external\` | string | \`""\` | | Define the object as an external link and set the link text.  |
-| \`link\`     | string | \`""\`  | Required | The link path.                                    |
+| Name             | Type   | Default | Required | Description                                     |
+|------------------|--------|---------|----------|-------------------------------------------------|
+| \`title\`        | string | \`""\`  |          | Set the link text.                              |
+| \`externalLink\` | string | \`""\`  | Required | The link path.                                  |
 `;
 
 export default [<MarkdownShard markdown={shardDocsReference} />];

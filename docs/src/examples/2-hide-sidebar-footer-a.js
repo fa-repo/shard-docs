@@ -5,18 +5,10 @@ import ShardDocs from "@fa-repo/shard-docs";
  * Hide sidebar footer example
  */
 
-const source = [
-  {
-    page: "Hide sidebar footer",
-    composition: [<h1>Hide sidebar footer</h1>]
-  }
-];
-
 export default () => (
   <ShardDocs
-    title="Documentation title"
+    title="Hide sidebar footer"
     basePath="/examples/hide-sidebar-footer"
     showSidebarFooter={false}
-    source={source}
   />
 );

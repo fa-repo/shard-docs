@@ -14,12 +14,12 @@ const sourceCode = `
   title="Documentation title"
   source={[
     {
-      group: null,
-      pages: [
-        { page: "Getting started", composition: [<h1>Getting started</h1>] },
-        { page: "API reference", composition: [<h1>API reference</h1>] },
-        { page: "Basic example", composition: [<h1>Basic example</h1>] },
-        { external: "Github", link: "https://github.com/" }
+      title: null,
+      children: [
+        { title: "Some page A", document: [<p>Lorem ipsum...</p>] },
+        { title: "Some page B", document: [<p>Lorem ipsum...</p>] },
+        { title: "Some page C", document: [<p>Lorem ipsum...</p>] },
+        { title: "Github", externalLink: "https://github.com/" }
       ]
     }
   ]}
