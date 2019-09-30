@@ -5,7 +5,8 @@ import isArray from "lodash/isArray";
 export default function fromSource(source, basePath) {
   source = source.map(injectType);
   source = groupAdjacentTopLevelDocuments(source);
-  source = prepareItems(source, basePath, [], 0);
+  source = prepareItems(source, basePath);
+  source = prepareBreadcrumbs(source, [{ link: basePath, text: "~" }]);
   return source;
 }
 
@@ -42,13 +43,12 @@ function groupAdjacentTopLevelDocuments(source) {
   return result.map(item => (item.type === "_folder" ? { ...item, type: "folder" } : item));
 }
 
-function prepareItems(items, basePath, breadcrumbs = []) {
+function prepareItems(items, basePath) {
   return items
     .map(item => {
       const { type, title } = item;
       const slug = slugify(kebabCase(title), { lower: true });
       const path = `${basePath}/${slug}`.replace(/\/+$/, "");
-      const breadcrumb = { text: title, link: path };
 
       if (type === "external") {
         return { type, title, link: item.externalLink };
@@ -56,12 +56,11 @@ function prepareItems(items, basePath, breadcrumbs = []) {
 
       if (type === "folder") {
         const isEmpty = !item.children.length;
+        const children = prepareItems(item.children, path);
 
         if (title) {
-          const children = prepareItems(item.children, path, [...breadcrumbs, breadcrumb]);
           return { type, path, title, isEmpty, children };
         } else {
-          const children = prepareItems(item.children, path, breadcrumbs);
           return { type, path, children };
         }
       }
@@ -70,10 +69,26 @@ function prepareItems(items, basePath, breadcrumbs = []) {
         const isEmpty = !isArray(item.document) || item.document.length <= 0;
         const document = item.document;
 
-        return { type, path, title, breadcrumbs: [...breadcrumbs, breadcrumb], isEmpty, document };
+        return { type, path, title, isEmpty, document };
       }
 
       return null;
     })
     .filter(Boolean);
+}
+
+function prepareBreadcrumbs(items, breadcrumbs = []) {
+  return items.map(item => {
+    const crumb = { text: item.title, link: item.path };
+    if (item.type === "folder") {
+      if (item.title) {
+        item.children = prepareBreadcrumbs(item.children, [...breadcrumbs, crumb]);
+      } else {
+        item.children = prepareBreadcrumbs(item.children, breadcrumbs);
+      }
+    } else if (item.type === "document") {
+      return { ...item, breadcrumbs: [...breadcrumbs, crumb] };
+    }
+    return item;
+  });
 }

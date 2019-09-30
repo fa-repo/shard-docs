@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
     description: PropTypes.string,
     basePath: PropTypes.string,
     activePath: PropTypes.string,
-    tree: PropTypes.array,
+    source: PropTypes.array,
     showSidebarFooter: PropTypes.bool
   };
 
@@ -25,7 +25,7 @@ class Sidebar extends React.Component {
     description: "",
     basePath: "",
     activePath: "",
-    tree: [],
+    source: [],
     showSidebarFooter: true
   };
 
@@ -34,7 +34,7 @@ class Sidebar extends React.Component {
   };
 
   render() {
-    const { title, description, basePath, activePath, tree, showSidebarFooter } = this.props;
+    const { title, description, basePath, activePath, source, showSidebarFooter } = this.props;
     return (
       <aside className="shard-docs-sidebar">
         <SidebarHeader
@@ -45,7 +45,7 @@ class Sidebar extends React.Component {
         />
         {description && <SidebarDescription description={description} />}
         <SidebarMenu
-          items={tree}
+          items={source}
           basePath={basePath}
           activePath={activePath}
           showMenuOnMobile={this.state.showMenuOnMobile}

@@ -20,64 +20,39 @@ class ShardDocs extends React.Component {
     source: fromSource(this.props.source, this.props.basePath)
   };
 
-  /* -- Lifecycle methods -- */
-
-  /* -- Handler methods -- */
-
-  /* -- Getter methods -- */
-
   get documents() {
-    let documents = [];
-
-    function mapAndFlatten(items) {
-      return items.map(item => {
-        documents.push(item);
-        if (item.type === "folder") mapAndFlatten(item.children);
-      });
+    function flatten(items, accumulator = []) {
+      for (const item of items) {
+        if (item.type === "folder") {
+          accumulator = flatten(item.children, accumulator);
+        } else if (item.type === "document") {
+          accumulator = [...accumulator, item];
+        }
+      }
+      return accumulator;
     }
 
-    mapAndFlatten(this.state.source);
-
-    return documents.filter(item => ["document"].includes(item.type));
+    return flatten(this.state.source);
   }
 
-  get showDocuments() {
-    const urlPath = this.props.location.pathname;
+  get currentDocuments() {
+    const { location } = this.props;
 
-    return this.documents
-      .filter(document => document.type === "document" && document.path.startsWith(urlPath))
-      .map(document => {
-        return {
-          ...document,
-          breadcrumbs: [{ link: this.props.basePath, text: "~" }, ...document.breadcrumbs]
-        };
-      });
+    return this.documents.filter(document => document.path.startsWith(location.pathname));
   }
 
-  get currentDocument() {
-    const documents = this.documents;
-    const urlPath = this.props.location.pathname;
-    const index =
-      urlPath === this.props.basePath ? 0 : documents.findIndex(doc => doc.path === urlPath);
+  get prevPage() {
+    const { location } = this.props;
+    const prevIndex = this.documents.findIndex(document => document.path === location.pathname) - 1;
 
-    if (index >= 0 && documents[index]) return documents[index];
-    else return {};
+    return this.documents[prevIndex];
   }
 
-  get prevDocument() {
-    const documents = this.documents;
-    const urlPath = this.props.location.pathname;
-    const index =
-      urlPath === this.props.basePath ? 0 : documents.findIndex(doc => doc.path === urlPath);
-    if (index > 0) return documents[index - 1];
-  }
+  get nextPage() {
+    const { location } = this.props;
+    const nextIndex = this.documents.findIndex(doc => doc.path === location.pathname) + 1;
 
-  get nextDocument() {
-    const documents = this.documents;
-    const urlPath = this.props.location.pathname;
-    const index =
-      urlPath === this.props.basePath ? 0 : documents.findIndex(doc => doc.path === urlPath);
-    if (index >= 0 && index < documents.length - 1) return documents[index + 1];
+    return this.documents[nextIndex];
   }
 
   /* -- Action methods -- */
@@ -99,7 +74,7 @@ class ShardDocs extends React.Component {
       ...props
     } = this.props;
 
-    const documents = this.showDocuments;
+    const documents = this.currentDocuments;
 
     return (
       <div {...props} className="shard-docs">
@@ -108,11 +83,11 @@ class ShardDocs extends React.Component {
           description={description}
           basePath={basePath}
           activePath={this.props.location.pathname}
-          tree={this.state.source}
+          source={this.state.source}
           showSidebarFooter={this.props.showSidebarFooter}
         />
 
-        <Main prevDocument={this.prevDocument} nextDocument={this.nextDocument}>
+        <Main prevPage={this.prevPage} nextPage={this.nextPage}>
           {documents.map((document, i) => (
             <Document key={i} breadcrumbs={document.breadcrumbs} document={document.document} />
           ))}
