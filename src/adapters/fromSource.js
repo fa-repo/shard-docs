@@ -5,7 +5,6 @@ import isArray from "lodash/isArray";
 export default function fromSource(source, basePath) {
   source = source.map(injectType);
   source = groupAdjacentTopLevelDocuments(source);
-  console.log(source);
   source = prepareItems(source, basePath);
   source = prepareBreadcrumbs(source, [{ link: basePath, text: "~" }]);
   return source;
