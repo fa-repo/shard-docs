@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Fix react-router not adding pages to history
+- Fix CodeExampleShard crashing when more than one child was provided
 ### Removed
 - Support for headings
 ### Changed
