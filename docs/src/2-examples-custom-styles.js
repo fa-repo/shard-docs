@@ -19,8 +19,8 @@ const sourceCode = `<>
     basePath="/examples/custom-styles/essentials/get-started"
     source={[
       {
-        group: "Essentials",
-        pages: [{ page: "Get started", composition: [<h1>Get started</h1>] }]
+        title: "Essentials",
+        children: [{ title: "Get started", document: [<h1>Get started</h1>] }]
       }
     ]}
   />

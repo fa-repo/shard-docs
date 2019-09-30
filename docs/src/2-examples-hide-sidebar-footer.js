@@ -11,19 +11,17 @@ const github =
 
 const sourceCode = `
 <ShardDocs
-  title="Documentation title"
+  title="Hide sidebar footer"
   basePath="/examples/hide-sidebar-footer"
   showSidebarFooter={false}
-  source={[
-    {
-      page: "Hide sidebar footer",
-      composition: [<h1>Hide sidebar footer</h1>]
-    }
-  ]}
 />`;
 
 export default [
-  <CodeExampleShard title="Sidebar sections" repository={github} sourceCode={sourceCode}>
+  <CodeExampleShard
+    title="Look, nothing shown at the bottom of the sidebar."
+    repository={github}
+    sourceCode={sourceCode}
+  >
     <IframeShard path="#/examples/hide-sidebar-footer" style={{ width: "1200px" }} />
   </CodeExampleShard>
 ];

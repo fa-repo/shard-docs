@@ -34,8 +34,7 @@ ReactDOM.render(
   <ShardDocs
     title="Documentation title"
     structure={[
-      { heading: "Essentials" },
-      { title: "Get started", shards: [ <h1>Get started</h1> ] }
+      { title: "Get started", document: [ <h1>Get started</h1> ] }
     ]}
   />,
     document.getElementById('app')

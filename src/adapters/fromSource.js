@@ -5,6 +5,7 @@ import isArray from "lodash/isArray";
 export default function fromSource(source, basePath) {
   source = source.map(injectType);
   source = groupAdjacentTopLevelDocuments(source);
+  console.log(source);
   source = prepareItems(source, basePath);
   source = prepareBreadcrumbs(source, [{ link: basePath, text: "~" }]);
   return source;
@@ -29,10 +30,10 @@ function groupAdjacentTopLevelDocuments(source) {
 
   source.map((item, i) => {
     if (item.type === "document" || item.type === "external") {
-      if (result[i - 1] && result[i - 1].type === "_folder") {
-        result[i - 1].children.push(item);
+      if (result[result.length - 1] && result[result.length - 1].type === "_folder") {
+        result[result.length - 1].children.push(item);
       } else {
-        result[i] = { title: null, children: [item], type: "_folder" };
+        result[result.length] = { title: null, children: [item], type: "_folder" };
       }
     } else {
       result.push(item);

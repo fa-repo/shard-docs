@@ -22,9 +22,9 @@ export default [
 <ShardDocs
   title="Basic example"
   source={[
-    { page: "Mangos", composition: [<h1>Mangos</h1>] },
-    { page: "Plums", composition: [<h1>Plums</h1>] },
-    { page: "Avacadoes", composition: [<h1>Avacadoes</h1>] },
+    { title: "Mangos", document: [<h1>Mangos</h1>] },
+    { title: "Plums", document: [<h1>Plums</h1>] },
+    { title: "Avacadoes", document: [<h1>Avacadoes</h1>] }
   ]}
 />`}
   >
@@ -36,23 +36,23 @@ export default [
 <ShardDocs
   title="Groups example"
   source={[
-    { page: "Camels", composition: [<h1>Camels</h1>] },
-    { page: "Hippos", composition: [<h1>Hippos</h1>] },
-    { page: "Baboons", composition: [<h1>Baboons</h1>] },
+    { title: "Camels", document: [<h1>Camels</h1>] },
+    { title: "Hippos", document: [<h1>Hippos</h1>] },
+    { title: "Baboons", document: [<h1>Baboons</h1>] },
     {
       group: "Wine",
-      pages: [
-        { page: "Red Bordeaux", composition: [<h1>Red Bordeaux</h1>] },
-        { page: "Champagne", composition: [<h1>Champagne</h1>] },
-        { page: "Rioja", composition: [<h1>Rioja</h1>] }
+      titles: [
+        { title: "Red Bordeaux", document: [<h1>Red Bordeaux</h1>] },
+        { title: "Champagne", document: [<h1>Champagne</h1>] },
+        { title: "Rioja", document: [<h1>Rioja</h1>] }
       ]
     },
     {
       group: null,
-      pages: [
-        { page: "Great Western Rail", composition: [<h1>Great Western Rail</h1>] },
-        { page: "East Midlands Trains", composition: [<h1>East Midlands Trains</h1>] },
-        { page: "Eurostar", composition: [<h1>Eurostar</h1>] }
+      titles: [
+        { title: "Great Western Rail", document: [<h1>Great Western Rail</h1>] },
+        { title: "East Midlands Trains", document: [<h1>East Midlands Trains</h1>] },
+        { title: "Eurostar", document: [<h1>Eurostar</h1>] }
       ]
     }
   ]}
@@ -67,22 +67,22 @@ export default [
   title="Indentation example"
   source={[
     {
-      group: "Europe bucket list:",
-      pages: [
+      title: "Europe bucket list:",
+      children: [
         {
-          group: null,
-          pages: [
+          title: null,
+          children: [
             {
-              page: "- France: Scale Mont Blanc",
-              composition: [<h1>Scale Mont Blanc</h1>]
+              title: "- France: Scale Mont Blanc",
+              document: [<h1>Scale Mont Blanc</h1>]
             },
             {
-              page: "- Italy: Dine at a Tuscan restaurent",
-              composition: [<h1>Dine at a Tuscan restaurent</h1>]
+              title: "- Italy: Dine at a Tuscan restaurent",
+              document: [<h1>Dine at a Tuscan restaurent</h1>]
             },
             {
-              page: "- Spain: Walk the Camino de Santiago",
-              composition: [<h1>Dine at a rustic Tuscan restaurent</h1>]
+              title: "- Spain: Walk the Camino de Santiago",
+              document: [<h1>Dine at a rustic Tuscan restaurent</h1>]
             }
           ]
         }
