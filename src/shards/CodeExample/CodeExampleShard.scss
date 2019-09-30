@@ -27,7 +27,7 @@
 
   menu a {
     color: black;
-    padding: 10px;
+    padding: 10px !important;
     transition: opacity 150ms ease-out;
     border-radius: 50%;
     display: inline-flex;
@@ -36,7 +36,7 @@
       background: #e0e0e0;
     }
 
-    a:after {
+    &:after {
       display: none;
     }
 
