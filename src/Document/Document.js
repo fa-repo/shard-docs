@@ -8,9 +8,7 @@ import "./prism.scss";
  * Document
  */
 
-const Document = ({ document }) => {
-  const { breadcrumbs, composition = [] } = document;
-
+const Document = ({ document, breadcrumbs }) => {
   return (
     <article className="document">
       <ul className="breadcrumbs">
@@ -18,20 +16,19 @@ const Document = ({ document }) => {
           <li key={i}>{link && <NavLink to={link}>{text}</NavLink>}</li>
         ))}
       </ul>
-      <div className="content">{composition.map((component, i) => ({ ...component, key: i }))}</div>
+      <div className="content">{document.map((component, i) => ({ ...component, key: i }))}</div>
     </article>
   );
 };
 
 Document.propTypes = {
-  document: PropTypes.shape({
-    breadcrumbs: PropTypes.array.isRequired,
-    composition: PropTypes.array.isRequired
-  })
+  breadcrumbs: PropTypes.array.isRequired,
+  document: PropTypes.array.isRequired
 };
 
 Document.defaultProps = {
-  document: {}
+  breadcrumbs: [],
+  document: []
 };
 
 export default Document;

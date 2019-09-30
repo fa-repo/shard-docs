@@ -16,7 +16,7 @@ const ExternalLinkNode = ({ title, link, ...props }) => (
   </li>
 );
 
-const PageNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) => {
+const DocumentNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) => {
   return (
     <li {...props}>
       <NavLink
@@ -56,47 +56,63 @@ const HeadingNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) =
   </li>
 );
 
-const GroupNode = ({ title, pages, path, isActive, isEmpty, basePath, onNavigate, ...props }) => (
+const GroupNode = ({
+  title,
+  children,
+  path,
+  isActive,
+  isEmpty,
+  basePath,
+  activePath,
+  onNavigate,
+  ...props
+}) => (
   <ul {...props}>
     {title && (
       <HeadingNode
         title={title}
         path={path}
-        isActive={isActive}
+        isActive={activePath === path}
         isEmpty={isEmpty}
         onNavigate={onNavigate}
       />
     )}
-    <SidebarMenuList items={pages} basePath={basePath} onNavigate={onNavigate} />
+    <SidebarMenuList
+      items={children}
+      basePath={basePath}
+      activePath={activePath}
+      onNavigate={onNavigate}
+    />
   </ul>
 );
 
-const SidebarMenuList = ({ items, basePath, onNavigate }) => {
+const SidebarMenuList = ({ items, basePath, activePath, onNavigate }) => {
   return (
     <>
       {items.map((item, i) => {
-        const { type, title, link, path, isActive, pages, isEmpty } = item;
-        if (type === "page") {
+        const { type, title, link, path, isActive, children, isEmpty } = item;
+        if (type === "document") {
           return (
-            <PageNode
+            <DocumentNode
               key={i}
               title={title}
               path={path}
-              isActive={isActive}
+              isActive={activePath === path}
               isEmpty={isEmpty}
               onNavigate={onNavigate}
             />
           );
         } else if (type === "external") {
           return <ExternalLinkNode key={i} title={title} link={link} />;
-        } else if (type === "group" || type === "discrete-group") {
+        } else if (type === "folder") {
           return (
             <GroupNode
               key={i}
               path={item.path}
               title={title}
-              pages={pages}
+              children={children}
               basePath={basePath}
+              activePath={activePath}
               isActive={isActive}
               isEmpty={isEmpty}
               onNavigate={onNavigate}

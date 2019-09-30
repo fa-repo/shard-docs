@@ -6,25 +6,25 @@ import { HashRouter } from "react-router-dom";
 import ShardDocs from "@fa-repo/shard-docs";
 
 // Introduction
-import GetStartedPage from "./1-introduction-get-started";
+import getStarted from "./1-introduction-get-started";
 
 // Examples
-import HelloWorldPage from "./2-examples-hello-world";
-import SidebarStructurePage from "./2-examples-sidebar-structure";
-import SidebarDescriptionPage from "./2-examples-sidebar-description";
-import SidebarExternalLinkPage from "./2-examples-sidebar-external-link";
-import HideSidebarFooterPage from "./2-examples-hide-sidebar-footer";
-import CustomStylesPage from "./2-examples-custom-styles";
+import helloWorld from "./2-examples-hello-world";
+import sidebarStructure from "./2-examples-sidebar-structure";
+import sidebarDescription from "./2-examples-sidebar-description";
+import sidebarExternalLink from "./2-examples-sidebar-external-link";
+import hideSidebarFooter from "./2-examples-hide-sidebar-footer";
+import customStyles from "./2-examples-custom-styles";
 
 // Shards
-import MarkdownShardPage from "./3-shards-markdown";
-import IframeShardPage from "./3-shards-iframe";
-import SectionShardPage from "./3-shards-section";
-import CodeExampleShardPage from "./3-shards-code-example";
+import markdownShard from "./3-shards-markdown";
+import iframeShard from "./3-shards-iframe";
+import sectionShard from "./3-shards-section";
+import codeExampleShard from "./3-shards-code-example";
 
 // Reference material
-import APIReferencePage from "./4-reference-api";
-import CSSReferencePage from "./4-reference-css";
+import apiReference from "./4-reference-api";
+import cssReference from "./4-reference-css";
 
 // Examples
 import HelloWorldExample from "./examples/2-hello-world-a";
@@ -33,10 +33,10 @@ import SidebarExternalLinkExample from "./examples/2-sidebar-external-link-a";
 import SidebarStructureBasicExample from "./examples/2-sidebar-structure-a";
 import SidebarStructureGroupsExample from "./examples/2-sidebar-structure-b";
 import SidebarStructureIndentationExample from "./examples/2-sidebar-structure-c";
-
 import SidebarCustomStylesExample from "./examples/2-custom-styles-a";
 import HideSidebarFooterExample from "./examples/2-hide-sidebar-footer-a";
 
+// Styles
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
 import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";
@@ -48,47 +48,50 @@ import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";
  * Docs
  */
 
+const source = [
+  { title: "Get started", document: getStarted },
+  {
+    title: "Examples",
+    children: [
+      { title: "Hello world", document: helloWorld },
+      { title: "Sidebar structure", document: sidebarStructure },
+      { title: "Sidebar description", document: sidebarDescription },
+      { title: "Sidebar external link", document: sidebarExternalLink },
+      { title: "Hide sidebar footer", document: hideSidebarFooter },
+      { title: "Custom styles", document: customStyles }
+    ]
+  },
+  {
+    title: "Shards",
+    children: [
+      { title: "CodeExampleShard", document: codeExampleShard },
+      { title: "IframeShard", document: iframeShard },
+      { title: "MarkdownShard", document: markdownShard },
+      { title: "SectionShard", document: sectionShard }
+    ]
+  },
+  {
+    title: "Reference",
+    children: [
+      { title: "API reference", document: apiReference },
+      { title: "CSS reference", document: cssReference }
+    ]
+  },
+  { title: "Github", externalLink: "http://github.com" }
+];
+
 const Docs = () => (
   <HashRouter>
     <>
-      <Route path="/" render={props => <NavLink to="/docs">Go to documentation</NavLink>} exact />
+      <Route path="/" render={() => <NavLink to="/docs">Go to documentation</NavLink>} exact />
       <Route
         path="/docs"
-        render={props => (
+        render={() => (
           <ShardDocs
             title="@fa-repo/shard-docs"
             description="A concise / extendable react component for handling documentation"
             basePath="/docs"
-            source={[
-              { page: "Get started", composition: GetStartedPage },
-              {
-                group: "Examples",
-                pages: [
-                  { page: "Hello world", composition: HelloWorldPage },
-                  { page: "Sidebar structure", composition: SidebarStructurePage },
-                  { page: "Sidebar description", composition: SidebarDescriptionPage },
-                  { page: "Sidebar external link", composition: SidebarExternalLinkPage },
-                  { page: "Hide sidebar footer", composition: HideSidebarFooterPage },
-                  { page: "Custom styles", composition: CustomStylesPage }
-                ]
-              },
-              {
-                group: "Shards",
-                pages: [
-                  { page: "CodeExampleShard", composition: CodeExampleShardPage },
-                  { page: "IframeShard", composition: IframeShardPage },
-                  { page: "MarkdownShard", composition: MarkdownShardPage },
-                  { page: "SectionShard", composition: SectionShardPage }
-                ]
-              },
-              {
-                group: "Reference",
-                pages: [
-                  { page: "API reference", composition: APIReferencePage },
-                  { page: "CSS reference", composition: CSSReferencePage }
-                ]
-              }
-            ]}
+            source={source}
           />
         )}
       />
