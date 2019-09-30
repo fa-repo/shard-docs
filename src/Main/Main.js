@@ -7,26 +7,26 @@ import "./Main.scss";
  * Main
  */
 
-const Main = ({ prevPage, nextPage, ...props }) => {
+const Main = ({ prevDocument, nextDocument, ...props }) => {
   return (
     <div className="shard-docs-main">
       {props.children}
       <Footer
-        prevText={prevPage && prevPage.title}
-        prevLink={prevPage && prevPage.path}
-        nextText={nextPage && nextPage.title}
-        nextLink={nextPage && nextPage.path}
+        prevText={prevDocument && prevDocument.title}
+        prevLink={prevDocument && prevDocument.path}
+        nextText={nextDocument && nextDocument.title}
+        nextLink={nextDocument && nextDocument.path}
       />
     </div>
   );
 };
 
 Main.propTypes = {
-  prevPage: PropTypes.shape({
+  prevDocument: PropTypes.shape({
     title: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired
   }),
-  nextPage: PropTypes.shape({
+  nextDocument: PropTypes.shape({
     title: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired
   })

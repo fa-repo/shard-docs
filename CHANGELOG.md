@@ -5,11 +5,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Removes
+- Support for headings
+### Changed
+- [Breaking change] Source schema
+- Terminology: Groups are now referred to as folders. Pages are now referred to as documents.
+- Source data is now prepared in an adapter file.
+- Remove support for custom doc / folder slugs
 
 ## [4.1.0] - 2019-09-27
 ### Fixed
 - Sidebar-structure doc crashing on load
-### Remove
+### Removed
 - Box shadow from CodeExampleShard as well as noShadow prop
 ### Changed
 - [BREAKING CHANGE] Renamed tree prop to source

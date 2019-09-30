@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import Document from "../Document";
 import Main from "../Main";
 import Sidebar from "../Sidebar";
-import transform from "./transformers";
+import fromSource from "../adapters/fromSource";
 import "./ShardDocs.scss";
 
 /**
@@ -16,7 +16,9 @@ class ShardDocs extends React.Component {
 
   static defaultProps = {};
 
-  state = {};
+  state = {
+    source: fromSource(this.props.source, this.props.basePath, this.props.location.pathname)
+  };
 
   /* -- Lifecycle methods -- */
 
@@ -24,138 +26,58 @@ class ShardDocs extends React.Component {
 
   /* -- Getter methods -- */
 
-  /**
-   * Parse documentation tree
-   */
-  get tree() {
-    let tree = this.props.source;
-    const basePath = this.props.basePath;
-    const locationPath = this.props.location.pathname;
-    let pageIndex = 0;
-    let depth = 0;
-
-    /* Combine all top level adjacent groups into discrete groups. */
-
-    let tree2 = [];
-    tree.map((item, i) => {
-      if (Boolean(item.page) || Boolean(item.external)) {
-        const lastItem = tree2[tree2.length - 1] || {};
-
-        if (lastItem._discrete_group === null) {
-          tree2[tree2.length - 1].pages.push(item);
-        } else {
-          tree2[tree2.length] = { _discrete_group: null, pages: [item] };
-        }
-      } else {
-        tree2.push(item);
-      }
-      return item;
-    });
-
-    tree = tree2.map(item => {
-      if (item._discrete_group === null) {
-        return { ...item, group: null };
-      } else {
-        return item;
-      }
-    });
-
-    const transformTree = (items, basePath, breadcrumbs = [], depth = 0) => {
-      basePath = basePath.replace(/\/+$/, "");
-
-      return items
-        .map(item => {
-          const isExternal = Boolean(item.external);
-          const isPage = Boolean(item.page);
-          const isGroup = Boolean(item.group);
-          const isDiscreteGroup = item.group === null;
-
-          if (isExternal) {
-            return transform.external(item, depth);
-          }
-
-          if (isGroup) {
-            const group = transform.group(item, basePath, breadcrumbs, depth);
-            const { path, breadcrumbs } = group;
-            group.pages = transformTree(item.pages, path, breadcrumbs, depth + 1);
-            group.isActive = group.path === locationPath && "active";
-            return group;
-          }
-
-          if (isDiscreteGroup) {
-            const group = transform.discreteGroup(item, basePath, breadcrumbs, depth);
-            const { path, breadcrumbs } = group;
-            group.pages = transformTree(item.pages, path, breadcrumbs, depth + 1);
-            return group;
-          }
-
-          if (isPage) {
-            let page = transform.page(item, basePath, breadcrumbs, depth);
-            page.pageIndex = pageIndex;
-            pageIndex = pageIndex + 1;
-            page.isActive = page.path === locationPath && "active";
-            return page;
-          }
-
-          return null;
-        })
-        .filter(Boolean);
-    };
-
-    return transformTree(tree, basePath);
-  }
-
-  get pages() {
-    let pages = [];
+  get documents() {
+    let documents = [];
 
     function mapAndFlatten(items) {
       return items.map(item => {
-        pages.push(item);
-        if (item.type === "group") mapAndFlatten(item.pages);
-        else if (item.type === "discrete-group") mapAndFlatten(item.pages);
+        documents.push(item);
+        if (item.type === "folder") mapAndFlatten(item.children);
       });
     }
 
-    mapAndFlatten(this.tree);
+    mapAndFlatten(this.state.source);
 
-    return pages.filter(item => ["group", "page"].includes(item.type));
+    return documents.filter(item => ["document"].includes(item.type));
   }
 
-  get documents() {
+  get showDocuments() {
     const urlPath = this.props.location.pathname;
 
-    return this.pages
-      .filter(page => page.type === "page" && page.path.startsWith(urlPath))
+    return this.documents
+      .filter(document => document.type === "document" && document.path.startsWith(urlPath))
       .map(document => {
-        document.breadcrumbs = [{ link: this.props.basePath, text: "~" }, ...document.breadcrumbs];
-        return document;
+        return {
+          ...document,
+          breadcrumbs: [{ link: this.props.basePath, text: "~" }, ...document.breadcrumbs]
+        };
       });
   }
 
-  get currentPage() {
-    const pages = this.pages;
+  get currentDocument() {
+    const documents = this.documents;
     const urlPath = this.props.location.pathname;
     const index =
-      urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
+      urlPath === this.props.basePath ? 0 : documents.findIndex(doc => doc.path === urlPath);
 
-    if (index >= 0 && pages[index]) return pages[index];
+    if (index >= 0 && documents[index]) return documents[index];
     else return {};
   }
 
-  get prevPage() {
-    const pages = this.pages;
+  get prevDocument() {
+    const documents = this.documents;
     const urlPath = this.props.location.pathname;
     const index =
-      urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
-    if (index > 0) return pages[index - 1];
+      urlPath === this.props.basePath ? 0 : documents.findIndex(doc => doc.path === urlPath);
+    if (index > 0) return documents[index - 1];
   }
 
-  get nextPage() {
-    const pages = this.pages;
+  get nextDocument() {
+    const documents = this.documents;
     const urlPath = this.props.location.pathname;
     const index =
-      urlPath === this.props.basePath ? 0 : pages.findIndex(doc => doc.path === urlPath);
-    if (index >= 0 && index < pages.length - 1) return pages[index + 1];
+      urlPath === this.props.basePath ? 0 : documents.findIndex(doc => doc.path === urlPath);
+    if (index >= 0 && index < documents.length - 1) return documents[index + 1];
   }
 
   /* -- Action methods -- */
@@ -168,7 +90,7 @@ class ShardDocs extends React.Component {
       description,
       baseLink,
       basePath,
-      tree,
+      source,
       staticContext,
       history,
       location,
@@ -177,7 +99,7 @@ class ShardDocs extends React.Component {
       ...props
     } = this.props;
 
-    const documents = this.documents;
+    const documents = this.showDocuments;
 
     return (
       <div {...props} className="shard-docs">
@@ -185,13 +107,14 @@ class ShardDocs extends React.Component {
           title={title}
           description={description}
           basePath={basePath}
-          tree={this.tree}
+          activePath={this.props.location.pathname}
+          tree={this.state.source}
           showSidebarFooter={this.props.showSidebarFooter}
         />
 
-        <Main prevPage={this.prevPage} nextPage={this.nextPage}>
+        <Main prevDocument={this.prevDocument} nextDocument={this.nextDocument}>
           {documents.map((document, i) => (
-            <Document key={i} document={document} />
+            <Document key={i} breadcrumbs={document.breadcrumbs} document={document.document} />
           ))}
         </Main>
       </div>

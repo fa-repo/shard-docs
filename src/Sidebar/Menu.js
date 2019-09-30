@@ -13,6 +13,7 @@ const SidebarMenu = props => {
       <SidebarMenuList
         items={props.items}
         basePath={props.basePath}
+        activePath={props.activePath}
         onNavigate={props.onNavigate}
       />
     </div>
@@ -22,12 +23,14 @@ const SidebarMenu = props => {
 SidebarMenu.propTypes = {
   items: PropTypes.array,
   basePath: PropTypes.string,
+  activePath: PropTypes.string,
   showMenuOnMobile: PropTypes.bool,
   onNavigate: PropTypes.func
 };
 SidebarMenu.defaultProps = {
   items: [],
-  items: "",
+  basePath: "",
+  activePath: "",
   showMenuOnMobile: false,
   onNavigate: () => {}
 };
