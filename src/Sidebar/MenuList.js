@@ -22,7 +22,6 @@ const DocumentNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) 
       <NavLink
         className={classnames(isActive && "active")}
         to={path}
-        replace={!isActive} // suppress "Warning: Hash history cannot PUSH the same path"
         onClick={e => {
           if (isEmpty) e.preventDefault();
           onNavigate();
@@ -42,7 +41,6 @@ const HeadingNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) =
       <NavLink
         className={classnames(isActive && "active")}
         to={path}
-        replace={!isActive} // suppress "Warning: Hash history cannot PUSH the same path"
         onClick={e => {
           if (isEmpty) e.preventDefault();
           onNavigate();

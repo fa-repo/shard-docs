@@ -5,7 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Removes
+### Fixed
+- Fix react-router not adding pages to history
+- Fix CodeExampleShard crashing when more than one child was provided
+- Fix inability to toggle SectionShard without providing an id.
+### Removed
 - Support for headings
 ### Changed
 - [Breaking change] Source schema

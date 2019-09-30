@@ -4,6 +4,7 @@ import classnames from "classnames";
 import parseMarkdown from "../lib/parseMarkdown";
 import CodeIcon from "boxicons/svg/regular/bx-code.svg";
 import GithubIcon from "boxicons/svg/logos/bxl-github.svg";
+import isArray from "lodash/isArray";
 import uniqid from "uniqid";
 import "./CodeExampleShard.scss";
 
@@ -52,6 +53,14 @@ class CodeExampleShard extends React.Component {
     const sourceCode = this.getSourceCode();
     const showHeader = title || sourceCode || repository;
     const displayCode = this.state.displayCode;
+    let children = this.props.children;
+    if (children) {
+      children = isArray(children) ? (
+        children.map((child, i) => <child.type {...child.props} key={this.state.id + i} />)
+      ) : (
+        <children.type {...children.props} key={this.state.id} />
+      );
+    }
 
     return (
       <section className={classnames("code-example-shard", this.props.className)}>
@@ -80,9 +89,10 @@ class CodeExampleShard extends React.Component {
             />
           )}
 
-          {this.props.children && (
+          {children}
+          {/* {this.props.children && (
             <this.props.children.type {...this.props.children.props} key={this.state.id} />
-          )}
+          )} */}
         </div>
       </section>
     );
