@@ -75,5 +75,8 @@
     "react": "^16",
     "react-dom": "^16",
     "react-router-dom": "^5"
+  },
+  "dependencies": {
+    "@fa-repo/base-react": "^2.2.1"
   }
 }

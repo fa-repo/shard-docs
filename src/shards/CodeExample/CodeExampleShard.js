@@ -6,6 +6,7 @@ import CodeIcon from "boxicons/svg/regular/bx-code.svg";
 import GithubIcon from "boxicons/svg/logos/bxl-github.svg";
 import isArray from "lodash/isArray";
 import uniqid from "uniqid";
+import BaseLink from "@fa-repo/base-react/dist/link";
 import "./CodeExampleShard.scss";
 
 /**
@@ -74,9 +75,9 @@ class CodeExampleShard extends React.Component {
                 <CodeIcon />
               </a>
               {repository && (
-                <a className="repository" href={repository} target="_blank">
+                <BaseLink className="repository" href={repository} newTab>
                   <GithubIcon />
-                </a>
+                </BaseLink>
               )}
             </menu>
           </header>
@@ -88,11 +89,7 @@ class CodeExampleShard extends React.Component {
               dangerouslySetInnerHTML={{ __html: parseMarkdown(sourceCode) }}
             />
           )}
-
           {children}
-          {/* {this.props.children && (
-            <this.props.children.type {...this.props.children.props} key={this.state.id} />
-          )} */}
         </div>
       </section>
     );

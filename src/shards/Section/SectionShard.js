@@ -1,19 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import BaseLink from "@fa-repo/base-react/dist/link";
 import "./SectionShard.scss";
-
-const Link = props => (
-  <a
-    href={props.href}
-    onClick={e => {
-      e.preventDefault();
-      props.onClick(e);
-    }}
-  >
-    {props.text}
-  </a>
-);
 
 class SectionShard extends React.Component {
   static propTypes = {
@@ -42,7 +31,8 @@ class SectionShard extends React.Component {
     return expanded === null ? this.state.expanded : expanded === "true";
   };
 
-  toggle = expanded => {
+  toggle = () => {
+    const expanded = !this.isExpanded();
     if (this.props.persistState) localStorage.setItem(this.state.storageId, expanded);
     this.setState({ expanded });
   };
@@ -52,7 +42,7 @@ class SectionShard extends React.Component {
     return (
       <div {...props} className={classnames("shard-docs-section-shard", props.className)}>
         <h2 className="shard-docs-section-shard-title">
-          <Link href="#" onClick={e => this.toggle(!this.isExpanded())} text={title} />
+          <BaseLink href="#" onClick={() => this.toggle()} preventDefault text={"title"} />
         </h2>
         {this.isExpanded() && <div className="shard-docs-section-shard">{props.children}</div>}
       </div>
