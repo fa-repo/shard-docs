@@ -27,26 +27,24 @@ class SectionShard extends React.Component {
   };
 
   state = {
-    collapsed: true
+    expanded: true,
+    storageId: "fa-repo-section-shard-state-" + this.props.persistState
   };
 
   componentDidMount() {
     if (this.props.persistState) {
-      let collapsed = this.isCollapsed();
-      this.setState({ collapsed });
+      this.setState({ expanded: this.isExpanded() });
     }
   }
 
-  isCollapsed = () => {
-    let collapsed = localStorage.getItem("fa-repo-section-shard-state-" + this.props.persistState);
-    return collapsed === null ? true : collapsed == "true";
+  isExpanded = () => {
+    let expanded = localStorage.getItem(this.state.storageId);
+    return expanded === null ? this.state.expanded : expanded === "true";
   };
 
-  setCollapsed = collapsed => {
-    if (this.props.persistState) {
-      localStorage.setItem("fa-repo-section-shard-state-" + this.props.persistState, collapsed);
-    }
-    this.setState({ collapsed });
+  toggle = expanded => {
+    if (this.props.persistState) localStorage.setItem(this.state.storageId, expanded);
+    this.setState({ expanded });
   };
 
   render() {
@@ -54,9 +52,9 @@ class SectionShard extends React.Component {
     return (
       <div {...props} className={classnames("shard-docs-section-shard", props.className)}>
         <h2 className="shard-docs-section-shard-title">
-          <Link href="#" onClick={e => this.setCollapsed(!this.isCollapsed())} text={title} />
+          <Link href="#" onClick={e => this.toggle(!this.isExpanded())} text={title} />
         </h2>
-        {this.isCollapsed() && <div className="shard-docs-section-shard">{props.children}</div>}
+        {this.isExpanded() && <div className="shard-docs-section-shard">{props.children}</div>}
       </div>
     );
   }
