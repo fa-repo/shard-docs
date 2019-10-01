@@ -48,7 +48,9 @@ function prepareItems(items, basePath) {
     .map(item => {
       const { type, title } = item;
       const slug = slugify(kebabCase(title), { lower: true });
-      const path = `${basePath}/${slug}`.replace(/\/+$/, "");
+      let path = `${basePath}/${slug}`;
+      path = path.replace(/\/+$/, ""); // remove trailing slash
+      path = path.replace(/\/+/g, "/"); // remove duplicate slash
 
       if (type === "external") {
         return { type, title, link: item.externalLink };
