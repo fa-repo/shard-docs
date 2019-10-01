@@ -85,14 +85,11 @@ const Docs = () => (
   <HashRouter>
     <>
       <ScrollMemory />
-      <Route path="/" render={() => <NavLink to="/docs">Go to documentation</NavLink>} exact />
       <Route
-        path="/docs"
         render={() => (
           <ShardDocs
             title="@fa-repo/shard-docs"
             description="A concise / extendable react component for handling documentation"
-            basePath="/docs"
             source={source}
           />
         )}
