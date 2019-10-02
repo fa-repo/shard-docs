@@ -9,7 +9,7 @@ import "./Main.scss";
 
 const Main = ({ prevPage, nextPage, ...props }) => {
   return (
-    <div className="shard-docs-main">
+    <main className="shard-docs-main">
       {props.children}
       <Footer
         prevText={prevPage && prevPage.title}
@@ -17,7 +17,7 @@ const Main = ({ prevPage, nextPage, ...props }) => {
         nextText={nextPage && nextPage.title}
         nextLink={nextPage && nextPage.path}
       />
-    </div>
+    </main>
   );
 };
 
