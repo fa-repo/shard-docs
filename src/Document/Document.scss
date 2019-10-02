@@ -1,161 +1,130 @@
 .document {
-  .breadcrumbs {
-    padding: 5px 6px;
-    margin: 0;
-    font-size: 12px;
-    background: #212121;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05), 0 0 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.document-body {
+  width: 100%;
+  padding: 15px;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 500;
+  }
+
+  pre code {
+    background: inherit;
+    color: inherit;
+    display: block;
+    padding: 15px;
+    font-size: 13px;
+    border: none;
+  }
+
+  code {
+    padding: 2px 6px;
+    border-radius: 2px;
+    // Font-size used to be 12px (and remains so in body) but was changed to percentage to stay proportional with varying text sizes such as headings.
+    font-size: 86%;
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+      Bitstream Vera Sans Mono, Courier New;
+    background: #f5f5f5;
+    color: #e0245e;
+  }
+
+  pre {
+    background: #2a2021;
+    background: #282c34;
+    background: #151515;
+    background: #f4f2f0;
     color: white;
+    color: #d0d0d0;
+    color: black;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    overflow-x: scroll;
+  }
 
-    li {
-      display: inline-block;
+  p {
+    margin-top: 0;
+  }
 
-      &:not(:last-child):after {
-        content: " / ";
-        margin-right: 4px;
-      }
-
-      &:last-child a {
-        font-weight: normal;
-      }
-    }
-
-    a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-
-      &:hover {
-        text-decoration: underline;
-      }
+  a {
+    color: #0000ee;
+    text-decoration: none;
+    position: relative;
+    &:hover {
+      text-decoration: underline;
     }
   }
 
-  .content {
+  a[target="_blank"] {
+    padding-right: 19px;
+    &::after {
+      content: "";
+      position: absolute;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' width='24' fill='rgb(0, 0, 238)' stroke='none'><path d='M13 3L16.293 6.293 9.293 13.293 10.707 14.707 17.707 7.707 21 11 21 3z'/><path d='M19,19H5V5h7l-2-2H5C3.897,3,3,3.897,3,5v14c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2v-5l-2-2V19z'/></svg>")
+        no-repeat;
+      background-size: 14px;
+      height: 14px;
+      width: 14px;
+      right: 0;
+      top: 3px;
+    }
+  }
+
+  table {
+    word-break: normal;
+    line-height: 1.4;
+    font-size: 14px;
+    margin-bottom: 25px;
+    margin-top: 0;
     width: 100%;
-    margin: 0 15px 30px 0;
+  }
+
+  table thead {
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  table thead th {
+    font-weight: 600;
+    text-align: left;
+    border-bottom: thin solid #616161;
+    padding-top: 0;
+  }
+
+  table th,
+  table td {
+    border: thin solid #bdbdbd !important;
+    padding: 5px !important;
+    line-height: 1.6;
     vertical-align: top;
-    background: white;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05), 0 0 20px rgba(0, 0, 0, 0.05);
+    width: 12%;
+    font-size: 13px !important;
 
-    > :first-child {
-      margin-top: 0;
+    &:last-child {
+      width: 99%;
+      padding-right: 0;
     }
+  }
 
-    > :last-child {
-      margin-bottom: 0;
-    }
+  table td.param {
+    color: #008000;
+    font-family: "Courier New", Courier, monospace;
+  }
 
-    h1,
-    h2,
-    h3 {
-      font-weight: 500;
-    }
-
-    pre code {
-      background: inherit;
-      color: inherit;
-      display: block;
-      padding: 15px;
-      font-size: 13px;
-      border: none;
-    }
-
-    code {
-      padding: 2px 6px;
-      border-radius: 2px;
-      // Font-size used to be 12px (and remains so in body) but was changed to percentage to stay proportional with varying text sizes such as headings.
-      font-size: 86%;
-      font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-        Bitstream Vera Sans Mono, Courier New;
-      background: #f5f5f5;
-      color: #e0245e;
-    }
-
-    pre {
-      background: #2a2021;
-      background: #282c34;
-      background: #151515;
-      background: #f4f2f0;
-      color: white;
-      color: #d0d0d0;
-      color: black;
-      border-radius: 4px;
-      margin-bottom: 25px;
-      overflow-x: scroll;
-    }
-
-    p {
-      margin-top: 0;
-    }
-
-    a {
-      color: #0000ee;
-      text-decoration: none;
-      position: relative;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    a[target="_blank"] {
-      padding-right: 19px;
-      &::after {
-        content: "";
-        position: absolute;
-        background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' height='24' width='24' fill='rgb(0, 0, 238)' stroke='none'><path d='M13 3L16.293 6.293 9.293 13.293 10.707 14.707 17.707 7.707 21 11 21 3z'/><path d='M19,19H5V5h7l-2-2H5C3.897,3,3,3.897,3,5v14c0,1.103,0.897,2,2,2h14c1.103,0,2-0.897,2-2v-5l-2-2V19z'/></svg>")
-          no-repeat;
-        background-size: 14px;
-        height: 14px;
-        width: 14px;
-        right: 0;
-        top: 3px;
-      }
-    }
-
-    table {
-      word-break: normal;
-      line-height: 1.4;
-      font-size: 14px;
-      margin-bottom: 25px;
-      margin-top: 0;
-      width: 100%;
-    }
-
-    table thead {
-      white-space: nowrap;
-      font-weight: bold;
-    }
-
-    table thead th {
-      font-weight: 600;
-      text-align: left;
-      border-bottom: thin solid #616161;
-      padding-top: 0;
-    }
-
-    table th,
-    table td {
-      border: thin solid #bdbdbd !important;
-      padding: 5px !important;
-      line-height: 1.6;
-      vertical-align: top;
-      width: 12%;
-      font-size: 13px !important;
-
-      &:last-child {
-        width: 99%;
-        padding-right: 0;
-      }
-    }
-
-    table td.param {
-      color: #008000;
-      font-family: "Courier New", Courier, monospace;
-    }
-
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
   }
 }
