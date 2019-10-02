@@ -16,8 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "test": "npx cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "npx react-scripts test --env=jsdom",
+    "test": "npx ./node_modules/.bin/jest --env=jsdom",
+    "test:watch": "npx ./node_modules/.bin/jest --watch --env=jsdom",
     "build": "npx rollup -c",
     "watch": "npx rollup -c -w",
     "prepare": "npm run build",
@@ -55,7 +55,12 @@
     "boxicons": "^2.0.3",
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "gh-pages": "^2.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "immutable": "^4.0.0-rc.12",
+    "jest": "^24.9.0",
     "node-sass": "^4.12.0",
     "react-router-scroll-memory": "^2.0.3",
     "remarkable": "^2.0.0",
