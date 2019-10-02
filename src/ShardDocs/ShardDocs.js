@@ -41,18 +41,15 @@ class ShardDocs extends React.Component {
     return this.documents.filter(document => document.path.startsWith(location.pathname));
   }
 
-  get prevPage() {
-    const { location } = this.props;
+  get pagination() {
+    const location = this.props.location;
     const prevIndex = this.documents.findIndex(document => document.path === location.pathname) - 1;
-
-    return this.documents[prevIndex];
-  }
-
-  get nextPage() {
-    const { location } = this.props;
     const nextIndex = this.documents.findIndex(doc => doc.path === location.pathname) + 1;
-
-    return this.documents[nextIndex];
+    const prevPage = this.documents[prevIndex];
+    const nextPage = this.documents[nextIndex];
+    const prev = prevPage && { text: prevPage.title, path: prevPage.path };
+    const next = nextPage && { text: nextPage.title, path: nextPage.path };
+    return { prev, next };
   }
 
   /* -- Action methods -- */
@@ -87,7 +84,7 @@ class ShardDocs extends React.Component {
           showSidebarFooter={this.props.showSidebarFooter}
         />
 
-        <Main prevPage={this.prevPage} nextPage={this.nextPage}>
+        <Main pagination={this.pagination}>
           {documents.map((document, i) => (
             <Document key={i} breadcrumbs={document.breadcrumbs} document={document.document} />
           ))}

@@ -1,4 +1,4 @@
-.shard-docs-nav-footer {
+.shard-docs-pagination {
   display: flex;
   margin-top: 40px;
   border-top: thin solid #dddddd;
@@ -13,7 +13,7 @@
     }
   }
 
-  .shard-docs-nav-prev {
+  .next {
     margin-left: auto;
   }
 }
