@@ -1,0 +1,33 @@
+.breadcrumbs {
+  padding: 5px 6px;
+  font-size: 12px;
+  background: #212121;
+  color: white;
+
+  ol {
+    margin: 0;
+  }
+
+  ol li {
+    display: inline-block;
+  }
+
+  ol li:not(:last-child):after {
+    content: " / ";
+    margin-right: 4px;
+  }
+
+  ol li:last-child a {
+    font-weight: normal;
+  }
+
+  ol li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  ol li a:hover {
+    text-decoration: underline;
+  }
+}

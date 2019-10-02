@@ -40,12 +40,12 @@ class SectionShard extends React.Component {
   render() {
     const { title, persistState, ...props } = this.props;
     return (
-      <div {...props} className={classnames("shard-docs-section-shard", props.className)}>
+      <section {...props} className={classnames("shard-docs-section-shard", props.className)}>
         <h2 className="shard-docs-section-shard-title">
           <BaseLink href="#" onClick={() => this.toggle()} preventDefault text={"title"} />
         </h2>
         {this.isExpanded() && <div className="shard-docs-section-shard">{props.children}</div>}
-      </div>
+      </section>
     );
   }
 }
