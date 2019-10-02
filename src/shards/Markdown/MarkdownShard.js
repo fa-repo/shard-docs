@@ -11,7 +11,7 @@ import "./MarkdownShard.scss";
 const MarkdownShard = props => {
   const html = parseMarkdown(props.markdown);
   return (
-    <div
+    <section
       className={classnames("shard-docs-markdown-shard", props.className)}
       dangerouslySetInnerHTML={{ __html: html }}
     />

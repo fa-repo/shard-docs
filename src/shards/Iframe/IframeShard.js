@@ -9,9 +9,9 @@ import "./IframeShard.scss";
 
 const IframeShard = ({ path, ...props }) => {
   return (
-    <div className={classnames("shard-docs-iframe-shard", props.className)}>
+    <section className={classnames("shard-docs-iframe-shard", props.className)}>
       <iframe src={path} {...props} />
-    </div>
+    </section>
   );
 };
 

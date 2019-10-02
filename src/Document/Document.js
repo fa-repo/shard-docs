@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import Breadcrumbs from "../Breadcrumbs";
 import "./Document.scss";
 import "./prism.scss";
 
@@ -9,14 +9,11 @@ import "./prism.scss";
  */
 
 const Document = ({ document, breadcrumbs }) => {
+  document = document.map((component, i) => ({ ...component, key: i }));
   return (
     <article className="document">
-      <ul className="breadcrumbs">
-        {breadcrumbs.map(({ text, link }, i) => (
-          <li key={i}>{link && <NavLink to={link}>{text}</NavLink>}</li>
-        ))}
-      </ul>
-      <div className="content">{document.map((component, i) => ({ ...component, key: i }))}</div>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
+      <div className="document-body">{document}</div>
     </article>
   );
 };
