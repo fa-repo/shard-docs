@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
-import Document from "../Document";
 import Main from "../Main";
 import Sidebar from "../Sidebar";
 import fromSource from "../adapters/fromSource";
@@ -84,11 +83,7 @@ class ShardDocs extends React.Component {
           showSidebarFooter={this.props.showSidebarFooter}
         />
 
-        <Main pagination={this.pagination}>
-          {documents.map((document, i) => (
-            <Document key={i} breadcrumbs={document.breadcrumbs} document={document.document} />
-          ))}
-        </Main>
+        <Main pagination={this.pagination} documents={this.currentDocuments} />
       </div>
     );
   }
