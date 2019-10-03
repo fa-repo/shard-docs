@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import "./Footer.scss";
 
 /**
- * SidebarFooter
+ * Footer
  */
 
-const SidebarFooter = ({ title, description, basePath, ...props }) => {
+const Footer = () => {
   return (
     <footer className="shard-docs-sidebar-footer">
       Built with <a href="https://fa-repo.github.io/shard-docs/#/docs">@fa-repo/shard-docs</a>
@@ -14,8 +14,8 @@ const SidebarFooter = ({ title, description, basePath, ...props }) => {
   );
 };
 
-SidebarFooter.propTypes = {};
+Footer.propTypes = {};
 
-SidebarFooter.defaultProps = {};
+Footer.defaultProps = {};
 
-export default SidebarFooter;
+export default Footer;
