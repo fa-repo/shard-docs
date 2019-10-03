@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import SidebarHeader from "../Header";
 import SidebarDescription from "../Description";
 import SidebarMenu from "../Menu";
-import SidebarFooter from "./Footer";
+import BuiltWithShardDocs from "../BuiltWithShardDocs";
 import "./Sidebar.scss";
 
 /**
@@ -51,7 +51,7 @@ class Sidebar extends React.Component {
           showMenuOnMobile={this.state.showMenuOnMobile}
           onNavigate={() => this.setState({ showMenuOnMobile: false })}
         />
-        {showSidebarFooter && <SidebarFooter />}
+        {showSidebarFooter && <BuiltWithShardDocs />}
       </aside>
     );
   }
