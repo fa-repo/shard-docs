@@ -1,12 +1,12 @@
 import fromSource from "./fromSource";
 
 const source = [
-  { title: "Doc A", document: [] },
-  { title: "Doc B", document: [] },
-  { title: "Doc C", document: [] },
+  { title: "Doc A", document: null },
+  { title: "Doc B", document: null },
+  { title: "Doc C", document: null },
   {
     title: "Folder",
-    children: [{ title: "Doc D", document: [] }, { title: "Doc E", document: [] }]
+    children: [{ title: "Doc D", document: null }, { title: "Doc E", document: null }]
   },
   { title: "Github", externalLink: "http://github.com" }
 ];
@@ -22,7 +22,7 @@ test("fromSource() adapts data", () =>
           type: "document",
           path: "/doc-a",
           breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc A", link: "/doc-a" }],
-          document: [],
+          document: null,
           isEmpty: true
         },
         {
@@ -30,7 +30,7 @@ test("fromSource() adapts data", () =>
           type: "document",
           path: "/doc-b",
           breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc B", link: "/doc-b" }],
-          document: [],
+          document: null,
           isEmpty: true
         },
         {
@@ -38,7 +38,7 @@ test("fromSource() adapts data", () =>
           type: "document",
           path: "/doc-c",
           breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc C", link: "/doc-c" }],
-          document: [],
+          document: null,
           isEmpty: true
         }
       ]
@@ -58,7 +58,7 @@ test("fromSource() adapts data", () =>
             { text: "Folder", link: "/folder" },
             { text: "Doc D", link: "/folder/doc-d" }
           ],
-          document: [],
+          document: null,
           isEmpty: true
         },
         {
@@ -70,7 +70,7 @@ test("fromSource() adapts data", () =>
             { text: "Folder", link: "/folder" },
             { text: "Doc E", link: "/folder/doc-e" }
           ],
-          document: [],
+          document: null,
           isEmpty: true
         }
       ]

@@ -9,9 +9,9 @@ const source = [
   {
     title: null,
     children: [
-      { title: "Some page A", document: [<p>Lorem ipsum...</p>] },
-      { title: "Some page B", document: [<p>Lorem ipsum...</p>] },
-      { title: "Some page C", document: [<p>Lorem ipsum...</p>] },
+      { title: "Some page A", document: <p>Lorem ipsum...</p> },
+      { title: "Some page B", document: <p>Lorem ipsum...</p> },
+      { title: "Some page C", document: <p>Lorem ipsum...</p> },
       { title: "Github", externalLink: "https://github.com/" }
     ]
   }

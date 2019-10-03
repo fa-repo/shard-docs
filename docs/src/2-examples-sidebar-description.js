@@ -15,8 +15,8 @@ const sourceCode = `
   description="A description describing your documentation"
 />`;
 
-export default [
+export default (
   <CodeExampleShard title="Sidebar description" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/sidebar-description" style={{ width: "1200px" }} />
   </CodeExampleShard>
-];
+);

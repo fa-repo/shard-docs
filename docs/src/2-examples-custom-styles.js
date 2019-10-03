@@ -20,14 +20,14 @@ const sourceCode = `<>
     source={[
       {
         title: "Essentials",
-        children: [{ title: "Get started", document: [<h1>Get started</h1>] }]
+        children: [{ title: "Get started", document: <h1>Get started</h1> }]
       }
     ]}
   />
 </>`;
 
-export default [
+export default (
   <CodeExampleShard title="Custom styles" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/custom-styles" style={{ width: "1200px" }} />
   </CodeExampleShard>
-];
+);

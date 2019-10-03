@@ -15,13 +15,13 @@ const sourceCode = `
   source={[
     {
       title: "Hello world",
-      document: [ <img src="/images/hello-world.jpg" alt="Turtle" /> ]
+      document: <img src="/images/hello-world.jpg" alt="Turtle" />
     }
   ]}
 />`;
 
-export default [
+export default (
   <CodeExampleShard title="Hello world" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/hello-world" style={{ width: "1200px" }} />
   </CodeExampleShard>
-];
+);

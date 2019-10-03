@@ -33,8 +33,8 @@ render(
 ReactDOM.render(
   <ShardDocs
     title="Documentation title"
-    structure={[
-      { title: "Get started", document: [ <h1>Get started</h1> ] }
+    source={[
+      { title: "Get started", document: <h1>Get started</h1> }
     ]}
   />,
     document.getElementById('app')
@@ -42,4 +42,4 @@ ReactDOM.render(
 ~~~
 `;
 
-export default [<MarkdownShard markdown={getStarted} />];
+export default <MarkdownShard markdown={getStarted} />;

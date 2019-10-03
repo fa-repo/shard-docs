@@ -16,7 +16,7 @@ const sourceCode = `
   showSidebarFooter={false}
 />`;
 
-export default [
+export default (
   <CodeExampleShard
     title="Look, nothing shown at the bottom of the sidebar."
     repository={github}
@@ -24,4 +24,4 @@ export default [
   >
     <IframeShard path="#/examples/hide-sidebar-footer" style={{ width: "1200px" }} />
   </CodeExampleShard>
-];
+);

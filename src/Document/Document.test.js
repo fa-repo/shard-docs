@@ -9,11 +9,11 @@ const breadcrumbs = [
   { text: "Hello world", link: "/examples/hello-world" }
 ];
 
-const document = [
-  <h1>Hello earth!</h1>,
-  <h2>Hello galaxy!</h2>,
-  <h3>Hello universe!</h3>,
-];
+const document = <>
+  <h1>Hello earth!</h1>
+  <h2>Hello galaxy!</h2>
+  <h3>Hello universe!</h3>
+</>
 
 describe("<Document />", () => {
   it("renders without crashing", () => {
