@@ -10,27 +10,20 @@ import "./Menu.scss";
 const Menu = props => {
   return (
     <div className="shard-docs-sidebar-menu" data-show-menu-on-mobile={props.showMenuOnMobile}>
-      <SidebarMenuList
-        items={props.items}
-        basePath={props.basePath}
-        activePath={props.activePath}
-        onNavigate={props.onNavigate}
-      />
+      <SidebarMenuList app={props.app} items={props.items} onNavigate={props.onNavigate} />
     </div>
   );
 };
 
 Menu.propTypes = {
+  app: PropTypes.object,
   items: PropTypes.array,
-  basePath: PropTypes.string,
-  activePath: PropTypes.string,
   showMenuOnMobile: PropTypes.bool,
   onNavigate: PropTypes.func
 };
 Menu.defaultProps = {
+  app: {},
   items: [],
-  basePath: "",
-  activePath: "",
   showMenuOnMobile: false,
   onNavigate: () => {}
 };
