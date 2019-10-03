@@ -5,19 +5,7 @@ import ShardDocs from "./ShardDocs";
 
 const title = "App title";
 const description = "App description.";
-const source = [
-  { title: "Doc A", document: [ <h1>Doc A</h1> ] },
-  { title: "Doc B", document: [ <h1>Doc B</h1> ] },
-  { title: "Doc C", document: [ <h1>Doc C</h1> ] },
-  {
-    title: "Folder",
-    children: [
-      { title: "Doc D", document: [ <h1>Doc D</h1> ] },
-      { title: "Doc E", document: [ <h1>Doc E</h1> ] }
-    ]
-  },
-  { title: "Github", externalLink: "http://github.com" }
-];
+const source = [{ title: "Doc A", document: [ <h1>Doc A</h1> ] }];
 
 describe("<ShardDocs />", () => {
   const mountShardDocs = ({title, description, source,showSidebarFooter}={}) => {
