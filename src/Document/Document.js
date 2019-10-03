@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Breadcrumbs from "../Breadcrumbs";
+import { breadcrumbTypes, documentTypes } from "../types";
+
 import "./Document.scss";
 import "./prism.scss";
 
@@ -19,7 +21,7 @@ const Document = ({ document, breadcrumbs }) => {
 };
 
 Document.propTypes = {
-  breadcrumbs: PropTypes.array.isRequired,
+  breadcrumbs: PropTypes.arrayOf(breadcrumbTypes).isRequired,
   document: PropTypes.array.isRequired
 };
 

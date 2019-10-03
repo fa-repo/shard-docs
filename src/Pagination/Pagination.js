@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import { paginationTypes } from "../types";
 import "./Pagination.scss";
 
 /**
@@ -27,16 +28,7 @@ const Pagination = props => {
 };
 
 Pagination.propTypes = {
-  pagination: PropTypes.shape({
-    prev: PropTypes.shape({
-      title: PropTypes.string,
-      path: PropTypes.string
-    }),
-    next: PropTypes.shape({
-      title: PropTypes.string,
-      path: PropTypes.string
-    })
-  })
+  pagination: paginationTypes
 };
 
 Pagination.defaultProps = {

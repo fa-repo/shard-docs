@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import classnames from "classnames";
 import { NavLink } from "react-router-dom";
 import ExternalIcon from "boxicons/svg/regular/bx-link-external.svg";
+import { appTypes, treeTypes } from "../types";
 
 /**
  * MenuList
@@ -109,13 +110,8 @@ const MenuList = ({ items, app, onNavigate }) => {
 };
 
 MenuList.propTypes = {
-  app: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    actionPath: PropTypes.string,
-    basePath: PropTypes.string
-  }),
-  items: PropTypes.array,
+  app: appTypes,
+  items: treeTypes,
   onNavigate: PropTypes.func
 };
 MenuList.defaultProps = {

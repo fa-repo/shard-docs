@@ -10,6 +10,7 @@ const pagination = {
 
 const documents = [
   {
+    type: 'document',
     breadcrumbs: [
       { text: "~", link: "/" },
       { text: "Examples", link: "/examples" },
