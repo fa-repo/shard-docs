@@ -3,14 +3,18 @@ import PropTypes from "prop-types";
 import "./Description.scss";
 
 /**
- * SidebarDescription
+ * Description
  */
 
-const SidebarDescription = props => (
-  <p className="shard-docs-sidebar-description">{props.description}</p>
+const Description = ({ description }) => (
+  <p className="shard-docs-sidebar-description">{description}</p>
 );
 
-SidebarDescription.propTypes = {};
-SidebarDescription.defaultProps = {};
+Description.propTypes = {
+  description: PropTypes.string
+};
+Description.defaultProps = {
+  description: ""
+};
 
-export default SidebarDescription;
+export default Description;

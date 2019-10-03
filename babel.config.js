@@ -1,13 +1,5 @@
 module.exports = {
-  presets: [
-    [
-      "@babel/preset-env",
-      {
-        modules: false
-      }
-    ],
-    "@babel/preset-react"
-  ],
+  presets: [["@babel/preset-env", { modules: false }], "@babel/preset-react"],
   plugins: ["@babel/plugin-proposal-class-properties"],
   env: {
     test: {
@@ -20,7 +12,8 @@ module.exports = {
         "@babel/plugin-proposal-do-expressions",
         "@babel/plugin-proposal-json-strings",
         "@babel/plugin-proposal-nullish-coalescing-operator",
-        "@babel/plugin-proposal-optional-chaining"
+        "@babel/plugin-proposal-optional-chaining",
+        "inline-react-svg"
       ]
     }
   }

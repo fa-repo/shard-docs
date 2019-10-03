@@ -42,7 +42,7 @@ class SectionShard extends React.Component {
     return (
       <section {...props} className={classnames("shard-docs-section-shard", props.className)}>
         <h2 className="shard-docs-section-shard-title">
-          <BaseLink href="#" onClick={() => this.toggle()} preventDefault text={"title"} />
+          <BaseLink href="#" onClick={() => this.toggle()} preventDefault text={title} />
         </h2>
         {this.isExpanded() && <div className="shard-docs-section-shard">{props.children}</div>}
       </section>

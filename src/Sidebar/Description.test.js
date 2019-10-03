@@ -1,6 +1,10 @@
 import React from "react";
 import { mount } from "enzyme";
+import Description from "./Description";
 
 describe("<Description />", () => {
-  test.todo("renders without crashing");
+  it("renders description", () => {
+    const wrapper = mount(<Description description="Hello world"/>)
+    expect(wrapper.find('Description').text()).toBe("Hello world")
+  });
 });
