@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import SidebarMenuList from "./MenuList";
+import { appTypes, treeTypes } from "../types";
 import "./Menu.scss";
 
 /**
@@ -16,13 +17,8 @@ const Menu = props => {
 };
 
 Menu.propTypes = {
-  app: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    actionPath: PropTypes.string,
-    basePath: PropTypes.string
-  }),
-  items: PropTypes.array,
+  app: appTypes,
+  items: treeTypes,
   showMenuOnMobile: PropTypes.bool,
   onNavigate: PropTypes.func
 };

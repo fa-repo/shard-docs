@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 import Main from "../Main";
 import Sidebar from "../Sidebar";
 import fromSource from "../adapters/fromSource";
+import { sourceTypes } from "../types";
 import "./ShardDocs.scss";
 
 /**
@@ -98,7 +99,7 @@ class ShardDocs extends React.Component {
 ShardDocs.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  source: PropTypes.array,
+  source: sourceTypes,
   basePath: PropTypes.string,
   showSidebarFooter: PropTypes.bool
 };

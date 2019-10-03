@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Pagination from "../Pagination";
 import Document from "../Document";
+import { paginationTypes, documentTypes } from "../types";
 import "./Main.scss";
 
 /**
@@ -20,8 +21,8 @@ const Main = ({ pagination, documents }) => {
 };
 
 Main.propTypes = {
-  pagination: PropTypes.object,
-  documents: PropTypes.array
+  pagination: paginationTypes,
+  documents: PropTypes.arrayOf(documentTypes)
 };
 Main.defaultProps = {
   pagination: {},
