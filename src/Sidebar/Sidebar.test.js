@@ -4,13 +4,6 @@ import { mount } from "enzyme";
 import Sidebar from "./Sidebar";
 import fromSource from "../adapters/fromSource";
 
-describe("<Sidebar />", () => {
-  test.todo("renders menu");
-  test.todo("renders description");
-  test.todo("renders sidebarFooter");
-  test.todo("can hide sidebarFooter");
-});
-
 const title = "App title";
 const description = "App description.";
 const source = fromSource([

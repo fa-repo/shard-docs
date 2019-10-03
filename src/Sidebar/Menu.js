@@ -4,10 +4,10 @@ import SidebarMenuList from "./MenuList";
 import "./Menu.scss";
 
 /**
- * SidebarMenu
+ * Menu
  */
 
-const SidebarMenu = props => {
+const Menu = props => {
   return (
     <div className="shard-docs-sidebar-menu" data-show-menu-on-mobile={props.showMenuOnMobile}>
       <SidebarMenuList
@@ -20,14 +20,14 @@ const SidebarMenu = props => {
   );
 };
 
-SidebarMenu.propTypes = {
+Menu.propTypes = {
   items: PropTypes.array,
   basePath: PropTypes.string,
   activePath: PropTypes.string,
   showMenuOnMobile: PropTypes.bool,
   onNavigate: PropTypes.func
 };
-SidebarMenu.defaultProps = {
+Menu.defaultProps = {
   items: [],
   basePath: "",
   activePath: "",
@@ -35,4 +35,4 @@ SidebarMenu.defaultProps = {
   onNavigate: () => {}
 };
 
-export default SidebarMenu;
+export default Menu;
