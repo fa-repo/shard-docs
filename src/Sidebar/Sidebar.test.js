@@ -51,12 +51,12 @@ describe("<Sidebar />", () => {
   it("renders sidebar footer", () => {
     const wrapper = mountSidebar();
 
-    expect(wrapper.find('.shard-docs-sidebar-footer').exists()).toBe(true);
+    expect(wrapper.find('.shard-docs-built-with').exists()).toBe(true);
   });
 
   it("can hide sidebar footer", () => {
     const wrapper = mountSidebar({ showSidebarFooter: false });
 
-    expect(wrapper.find('.shard-docs-sidebar-footer').exists()).toBe(false);
+    expect(wrapper.find('.shard-docs-built-with').exists()).toBe(false);
   });
 });

@@ -54,7 +54,7 @@ describe("<ShardDocs />", () => {
   it("renders sidebar footer", () => {
     const wrapper = mountShardDocs();
 
-    expect(wrapper.find('Sidebar .shard-docs-sidebar-footer').exists()).toBe(true);
+    expect(wrapper.find('Sidebar .shard-docs-built-with').exists()).toBe(true);
   });
 
   it("can hide sidebar footer", () => {
