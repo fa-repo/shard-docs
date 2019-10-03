@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 import ExternalIcon from "boxicons/svg/regular/bx-link-external.svg";
 
 /**
- * SidebarMenuList
+ * MenuList
  */
 
 const ExternalLinkNode = ({ title, link, ...props }) => (
@@ -75,7 +75,7 @@ const GroupNode = ({
         onNavigate={onNavigate}
       />
     )}
-    <SidebarMenuList
+    <MenuList
       items={children}
       basePath={basePath}
       activePath={activePath}
@@ -84,7 +84,7 @@ const GroupNode = ({
   </ul>
 );
 
-const SidebarMenuList = ({ items, basePath, activePath, onNavigate }) => {
+const MenuList = ({ items, basePath, activePath, onNavigate }) => {
   return (
     <>
       {items.map((item, i) => {
@@ -124,15 +124,15 @@ const SidebarMenuList = ({ items, basePath, activePath, onNavigate }) => {
   );
 };
 
-SidebarMenuList.propTypes = {
+MenuList.propTypes = {
   items: PropTypes.array,
   basePath: PropTypes.string,
   onNavigate: PropTypes.func
 };
-SidebarMenuList.defaultProps = {
+MenuList.defaultProps = {
   items: [],
   basePath: "",
   onNavigate: () => {}
 };
 
-export default SidebarMenuList;
+export default MenuList;
