@@ -12,7 +12,12 @@ import "./Sidebar.scss";
 
 class Sidebar extends React.Component {
   static propTypes = {
-    app: PropTypes.object,
+    app: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      actionPath: PropTypes.string,
+      basePath: PropTypes.string
+    }),
     title: PropTypes.string,
     description: PropTypes.string,
     source: PropTypes.array,
