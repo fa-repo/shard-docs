@@ -8,14 +8,14 @@ const description = "App description.";
 const source = [{ title: "Doc A", document: <h1>Doc A</h1> }];
 
 describe("<ShardDocs />", () => {
-  const mountShardDocs = ({title, description, source,showSidebarFooter}={}) => {
+  const mountShardDocs = ({title, description, source, hideBuiltWithShardDocs}={}) => {
     return mount(
       <MemoryRouter>
         <ShardDocs
           title={title}
           description={description}
           source={source}
-          showSidebarFooter={showSidebarFooter}
+          hideBuiltWithShardDocs={hideBuiltWithShardDocs}
         />
       </MemoryRouter>
     )
@@ -58,13 +58,13 @@ describe("<ShardDocs />", () => {
   });
 
   it("can hide sidebar footer", () => {
-    const wrapper = mountShardDocs({ showSidebarFooter: false });
+    const wrapper = mountShardDocs({ hideBuiltWithShardDocs: true });
 
     expect(wrapper.find('Sidebar .shard-docs-sidebar-footer').exists()).toBe(false);
   });
 
   it("renders main", () => {
-    const wrapper = mountShardDocs({ showSidebarFooter: false });
+    const wrapper = mountShardDocs();
 
     expect(wrapper.find('Main').exists()).toBe(true);
   });

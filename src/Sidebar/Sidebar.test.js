@@ -11,13 +11,13 @@ const source = fromSource([
 ]);
 
 describe("<Sidebar />", () => {
-  const mountSidebar = ({app, source, showSidebarFooter } = {}) => {
+  const mountSidebar = ({app, source, hideBuiltWithShardDocs } = {}) => {
     return mount(
       <MemoryRouter>
         <Sidebar
           app={app}
           source={source}
-          showSidebarFooter={showSidebarFooter}
+          hideBuiltWithShardDocs={hideBuiltWithShardDocs}
         />
       </MemoryRouter>
     )
@@ -56,7 +56,7 @@ describe("<Sidebar />", () => {
   });
 
   it("can hide sidebar footer", () => {
-    const wrapper = mountSidebar({ showSidebarFooter: false });
+    const wrapper = mountSidebar({ hideBuiltWithShardDocs: true });
 
     expect(wrapper.find('.shard-docs-built-with').exists()).toBe(false);
   });

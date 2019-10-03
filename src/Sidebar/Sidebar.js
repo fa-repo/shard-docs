@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
     title: PropTypes.string,
     description: PropTypes.string,
     source: treeTypes,
-    showSidebarFooter: PropTypes.bool
+    hideBuiltWithShardDocs: PropTypes.bool
   };
 
   static defaultProps = {
@@ -25,7 +25,7 @@ class Sidebar extends React.Component {
     title: "",
     description: "",
     source: [],
-    showSidebarFooter: true
+    hideBuiltWithShardDocs: false
   };
 
   state = {
@@ -33,7 +33,9 @@ class Sidebar extends React.Component {
   };
 
   render() {
-    const { app, source, showSidebarFooter } = this.props;
+    const { app, source, hideBuiltWithShardDocs } = this.props;
+    const showBuiltWithShardDocs = !hideBuiltWithShardDocs;
+
     return (
       <aside className="shard-docs-sidebar">
         <SidebarHeader
@@ -49,7 +51,7 @@ class Sidebar extends React.Component {
           showMenuOnMobile={this.state.showMenuOnMobile}
           onNavigate={() => this.setState({ showMenuOnMobile: false })}
         />
-        {showSidebarFooter && <BuiltWithShardDocs />}
+        {showBuiltWithShardDocs && <BuiltWithShardDocs />}
       </aside>
     );
   }
