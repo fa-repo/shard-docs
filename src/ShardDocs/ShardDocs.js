@@ -67,7 +67,7 @@ class ShardDocs extends React.Component {
       history,
       location,
       match,
-      showSidebarFooter,
+      hideBuiltWithShardDocs,
       ...props
     } = this.props;
 
@@ -87,7 +87,7 @@ class ShardDocs extends React.Component {
           basePath={basePath}
           activePath={this.props.location.pathname}
           source={this.state.source}
-          showSidebarFooter={this.props.showSidebarFooter}
+          hideBuiltWithShardDocs={this.props.hideBuiltWithShardDocs}
         />
 
         <Main pagination={this.pagination} documents={this.currentDocuments} />
@@ -101,7 +101,7 @@ ShardDocs.propTypes = {
   description: PropTypes.string,
   source: sourceTypes,
   basePath: PropTypes.string,
-  showSidebarFooter: PropTypes.bool
+  hideBuiltWithShardDocs: PropTypes.bool
 };
 
 ShardDocs.defaultProps = {
@@ -109,7 +109,7 @@ ShardDocs.defaultProps = {
   description: "",
   source: [],
   basePath: "/",
-  showSidebarFooter: true
+  hideBuiltWithShardDocs: false
 };
 
 export default withRouter(ShardDocs);

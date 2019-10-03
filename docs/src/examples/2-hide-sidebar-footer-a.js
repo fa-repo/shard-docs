@@ -9,6 +9,6 @@ export default () => (
   <ShardDocs
     title="Hide sidebar footer"
     basePath="/examples/hide-sidebar-footer"
-    showSidebarFooter={false}
+    hideBuiltWithShardDocs
   />
 );

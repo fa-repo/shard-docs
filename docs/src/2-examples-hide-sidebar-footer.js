@@ -13,7 +13,7 @@ const sourceCode = `
 <ShardDocs
   title="Hide sidebar footer"
   basePath="/examples/hide-sidebar-footer"
-  showSidebarFooter={false}
+  hideBuiltWithShardDocs
 />`;
 
 export default (

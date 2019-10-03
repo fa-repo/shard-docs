@@ -9,9 +9,10 @@ const shardDocsReference = `
 | Name      | Type   | Default   | Description                                                     |
 |-----------|--------|-----------|-----------------------------------------------------------------|
 | \`title\` | string | \`""\` | A title for your documentation. Appears at the top of the sidebar. |
-| \`description\` | string | \`""\` | A description for your documentation. Appears below the title in the sidebar. |
-| \`basePath\` | string | \`"/docs"\` | A path prepended to every page.                            |
-| \`source\`  | array  | \`[]\` |Documentation data organised as a tree. See below for help.         |
+| \`description\` | string | \`""\` | A description for your documentation. Appears below the title in the sidebar.   |
+| \`basePath\`    | string | \`"/docs"\` | A path prepended to every page.                         |
+| \`source\`      | array  | \`[]\` |Documentation data organised as a tree. See below for help.   |
+| \`hideBuiltWithShardDocs\` | boolean | \`false\` | Hide "Built with @fa-repo/shard-docs" on sidebar. |
 
 #### Configuring Shard-Docs structure
 
