@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import fromSource from "../adapters/fromSource";
 
 const items = fromSource([
-  { title: "Doc A", document: [ <h1>Doc A</h1> ] }
+  { title: "Doc A", document: <h1>Doc A</h1> }
 ]);
 
 describe("<Menu />", () => {

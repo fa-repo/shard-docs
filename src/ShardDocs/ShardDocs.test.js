@@ -5,7 +5,7 @@ import ShardDocs from "./ShardDocs";
 
 const title = "App title";
 const description = "App description.";
-const source = [{ title: "Doc A", document: [ <h1>Doc A</h1> ] }];
+const source = [{ title: "Doc A", document: <h1>Doc A</h1> }];
 
 describe("<ShardDocs />", () => {
   const mountShardDocs = ({title, description, source,showSidebarFooter}={}) => {

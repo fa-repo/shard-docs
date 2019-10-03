@@ -21,9 +21,9 @@ export function addTypes(items) {
   for (let i in items) {
     let type = false;
 
-    if (items[i].children) type = "folder";
-    else if (items[i].document) type = "document";
-    else if (items[i].externalLink) type = "external";
+    if (items[i].hasOwnProperty("children")) type = "folder";
+    else if (items[i].hasOwnProperty("document")) type = "document";
+    else if (items[i].hasOwnProperty("externalLink")) type = "external";
 
     if (type === "folder") items[i].children = addTypes(items[i].children);
 
@@ -120,7 +120,7 @@ export function shapeItems(items) {
         const children = shapeItems(item.children);
         return { type, path, children };
       } else if (type === "document") {
-        const isEmpty = !isArray(item.document) || item.document.length <= 0;
+        const isEmpty = !Boolean(item.document);
         const document = item.document;
         const breadcrumbs = item.breadcrumbs;
         return { type, path, title, isEmpty, breadcrumbs, document };

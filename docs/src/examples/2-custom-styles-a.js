@@ -8,7 +8,7 @@ import ShardDocs from "@fa-repo/shard-docs";
 const source = [
   {
     title: "Essentials",
-    children: [{ title: "Get started", document: [<h1>Get started</h1>] }]
+    children: [{ title: "Get started", document: <h1>Get started</h1> }]
   }
 ];
 

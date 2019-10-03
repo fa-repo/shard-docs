@@ -16,11 +16,13 @@ const documents = [
       { text: "Examples", link: "/examples" },
       { text: "Hello world", link: "/examples/hello-world" }
     ],
-    document: [
-      <h1>Hello earth!</h1>,
-      <h2>Hello galaxy!</h2>,
-      <h3>Hello universe!</h3>,
-    ]
+    document: (
+      <>
+        <h1>Hello earth!</h1>,
+        <h2>Hello galaxy!</h2>,
+        <h3>Hello universe!</h3>,
+      </>
+    )
   }
 ];
 

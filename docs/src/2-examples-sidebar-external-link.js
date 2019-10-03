@@ -16,17 +16,17 @@ const sourceCode = `
     {
       title: null,
       children: [
-        { title: "Some page A", document: [<p>Lorem ipsum...</p>] },
-        { title: "Some page B", document: [<p>Lorem ipsum...</p>] },
-        { title: "Some page C", document: [<p>Lorem ipsum...</p>] },
+        { title: "Some page A", document: <p>Lorem ipsum...</p> },
+        { title: "Some page B", document: <p>Lorem ipsum...</p> },
+        { title: "Some page C", document: <p>Lorem ipsum...</p> },
         { title: "Github", externalLink: "https://github.com/" }
       ]
     }
   ]}
 />`;
 
-export default [
+export default (
   <CodeExampleShard title="Sidebar external link" repository={github} sourceCode={sourceCode}>
     <IframeShard path="#/examples/sidebar-external-link" style={{ width: "1200px" }} />
   </CodeExampleShard>
-];
+);

@@ -6,9 +6,10 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
  * MarkdownShard
  */
 
-export default [
-  <MarkdownShard
-    markdown={`
+export default (
+  <>
+    <MarkdownShard
+      markdown={`
 #### Import
 ~~~jsx
 import MarkdownShard from "@fa-repo/shard-docs/dist/shards/markdown-shard";
@@ -22,8 +23,12 @@ import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";
 
 #### Usage
 `}
-  />,
-  <CodeExampleShard title="Hello world" sourceCode={`<MarkdownShard markdown="## Hello world" />`}>
-    <MarkdownShard markdown="## Hello world" />
-  </CodeExampleShard>
-];
+    />
+    <CodeExampleShard
+      title="Hello world"
+      sourceCode={`<MarkdownShard markdown="## Hello world" />`}
+    >
+      <MarkdownShard markdown="## Hello world" />
+    </CodeExampleShard>
+  </>
+);

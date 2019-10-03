@@ -6,9 +6,9 @@ import ShardDocs from "@fa-repo/shard-docs";
  */
 
 const source = [
-  { title: "Mangos", document: [<h1>Mangos</h1>] },
-  { title: "Plums", document: [<h1>Plums</h1>] },
-  { title: "Avacadoes", document: [<h1>Avacadoes</h1>] }
+  { title: "Mangos", document: <h1>Mangos</h1> },
+  { title: "Plums", document: <h1>Plums</h1> },
+  { title: "Avacadoes", document: <h1>Avacadoes</h1> }
 ];
 
 export default () => (

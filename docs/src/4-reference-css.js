@@ -32,4 +32,4 @@ const cssReference = `
 .shard-docs-source-code-shard
 ~~~`;
 
-export default [<MarkdownShard markdown={cssReference} />];
+export default <MarkdownShard markdown={cssReference} />;

@@ -11,7 +11,6 @@ import "./prism.scss";
  */
 
 const Document = ({ document, breadcrumbs }) => {
-  document = document.map((component, i) => ({ ...component, key: i }));
   return (
     <article className="document">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
@@ -22,12 +21,12 @@ const Document = ({ document, breadcrumbs }) => {
 
 Document.propTypes = {
   breadcrumbs: PropTypes.arrayOf(breadcrumbTypes).isRequired,
-  document: PropTypes.array.isRequired
+  document: PropTypes.element
 };
 
 Document.defaultProps = {
   breadcrumbs: [],
-  document: []
+  document: null
 };
 
 export default Document;

@@ -14,15 +14,15 @@ const source = [
         children: [
           {
             title: "- France: Scale Mont Blanc",
-            document: [<h1>Scale Mont Blanc</h1>]
+            document: <h1>Scale Mont Blanc</h1>
           },
           {
             title: "- Italy: Dine at a Tuscan restaurent",
-            document: [<h1>Dine at a Tuscan restaurent</h1>]
+            document: <h1>Dine at a Tuscan restaurent</h1>
           },
           {
             title: "- Spain: Walk the Camino de Santiago",
-            document: [<h1>Dine at a rustic Tuscan restaurent</h1>]
+            document: <h1>Dine at a rustic Tuscan restaurent</h1>
           }
         ]
       }

@@ -14,7 +14,7 @@ npm install --save @fa-repo/shard-docs
 ReactDOM.render(
   <ShardDocs
     title="Documentation title"
-    structure={[
+    source={[
       { type: "heading", heading: "Essentials" },
       {
         type: "page",

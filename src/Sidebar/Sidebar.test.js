@@ -7,7 +7,7 @@ import fromSource from "../adapters/fromSource";
 const title = "App title";
 const description = "App description.";
 const source = fromSource([
-  { title: "Doc A", document: [ <h1>Doc A</h1> ] }
+  { title: "Doc A", document: <h1>Doc A</h1> }
 ]);
 
 describe("<Sidebar />", () => {

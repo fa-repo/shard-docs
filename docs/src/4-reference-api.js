@@ -38,7 +38,7 @@ An object representing a document in the documentation tree.
 | Name         | Type   | Default | Required | Description                                         |
 |--------------|--------|---------|----------|-----------------------------------------------------|
 | \`title\`    | string | \`""\`  | Required | Set the document title.                             |
-| \`document\` | array  | \`[]\`  |          | An array of components that will be rendered in order when viewing this document. |
+| \`document\` | component  | \`null\`  | | A component containing document content. |
 
 #### Group object properties
 
@@ -57,4 +57,4 @@ An object displaying an external link in the sidebar menu.
 | \`externalLink\` | string | \`""\`  | Required | The link path.                                  |
 `;
 
-export default [<MarkdownShard markdown={shardDocsReference} />];
+export default <MarkdownShard markdown={shardDocsReference} />;

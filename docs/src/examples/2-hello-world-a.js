@@ -8,7 +8,7 @@ import ShardDocs from "@fa-repo/shard-docs";
 const source = [
   {
     title: "Hello world",
-    document: [<img src="/images/hello-world.jpg" alt="Turtle" />]
+    document: <img src="/images/hello-world.jpg" alt="Turtle" />
   }
 ];
 
