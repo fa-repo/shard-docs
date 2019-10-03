@@ -17,7 +17,7 @@ describe("<Header />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.shard-docs-sidebar-heading').text()).toBe("Hello world")
+    expect(wrapper.find('.shard-docs-sidebar-title h2').text()).toBe("Hello world")
   });
 
   it("renders header link with custom basePath", () => {
@@ -34,14 +34,14 @@ describe("<Header />", () => {
   it("renders toggle button", () => {
     const wrapper = mount(<Header />);
 
-    expect(wrapper.find('.shard-docs-toggle-menu').exists()).toBe(true)
+    expect(wrapper.find('.shard-docs-sidebar-toggle').exists()).toBe(true)
   });
 
-  it("calls onToggleMenu when toggle button clicked", () => {
+  it("calls onToggleMenu when sidebar toggle button clicked", () => {
     const onToggleMenu = jest.fn();
     const wrapper = mount(<Header onToggleMenu={onToggleMenu} />)
 
-    wrapper.find('.shard-docs-toggle-menu').simulate('click')
+    wrapper.find('.shard-docs-sidebar-toggle').simulate('click')
 
     expect(onToggleMenu.mock.calls[0].length).toBe(1)
   });

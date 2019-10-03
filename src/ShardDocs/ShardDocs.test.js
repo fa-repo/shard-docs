@@ -36,7 +36,7 @@ describe("<ShardDocs />", () => {
   it("renders app title", () => {
     const wrapper = mountShardDocs({ title });
 
-    expect(wrapper.find('Sidebar .shard-docs-sidebar-heading').text()).toBe(title);
+    expect(wrapper.find('Sidebar .shard-docs-sidebar-title h2').text()).toBe(title);
   });
 
   it("renders app description", () => {
