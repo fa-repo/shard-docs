@@ -109,7 +109,12 @@ const MenuList = ({ items, app, onNavigate }) => {
 };
 
 MenuList.propTypes = {
-  app: PropTypes.object,
+  app: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    actionPath: PropTypes.string,
+    basePath: PropTypes.string
+  }),
   items: PropTypes.array,
   onNavigate: PropTypes.func
 };
