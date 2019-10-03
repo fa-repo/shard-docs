@@ -70,11 +70,17 @@ class ShardDocs extends React.Component {
       ...props
     } = this.props;
 
-    const documents = this.currentDocuments;
+    const app = {
+      title,
+      description,
+      basePath,
+      activePath: this.props.location.pathname
+    };
 
     return (
       <div {...props} className="shard-docs">
         <Sidebar
+          app={app}
           title={title}
           description={description}
           basePath={basePath}

@@ -54,37 +54,22 @@ const HeadingNode = ({ title, path, isActive, isEmpty, onNavigate, ...props }) =
   </li>
 );
 
-const GroupNode = ({
-  title,
-  children,
-  path,
-  isActive,
-  isEmpty,
-  basePath,
-  activePath,
-  onNavigate,
-  ...props
-}) => (
+const GroupNode = ({ app, title, children, path, isActive, isEmpty, onNavigate, ...props }) => (
   <ul {...props}>
     {title && (
       <HeadingNode
         title={title}
         path={path}
-        isActive={activePath === path}
+        isActive={app.activePath === path}
         isEmpty={isEmpty}
         onNavigate={onNavigate}
       />
     )}
-    <MenuList
-      items={children}
-      basePath={basePath}
-      activePath={activePath}
-      onNavigate={onNavigate}
-    />
+    <MenuList items={children} app={app} onNavigate={onNavigate} />
   </ul>
 );
 
-const MenuList = ({ items, basePath, activePath, onNavigate }) => {
+const MenuList = ({ items, app, onNavigate }) => {
   return (
     <>
       {items.map((item, i) => {
@@ -95,7 +80,7 @@ const MenuList = ({ items, basePath, activePath, onNavigate }) => {
               key={i}
               title={title}
               path={path}
-              isActive={activePath === path}
+              isActive={app.activePath === path}
               isEmpty={isEmpty}
               onNavigate={onNavigate}
             />
@@ -109,8 +94,7 @@ const MenuList = ({ items, basePath, activePath, onNavigate }) => {
               path={item.path}
               title={title}
               children={children}
-              basePath={basePath}
-              activePath={activePath}
+              app={app}
               isActive={isActive}
               isEmpty={isEmpty}
               onNavigate={onNavigate}
@@ -125,13 +109,13 @@ const MenuList = ({ items, basePath, activePath, onNavigate }) => {
 };
 
 MenuList.propTypes = {
+  app: PropTypes.object,
   items: PropTypes.array,
-  basePath: PropTypes.string,
   onNavigate: PropTypes.func
 };
 MenuList.defaultProps = {
+  app: {},
   items: [],
-  basePath: "",
   onNavigate: () => {}
 };
 

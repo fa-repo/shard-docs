@@ -11,12 +11,11 @@ const source = fromSource([
 ]);
 
 describe("<Sidebar />", () => {
-  const mountSidebar = ({title, description, source, showSidebarFooter } = {}) => {
+  const mountSidebar = ({app, source, showSidebarFooter } = {}) => {
     return mount(
       <MemoryRouter>
         <Sidebar
-          title={title}
-          description={description}
+          app={app}
           source={source}
           showSidebarFooter={showSidebarFooter}
         />
@@ -31,13 +30,15 @@ describe("<Sidebar />", () => {
   });
 
   it("renders app title", () => {
-    const wrapper = mountSidebar({ title });
+    const app = { title };
+    const wrapper = mountSidebar({ app });
 
     expect(wrapper.find('.shard-docs-sidebar-heading').text()).toBe(title);
   });
 
   it("renders app description", () => {
-    const wrapper = mountSidebar({ description });
+    const app = { description };
+    const wrapper = mountSidebar({ app });
 
     expect(wrapper.find('.shard-docs-sidebar-description').text()).toBe(description);
   });
