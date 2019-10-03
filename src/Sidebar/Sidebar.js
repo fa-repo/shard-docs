@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SidebarHeader from "../Header";
 import SidebarDescription from "../Description";
-import SidebarMenu from "./Menu";
+import SidebarMenu from "../Menu";
 import SidebarFooter from "./Footer";
 import "./Sidebar.scss";
 
