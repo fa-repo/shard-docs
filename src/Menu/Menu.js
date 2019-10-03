@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SidebarMenuList from "./MenuList";
+import MenuList from "./MenuList";
 import { appTypes, treeTypes } from "../types";
 import "./Menu.scss";
 
@@ -10,8 +10,8 @@ import "./Menu.scss";
 
 const Menu = props => {
   return (
-    <div className="shard-docs-sidebar-menu" data-show-menu-on-mobile={props.showMenuOnMobile}>
-      <SidebarMenuList app={props.app} items={props.items} onNavigate={props.onNavigate} />
+    <div className="shard-docs-sidebar-menu" data-show-on-mobile={props.showOnMobile}>
+      <MenuList app={props.app} items={props.items} onNavigate={props.onNavigate} />
     </div>
   );
 };
@@ -19,13 +19,13 @@ const Menu = props => {
 Menu.propTypes = {
   app: appTypes,
   items: treeTypes,
-  showMenuOnMobile: PropTypes.bool,
+  showOnMobile: PropTypes.bool,
   onNavigate: PropTypes.func
 };
 Menu.defaultProps = {
   app: {},
   items: [],
-  showMenuOnMobile: false,
+  showOnMobile: false,
   onNavigate: () => {}
 };
 

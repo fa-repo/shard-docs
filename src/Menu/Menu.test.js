@@ -9,11 +9,11 @@ const items = fromSource([
 ]);
 
 describe("<Menu />", () => {
-  const mountMenu = ({ items,showMenuOnMobile } = {}) => {
+  const mountMenu = ({ items, showOnMobile } = {}) => {
     const onNavigate = jest.fn();
     const wrapper = mount(
       <MemoryRouter>
-        <Menu onNavigate={onNavigate} items={items} showMenuOnMobile={showMenuOnMobile} />
+        <Menu onNavigate={onNavigate} items={items} showOnMobile={showOnMobile} />
       </MemoryRouter>
     );
 
@@ -33,15 +33,15 @@ describe("<Menu />", () => {
   });
 
   it("can show menu on mobile devices", () => {
-    const { wrapper } = mountMenu({ items, showMenuOnMobile: true });
+    const { wrapper } = mountMenu({ items, showOnMobile: true });
 
-    expect(wrapper.find('.shard-docs-sidebar-menu').props()['data-show-menu-on-mobile']).toBe(true)
+    expect(wrapper.find('.shard-docs-sidebar-menu').props()['data-show-on-mobile']).toBe(true)
   });
 
   it("can show menu on mobile devices", () => {
-    const { wrapper } = mountMenu({ items, showMenuOnMobile: false });
+    const { wrapper } = mountMenu({ items, showOnMobile: false });
 
-    expect(wrapper.find('.shard-docs-sidebar-menu').props()['data-show-menu-on-mobile']).toBe(false)
+    expect(wrapper.find('.shard-docs-sidebar-menu').props()['data-show-on-mobile']).toBe(false)
   });
 
   it("calls onNavigate", () => {

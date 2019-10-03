@@ -48,7 +48,7 @@ class Sidebar extends React.Component {
         <SidebarMenu
           app={app}
           items={source}
-          showMenuOnMobile={this.state.showMenuOnMobile}
+          showOnMobile={this.state.showMenuOnMobile}
           onNavigate={() => this.setState({ showMenuOnMobile: false })}
         />
         {showBuiltWithShardDocs && <BuiltWithShardDocs />}
