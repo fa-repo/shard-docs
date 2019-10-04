@@ -24,6 +24,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@mdx-js/loader": "^1.5.0",
+    "babel-loader": "^8.0.6",
     "cross-env": "^5.2.0",
     "css-loader": "^3.2.0",
     "laravel-mix": "^4.1.2",

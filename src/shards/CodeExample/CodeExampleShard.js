@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import parseMarkdown from "../lib/parseMarkdown";
 import CodeIcon from "boxicons/svg/regular/bx-code.svg";
 import GithubIcon from "boxicons/svg/logos/bxl-github.svg";
 import isArray from "lodash/isArray";
 import uniqid from "uniqid";
+import CodeBlock from "../../renderers/CodeBlock";
 import BaseLink from "@fa-repo/base-react/dist/link";
 import "./CodeExampleShard.scss";
 
@@ -35,15 +35,6 @@ class CodeExampleShard extends React.Component {
 
   toggleCode = () => this.setState({ displayCode: !this.state.displayCode });
 
-  getSourceCode = () => {
-    const { sourceCode, lang } = this.props;
-    if (sourceCode) {
-      return `\`\`\`${lang}\n${sourceCode.trim()}\n\`\`\``;
-    } else {
-      return null;
-    }
-  };
-
   handleToggleCode = e => {
     e.preventDefault();
     this.toggleCode();
@@ -51,7 +42,6 @@ class CodeExampleShard extends React.Component {
 
   render() {
     const { title, repository } = this.props;
-    const sourceCode = this.getSourceCode();
     const showHeader = title || sourceCode || repository;
     const displayCode = this.state.displayCode;
     let children = this.props.children;
@@ -85,10 +75,9 @@ class CodeExampleShard extends React.Component {
         )}
         <div className="code-example-shard-body">
           {displayCode && (
-            <div
-              className="source-code"
-              dangerouslySetInnerHTML={{ __html: parseMarkdown(sourceCode) }}
-            />
+            <CodeBlock className="source-code" language={this.props.lang}>
+              {this.props.sourceCode}
+            </CodeBlock>
           )}
           {children}
         </div>

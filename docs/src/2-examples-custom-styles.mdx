@@ -1,14 +1,9 @@
-import React from "react";
 import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
 
-/**
- * CustomStyles
- */
-
-const github = "https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/CustomStyles";
-
-const sourceCode = `<>
+<CodeExampleShard
+  title="Custom styles"
+  repository="https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/CustomStyles" sourceCode={`<>
   <style
     dangerouslySetInnerHTML={{
       __html: \`.shard-docs-sidebar { background: red; }\`
@@ -24,10 +19,7 @@ const sourceCode = `<>
       }
     ]}
   />
-</>`;
-
-export default (
-  <CodeExampleShard title="Custom styles" repository={github} sourceCode={sourceCode}>
-    <IframeShard path="#/examples/custom-styles" style={{ width: "1200px" }} />
-  </CodeExampleShard>
-);
+</>`}
+>
+  <IframeShard path="#/examples/custom-styles" style={{ width: "1200px" }} />
+</CodeExampleShard>

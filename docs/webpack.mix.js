@@ -8,6 +8,10 @@ mix
         {
           test: /\.md$/,
           use: "raw-loader"
+        },
+        {
+          test: /\.mdx?$/,
+          use: ["babel-loader", "@mdx-js/loader"]
         }
       ]
     }
