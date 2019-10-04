@@ -8,11 +8,11 @@ import { NavLink } from "react-router-dom";
  * HeadingNode
  */
 
-const HeadingNode = ({ node, isActive, onNavigate }) => (
+const HeadingNode = ({ node, onNavigate }) => (
   <li className="shard-docs-menu-heading">
     <h3>
       <NavLink
-        className={classnames(isActive && "active")}
+        className={classnames(node.isActive && "active")}
         to={node.path}
         onClick={e => {
           if (node.isEmpty) e.preventDefault();
@@ -29,12 +29,10 @@ const HeadingNode = ({ node, isActive, onNavigate }) => (
 
 HeadingNode.propTypes = {
   node: folderTypes,
-  isActive: PropTypes.bool,
   onNavigate: PropTypes.func
 };
 HeadingNode.defaultProps = {
   node: {},
-  isActive: false,
   onNavigate: () => {}
 };
 

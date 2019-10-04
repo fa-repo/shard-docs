@@ -116,16 +116,18 @@ export function shapeItems(items) {
         return { type, title, link };
       } else if (type === "folder" && title) {
         const isEmpty = !item.children.length;
+        const isActive = false;
         const children = shapeItems(item.children);
-        return { type, path, title, isEmpty, children };
+        return { type, path, title, isEmpty, isActive, children };
       } else if (type === "folder" && !title) {
         const children = shapeItems(item.children);
         return { type, path, children };
       } else if (type === "document") {
         const isEmpty = !Boolean(item.document);
+        const isActive = false;
         const document = item.document;
         const breadcrumbs = item.breadcrumbs;
-        return { type, path, title, isEmpty, breadcrumbs, document };
+        return { type, path, title, isEmpty, isActive, breadcrumbs, document };
       }
       return null;
     })

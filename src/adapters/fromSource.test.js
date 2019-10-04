@@ -23,7 +23,8 @@ test("fromSource() transforms data and returns tree", () =>
           path: "/doc-a",
           breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc A", link: "/doc-a" }],
           document: null,
-          isEmpty: true
+          isEmpty: true,
+          isActive: false,
         },
         {
           title: "Doc B",
@@ -31,7 +32,8 @@ test("fromSource() transforms data and returns tree", () =>
           path: "/doc-b",
           breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc B", link: "/doc-b" }],
           document: null,
-          isEmpty: true
+          isEmpty: true,
+          isActive: false,
         },
         {
           title: "Doc C",
@@ -39,7 +41,8 @@ test("fromSource() transforms data and returns tree", () =>
           path: "/doc-c",
           breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc C", link: "/doc-c" }],
           document: null,
-          isEmpty: true
+          isEmpty: true,
+          isActive: false,
         }
       ]
     },
@@ -48,6 +51,7 @@ test("fromSource() transforms data and returns tree", () =>
       type: "folder",
       path: "/folder",
       isEmpty: false,
+      isActive: false,
       children: [
         {
           title: "Doc D",
@@ -59,7 +63,8 @@ test("fromSource() transforms data and returns tree", () =>
             { text: "Doc D", link: "/folder/doc-d" }
           ],
           document: null,
-          isEmpty: true
+          isEmpty: true,
+          isActive: false,
         },
         {
           title: "Doc E",
@@ -71,7 +76,8 @@ test("fromSource() transforms data and returns tree", () =>
             { text: "Doc E", link: "/folder/doc-e" }
           ],
           document: null,
-          isEmpty: true
+          isEmpty: true,
+          isActive: false,
         }
       ]
     },
@@ -91,7 +97,8 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       path: "/doc-a",
       breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc A", link: "/doc-a" }],
       document: null,
-      isEmpty: true
+      isEmpty: true,
+      isActive: false,
     },
     {
       title: "Doc B",
@@ -99,7 +106,8 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       path: "/doc-b",
       breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc B", link: "/doc-b" }],
       document: null,
-      isEmpty: true
+      isEmpty: true,
+      isActive: false,
     },
     {
       title: "Doc C",
@@ -107,7 +115,8 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       path: "/doc-c",
       breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc C", link: "/doc-c" }],
       document: null,
-      isEmpty: true
+      isEmpty: true,
+      isActive: false,
     },
     {
       title: "Doc D",
@@ -119,7 +128,8 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
         { text: "Doc D", link: "/folder/doc-d" }
       ],
       document: null,
-      isEmpty: true
+      isEmpty: true,
+      isActive: false,
     },
     {
       title: "Doc E",
@@ -131,7 +141,8 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
         { text: "Doc E", link: "/folder/doc-e" }
       ],
       document: null,
-      isEmpty: true
+      isEmpty: true,
+      isActive: false,
     }
   ])
 );

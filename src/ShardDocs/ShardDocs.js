@@ -5,6 +5,7 @@ import Main from "../Main";
 import Sidebar from "../Sidebar";
 import fromSource from "../adapters/fromSource";
 import { sourceTypes } from "../types";
+import { setActiveTreeNode } from "../utils";
 import "./ShardDocs.scss";
 
 /**
@@ -26,7 +27,16 @@ class ShardDocs extends React.Component {
 
     const { tree, documents } = fromSource(this.props.source, this.props.basePath);
 
-    this.state = { tree, documents };
+    this.state = {
+      tree: setActiveTreeNode(tree),
+      documents
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setState({ tree: setActiveTreeNode(this.state.tree) });
+    }
   }
 
   get showDocuments() {

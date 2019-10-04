@@ -11,13 +11,12 @@ import "./Menu.scss";
 const Menu = props => {
   return (
     <div className="shard-docs-menu" data-show-on-mobile={props.showOnMobile}>
-      <MenuTree app={props.app} tree={props.tree} onNavigate={props.onNavigate} />
+      <MenuTree tree={props.tree} onNavigate={props.onNavigate} />
     </div>
   );
 };
 
 Menu.propTypes = {
-  app: appTypes,
   tree: treeTypes,
   showOnMobile: PropTypes.bool,
   onNavigate: PropTypes.func

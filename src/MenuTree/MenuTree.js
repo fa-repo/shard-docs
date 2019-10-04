@@ -3,23 +3,22 @@ import PropTypes from "prop-types";
 import DocumentNode from "./DocumentNode";
 import ExternalLinkNode from "./ExternalLinkNode";
 import FolderNode from "./FolderNode";
-import { appTypes, treeTypes } from "../types";
+import { treeTypes } from "../types";
 
 /**
  * MenuTree
  */
 
-const MenuTree = ({ tree, app, onNavigate }) => {
+const MenuTree = ({ tree, onNavigate }) => {
   return (
     <>
       {tree.map((node, i) => {
         if (node.type === "document") {
-          const isActive = app.activePath === node.path;
-          return <DocumentNode key={i} isActive={isActive} node={node} onNavigate={onNavigate} />;
+          return <DocumentNode key={i} node={node} onNavigate={onNavigate} />;
         } else if (node.type === "external") {
           return <ExternalLinkNode key={i} node={node} />;
         } else if (node.type === "folder") {
-          return <FolderNode key={i} app={app} node={node} onNavigate={onNavigate} />;
+          return <FolderNode key={i} node={node} onNavigate={onNavigate} />;
         } else {
           return null;
         }
@@ -29,12 +28,10 @@ const MenuTree = ({ tree, app, onNavigate }) => {
 };
 
 MenuTree.propTypes = {
-  app: appTypes,
   tree: treeTypes,
   onNavigate: PropTypes.func
 };
 MenuTree.defaultProps = {
-  app: {},
   tree: [],
   onNavigate: () => {}
 };

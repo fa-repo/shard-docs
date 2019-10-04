@@ -7,11 +7,11 @@ import { documentTypes } from "../types";
 /**
  * DocumentNode
  */
-const DocumentNode = ({ node, isActive, onNavigate }) => {
+const DocumentNode = ({ node, onNavigate }) => {
   return (
     <li className="shard-docs-menu-document">
       <NavLink
-        className={classnames(isActive && "active")}
+        className={classnames(node.isActive && "active")}
         to={node.path}
         onClick={e => {
           if (node.isEmpty) e.preventDefault();
@@ -28,12 +28,10 @@ const DocumentNode = ({ node, isActive, onNavigate }) => {
 
 DocumentNode.propTypes = {
   node: documentTypes,
-  isActive: PropTypes.bool,
   onNavigate: PropTypes.func
 };
 DocumentNode.defaultProps = {
   node: {},
-  isActive: false,
   onNavigate: () => {}
 };
 

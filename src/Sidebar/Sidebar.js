@@ -46,7 +46,6 @@ class Sidebar extends React.Component {
         />
         {app.description && <SidebarDescription description={app.description} />}
         <SidebarMenu
-          app={app}
           tree={tree}
           showOnMobile={this.state.showMenuOnMobile}
           onNavigate={() => this.setState({ showMenuOnMobile: false })}
