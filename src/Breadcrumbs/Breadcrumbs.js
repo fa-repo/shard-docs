@@ -12,7 +12,7 @@ const Breadcrumbs = ({ breadcrumbs }) => (
   <nav className="breadcrumbs">
     <ol>
       {breadcrumbs.map(({ text, link }, i) => (
-        <li key={i}>{link && <NavLink to={link}>{text}</NavLink>}</li>
+        <li key={i}>{<NavLink to={link}>{text}</NavLink>}</li>
       ))}
     </ol>
   </nav>

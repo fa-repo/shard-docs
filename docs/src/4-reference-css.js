@@ -14,7 +14,7 @@ const cssReference = `
 .shard-docs-sidebar-header
 .shard-docs-sidebar-heading
 .shard-docs-sidebar-description
-.shard-docs-sidebar-menu
+.shard-docs-menu
 
 // Main
 .shard-docs-main

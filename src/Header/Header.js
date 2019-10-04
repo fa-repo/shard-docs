@@ -1,42 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
-import MenuIcon from "boxicons/svg/regular/bx-menu.svg";
+import HeaderTitle from "../HeaderTitle";
+import SidebarToggle from "../SidebarToggle";
 import "./Header.scss";
 
 /**
- * SidebarHeader
+ * Header
  */
 
-const SidebarHeader = ({ title, basePath, onToggleMenu, ...props }) => {
+const Header = ({ title, basePath, onToggleMenu, ...props }) => {
   return (
     <header className="shard-docs-sidebar-header" {...props}>
-      {title && (
-        <NavLink to={basePath}>
-          <h2 className="shard-docs-sidebar-heading" title={title}>
-            {title}
-          </h2>
-        </NavLink>
-      )}
-      <button className="shard-docs-toggle-menu" onClick={onToggleMenu}>
-        <MenuIcon />
-      </button>
+      {title && <HeaderTitle title={title} path={basePath} />}
+      <SidebarToggle onClick={onToggleMenu} />
     </header>
   );
 };
 
-SidebarHeader.propTypes = {
+Header.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   basePath: PropTypes.string,
   onToggleMenu: PropTypes.func
 };
 
-SidebarHeader.defaultProps = {
+Header.defaultProps = {
   title: "",
   description: "",
   basePath: "/",
   onToggleMenu: () => {}
 };
 
-export default SidebarHeader;
+export default Header;

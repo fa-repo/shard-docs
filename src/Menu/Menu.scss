@@ -1,4 +1,4 @@
-.shard-docs-sidebar-menu {
+.shard-docs-menu {
   margin: 0;
   padding-right: 15px;
   color: rgba(255, 255, 255, 0.5);
@@ -6,7 +6,7 @@
   line-height: normal;
   width: 300px;
 
-  &[data-show-menu-on-mobile="false"] {
+  &[data-show-on-mobile="false"] {
     display: none;
     @media (min-width: 1200px) {
       display: block;

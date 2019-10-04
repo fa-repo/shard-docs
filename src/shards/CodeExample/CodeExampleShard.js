@@ -15,7 +15,7 @@ import "./CodeExampleShard.scss";
 
 class CodeExampleShard extends React.Component {
   static propTypes = {
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    title: PropTypes.string,
     lang: PropTypes.string,
     sourceCode: PropTypes.string,
     repository: PropTypes.string
@@ -71,9 +71,10 @@ class CodeExampleShard extends React.Component {
               {title}
             </h3>
             <menu>
-              <a className="code" href="#" onClick={this.handleToggleCode}>
+              <BaseLink className="code" preventDefault onClick={this.toggleCode}>
                 <CodeIcon />
-              </a>
+              </BaseLink>
+
               {repository && (
                 <BaseLink className="repository" href={repository} newTab>
                   <GithubIcon />

@@ -6,5 +6,6 @@ export default PropTypes.shape({
   path: PropTypes.string,
   title: PropTypes.string,
   isEmpty: PropTypes.bool,
+  isActive: PropTypes.bool,
   children: treeTypes
 });

@@ -8,7 +8,7 @@ import "./Pagination.scss";
  * Pagination
  */
 
-const Button = ({ link, text, ...props }) => (
+const PaginationButton = ({ link, text, ...props }) => (
   <div {...props}>
     <NavLink to={link} children={text} exact />
   </div>
@@ -20,8 +20,20 @@ const Pagination = props => {
   return (
     show && (
       <footer className="shard-docs-pagination">
-        {prev && <Button className="prev" text={`⟵ ${prev.text}`} link={prev.path}></Button>}
-        {next && <Button className="next" text={`${next.text} ⟶`} link={next.path}></Button>}
+        {prev && (
+          <PaginationButton
+            className="prev"
+            text={`⟵ ${prev.text}`}
+            link={prev.path}
+          ></PaginationButton>
+        )}
+        {next && (
+          <PaginationButton
+            className="next"
+            text={`${next.text} ⟶`}
+            link={next.path}
+          ></PaginationButton>
+        )}
       </footer>
     )
   );
