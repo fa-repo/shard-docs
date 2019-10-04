@@ -29,25 +29,25 @@ describe("<Menu />", () => {
   it("renders Menu", () => {
     const { wrapper } = mountMenu({ tree });
 
-    expect(wrapper.find('.shard-docs-sidebar-menu ul li').exists()).toBe(true)
+    expect(wrapper.find('.shard-docs-menu ul li').exists()).toBe(true)
   });
 
   it("can show menu on mobile devices", () => {
     const { wrapper } = mountMenu({ tree, showOnMobile: true });
 
-    expect(wrapper.find('.shard-docs-sidebar-menu').props()['data-show-on-mobile']).toBe(true)
+    expect(wrapper.find('.shard-docs-menu').props()['data-show-on-mobile']).toBe(true)
   });
 
   it("can show menu on mobile devices", () => {
     const { wrapper } = mountMenu({ tree, showOnMobile: false });
 
-    expect(wrapper.find('.shard-docs-sidebar-menu').props()['data-show-on-mobile']).toBe(false)
+    expect(wrapper.find('.shard-docs-menu').props()['data-show-on-mobile']).toBe(false)
   });
 
   it("calls onNavigate", () => {
     const { wrapper, onNavigate } = mountMenu({ tree });
 
-    wrapper.find('.shard-docs-sidebar-menu ul li a').first().simulate('click');
+    wrapper.find('.shard-docs-menu ul li a').first().simulate('click');
 
     expect(onNavigate.mock.calls.length).toBe(1)
   });

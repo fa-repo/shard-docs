@@ -46,7 +46,7 @@ describe("<Sidebar />", () => {
   it("renders menu", () => {
     const wrapper = mountSidebar({ tree });
 
-    expect(wrapper.find('.shard-docs-sidebar-menu ul li').exists()).toBe(true);
+    expect(wrapper.find('.shard-docs-menu ul li').exists()).toBe(true);
   });
 
   it("renders sidebar footer", () => {

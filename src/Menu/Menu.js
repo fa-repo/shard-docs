@@ -10,7 +10,7 @@ import "./Menu.scss";
 
 const Menu = props => {
   return (
-    <div className="shard-docs-sidebar-menu" data-show-on-mobile={props.showOnMobile}>
+    <div className="shard-docs-menu" data-show-on-mobile={props.showOnMobile}>
       <MenuTree app={props.app} tree={props.tree} onNavigate={props.onNavigate} />
     </div>
   );
