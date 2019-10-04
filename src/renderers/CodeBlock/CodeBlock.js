@@ -1,8 +1,9 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 
-export default ({ children, language }) => {
-  console.log(children);
+export default ({ children, className, language }) => {
+  language = language || className.replace(/language-/, "");
+
   return (
     <Highlight {...defaultProps} code={children.trim()} language={language} theme={null}>
       {({ className, tokens, getLineProps, getTokenProps }) => (

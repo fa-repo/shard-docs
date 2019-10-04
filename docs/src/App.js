@@ -1,8 +1,10 @@
 import React from "react";
+import { MDXProvider } from "@mdx-js/react";
 
-import { Switch, Route, NavLink } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 import ScrollMemory from "react-router-scroll-memory";
+import CodeBlock from "@fa-repo/shard-docs/dist/renderers/codeblock";
 
 import ShardDocs from "@fa-repo/shard-docs";
 
@@ -20,7 +22,6 @@ import CustomStyles from "./2-examples-custom-styles.mdx";
 // Shards
 import CodeExampleShard from "./3-shards-code-example.mdx";
 import IframeShard from "./3-shards-iframe.mdx";
-import MarkdownShard from "./3-shards-markdown.mdx";
 import SectionShard from "./3-shards-section.mdx";
 
 // Reference material
@@ -40,7 +41,6 @@ import HideSidebarFooterExample from "./examples/2-hide-sidebar-footer-a";
 // Styles
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
-import "@fa-repo/shard-docs/dist/shards/markdown-shard.css";
 import "@fa-repo/shard-docs/dist/shards/iframe-shard.css";
 import "@fa-repo/shard-docs/dist/shards/section-shard.css";
 import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";
@@ -67,7 +67,6 @@ const source = [
     children: [
       { title: "CodeExampleShard", document: <CodeExampleShard /> },
       { title: "IframeShard", document: <IframeShard /> },
-      { title: "MarkdownShard", document: <MarkdownShard /> },
       { title: "SectionShard", document: <SectionShard /> }
     ]
   },
@@ -81,40 +80,47 @@ const source = [
   { title: "Github", externalLink: "http://github.com" }
 ];
 
+const components = {
+  pre: props => <div {...props} />,
+  code: CodeBlock
+};
+
 const Docs = () => (
   <HashRouter>
-    <>
-      <ScrollMemory />
-      <Route
-        render={() => (
-          <ShardDocs
-            title="@fa-repo/shard-docs"
-            description="A concise / extendable react component for handling documentation"
-            source={source}
-          />
-        )}
-      />
+    <MDXProvider components={components}>
+      <>
+        <ScrollMemory />
+        <Route
+          render={() => (
+            <ShardDocs
+              title="@fa-repo/shard-docs"
+              description="A concise / extendable react component for handling documentation"
+              source={source}
+            />
+          )}
+        />
 
-      <Switch>
-        <Route path="/examples/hello-world" children={<HelloWorldExample />} />
-        <Route
-          path="/examples/sidebar-structure-basic"
-          children={<SidebarStructureBasicExample />}
-        />
-        <Route
-          path="/examples/sidebar-structure-groups"
-          children={<SidebarStructureGroupsExample />}
-        />
-        <Route
-          path="/examples/sidebar-structure-indentation"
-          children={<SidebarStructureIndentationExample />}
-        />
-        <Route path="/examples/sidebar-description" children={<SidebarDescriptionExample />} />
-        <Route path="/examples/sidebar-external-link" children={<SidebarExternalLinkExample />} />
-        <Route path="/examples/hide-sidebar-footer" children={<HideSidebarFooterExample />} />
-        <Route path="/examples/custom-styles" children={<SidebarCustomStylesExample />} />
-      </Switch>
-    </>
+        <Switch>
+          <Route path="/examples/hello-world" children={<HelloWorldExample />} />
+          <Route
+            path="/examples/sidebar-structure-basic"
+            children={<SidebarStructureBasicExample />}
+          />
+          <Route
+            path="/examples/sidebar-structure-groups"
+            children={<SidebarStructureGroupsExample />}
+          />
+          <Route
+            path="/examples/sidebar-structure-indentation"
+            children={<SidebarStructureIndentationExample />}
+          />
+          <Route path="/examples/sidebar-description" children={<SidebarDescriptionExample />} />
+          <Route path="/examples/sidebar-external-link" children={<SidebarExternalLinkExample />} />
+          <Route path="/examples/hide-sidebar-footer" children={<HideSidebarFooterExample />} />
+          <Route path="/examples/custom-styles" children={<SidebarCustomStylesExample />} />
+        </Switch>
+      </>
+    </MDXProvider>
   </HashRouter>
 );
 

@@ -1,12 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import parseMarkdown from "../lib/parseMarkdown";
 import CodeIcon from "boxicons/svg/regular/bx-code.svg";
 import GithubIcon from "boxicons/svg/logos/bxl-github.svg";
 import isArray from "lodash/isArray";
 import uniqid from "uniqid";
-import CodeBlock from "../../CodeBlock";
+import CodeBlock from "../../renderers/CodeBlock";
 import BaseLink from "@fa-repo/base-react/dist/link";
 import "./CodeExampleShard.scss";
 
