@@ -1,5 +1,6 @@
-import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
+import Frame from "./Frame";
+import ShardDocs from "@fa-repo/shard-docs";
 
 <CodeExampleShard
   title="Sidebar external link"
@@ -19,6 +20,21 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
     }
   ]}
 />`}
->
-  <IframeShard path="#/examples/sidebar-external-link" style={{ width: "1200px" }} />
+><Frame>
+  <ShardDocs
+    title="Documentation title"
+    basePath="/examples/sidebar-external-link"
+    source={[
+  {
+    title: null,
+    children: [
+      { title: "Some page A", document: <p>Lorem ipsum...</p> },
+      { title: "Some page B", document: <p>Lorem ipsum...</p> },
+      { title: "Some page C", document: <p>Lorem ipsum...</p> },
+      { title: "Github", externalLink: "https://github.com/" }
+    ]
+  }
+]}
+  />
+</Frame>
 </CodeExampleShard>

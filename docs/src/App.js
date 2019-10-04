@@ -21,27 +21,15 @@ import CustomStyles from "./2-examples-custom-styles.mdx";
 
 // Shards
 import CodeExampleShard from "./3-shards-code-example.mdx";
-import IframeShard from "./3-shards-iframe.mdx";
 import SectionShard from "./3-shards-section.mdx";
 
 // Reference material
 import ApiReference from "./4-reference-api.mdx";
 import CssReference from "./4-reference-css.mdx";
 
-// Examples
-import HelloWorldExample from "./examples/2-hello-world-a";
-import SidebarDescriptionExample from "./examples/2-sidebar-description-a";
-import SidebarExternalLinkExample from "./examples/2-sidebar-external-link-a";
-import SidebarStructureBasicExample from "./examples/2-sidebar-structure-a";
-import SidebarStructureGroupsExample from "./examples/2-sidebar-structure-b";
-import SidebarStructureIndentationExample from "./examples/2-sidebar-structure-c";
-import SidebarCustomStylesExample from "./examples/2-custom-styles-a";
-import HideSidebarFooterExample from "./examples/2-hide-sidebar-footer-a";
-
 // Styles
 import "./sanitize.css";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
-import "@fa-repo/shard-docs/dist/shards/iframe-shard.css";
 import "@fa-repo/shard-docs/dist/shards/section-shard.css";
 import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";
 
@@ -66,7 +54,6 @@ const source = [
     title: "Shards",
     children: [
       { title: "CodeExampleShard", document: <CodeExampleShard /> },
-      { title: "IframeShard", document: <IframeShard /> },
       { title: "SectionShard", document: <SectionShard /> }
     ]
   },
@@ -99,26 +86,6 @@ const Docs = () => (
             />
           )}
         />
-
-        <Switch>
-          <Route path="/examples/hello-world" children={<HelloWorldExample />} />
-          <Route
-            path="/examples/sidebar-structure-basic"
-            children={<SidebarStructureBasicExample />}
-          />
-          <Route
-            path="/examples/sidebar-structure-groups"
-            children={<SidebarStructureGroupsExample />}
-          />
-          <Route
-            path="/examples/sidebar-structure-indentation"
-            children={<SidebarStructureIndentationExample />}
-          />
-          <Route path="/examples/sidebar-description" children={<SidebarDescriptionExample />} />
-          <Route path="/examples/sidebar-external-link" children={<SidebarExternalLinkExample />} />
-          <Route path="/examples/hide-sidebar-footer" children={<HideSidebarFooterExample />} />
-          <Route path="/examples/custom-styles" children={<SidebarCustomStylesExample />} />
-        </Switch>
       </>
     </MDXProvider>
   </HashRouter>
