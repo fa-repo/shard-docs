@@ -25,17 +25,17 @@ class ShardDocs extends React.Component {
   constructor(props) {
     super(props);
 
-    const { tree, documents } = fromSource(this.props.source, this.props.basePath);
+    let { tree, documents } = fromSource(this.props.source, this.props.basePath);
+    tree = setActiveTreeNode(tree, this.props.location.pathname);
 
-    this.state = {
-      tree: setActiveTreeNode(tree),
-      documents
-    };
+    this.state = { tree, documents };
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.setState({ tree: setActiveTreeNode(this.state.tree) });
+    const { location } = this.props;
+
+    if (location.pathname !== prevProps.location.pathname) {
+      this.setState({ tree: setActiveTreeNode(this.state.tree, location.pathname) });
     }
   }
 
