@@ -2,8 +2,13 @@
   flex: 1;
   text-decoration: none;
   overflow: hidden;
+
   &:hover {
     text-decoration: underline;
+  }
+
+  &:focus {
+    color: #673ab6;
   }
 
   h2 {
