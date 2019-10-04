@@ -7,25 +7,25 @@ import ScrollMemory from "react-router-scroll-memory";
 import ShardDocs from "@fa-repo/shard-docs";
 
 // Introduction
-import getStarted from "./1-introduction-get-started";
+import GetStarted from "./1-introduction-get-started.mdx";
 
 // Examples
-import helloWorld from "./2-examples-hello-world";
-import sidebarStructure from "./2-examples-sidebar-structure";
-import sidebarDescription from "./2-examples-sidebar-description";
-import sidebarExternalLink from "./2-examples-sidebar-external-link";
-import hideSidebarFooter from "./2-examples-hide-sidebar-footer";
-import customStyles from "./2-examples-custom-styles";
+import HelloWorld from "./2-examples-hello-world.mdx";
+import SidebarStructure from "./2-examples-sidebar-structure.mdx";
+import SidebarDescription from "./2-examples-sidebar-description.mdx";
+import SidebarExternalLink from "./2-examples-sidebar-external-link.mdx";
+import HideSidebarFooter from "./2-examples-hide-sidebar-footer.mdx";
+import CustomStyles from "./2-examples-custom-styles.mdx";
 
 // Shards
-import markdownShard from "./3-shards-markdown";
-import iframeShard from "./3-shards-iframe";
-import sectionShard from "./3-shards-section";
-import codeExampleShard from "./3-shards-code-example";
+import CodeExampleShard from "./3-shards-code-example.mdx";
+import IframeShard from "./3-shards-iframe.mdx";
+import MarkdownShard from "./3-shards-markdown.mdx";
+import SectionShard from "./3-shards-section.mdx";
 
 // Reference material
-import apiReference from "./4-reference-api";
-import cssReference from "./4-reference-css";
+import ApiReference from "./4-reference-api.mdx";
+import CssReference from "./4-reference-css.mdx";
 
 // Examples
 import HelloWorldExample from "./examples/2-hello-world-a";
@@ -50,32 +50,32 @@ import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";
  */
 
 const source = [
-  { title: "Get started", document: getStarted },
+  { title: "Get started", document: <GetStarted /> },
   {
     title: "Examples",
     children: [
-      { title: "Hello world", document: helloWorld },
-      { title: "Sidebar structure", document: sidebarStructure },
-      { title: "Sidebar description", document: sidebarDescription },
-      { title: "Sidebar external link", document: sidebarExternalLink },
-      { title: "Hide sidebar footer", document: hideSidebarFooter },
-      { title: "Custom styles", document: customStyles }
+      { title: "Hello world", document: <HelloWorld /> },
+      { title: "Sidebar structure", document: <SidebarStructure /> },
+      { title: "Sidebar description", document: <SidebarDescription /> },
+      { title: "Sidebar external link", document: <SidebarExternalLink /> },
+      { title: "Hide sidebar footer", document: <HideSidebarFooter /> },
+      { title: "Custom styles", document: <CustomStyles /> }
     ]
   },
   {
     title: "Shards",
     children: [
-      { title: "CodeExampleShard", document: codeExampleShard },
-      { title: "IframeShard", document: iframeShard },
-      { title: "MarkdownShard", document: markdownShard },
-      { title: "SectionShard", document: sectionShard }
+      { title: "CodeExampleShard", document: <CodeExampleShard /> },
+      { title: "IframeShard", document: <IframeShard /> },
+      { title: "MarkdownShard", document: <MarkdownShard /> },
+      { title: "SectionShard", document: <SectionShard /> }
     ]
   },
   {
     title: "Reference",
     children: [
-      { title: "API reference", document: apiReference },
-      { title: "CSS reference", document: cssReference }
+      { title: "API reference", document: <ApiReference /> },
+      { title: "CSS reference", document: <CssReference /> }
     ]
   },
   { title: "Github", externalLink: "http://github.com" }
