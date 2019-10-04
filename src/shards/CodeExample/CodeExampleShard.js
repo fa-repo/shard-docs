@@ -75,11 +75,11 @@ class CodeExampleShard extends React.Component {
         )}
         <div className="code-example-shard-body">
           {displayCode && (
-            <CodeBlock className="source-code" language={this.props.lang}>
-              {this.props.sourceCode}
-            </CodeBlock>
+            <div className="source-code">
+              <CodeBlock language={this.props.lang}>{this.props.sourceCode}</CodeBlock>
+            </div>
           )}
-          {children}
+          <div className="example">{children}</div>
         </div>
       </section>
     );

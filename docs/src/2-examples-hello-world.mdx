@@ -1,5 +1,6 @@
-import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
+import ShardDocs from "@fa-repo/shard-docs";
+import Frame from "./Frame";
 
 <CodeExampleShard
   title="Hello world"
@@ -14,5 +15,12 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
     }
   ]}
 />`}>
-  <IframeShard path="#/examples/hello-world" style={{ width: "1200px" }} />
+  <Frame>
+    <ShardDocs title="Package name" basePath="/examples/hello-world" source={[
+  {
+    title: "Hello world",
+    document: <img src="/images/hello-world.jpg" alt="Turtle" />
+  }
+]} />
+  </Frame>
 </CodeExampleShard>

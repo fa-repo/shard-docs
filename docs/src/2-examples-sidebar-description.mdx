@@ -1,5 +1,6 @@
-import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
+import Frame from "./Frame";
+import ShardDocs from "@fa-repo/shard-docs";
 
 <CodeExampleShard
   title="Sidebar description"
@@ -9,5 +10,11 @@ import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard
   title="Documentation title"
   description="A description describing your documentation"
 />`}>
-  <IframeShard path="#/examples/sidebar-description" style={{ width: "1200px" }} />
+  <Frame>
+    <ShardDocs
+      title="Documentation title"
+      description="A description describing your documentation"
+      basePath="/examples/sidebar-description"
+    />
+  </Frame>
 </CodeExampleShard>

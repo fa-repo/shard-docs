@@ -1,25 +1,34 @@
-import IframeShard from "@fa-repo/shard-docs/dist/shards/iframe-shard";
 import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
+import ShardDocs from "@fa-repo/shard-docs";
+import Frame from "./Frame";
 
 <CodeExampleShard
   title="Custom styles"
-  repository="https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/CustomStyles" sourceCode={`<>
-  <style
-    dangerouslySetInnerHTML={{
-      __html: \`.shard-docs-sidebar { background: red; }\`
-    }}
-  />
-  <ShardDocs
-    title="Documentation title"
-    basePath="/examples/custom-styles/essentials/get-started"
-    source={[
-      {
-        title: "Essentials",
-        children: [{ title: "Get started", document: <h1>Get started</h1> }]
-      }
-    ]}
-  />
-</>`}
+  repository="https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/CustomStyles" sourceCode={`
+<style>{\`
+  .shard-docs-sidebar { background: red; }
+\`}</style>
+\n
+<ShardDocs
+  title="Documentation title"
+  basePath="/examples/custom-styles/essentials/get-started"
+  source={[
+    {
+      title: "Essentials",
+      children: [{ title: "Get started", document: <h1>Get started</h1> }]
+    }
+  ]}
+/>`}
 >
-  <IframeShard path="#/examples/custom-styles" style={{ width: "1200px" }} />
+  <Frame>
+    <>
+      <style>{`.shard-docs-sidebar { background: red; }`}</style>
+      <ShardDocs
+        title="Documentation title"
+        source={
+          [{title:"Essentials",children:[{title:"Get started",document:<h1>Get started</h1>}]}]
+        }
+      />
+    </>
+  </Frame>
 </CodeExampleShard>
