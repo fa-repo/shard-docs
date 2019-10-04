@@ -6,17 +6,17 @@ import fromSource from "../adapters/fromSource";
 
 const title = "App title";
 const description = "App description.";
-const source = fromSource([
+const tree = fromSource([
   { title: "Doc A", document: <h1>Doc A</h1> }
 ]);
 
 describe("<Sidebar />", () => {
-  const mountSidebar = ({app, source, hideBuiltWithShardDocs } = {}) => {
+  const mountSidebar = ({ app, tree, hideBuiltWithShardDocs } = {}) => {
     return mount(
       <MemoryRouter>
         <Sidebar
           app={app}
-          source={source}
+          tree={tree}
           hideBuiltWithShardDocs={hideBuiltWithShardDocs}
         />
       </MemoryRouter>
@@ -44,7 +44,7 @@ describe("<Sidebar />", () => {
   });
 
   it("renders menu", () => {
-    const wrapper = mountSidebar({ source });
+    const wrapper = mountSidebar({ tree });
 
     expect(wrapper.find('.shard-docs-sidebar-menu ul li').exists()).toBe(true);
   });

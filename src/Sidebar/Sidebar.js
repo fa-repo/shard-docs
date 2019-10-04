@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
     app: appTypes,
     title: PropTypes.string,
     description: PropTypes.string,
-    source: treeTypes,
+    tree: treeTypes,
     hideBuiltWithShardDocs: PropTypes.bool
   };
 
@@ -24,7 +24,7 @@ class Sidebar extends React.Component {
     app: {},
     title: "",
     description: "",
-    source: [],
+    tree: [],
     hideBuiltWithShardDocs: false
   };
 
@@ -33,7 +33,7 @@ class Sidebar extends React.Component {
   };
 
   render() {
-    const { app, source, hideBuiltWithShardDocs } = this.props;
+    const { app, tree, hideBuiltWithShardDocs } = this.props;
     const showBuiltWithShardDocs = !hideBuiltWithShardDocs;
 
     return (
@@ -47,7 +47,7 @@ class Sidebar extends React.Component {
         {app.description && <SidebarDescription description={app.description} />}
         <SidebarMenu
           app={app}
-          items={source}
+          tree={tree}
           showOnMobile={this.state.showMenuOnMobile}
           onNavigate={() => this.setState({ showMenuOnMobile: false })}
         />
