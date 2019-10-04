@@ -1,14 +1,16 @@
 import slugify from "slugify";
 import kebabCase from "lodash/kebabCase";
-import isArray from "lodash/isArray";
 
-export default function fromSource(source, basePath = "/") {
-  source = addTypes(source);
-  source = addPaths(source, basePath);
-  source = addBreadcrumbs(source, [{ link: basePath, text: "~" }]);
-  source = shapeItems(source, basePath);
-  source = combineTopLevelAdjacentItems(source);
-  return source;
+export default function fromSource(tree, basePath = "/") {
+  tree = addTypes(tree);
+  tree = addPaths(tree, basePath);
+  tree = addBreadcrumbs(tree, [{ link: basePath, text: "~" }]);
+  tree = shapeItems(tree, basePath);
+  tree = combineTopLevelAdjacentItems(tree);
+  return {
+    tree,
+    documents: flattenDocuments(tree)
+  };
 }
 
 /**
@@ -128,4 +130,20 @@ export function shapeItems(items) {
       return null;
     })
     .filter(Boolean);
+}
+
+/**
+ * Loops through each item, child and grandchild grabbing each document.
+ * @param  {array} source Expects source array to have been fed through addTypes..
+ * @return {array} returns all documents in an array
+ */
+function flattenDocuments(items, accumulator = []) {
+  for (const item of items) {
+    if (item.type === "folder") {
+      accumulator = flattenDocuments(item.children, accumulator);
+    } else if (item.type === "document") {
+      accumulator = [...accumulator, item];
+    }
+  }
+  return accumulator;
 }

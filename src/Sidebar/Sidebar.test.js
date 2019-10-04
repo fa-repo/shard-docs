@@ -6,7 +6,7 @@ import fromSource from "../adapters/fromSource";
 
 const title = "App title";
 const description = "App description.";
-const tree = fromSource([
+const { tree } = fromSource([
   { title: "Doc A", document: <h1>Doc A</h1> }
 ]);
 

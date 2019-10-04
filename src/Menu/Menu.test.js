@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import Menu from "./Menu";
 import fromSource from "../adapters/fromSource";
 
-const tree = fromSource([
+const { tree } = fromSource([
   { title: "Doc A", document: <h1>Doc A</h1> }
 ]);
 
