@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { NavLink } from "react-router-dom";
+import Breadcrumbs from "../Breadcrumbs";
+import { breadcrumbTypes, documentTypes } from "../types";
+
 import "./Document.scss";
 import "./prism.scss";
 
@@ -8,30 +10,23 @@ import "./prism.scss";
  * Document
  */
 
-const Document = ({ document }) => {
-  const { breadcrumbs, composition = [] } = document;
-
+const Document = ({ document, breadcrumbs }) => {
   return (
     <article className="document">
-      <ul className="breadcrumbs">
-        {breadcrumbs.map(({ text, link }, i) => (
-          <li key={i}>{link && <NavLink to={link}>{text}</NavLink>}</li>
-        ))}
-      </ul>
-      <div className="content">{composition.map((component, i) => ({ ...component, key: i }))}</div>
+      <Breadcrumbs breadcrumbs={breadcrumbs} />
+      <div className="document-body">{document}</div>
     </article>
   );
 };
 
 Document.propTypes = {
-  document: PropTypes.shape({
-    breadcrumbs: PropTypes.array.isRequired,
-    composition: PropTypes.array.isRequired
-  })
+  breadcrumbs: PropTypes.arrayOf(breadcrumbTypes).isRequired,
+  document: PropTypes.element
 };
 
 Document.defaultProps = {
-  document: {}
+  breadcrumbs: [],
+  document: null
 };
 
 export default Document;

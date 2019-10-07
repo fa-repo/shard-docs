@@ -1,0 +1,30 @@
+.shard-docs-sidebar-title {
+  flex: 1;
+  text-decoration: none;
+  overflow: hidden;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: #673ab6;
+  }
+
+  h2 {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    padding: 3px 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    @media (min-width: 1200px) {
+      background: white;
+      color: #673ab6;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}

@@ -5,11 +5,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Fixed
+- Fix react-router not adding pages to history
+- Fix CodeExampleShard crashing when more than one child was provided
+- Fix inability to toggle SectionShard without providing an id.
+### Removed
+- Remove support for headings in source schema.
+- Remove markdown shard. Write docs with MDX instead (@mdx-js/react).
+- Remove Iframe shard. Use react-frame-component instead which enables writing inline iframes.
+### Changed
+- Change source schema. Groups are now referred to as folders and pages as documents.
+- Source data is now prepared in an adapter file.
+- Remove support for custom doc / folder slugs
+- Various adjustments
+- CSS changes
+- Updated docs
 
 ## [4.1.0] - 2019-09-27
 ### Fixed
 - Sidebar-structure doc crashing on load
-### Remove
+### Removed
 - Box shadow from CodeExampleShard as well as noShadow prop
 ### Changed
 - [BREAKING CHANGE] Renamed tree prop to source

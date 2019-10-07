@@ -1,0 +1,19 @@
+.shard-docs-pagination {
+  display: flex;
+  margin: 0 auto;
+  max-width: 980px;
+  margin-top: 30px;
+
+  a {
+    color: #0000ee;
+    text-decoration: none;
+    font-size: 14px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .next {
+    margin-left: auto;
+  }
+}

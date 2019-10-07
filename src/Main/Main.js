@@ -1,36 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Footer from "./Footer";
+import Pagination from "../Pagination";
+import Document from "../Document";
+import { paginationTypes, documentTypes } from "../types";
 import "./Main.scss";
 
 /**
  * Main
  */
 
-const Main = ({ prevPage, nextPage, ...props }) => {
+const Main = ({ pagination, documents }) => {
   return (
-    <div className="shard-docs-main">
-      {props.children}
-      <Footer
-        prevText={prevPage && prevPage.title}
-        prevLink={prevPage && prevPage.path}
-        nextText={nextPage && nextPage.title}
-        nextLink={nextPage && nextPage.path}
-      />
-    </div>
+    <main className="shard-docs-main">
+      {documents.map((document, i) => (
+        <Document key={i} breadcrumbs={document.breadcrumbs} document={document.document} />
+      ))}
+      <Pagination pagination={pagination} />
+    </main>
   );
 };
 
 Main.propTypes = {
-  prevPage: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired
-  }),
-  nextPage: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired
-  })
+  pagination: paginationTypes,
+  documents: PropTypes.arrayOf(documentTypes)
 };
-Main.defaultProps = {};
+Main.defaultProps = {
+  pagination: {},
+  documents: []
+};
 
 export default Main;

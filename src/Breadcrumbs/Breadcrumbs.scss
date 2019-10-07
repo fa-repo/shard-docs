@@ -1,0 +1,35 @@
+.breadcrumbs {
+  padding: 5px 6px;
+  font-size: 14px;
+  background: #eeeeee;
+  color: #212121;
+  border-bottom: thin solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px 4px 0 0;
+
+  ol {
+    margin: 0;
+  }
+
+  ol li {
+    display: inline-block;
+  }
+
+  ol li:not(:last-child):after {
+    content: " / ";
+    margin-right: 4px;
+  }
+
+  ol li:last-child a {
+    font-weight: normal;
+  }
+
+  ol li a {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  ol li a:hover {
+    text-decoration: underline;
+  }
+}

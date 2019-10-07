@@ -16,8 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "test": "npx cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "npx react-scripts test --env=jsdom",
+    "test": "npx ./node_modules/.bin/jest --env=jsdom",
+    "test:watch": "npx ./node_modules/.bin/jest --watch --env=jsdom",
     "build": "npx rollup -c",
     "watch": "npx rollup -c -w",
     "prepare": "npm run build",
@@ -51,12 +51,24 @@
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@fa-repo/base-react": "^2.2.1",
+    "@mdx-js/react": "^1.5.0",
     "@svgr/rollup": "^4.3.2",
+    "babel-plugin-inline-react-svg": "^1.1.0",
     "boxicons": "^2.0.3",
     "classnames": "^2.2.6",
+    "core-js": "^3.2.1",
     "cross-env": "^5.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "gh-pages": "^2.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "immutable": "^4.0.0-rc.12",
+    "jest": "^24.9.0",
     "node-sass": "^4.12.0",
+    "prism-react-renderer": "^1.0.1",
+    "react-router-dom": "^5.1.2",
+    "react-router-scroll-memory": "^2.0.3",
     "remarkable": "^2.0.0",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
@@ -74,6 +86,6 @@
     "prop-types": "^15",
     "react": "^16",
     "react-dom": "^16",
-    "react-router-dom": "^5"
+    "react-router-dom": "^5.1.2"
   }
 }
