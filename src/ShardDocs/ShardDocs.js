@@ -87,7 +87,6 @@ class ShardDocs extends React.Component {
           title={title}
           description={description}
           basePath={basePath}
-          activePath={this.props.location.pathname}
           tree={this.state.tree}
           hideBuiltWithShardDocs={this.props.hideBuiltWithShardDocs}
         />
