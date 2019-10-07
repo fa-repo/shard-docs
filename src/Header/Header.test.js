@@ -7,7 +7,7 @@ describe("<Header />", () => {
   it("renders without crashing", () => {
     const wrapper = mount(<Header/>)
 
-    expect(wrapper.find('.shard-docs-sidebar-header').exists()).toBe(true)
+    expect(wrapper.find('.shard-docs-header').exists()).toBe(true)
   });
 
   it("renders title", () => {
@@ -17,7 +17,7 @@ describe("<Header />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.shard-docs-sidebar-title h2').text()).toBe("Hello world")
+    expect(wrapper.find('.shard-docs-header-title h2').text()).toBe("Hello world")
   });
 
   it("renders header link with custom basePath", () => {
@@ -27,21 +27,21 @@ describe("<Header />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.shard-docs-sidebar-header a').props().href).toBe("/docs")
-    expect(wrapper.find('.shard-docs-sidebar-header').text()).toBe("Hello world")
+    expect(wrapper.find('.shard-docs-header a').props().href).toBe("/docs")
+    expect(wrapper.find('.shard-docs-header').text()).toBe("Hello world")
   });
 
   it("renders toggle button", () => {
     const wrapper = mount(<Header />);
 
-    expect(wrapper.find('.shard-docs-sidebar-toggle').exists()).toBe(true)
+    expect(wrapper.find('.shard-docs-header-toggle').exists()).toBe(true)
   });
 
   it("calls onToggleMenu when sidebar toggle button clicked", () => {
     const onToggleMenu = jest.fn();
     const wrapper = mount(<Header onToggleMenu={onToggleMenu} />)
 
-    wrapper.find('.shard-docs-sidebar-toggle').simulate('click')
+    wrapper.find('.shard-docs-header-toggle').simulate('click')
 
     expect(onToggleMenu.mock.calls[0].length).toBe(1)
   });

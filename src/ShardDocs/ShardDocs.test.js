@@ -36,13 +36,13 @@ describe("<ShardDocs />", () => {
   it("renders app title", () => {
     const wrapper = mountShardDocs({ title });
 
-    expect(wrapper.find('Sidebar .shard-docs-sidebar-title h2').text()).toBe(title);
+    expect(wrapper.find('Sidebar .shard-docs-header-title h2').text()).toBe(title);
   });
 
   it("renders app description", () => {
     const wrapper = mountShardDocs({ description });
 
-    expect(wrapper.find('Sidebar .shard-docs-sidebar-description').text()).toBe(description);
+    expect(wrapper.find('Sidebar .shard-docs-description').text()).toBe(description);
   });
 
   it("renders menu", () => {
@@ -54,13 +54,13 @@ describe("<ShardDocs />", () => {
   it("renders sidebar footer", () => {
     const wrapper = mountShardDocs();
 
-    expect(wrapper.find('Sidebar .shard-docs-built-with').exists()).toBe(true);
+    expect(wrapper.find('Sidebar .shard-docs-built-with-shard-docs').exists()).toBe(true);
   });
 
   it("can hide sidebar footer", () => {
     const wrapper = mountShardDocs({ hideBuiltWithShardDocs: true });
 
-    expect(wrapper.find('Sidebar .shard-docs-sidebar-footer').exists()).toBe(false);
+    expect(wrapper.find('Sidebar .shard-docs-built-with-shard-docs').exists()).toBe(false);
   });
 
   it("renders main", () => {

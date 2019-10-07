@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Breadcrumbs from "../Breadcrumbs";
-import { breadcrumbTypes, documentTypes } from "../types";
+import { breadcrumbTypes } from "../types";
 
 import "./Document.scss";
 import "./prism.scss";
@@ -12,9 +12,9 @@ import "./prism.scss";
 
 const Document = ({ document, breadcrumbs }) => {
   return (
-    <article className="document">
+    <article className="shard-docs-document">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="document-body">{document}</div>
+      <div className="shard-docs-document-body">{document}</div>
     </article>
   );
 };

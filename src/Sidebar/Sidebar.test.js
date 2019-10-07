@@ -33,14 +33,14 @@ describe("<Sidebar />", () => {
     const app = { title };
     const wrapper = mountSidebar({ app });
 
-    expect(wrapper.find('.shard-docs-sidebar-title h2').text()).toBe(title);
+    expect(wrapper.find('.shard-docs-header-title h2').text()).toBe(title);
   });
 
   it("renders app description", () => {
     const app = { description };
     const wrapper = mountSidebar({ app });
 
-    expect(wrapper.find('.shard-docs-sidebar-description').text()).toBe(description);
+    expect(wrapper.find('.shard-docs-description').text()).toBe(description);
   });
 
   it("renders menu", () => {
@@ -52,12 +52,12 @@ describe("<Sidebar />", () => {
   it("renders sidebar footer", () => {
     const wrapper = mountSidebar();
 
-    expect(wrapper.find('.shard-docs-built-with').exists()).toBe(true);
+    expect(wrapper.find('.shard-docs-built-with-shard-docs').exists()).toBe(true);
   });
 
   it("can hide sidebar footer", () => {
     const wrapper = mountSidebar({ hideBuiltWithShardDocs: true });
 
-    expect(wrapper.find('.shard-docs-built-with').exists()).toBe(false);
+    expect(wrapper.find('.shard-docs-built-with-shard-docs').exists()).toBe(false);
   });
 });
