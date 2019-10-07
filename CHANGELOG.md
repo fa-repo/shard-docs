@@ -10,13 +10,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix CodeExampleShard crashing when more than one child was provided
 - Fix inability to toggle SectionShard without providing an id.
 ### Removed
-- Support for headings
+- Remove support for headings in source schema.
+- Remove markdown shard. Write docs with MDX instead (@mdx-js/react).
+- Remove Iframe shard. Use react-frame-component instead which enables writing inline iframes.
 ### Changed
-- [Breaking change] Source schema
-- Terminology: Groups are now referred to as folders. Pages are now referred to as documents.
+- Change source schema. Groups are now referred to as folders and pages as documents.
 - Source data is now prepared in an adapter file.
 - Remove support for custom doc / folder slugs
-- Adjusted styles
+- Various adjustments
+- CSS changes
+- Updated docs
 
 ## [4.1.0] - 2019-09-27
 ### Fixed
