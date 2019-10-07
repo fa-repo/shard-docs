@@ -1,12 +1,15 @@
-## Install
+import Example from "@fa-repo/shard-docs/dist/shards/code-example-shard";
+import ShardDocs from "@fa-repo/shard-docs";
+import Frame from "./Frame";
+
+### Install
 ```bash
-npm install @fa-repo/shard-docs
+npm i @fa-repo/shard-docs
 ```
 
-## Dependencies
+### Dependencies
 
-ShardDocs makes use of React Router V4. Ensure that an instance of this component is wrapped
-by a router provider further up the tree. Example:
+ShardDocs makes use of [React Router 4](https://reacttraining.com/react-router/web/guides/quick-start) for routing. Ensure that a router provider has been set further up the tree.
 
 ```jsx
 import { BrowserRouter } from "react-router-dom";
@@ -19,16 +22,64 @@ render(
 );
 ```
 
-## Basic usage
+### Basic usage
 
-```jsx
-ReactDOM.render(
-  <ShardDocs
-    title="Documentation title"
-    source={[
-      { title: "Get started", document: <h1>Get started</h1> }
-    ]}
-  />,
-    document.getElementById('app')
-);
-```
+<Example title="" sourceCode={`
+const source = [
+  {
+    title: "Get started",
+    document: <>
+      <h1>Get started</h1>
+      <p>Lorem ipsum..</p>
+    </>
+  },
+  {
+    title: "Examples",
+    children: [
+      {
+        title: "Hello world",
+        document: <>{/* Hello world example */}</>
+      },
+      {
+        title: "Amazing feature",
+        document: <>{/* Amazing feature example */}</>
+      },
+    ]
+  },
+];
+
+<ShardDocs
+  title="Hello world"
+  description="A example demonstrating basic usage."
+  source={source}
+/>
+`}>
+  <Frame>
+    <ShardDocs
+      title="Hello world"
+      description="A example demonstrating basic usage."
+      source={[
+        {
+          title: "Get started",
+          document: <>
+            <h1>Get started</h1>
+            <p>Lorem ipsum..</p>
+          </>
+        },
+        {
+          title: "Examples",
+          children: [
+            {
+              title: "Hello world",
+              document: <>{/* Hello world example */}</>
+            },
+            {
+              title: "Amazing feature",
+              document: <>{/* Amazing feature example */}</>
+            },
+          ]
+        },
+      ]}
+    />
+  </Frame>
+</Example>

@@ -1,7 +1,6 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 
-import { Switch, Route } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
 import ScrollMemory from "react-router-scroll-memory";
 import CodeBlock from "@fa-repo/shard-docs/dist/renderers/codeblock";
@@ -68,7 +67,13 @@ const source = [
 ];
 
 const components = {
-  pre: props => <div {...props} />,
+  pre: props => {
+    if (props?.children?.props?.mdxType === "code") {
+      return props.children;
+    } else {
+      return <pre {...props} />;
+    }
+  },
   code: CodeBlock
 };
 
@@ -77,14 +82,10 @@ const Docs = () => (
     <MDXProvider components={components}>
       <>
         <ScrollMemory />
-        <Route
-          render={() => (
-            <ShardDocs
-              title="@fa-repo/shard-docs"
-              description="A concise / extendable react component for handling documentation"
-              source={source}
-            />
-          )}
+        <ShardDocs
+          title="@fa-repo/shard-docs"
+          description="A concise / extendable react component for handling documentation"
+          source={source}
         />
       </>
     </MDXProvider>

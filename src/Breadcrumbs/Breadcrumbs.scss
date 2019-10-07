@@ -1,8 +1,10 @@
 .breadcrumbs {
   padding: 5px 6px;
-  font-size: 12px;
-  background: #212121;
-  color: white;
+  font-size: 14px;
+  background: #eeeeee;
+  color: #212121;
+  border-bottom: thin solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px 4px 0 0;
 
   ol {
     margin: 0;
@@ -22,7 +24,7 @@
   }
 
   ol li a {
-    color: white;
+    color: black;
     text-decoration: none;
     font-weight: 600;
   }
