@@ -6,6 +6,7 @@ import Sidebar from "../Sidebar";
 import fromSource from "../adapters/fromSource";
 import { sourceTypes } from "../types";
 import { setActiveTreeNode } from "../utils";
+import "./sanitize.css";
 import "./ShardDocs.scss";
 
 /**

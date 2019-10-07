@@ -41,7 +41,7 @@ class CodeExampleShard extends React.Component {
   };
 
   render() {
-    const { title, repository } = this.props;
+    const { title, repository, sourceCode } = this.props;
     const showHeader = title || sourceCode || repository;
     const displayCode = this.state.displayCode;
     let children = this.props.children;

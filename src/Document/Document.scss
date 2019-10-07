@@ -1,12 +1,14 @@
 .document {
   background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05), 0 0 20px rgba(0, 0, 0, 0.05);
-  margin-bottom: 30px;
+  margin: 0 auto 20px auto;
+  max-width: 980px;
+  border: thin solid rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
 }
 
 .document-body {
   width: 100%;
-  padding: 15px;
+  padding: 30px;
 
   > :first-child {
     margin-top: 0;
@@ -51,7 +53,7 @@
     color: #d0d0d0;
     color: black;
     border-radius: 4px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     overflow-x: scroll;
   }
 
