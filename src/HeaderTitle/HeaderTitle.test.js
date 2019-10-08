@@ -11,7 +11,7 @@ describe("<HeaderTitle />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.shard-docs-sidebar-title').exists()).toBe(true)
+    expect(wrapper.find('.shard-docs-header-title').exists()).toBe(true)
   });
 
   it("renders title", () => {
@@ -21,8 +21,8 @@ describe("<HeaderTitle />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.shard-docs-sidebar-title h2').text()).toBe("Hello world")
-    expect(wrapper.find('a.shard-docs-sidebar-title').props().href).toBe("/")
+    expect(wrapper.find('.shard-docs-header-title h2').text()).toBe("Hello world")
+    expect(wrapper.find('a.shard-docs-header-title').props().href).toBe("/")
   });
 
   it("renders link with custom path", () => {
@@ -32,7 +32,7 @@ describe("<HeaderTitle />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.shard-docs-sidebar-title h2').text()).toBe("Hello world")
-    expect(wrapper.find('a.shard-docs-sidebar-title').props().href).toBe("/docs")
+    expect(wrapper.find('.shard-docs-header-title h2').text()).toBe("Hello world")
+    expect(wrapper.find('a.shard-docs-header-title').props().href).toBe("/docs")
   });
 });

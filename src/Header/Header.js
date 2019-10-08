@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import HeaderTitle from "../HeaderTitle";
-import SidebarToggle from "../SidebarToggle";
+import HeaderToggle from "../HeaderToggle";
 import "./Header.scss";
 
 /**
@@ -10,9 +10,9 @@ import "./Header.scss";
 
 const Header = ({ title, basePath, onToggleMenu, ...props }) => {
   return (
-    <header className="shard-docs-sidebar-header" {...props}>
+    <header className="shard-docs-header" {...props}>
       {title && <HeaderTitle title={title} path={basePath} />}
-      <SidebarToggle onClick={onToggleMenu} />
+      <HeaderToggle onClick={onToggleMenu} />
     </header>
   );
 };

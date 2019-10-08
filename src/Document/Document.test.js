@@ -27,7 +27,7 @@ describe("<Document />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.breadcrumbs a').exists()).toBe(true);
+    expect(wrapper.find('.shard-docs-breadcrumbs a').exists()).toBe(true);
   });
 
   it("renders document", () => {
@@ -37,9 +37,9 @@ describe("<Document />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find('.document-body').exists()).toBe(true);
-    expect(wrapper.find('.document-body h1').text()).toBe('Hello earth!');
-    expect(wrapper.find('.document-body h2').text()).toBe('Hello galaxy!');
-    expect(wrapper.find('.document-body h3').text()).toBe('Hello universe!');
+    expect(wrapper.find('.shard-docs-document-body').exists()).toBe(true);
+    expect(wrapper.find('.shard-docs-document-body h1').text()).toBe('Hello earth!');
+    expect(wrapper.find('.shard-docs-document-body h2').text()).toBe('Hello galaxy!');
+    expect(wrapper.find('.shard-docs-document-body h3').text()).toBe('Hello universe!');
   });
 });

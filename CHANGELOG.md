@@ -5,6 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Rename CodeExampleShard to CodeSampleShard
+- Changed document css to look more like github
+- Update docs
+### Add
+- CodeSampleShard: choose whether to wrap sample in an iframe.
+
+## [5.0.0-0] - 2019-10-07
 ### Fixed
 - Fix react-router not adding pages to history
 - Fix CodeExampleShard crashing when more than one child was provided
@@ -69,7 +77,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CHANGELOG to document the development of @fa-repo/shard-docs.
 - Github release tagging
 
-[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v4.1.0...HEAD
+[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-0...HEAD
+[5.0.0-0]: https://github.com/fa-repo/shard-docs/compare/v4.1.0...v5.0.0-0
 [4.1.0]: https://github.com/fa-repo/shard-docs/compare/v4.0.6...v4.1.0
 [4.0.6]: https://github.com/fa-repo/shard-docs/compare/v4.0.5...v4.0.6
 [4.0.5]: https://github.com/fa-repo/shard-docs/compare/v4.0.4...v4.0.5

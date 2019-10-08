@@ -1,14 +1,14 @@
-.shard-docs-sidebar-title {
+.shard-docs-header-title {
   flex: 1;
   text-decoration: none;
   overflow: hidden;
 
-  &:hover {
-    text-decoration: underline;
-  }
-
   &:focus {
     color: #673ab6;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 
   h2 {
@@ -20,6 +20,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+
     @media (min-width: 1200px) {
       background: white;
       color: #673ab6;

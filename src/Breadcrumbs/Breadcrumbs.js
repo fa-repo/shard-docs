@@ -9,7 +9,7 @@ import "./Breadcrumbs.scss";
  */
 
 const Breadcrumbs = ({ breadcrumbs }) => (
-  <nav className="breadcrumbs">
+  <nav className="shard-docs-breadcrumbs">
     <ol>
       {breadcrumbs.map(({ text, link }, i) => (
         <li key={i}>{<NavLink to={link}>{text}</NavLink>}</li>

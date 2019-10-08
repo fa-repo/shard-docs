@@ -1,4 +1,4 @@
-.document {
+.shard-docs-document {
   background: white;
   margin: 0 auto 20px auto;
   max-width: 980px;
@@ -6,8 +6,7 @@
   border-radius: 4px;
 }
 
-.document-body {
-  width: 100%;
+.shard-docs-document-body {
   padding: 30px;
 
   > :first-child {
@@ -18,19 +17,10 @@
     margin-bottom: 0;
   }
 
-  h1,
-  h2,
-  h3 {
-    font-weight: 500;
-  }
-
   pre code {
-    background: inherit;
     color: inherit;
     display: block;
-    padding: 15px;
     font-size: 13px;
-    border: none;
   }
 
   code {
@@ -44,27 +34,9 @@
     color: #e0245e;
   }
 
-  pre {
-    background: #2a2021;
-    background: #282c34;
-    background: #151515;
-    background: #f4f2f0;
-    color: white;
-    color: #d0d0d0;
-    color: black;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    overflow-x: scroll;
-  }
-
-  p {
-    margin-top: 0;
-  }
-
   a {
     color: #0000ee;
-    text-decoration: none;
-    position: relative;
+
     &:hover {
       text-decoration: underline;
     }
@@ -87,23 +59,14 @@
 
   table {
     word-break: normal;
-    line-height: 1.4;
-    font-size: 14px;
-    margin-bottom: 25px;
-    margin-top: 0;
     width: 100%;
-  }
-
-  table thead {
-    white-space: nowrap;
-    font-weight: bold;
+    font-size: 13px;
+    display: table;
   }
 
   table thead th {
     font-weight: 600;
     text-align: left;
-    border-bottom: thin solid #616161;
-    padding-top: 0;
   }
 
   table th,
@@ -113,11 +76,9 @@
     line-height: 1.6;
     vertical-align: top;
     width: 12%;
-    font-size: 13px !important;
 
     &:last-child {
       width: 99%;
-      padding-right: 0;
     }
   }
 

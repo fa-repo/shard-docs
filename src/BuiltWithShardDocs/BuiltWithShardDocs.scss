@@ -1,4 +1,4 @@
-.shard-docs-built-with {
+.shard-docs-built-with-shard-docs {
   margin-top: auto;
   padding: 5px 6px;
   border-top: thin solid rgba(255, 255, 255, 0.5);
@@ -7,16 +7,19 @@
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.3px;
   font-weight: 400;
+  display: none;
+
   a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     transition: color 150ms ease-out;
+
     &:hover {
       color: white;
       text-decoration: underline;
     }
   }
-  display: none;
+
   @media (min-width: 1200px) {
     display: block;
   }

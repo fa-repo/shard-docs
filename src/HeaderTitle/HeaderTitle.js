@@ -9,7 +9,7 @@ import "./HeaderTitle.scss";
 
 const HeaderTitle = ({ title, path }) => {
   return (
-    <NavLink to={path} className="shard-docs-sidebar-title">
+    <NavLink to={path} className="shard-docs-header-title">
       <h2 title={title}>{title}</h2>
     </NavLink>
   );

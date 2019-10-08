@@ -6,9 +6,7 @@ import "./Description.scss";
  * Description
  */
 
-const Description = ({ description }) => (
-  <p className="shard-docs-sidebar-description">{description}</p>
-);
+const Description = ({ description }) => <p className="shard-docs-description">{description}</p>;
 
 Description.propTypes = {
   description: PropTypes.string

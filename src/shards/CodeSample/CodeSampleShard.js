@@ -7,25 +7,32 @@ import isArray from "lodash/isArray";
 import uniqid from "uniqid";
 import CodeBlock from "../../renderers/CodeBlock";
 import BaseLink from "@fa-repo/base-react/dist/link";
-import "./CodeExampleShard.scss";
+import Frame from "react-frame-component";
+import "./CodeSampleShard.scss";
 
 /**
- * CodeExampleShard
+ * CodeSampleShard
  */
 
-class CodeExampleShard extends React.Component {
+class CodeSampleShard extends React.Component {
   static propTypes = {
     title: PropTypes.string,
     lang: PropTypes.string,
     sourceCode: PropTypes.string,
-    repository: PropTypes.string
+    repository: PropTypes.string,
+    useIframe: PropTypes.bool,
+    iframeHead: PropTypes.string,
+    iframeStyle: PropTypes.object
   };
 
   static defaultProps = {
     title: "",
     lang: "jsx",
     sourceCode: "",
-    repository: ""
+    repository: "",
+    useIframe: false,
+    iframeHead: "",
+    iframeStyle: {}
   };
 
   state = {
@@ -41,7 +48,7 @@ class CodeExampleShard extends React.Component {
   };
 
   render() {
-    const { title, repository, sourceCode } = this.props;
+    const { title, repository, sourceCode, lang, useIframe, iframeHead, iframeStyle } = this.props;
     const showHeader = title || sourceCode || repository;
     const displayCode = this.state.displayCode;
     let children = this.props.children;
@@ -54,9 +61,9 @@ class CodeExampleShard extends React.Component {
     }
 
     return (
-      <section className={classnames("code-example-shard", this.props.className)}>
+      <section className={classnames("code-sample-shard", this.props.className)}>
         {showHeader && (
-          <header className="code-example-shard-header">
+          <header className="code-sample-shard-header">
             <h3 className="title" title={title}>
               {title}
             </h3>
@@ -73,17 +80,28 @@ class CodeExampleShard extends React.Component {
             </menu>
           </header>
         )}
-        <div className="code-example-shard-body">
+        <div className="code-sample-shard-body">
           {displayCode && (
-            <div className="source-code">
-              <CodeBlock language={this.props.lang}>{this.props.sourceCode}</CodeBlock>
+            <div className="code-sample-shard-source-code">
+              <CodeBlock language={lang}>{sourceCode}</CodeBlock>
             </div>
           )}
-          <div className="example">{children}</div>
+          <div className="code-sample-shard-example">
+            {useIframe ? (
+              <Frame
+                initialContent={`<!DOCTYPE html><html><head>${iframeHead}</head><body><div class="frame-root"></div></body></html>`}
+                style={iframeStyle}
+              >
+                {children}
+              </Frame>
+            ) : (
+              children
+            )}
+          </div>
         </div>
       </section>
     );
   }
 }
 
-export default CodeExampleShard;
+export default CodeSampleShard;

@@ -18,6 +18,7 @@ A simple engine for organising and viewing docs written in JSX.
 
 ## Table of Contents
 
+- [Requirements](#install)
 - [Install](#install)
 - [Basic usage](#basic-usage)
 - [API](#api)
@@ -25,10 +26,10 @@ A simple engine for organising and viewing docs written in JSX.
 - [Write docs with MDX](#write-docs-with-mdx)
 - [License](#license)
 
-## Install
-
+## Requirements
 This package relies on [react router](https://reacttraining.com/react-router/web/guides/quick-start) for routing.
 
+## Install
 ```
 npm install @fa-repo/shard-docs react-router-dom
 ```
@@ -93,7 +94,7 @@ render(
   */
   basePath="/docs/"
   /**
-   * "Built with Shard Docs" is shown by default at the bottom of the sidebar. This option hides it.
+   * Hide "Built with Shard Docs" at the bottom of the sidebar.
    * @optional
    * @boolean
    * @default false
@@ -116,11 +117,11 @@ render(
 ```
 
 ## Source schema
-The input source value is made up of a variety of items that affect how the sidebar menu is rendered and the paths to documents and folders are generated.
+Data is composed in a way that describes the relationship of items to each other - like a tree structure. The structure of the data influences the paths generated for document and folder routes as well as how the sidebar menu is rendered.
 
-Each item has a common `title` property. The combination of the subsequent properties defines their types.
+Each item has a common `title` property. The combination of the subsequent properties define their types.
 
-##### Let's take a look at the different items:
+### Let's take a look at the different items:
 
 `document`:  Represents a document endpoint.
 ```jsx
@@ -173,39 +174,58 @@ Each item has a common `title` property. The combination of the subsequent prope
 
 
 ## Write docs with MDX
-Documents are composed from JSX which offers a lot of power but the syntax can get unwieldy. MDX makes writing docs a breaze by combining the syntaxes of JSX and markdown. Setting up [mdx-js](https://github.com/mdx-js/mdx) will enabled this feature. Totally recommended!
+Documents are composed from JSX which offers a lot of power but the syntax can get unwieldy. MDX makes writing docs a breaze by combining the syntaxes of JSX and markdown. [MDXJS](https://github.com/mdx-js/mdx) is wholly recomended for handling MDX. Cursory installation instructions below.
 
-
-**JSX:**
-```jsx
-<>
-  <h1>Title</h1>
-  <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-  labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-  et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-  <h2>Examples</h2>
-  <h3>Hello world</h3>
-  <Example sourceCode={`/* example source code*/`}>
-    <App>
-  </Example>
-</>
-```
-**MDX:**
+### Example MDX script
 ```mdx
+// doc.mdx
+import "SomeComponent" from "./SomeComponent";
+
 # Title
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr.
 
-## Examples
-
-### Hello world
-
-<Example sourceCode={`/* example source code*/`}>
-  <App>
-</Example>
+<SomeComponent>
 ```
+
+### MDJSX Prerequisite
+- babel
+- webpack ([or other module bundlers](https://mdxjs.com/getting-started))
+
+### Install MDJSX
+```bash
+npm install --save-dev @mdx-js/loader @babel/preset-env @babel/preset-react babel-loader
+```
+
+### Configure MDJSX
+
+```js
+//webpack.config.js
+module.exports = {
+  module: {
+    // ...
+    rules: [
+      // ...
+      {
+        test: /\.mdx?$/,
+        use: [
+          'babel-loader',
+          '@mdx-js/loader'
+        ]
+      }
+    ]
+  }
+}
+```
+
+```jsx
+// babel.config.js
+module.exports = {
+  presets: ["@babel/preset-env", "@babel/preset-react"],
+};
+
+```
+
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

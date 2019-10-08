@@ -8,8 +8,8 @@ import CodeBlock from "@fa-repo/shard-docs/dist/renderers/codeblock";
 import ShardDocs from "@fa-repo/shard-docs";
 
 import "@fa-repo/shard-docs/dist/shard-docs.css";
-import "@fa-repo/shard-docs/dist/shards/section-shard.css";
-import "@fa-repo/shard-docs/dist/shards/code-example-shard.css";
+import "@fa-repo/shard-docs/dist/shards/section.css";
+import "@fa-repo/shard-docs/dist/shards/code-sample.css";
 
 // Essentials
 import GetStarted from "./1-essentials-get-started.mdx";
@@ -20,7 +20,7 @@ import SchemaReference from "./1-source-schema.mdx";
 import HelloWorld from "./2-examples-hello-world.mdx";
 
 // Shards
-import CodeExampleShard from "./3-shards-code-example.mdx";
+import CodeSampleShard from "./3-shards-code-sample.mdx";
 import SectionShard from "./3-shards-section.mdx";
 
 /**
@@ -32,8 +32,8 @@ const source = [
     title: "Essentials",
     children: [
       { title: "Get started", document: <GetStarted /> },
-      { title: "API", document: <ApiReference /> },
-      { title: "Source schema", document: <SchemaReference /> }
+      { title: "Source", document: <SchemaReference /> },
+      { title: "API", document: <ApiReference /> }
     ]
   },
   {
@@ -43,8 +43,8 @@ const source = [
   {
     title: "Shards",
     children: [
-      { title: "CodeExampleShard", document: <CodeExampleShard /> },
-      { title: "SectionShard", document: <SectionShard /> }
+      { title: "<CodeSample />", document: <CodeSampleShard /> },
+      { title: "<Section />", document: <SectionShard /> }
     ]
   },
   { title: "Github", externalLink: "http://github.com/fa-repo/shard-docs" }

@@ -1,11 +1,11 @@
-import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
-import CodeExampleShard from "@fa-repo/shard-docs/dist/shards/code-example-shard";
+import Section from "@fa-repo/shard-docs/dist/shards/section";
+import CodeSample from "@fa-repo/shard-docs/dist/shards/code-sample";
 
 #### Import
 
 ```jsx
-import SectionShard from "@fa-repo/shard-docs/dist/shards/section-shard";
-import "@fa-repo/shard-docs/dist/shards/section-shard.css";
+import Section from "@fa-repo/shard-docs/dist/shards/section";
+import "@fa-repo/shard-docs/dist/shards/section.css";
 ```
 
 #### Properties
@@ -17,23 +17,23 @@ import "@fa-repo/shard-docs/dist/shards/section-shard.css";
 
 #### Usage
 
-<CodeExampleShard
+<CodeSample
   title="Hello world"
-  sourceCode={`<SectionShard title="Section shard title">
+  sourceCode={`<Section title="Section shard title">
 Click \`Section shard title\` to toggle its content.
-</SectionShard>`}
+</Section>`}
 >
-  <SectionShard title="Section shard title">
+  <Section title="Section shard title">
     Click `Section shard title` to toggle its content.
-  </SectionShard>
-</CodeExampleShard>
-<CodeExampleShard
+  </Section>
+</CodeSample>
+<CodeSample
   title="Remember collapsed state by assigning a custom ID to `persistState`."
-  sourceCode={`<SectionShard title="Section shard title" persistState="abcdef">
+  sourceCode={`<Section title="Section shard title" persistState="abcdef">
 Click \`Section shard title\` to toggle content.
-</SectionShard>`}
+</Section>`}
 >
-  <SectionShard title="Section shard title" persistState="abcdef">
+  <Section title="Section shard title" persistState="abcdef">
     Remember collapsed state when toggling content. Refresh page to see persisted state.
-  </SectionShard>
-</CodeExampleShard>
+  </Section>
+</CodeSample>

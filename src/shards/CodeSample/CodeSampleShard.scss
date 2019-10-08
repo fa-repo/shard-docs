@@ -1,8 +1,8 @@
-.code-example-shard {
-  margin-bottom: 2rem;
+.code-sample-shard {
+  margin-bottom: 16px;
 }
 
-.code-example-shard .code-example-shard-header {
+.code-sample-shard .code-sample-shard-header {
   padding: 0 0 5px 0;
   font-size: 14px;
   display: flex;
@@ -47,7 +47,7 @@
   }
 }
 
-.code-example-shard .code-example-shard-body {
+.code-sample-shard .code-sample-shard-body {
   padding: 15px;
   background: rgba(0, 0, 0, 0.1);
 
@@ -60,7 +60,7 @@
   }
 }
 
-.code-example-shard .source-code {
+.code-sample-shard-source-code {
   margin-bottom: 15px;
 
   pre {
@@ -73,6 +73,8 @@
   }
 }
 
-.code-example-shard .example {
+.code-sample-shard-example {
   overflow: auto;
+  background: white;
+  padding: 15px;
 }
