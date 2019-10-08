@@ -5,13 +5,16 @@
   margin: -1px 0;
   outline: none;
   cursor: pointer;
+
   &:focus {
     border-color: white;
   }
+
   svg {
     width: 27px;
     height: 27px;
   }
+
   @media (min-width: 1200px) {
     display: none;
   }
