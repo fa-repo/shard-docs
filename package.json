@@ -26,7 +26,7 @@
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npx rimraf ./dist && npm run build",
     "postpublish": "git push --tags",
     "analyse": "npm run build && npx source-map-explorer ./dist/shard-docs.js",
     "version": "node -p \"require('./package.json').version\""
@@ -73,6 +73,7 @@
     "react-router-dom": "^5.1.2",
     "react-router-scroll-memory": "^2.0.3",
     "remarkable": "^2.0.0",
+    "rimraf": "^3.0.0",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.0.1",
