@@ -1,5 +1,5 @@
 .code-example-shard {
-  margin-bottom: 2rem;
+  margin-bottom: 16px;
 }
 
 .code-example-shard .code-example-shard-header {
@@ -75,4 +75,6 @@
 
 .code-example-shard .example {
   overflow: auto;
+  background: white;
+  padding: 15px;
 }

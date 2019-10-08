@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Breadcrumbs from "../Breadcrumbs";
 import { breadcrumbTypes } from "../types";
 
-import "./Document.scss";
-import "./prism.scss";
+import "./github.css";
+import "./document.scss";
 
 /**
  * Document
@@ -14,7 +14,7 @@ const Document = ({ document, breadcrumbs }) => {
   return (
     <article className="shard-docs-document">
       <Breadcrumbs breadcrumbs={breadcrumbs} />
-      <div className="shard-docs-document-body">{document}</div>
+      <div className="shard-docs-document-body markdown-body">{document}</div>
     </article>
   );
 };
