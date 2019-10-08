@@ -32,8 +32,8 @@ const source = [
     title: "Essentials",
     children: [
       { title: "Get started", document: <GetStarted /> },
-      { title: "API", document: <ApiReference /> },
-      { title: "Source schema", document: <SchemaReference /> }
+      { title: "Source", document: <SchemaReference /> },
+      { title: "API", document: <ApiReference /> }
     ]
   },
   {
@@ -43,8 +43,8 @@ const source = [
   {
     title: "Shards",
     children: [
-      { title: "CodeSampleShard", document: <CodeSampleShard /> },
-      { title: "SectionShard", document: <SectionShard /> }
+      { title: "<CodeSample />", document: <CodeSampleShard /> },
+      { title: "<Section />", document: <SectionShard /> }
     ]
   },
   { title: "Github", externalLink: "http://github.com/fa-repo/shard-docs" }
