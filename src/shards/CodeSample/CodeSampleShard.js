@@ -7,13 +7,13 @@ import isArray from "lodash/isArray";
 import uniqid from "uniqid";
 import CodeBlock from "../../renderers/CodeBlock";
 import BaseLink from "@fa-repo/base-react/dist/link";
-import "./CodeExampleShard.scss";
+import "./CodeSampleShard.scss";
 
 /**
- * CodeExampleShard
+ * CodeSampleShard
  */
 
-class CodeExampleShard extends React.Component {
+class CodeSampleShard extends React.Component {
   static propTypes = {
     title: PropTypes.string,
     lang: PropTypes.string,
@@ -54,9 +54,9 @@ class CodeExampleShard extends React.Component {
     }
 
     return (
-      <section className={classnames("code-example-shard", this.props.className)}>
+      <section className={classnames("code-sample-shard", this.props.className)}>
         {showHeader && (
-          <header className="code-example-shard-header">
+          <header className="code-sample-shard-header">
             <h3 className="title" title={title}>
               {title}
             </h3>
@@ -73,17 +73,17 @@ class CodeExampleShard extends React.Component {
             </menu>
           </header>
         )}
-        <div className="code-example-shard-body">
+        <div className="code-sample-shard-body">
           {displayCode && (
-            <div className="code-example-shard-source-code">
+            <div className="code-sample-shard-source-code">
               <CodeBlock language={this.props.lang}>{this.props.sourceCode}</CodeBlock>
             </div>
           )}
-          <div className="code-example-shard-example">{children}</div>
+          <div className="code-sample-shard-example">{children}</div>
         </div>
       </section>
     );
   }
 }
 
-export default CodeExampleShard;
+export default CodeSampleShard;
