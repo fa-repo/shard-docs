@@ -52,10 +52,10 @@ describe("<CodeExampleShard />", () => {
   it("can toggle sourceCode", () => {
     const wrapper = mount(<CodeExampleShard sourceCode={sourceCode} />);
 
-    expect(wrapper.find('.code-example-shard-body .source-code').exists()).toBe(false)
+    expect(wrapper.find('.code-example-shard-body .code-example-shard-source-code').exists()).toBe(false)
 
     wrapper.find('.code-example-shard-header menu a.code').simulate('click')
 
-    expect(wrapper.find('.code-example-shard-body .source-code').exists()).toBe(true)
+    expect(wrapper.find('.code-example-shard-body .code-example-shard-source-code').exists()).toBe(true)
   });
 });
