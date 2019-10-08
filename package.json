@@ -69,6 +69,7 @@
     "node-sass": "^4.12.0",
     "postcss-import": "^12.0.1",
     "prism-react-renderer": "^1.0.1",
+    "react-frame-component": "^4.1.1",
     "react-router-dom": "^5.1.2",
     "react-router-scroll-memory": "^2.0.3",
     "remarkable": "^2.0.0",

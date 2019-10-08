@@ -7,6 +7,7 @@ import isArray from "lodash/isArray";
 import uniqid from "uniqid";
 import CodeBlock from "../../renderers/CodeBlock";
 import BaseLink from "@fa-repo/base-react/dist/link";
+import Frame from "react-frame-component";
 import "./CodeSampleShard.scss";
 
 /**
@@ -18,14 +19,20 @@ class CodeSampleShard extends React.Component {
     title: PropTypes.string,
     lang: PropTypes.string,
     sourceCode: PropTypes.string,
-    repository: PropTypes.string
+    repository: PropTypes.string,
+    useIframe: PropTypes.bool,
+    iframeHead: PropTypes.string,
+    iframeStyle: PropTypes.object
   };
 
   static defaultProps = {
     title: "",
     lang: "jsx",
     sourceCode: "",
-    repository: ""
+    repository: "",
+    useIframe: false,
+    iframeHead: "",
+    iframeStyle: {}
   };
 
   state = {
@@ -41,7 +48,7 @@ class CodeSampleShard extends React.Component {
   };
 
   render() {
-    const { title, repository, sourceCode } = this.props;
+    const { title, repository, sourceCode, lang, useIframe, iframeHead, iframeStyle } = this.props;
     const showHeader = title || sourceCode || repository;
     const displayCode = this.state.displayCode;
     let children = this.props.children;
@@ -76,10 +83,21 @@ class CodeSampleShard extends React.Component {
         <div className="code-sample-shard-body">
           {displayCode && (
             <div className="code-sample-shard-source-code">
-              <CodeBlock language={this.props.lang}>{this.props.sourceCode}</CodeBlock>
+              <CodeBlock language={lang}>{sourceCode}</CodeBlock>
             </div>
           )}
-          <div className="code-sample-shard-example">{children}</div>
+          <div className="code-sample-shard-example">
+            {useIframe ? (
+              <Frame
+                initialContent={`<!DOCTYPE html><html><head>${iframeHead}</head><body><div class="frame-root"></div></body></html>`}
+                style={iframeStyle}
+              >
+                {children}
+              </Frame>
+            ) : (
+              children
+            )}
+          </div>
         </div>
       </section>
     );

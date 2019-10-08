@@ -7,19 +7,26 @@ import "@fa-repo/shard-docs/dist/shards/code-sample.css";
 ```
 
 #### Properties
-| Name       | Type   | Default  | Required  | Description                                         |
-|------------|--------|----------|-----------|-----------------------------------------------------|
-| title      | string | `""`   | Sometimes | Describe the example.                               |
-| sourceCode | string | `""`   | Required  | The example source code.                            |
-| repository | string | `""`   |           | Link to external source code.                       |
-| lang       | string | `jsx`  |           | Language parser: `bash`, `css`, `html`, `http`, `javascript`, `js`, `json`, `jsx`,  `markdown`, `mathml`, `md`, `php`, `regex`, `sass`, `scss`, `shell`, `sql`, `svg`, `ts`, `tsx`, `typescript`, `xml`, `yaml`, `yml`. |`}
+| Name       | Type   | Default | Required  | Description                                         |
+|------------|--------|---------|-----------|-----------------------------------------------------|
+| title      | string | `""`    | Sometimes | Describe the example.                               |
+| sourceCode | string | `""`    | Required  | The example source code.                            |
+| repository | string | `""`    |           | Link to external source code.                       |
+| lang       | string | `jsx`   |           | Language parser: `bash`, `css`, `html`, `http`, `javascript`, `js`, `json`, `jsx`,  `markdown`, `mathml`, `md`, `php`, `regex`, `sass`, `scss`, `shell`, `sql`, `svg`, `ts`, `tsx`, `typescript`, `xml`, `yaml`, `yml`. |`}
+| useIframe  | boolean | `false`    | | Load the code sample in an iframe.        |
+| iframeHead | string | `""`    | | Add things to the iframe `<head />`.        |
+| iframeStyle | object | `{}`    | | Set the iframes inline style.        |
 
 <CodeSample
   title="Hello world - (visual note: the shard is used to present itself here hence the inception style look)"
+   sampleHead={`
+   <style> :root { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif; }</style>
+    <link rel="stylesheet" type="text/css" href="/css/code-sample-shard.css"></link>`}
   sourceCode={`
 <CodeSample
   title="Hi!"
   repository="github.com/path/somewhere"
+  sampleHead={\`<link rel="stylesheet" type="text/css" href="/css/shard-docs.css"></link>\`}
   sourceCode={\`<p>
     Nulla at egestas ante. Suspendisse urna nisl, cursus eu ullamcorper ut, gravida at nibh. In
     hendrerit eget sapien in sollicitudin. Nulla vulputate elementum turpis, vel ultrices purus
@@ -39,6 +46,10 @@ import "@fa-repo/shard-docs/dist/shards/code-sample.css";
   <CodeSample
     title="Hi!"
     repository="github.com/path/somewhere"
+    sampleHead={`
+    <style> :root { font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, Arial, sans-serif; }</style>
+    <link rel="stylesheet" type="text/css" href="/css/shard-docs.css"></link>
+    <link rel="stylesheet" type="text/css" href="/css/code-sample-shard.css"></link>`}
     sourceCode={`<p>
 Nulla at egestas ante. Suspendisse urna nisl, cursus eu ullamcorper ut, gravida at nibh. In
 hendrerit eget sapien in sollicitudin. Nulla vulputate elementum turpis, vel ultrices purus

@@ -1,10 +1,10 @@
 import CodeSample from "@fa-repo/shard-docs/dist/shards/code-sample";
 import ShardDocs from "@fa-repo/shard-docs";
-import Frame from "./Frame";
 
 <CodeSample
   title="Example"
-  repository="https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HelloWorld" sourceCode={`
+  repository="https://github.com/fa-repo/shard-docs/tree/master/docs/src/examples/HelloWorld"
+  sourceCode={`
 <ShardDocs
   title="Package name"
   description="Description describing package."
@@ -24,13 +24,16 @@ import Frame from "./Frame";
       { title: "Github", externalLink: "https://github.com/" }
     ]
   }
-/>`}>
-  <Frame>
-    <ShardDocs
-      title="Package name"
-      description="Description describing package."
-      basePath="/examples/hello-world"
-      source={
+/>`}
+  iframeStyle={{'width': '1200px', 'height': '400px', pointerEvents: 'none'}}
+  iframeHead={`<link rel="stylesheet" type="text/css" href="/css/shard-docs.css"/>`}
+  useIframe
+>
+  <ShardDocs
+    title="Package name"
+    description="Description describing package."
+    basePath="/examples/hello-world"
+    source={
       [
         { title: "Hello world", document: <h1>Hello world</h1> },
         {
@@ -44,5 +47,4 @@ import Frame from "./Frame";
       ]
     }
   />
-  </Frame>
 </CodeSample>
