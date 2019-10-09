@@ -30,7 +30,7 @@ import SectionShard from "./3-shards-section.mdx";
 const source = [
   {
     title: "Essentials",
-    children: [
+    folder: [
       { title: "Get started", document: <GetStarted /> },
       { title: "Source", document: <SchemaReference /> },
       { title: "API", document: <ApiReference /> }
@@ -38,11 +38,11 @@ const source = [
   },
   {
     title: "Examples",
-    children: [{ title: "Hello world", document: <HelloWorld /> }]
+    folder: [{ title: "Hello world", document: <HelloWorld /> }]
   },
   {
     title: "Shards",
-    children: [
+    folder: [
       { title: "<CodeSample />", document: <CodeSampleShard /> },
       { title: "<Section />", document: <SectionShard /> }
     ]

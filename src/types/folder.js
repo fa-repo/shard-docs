@@ -7,5 +7,5 @@ export default PropTypes.shape({
   title: PropTypes.string,
   isEmpty: PropTypes.bool,
   isActive: PropTypes.bool,
-  children: treeTypes
+  folder: treeTypes
 });

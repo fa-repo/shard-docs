@@ -6,7 +6,7 @@ const source = [
   { title: "Doc C", document: null },
   {
     title: "Folder",
-    children: [{ title: "Doc D", document: null }, { title: "Doc E", document: null }]
+    folder: [{ title: "Doc D", document: null }, { title: "Doc E", document: null }]
   },
   { title: "Github", externalLink: "http://github.com" }
 ];
@@ -16,7 +16,7 @@ test("fromSource() transforms data and returns tree", () =>
     {
       title: null,
       type: "folder",
-      children: [
+      folder: [
         {
           title: "Doc A",
           type: "document",
@@ -52,7 +52,7 @@ test("fromSource() transforms data and returns tree", () =>
       path: "/folder",
       isEmpty: false,
       isActive: false,
-      children: [
+      folder: [
         {
           title: "Doc D",
           type: "document",
@@ -84,7 +84,7 @@ test("fromSource() transforms data and returns tree", () =>
     {
       title: null,
       type: "folder",
-      children: [{ title: "Github", type: "external", link: "http://github.com" }]
+      folder: [{ title: "Github", type: "external", link: "http://github.com" }]
     }
   ])
 );

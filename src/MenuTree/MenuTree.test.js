@@ -10,7 +10,7 @@ const { tree } = fromSource([
   { title: "Doc C", document: [] },
   {
     title: "Folder",
-    children: [{ title: "Doc D", document: [] }, { title: "Doc E", document: [] }]
+    folder: [{ title: "Doc D", document: [] }, { title: "Doc E", document: [] }]
   },
   { title: "Github", externalLink: "http://github.com" }
 ]);

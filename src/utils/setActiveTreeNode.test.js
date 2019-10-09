@@ -5,7 +5,7 @@ const tree = [
     title: null,
     type: "folder",
     path: '/',
-    children: [
+    folder: [
       {
         title: "Doc A",
         type: "document",
@@ -41,7 +41,7 @@ test("setActiveTreeNode() correctly sets isActive", () => {
       type: "folder",
       path: '/',
       isActive: false,
-      children: [
+      folder: [
         {
           title: "Doc A",
           type: "document",
@@ -78,7 +78,7 @@ test("setActiveTreeNode() correctly sets isActive", () => {
       type: "folder",
       path: "/",
       isActive: false,
-      children: [
+      folder: [
         {
           title: "Doc A",
           type: "document",

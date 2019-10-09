@@ -50,7 +50,7 @@ const source = [
   { title: "Basic usage", document: <><h1>Basic usage</h1></> },
   {
     title: "Examples",
-    children: [
+    folder: [
       { title: "Use case A", document: <><h1>Use case A</h1></> },
       { title: "Use case B", document: <><h1>Use case B</h1></> }
     ]
@@ -108,7 +108,7 @@ render(
   source={[
     {
       title: "Essentials",
-      children: [
+      folder: [
         { title: "Get started", document: <p>Lorem ipsum dolor sit amet..</p> }
       ]
     }
@@ -152,7 +152,7 @@ Each item has a common `title` property. The combination of the subsequent prope
      * Folder items. Can contain any type of node.
      * @array
     */
-    children: [ /* items */ ]
+    folder: [ /* items */ ]
   }
 ```
 

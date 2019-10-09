@@ -11,7 +11,7 @@ import MenuTree from "./MenuTree";
 const FolderNode = ({ node, onNavigate }) => (
   <ul className="shard-docs-menu-folder">
     {node.title && <HeadingNode node={node} onNavigate={onNavigate} />}
-    <MenuTree tree={node.children} onNavigate={onNavigate} />
+    <MenuTree tree={node.folder} onNavigate={onNavigate} />
   </ul>
 );
 

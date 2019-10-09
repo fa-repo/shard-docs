@@ -9,7 +9,7 @@ export default () => (
     source={[
       {
         title: "Essentials",
-        children: [
+        folder: [
           {
             title: "Install",
             document: (
@@ -31,7 +31,7 @@ export default () => (
 
       {
         title: "Examples",
-        children: [
+        folder: [
           {
             title: "Use case A",
             document: (

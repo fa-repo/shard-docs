@@ -23,11 +23,11 @@ export function addTypes(items) {
   for (let i in items) {
     let type = false;
 
-    if (items[i].hasOwnProperty("children")) type = "folder";
+    if (items[i].hasOwnProperty("folder")) type = "folder";
     else if (items[i].hasOwnProperty("document")) type = "document";
     else if (items[i].hasOwnProperty("externalLink")) type = "external";
 
-    if (type === "folder") items[i].children = addTypes(items[i].children);
+    if (type === "folder") items[i].folder = addTypes(items[i].folder);
 
     items[i].type = type;
   }
@@ -44,14 +44,14 @@ export function combineTopLevelAdjacentItems(items) {
   const isDiscreteFolder = item => item && item.type === "folder" && !item.title;
 
   items = items.map(item => {
-    return item.type !== "folder" ? { title: null, children: [item], type: "folder" } : item;
+    return item.type !== "folder" ? { title: null, folder: [item], type: "folder" } : item;
   });
 
   return items.reduce((accumulator, item) => {
     const lastItem = accumulator[accumulator.length - 1];
 
     if (isDiscreteFolder(item) && isDiscreteFolder(lastItem)) {
-      lastItem.children = [...lastItem.children, ...item.children];
+      lastItem.folder = [...lastItem.folder, ...item.folder];
       accumulator[accumulator.length - 1] = lastItem;
     } else {
       accumulator = [...accumulator, item];
@@ -74,7 +74,7 @@ export function addPaths(items, basePath) {
     item.path = `${basePath}/${getSlug(item.title)}`.replace(/\/+$/, "").replace(/\/+/g, "/");
 
     if (item.type === "folder") {
-      item.children = addPaths(item.children, item.path);
+      item.folder = addPaths(item.folder, item.path);
     }
 
     return item;
@@ -91,9 +91,9 @@ export function addBreadcrumbs(items, breadcrumbs = []) {
     const crumb = { text: item.title, link: item.path };
     if (item.type === "folder") {
       if (item.title) {
-        item.children = addBreadcrumbs(item.children, [...breadcrumbs, crumb]);
+        item.folder = addBreadcrumbs(item.folder, [...breadcrumbs, crumb]);
       } else {
-        item.children = addBreadcrumbs(item.children, breadcrumbs);
+        item.folder = addBreadcrumbs(item.folder, breadcrumbs);
       }
     } else if (item.type === "document") {
       return { ...item, breadcrumbs: [...breadcrumbs, crumb] };
@@ -115,13 +115,13 @@ export function shapeItems(items) {
         const link = item.externalLink;
         return { type, title, link };
       } else if (type === "folder" && title) {
-        const isEmpty = !item.children.length;
+        const isEmpty = !item.folder.length;
         const isActive = false;
-        const children = shapeItems(item.children);
-        return { type, path, title, isEmpty, isActive, children };
+        const folder = shapeItems(item.folder);
+        return { type, path, title, isEmpty, isActive, folder };
       } else if (type === "folder" && !title) {
-        const children = shapeItems(item.children);
-        return { type, path, children };
+        const folder = shapeItems(item.folder);
+        return { type, path, folder };
       } else if (type === "document") {
         const isEmpty = !Boolean(item.document);
         const isActive = false;
@@ -142,7 +142,7 @@ export function shapeItems(items) {
 function flattenDocuments(items, accumulator = []) {
   for (const item of items) {
     if (item.type === "folder") {
-      accumulator = flattenDocuments(item.children, accumulator);
+      accumulator = flattenDocuments(item.folder, accumulator);
     } else if (item.type === "document") {
       accumulator = [...accumulator, item];
     }
