@@ -5,6 +5,7 @@ import { breadcrumbTypes } from "../types";
 
 import "./github.css";
 import "./document.scss";
+import "./prism-github.css";
 
 /**
  * Document

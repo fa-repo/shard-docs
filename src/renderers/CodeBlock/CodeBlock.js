@@ -1,6 +1,5 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import "./prism-github.css";
 
 export default ({ children, className, language }) => {
   language = language || className?.replace(/language-/, "");
