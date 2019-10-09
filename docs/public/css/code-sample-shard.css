@@ -182,10 +182,6 @@
 .shard-docs-code-sample-shard .shard-docs-code-sample-shard-body {
   padding: 15px;
   background: rgba(0, 0, 0, 0.1); }
-  .shard-docs-code-sample-shard .shard-docs-code-sample-shard-body > :first-child {
-    margin-top: 0; }
-  .shard-docs-code-sample-shard .shard-docs-code-sample-shard-body > :last-child {
-    margin-bottom: 0; }
 
 .shard-docs-code-sample-shard-source-code {
   margin-bottom: 15px; }
@@ -199,3 +195,7 @@
   overflow: auto;
   background: white;
   padding: 15px; }
+  .shard-docs-code-sample-shard-example > :first-child {
+    margin-top: 0; }
+  .shard-docs-code-sample-shard-example > :last-child {
+    margin-bottom: 0; }

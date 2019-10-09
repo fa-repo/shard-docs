@@ -50,14 +50,6 @@
 .shard-docs-code-sample-shard .shard-docs-code-sample-shard-body {
   padding: 15px;
   background: rgba(0, 0, 0, 0.1);
-
-  > :first-child {
-    margin-top: 0;
-  }
-
-  > :last-child {
-    margin-bottom: 0;
-  }
 }
 
 .shard-docs-code-sample-shard-source-code {
@@ -77,4 +69,12 @@
   overflow: auto;
   background: white;
   padding: 15px;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
 }
