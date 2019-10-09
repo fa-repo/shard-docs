@@ -61,9 +61,9 @@ class CodeSampleShard extends React.Component {
     }
 
     return (
-      <section className={classnames("code-sample-shard", this.props.className)}>
+      <section className={classnames("shard-docs-code-sample-shard", this.props.className)}>
         {showHeader && (
-          <header className="code-sample-shard-header">
+          <header className="shard-docs-code-sample-shard-header">
             <h3 className="title" title={title}>
               {title}
             </h3>
@@ -80,13 +80,13 @@ class CodeSampleShard extends React.Component {
             </menu>
           </header>
         )}
-        <div className="code-sample-shard-body">
+        <div className="shard-docs-code-sample-shard-body">
           {displayCode && (
-            <div className="code-sample-shard-source-code">
+            <div className="shard-docs-code-sample-shard-source-code">
               <CodeBlock language={lang}>{sourceCode}</CodeBlock>
             </div>
           )}
-          <div className="code-sample-shard-example">
+          <div className="shard-docs-code-sample-shard-example">
             {useIframe ? (
               <Frame
                 initialContent={`<!DOCTYPE html><html><head>${iframeHead}</head><body><div class="frame-root"></div></body></html>`}
