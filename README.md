@@ -27,7 +27,7 @@ A simple engine for organising and viewing docs written in JSX.
 - [License](#license)
 
 ## Requirements
-This package relies on [react router](https://reacttraining.com/react-router/web/guides/quick-start) for routing.
+This package relies internally on [react router](https://reacttraining.com/react-router/web/guides/quick-start) for routing.
 
 ## Install
 ```
@@ -41,7 +41,6 @@ npm install @fa-repo/shard-docs react-router-dom
 // documentation.js
 import React from "react";
 import { render } from "react-dom";
-import { HashRouter } from "react-router-dom";
 import ShardDocs from "@fa-repo/shard-docs";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
 
@@ -59,13 +58,11 @@ const source = [
 ]
 
 render(
-  <HashRouter>
-    <ShardDocs
-      title="ShardDocs demo"
-      description="A description describing the purpose of the docs."
-      source={source}
-    />
-  </HashRouter>,
+  <ShardDocs
+    title="ShardDocs demo"
+    description="A description describing the purpose of the docs."
+    source={source}
+  />,
   document.getElementById("root")
 );
 ```
@@ -104,6 +101,12 @@ render(
    * Data is fed in through the source prop. Scroll down for an explanation of the schema.
    * @array
    * @default []
+  */
+  useBrowserRouter={true}
+  /**
+   * Use react routers BrowserRouter instead of HashRouter (default) for routing..
+   * @boolean
+   * @default false
   */
   source={[
     {
