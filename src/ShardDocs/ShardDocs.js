@@ -37,6 +37,7 @@ class ShardDocs extends React.Component {
 
     if (location.pathname !== prevProps.location.pathname) {
       this.setState({ tree: setActiveTreeNode(this.state.tree, location.pathname) });
+      window.scrollTo(0, 0);
     }
   }
 

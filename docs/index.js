@@ -3,7 +3,6 @@ import { render } from "react-dom";
 
 import { MDXProvider } from "@mdx-js/react";
 import { HashRouter } from "react-router-dom";
-import ScrollMemory from "react-router-scroll-memory";
 
 import CodeBlock from "@fa-repo/shard-docs/dist/renderers/codeblock";
 import ShardDocs from "@fa-repo/shard-docs";
@@ -38,7 +37,6 @@ const components = {
 render(
   <HashRouter>
     <MDXProvider components={components}>
-      <ScrollMemory />
       <ShardDocs
         title="@fa-repo/shard-docs"
         description="A concise / extendable react component for handling documentation"
