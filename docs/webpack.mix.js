@@ -1,7 +1,7 @@
 const mix = require("laravel-mix");
 
 mix
-  .react("./src/index.js", "public/main.js")
+  .react("./index.js", "public/index.js")
   .copy("node_modules/@fa-repo/shard-docs/dist/shard-docs.css", "public/css/shard-docs.css")
   .copy(
     "node_modules/@fa-repo/shard-docs/dist/shards/code-sample.css",
@@ -11,14 +11,8 @@ mix
   .webpackConfig({
     module: {
       rules: [
-        {
-          test: /\.md$/,
-          use: "raw-loader"
-        },
-        {
-          test: /\.mdx?$/,
-          use: ["babel-loader", "@mdx-js/loader"]
-        }
+        { test: /\.md$/, use: "raw-loader" },
+        { test: /\.mdx?$/, use: ["babel-loader", "@mdx-js/loader"] }
       ]
     }
   })

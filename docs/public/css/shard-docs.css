@@ -1022,7 +1022,8 @@
     .shard-docs-document-body a:hover {
       text-decoration: underline; }
   .shard-docs-document-body a[target="_blank"] {
-    padding-right: 19px; }
+    padding-right: 19px;
+    position: relative; }
     .shard-docs-document-body a[target="_blank"]::after {
       content: "";
       position: absolute;

@@ -44,6 +44,10 @@
 
   a[target="_blank"] {
     padding-right: 19px;
+
+    // Required to position new tab icon properly.
+    position: relative;
+
     &::after {
       content: "";
       position: absolute;

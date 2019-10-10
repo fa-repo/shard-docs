@@ -1,0 +1,36 @@
+```js
+// example
+const source = [
+  { title: "Install", document: [ <h1>Install</h1> ] },
+  { title: "Basic usage", document: [ <h1>Basic usage</h1> ] },
+  {
+    title: "Examples",
+    folder: [
+      { title: "Use case A", document: [ <h1>Use case A</h1> ] },
+      { title: "Use case B", document: [ <h1>Use case B</h1> ] }
+    ]
+  },
+  { title: "Github", externalLink: "https://github.com" },
+]
+```
+
+#### Document item
+
+| Name       | Type   | Default | Required | Description                       |
+|------------|--------|---------|----------|-----------------------------------|
+| `title`    | string | `""`    | Required | Document title.                   |
+| `document` | JSX    | `null`  |          | Document content.                 |
+
+#### Folder item
+
+| Name       | Type   | Default | Required | Description                                       |
+|------------|--------|---------|----------|---------------------------------------------------|
+| `title`    | string | `""`    |          | Folder title.                                     |
+| `folder` | array  | `[]`    | Required | An array that accepts all items listed here.      |
+
+#### External link item
+
+| Name             | Type   | Default | Required | Description         |
+|------------------|--------|---------|----------|---------------------|
+| `title`          | string | `""`    |          | Link text.          |
+| `externalLink`   | string | `""`    | Required | Link path.          |
