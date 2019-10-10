@@ -2,7 +2,6 @@ import React from "react";
 import { render } from "react-dom";
 
 import { MDXProvider } from "@mdx-js/react";
-import { HashRouter } from "react-router-dom";
 
 import CodeBlock from "@fa-repo/shard-docs/dist/renderers/codeblock";
 import ShardDocs from "@fa-repo/shard-docs";
@@ -35,35 +34,33 @@ const components = {
 };
 
 render(
-  <HashRouter>
-    <MDXProvider components={components}>
-      <ShardDocs
-        title="@fa-repo/shard-docs"
-        description="A concise / extendable react component for handling documentation"
-        source={[
-          {
-            title: "Essentials",
-            folder: [
-              { title: "Get started", document: <GetStarted /> },
-              { title: "Source", document: <SchemaReference /> },
-              { title: "API", document: <ApiReference /> }
-            ]
-          },
-          {
-            title: "Examples",
-            folder: [{ title: "Hello world", document: <HelloWorld /> }]
-          },
-          {
-            title: "Shards",
-            folder: [
-              { title: "<CodeSample />", document: <CodeSampleShard /> },
-              { title: "<Section />", document: <SectionShard /> }
-            ]
-          },
-          { title: "Github", externalLink: "http://github.com/fa-repo/shard-docs" }
-        ]}
-      />
-    </MDXProvider>
-  </HashRouter>,
+  <MDXProvider components={components}>
+    <ShardDocs
+      title="@fa-repo/shard-docs"
+      description="A concise / extendable react component for handling documentation"
+      source={[
+        {
+          title: "Essentials",
+          folder: [
+            { title: "Get started", document: <GetStarted /> },
+            { title: "Source", document: <SchemaReference /> },
+            { title: "API", document: <ApiReference /> }
+          ]
+        },
+        {
+          title: "Examples",
+          folder: [{ title: "Hello world", document: <HelloWorld /> }]
+        },
+        {
+          title: "Shards",
+          folder: [
+            { title: "<CodeSample />", document: <CodeSampleShard /> },
+            { title: "<Section />", document: <SectionShard /> }
+          ]
+        },
+        { title: "Github", externalLink: "http://github.com/fa-repo/shard-docs" }
+      ]}
+    />
+  </MDXProvider>,
   document.getElementById("root")
 );

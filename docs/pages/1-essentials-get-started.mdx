@@ -12,7 +12,7 @@ npm install @fa-repo/shard-docs react-router-dom
 // index.js
 import React from "react";
 import { render } from "react-dom";
-import { HashRouter } from "react-router-dom";
+
 import ShardDocs from "@fa-repo/shard-docs";
 import "@fa-repo/shard-docs/dist/shard-docs.css";
 
@@ -30,13 +30,11 @@ const source = [
 ]
 
 render(
-  <HashRouter>
-    <ShardDocs
-      title="ShardDocs demo"
-      description="A description describing the purpose of the docs."
-      source={source}
-    />
-  </HashRouter>,
+  <ShardDocs
+    title="ShardDocs demo"
+    description="A description describing the purpose of the docs."
+    source={source}
+  />,
   document.getElementById("root")
 );
 ```

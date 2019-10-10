@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
+import { withRouter, HashRouter, BrowserRouter, Route } from "react-router-dom";
 import Main from "../Main";
 import Sidebar from "../Sidebar";
 import fromSource from "../adapters/fromSource";
@@ -63,7 +63,6 @@ class ShardDocs extends React.Component {
     const {
       title,
       description,
-      baseLink,
       basePath,
       source,
       staticContext,
@@ -71,6 +70,7 @@ class ShardDocs extends React.Component {
       location,
       match,
       hideBuiltWithShardDocs,
+      useBrowserRouter,
       ...props
     } = this.props;
 
@@ -103,7 +103,8 @@ ShardDocs.propTypes = {
   description: PropTypes.string,
   source: sourceTypes,
   basePath: PropTypes.string,
-  hideBuiltWithShardDocs: PropTypes.bool
+  hideBuiltWithShardDocs: PropTypes.bool,
+  useBrowserRouter: PropTypes.bool
 };
 
 ShardDocs.defaultProps = {
@@ -111,7 +112,15 @@ ShardDocs.defaultProps = {
   description: "",
   source: [],
   basePath: "/",
-  hideBuiltWithShardDocs: false
+  hideBuiltWithShardDocs: false,
+  useBrowserRouter: false
 };
 
-export default withRouter(ShardDocs);
+export default props => {
+  const Router = props.useBrowserRouter ? BrowserRouter : HashRouter;
+  return (
+    <Router>
+      <Route component={props2 => <ShardDocs {...{ ...props, ...props2 }} />} />
+    </Router>
+  );
+};
