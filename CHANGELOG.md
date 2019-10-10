@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.0-3] - 2019-10-10
+### Changed
+- Fully integrated react-router into package
+- Tidy repo
+- Updated docs
+
 ## [5.0.0-2] - 2019-10-09
 ### Changed
 - Renamed source folder item property from `children` to `folder`
@@ -87,7 +93,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CHANGELOG to document the development of @fa-repo/shard-docs.
 - Github release tagging
 
-[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-2...HEAD
+[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-3...HEAD
+[5.0.0-3]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-2...v5.0.0-3
 [5.0.0-2]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-1...v5.0.0-2
 [5.0.0-1]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-0...v5.0.0-1
 [5.0.0-0]: https://github.com/fa-repo/shard-docs/compare/v4.1.0...v5.0.0-0
