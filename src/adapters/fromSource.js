@@ -5,8 +5,10 @@ export default function fromSource(tree, basePath = "/") {
   tree = addTypes(tree);
   tree = addPaths(tree, basePath);
   tree = addBreadcrumbs(tree, [{ link: basePath, text: "~" }]);
+  tree = addDepth(tree);
   tree = shapeItems(tree, basePath);
   tree = combineTopLevelAdjacentItems(tree);
+
   return {
     tree,
     documents: flattenDocuments(tree)
@@ -44,7 +46,9 @@ export function combineTopLevelAdjacentItems(items) {
   const isDiscreteFolder = item => item && item.type === "folder" && !item.title;
 
   items = items.map(item => {
-    return item.type !== "folder" ? { title: null, folder: [item], type: "folder" } : item;
+    return item.type !== "folder"
+      ? { title: null, folder: [item], type: "folder", depth: 0 }
+      : item;
   });
 
   return items.reduce((accumulator, item) => {
@@ -103,6 +107,21 @@ export function addBreadcrumbs(items, breadcrumbs = []) {
 }
 
 /**
+ * Recursively loops through source tree adding depth level to all items.
+ * @param  {array} items Expects result of fromSource/ shapeItems().
+ * @return {array}
+ */
+export function addDepth(items, depth = 0) {
+  return items.map(item => {
+    if (item.type === "folder") {
+      item.folder = addDepth(item.folder, depth + 1);
+    }
+    item.depth = depth;
+    return item;
+  });
+}
+
+/**
  * Loops through each item, child and grandchild shaping each item to the specs of its given type.
  * @param  {array} items Expects result of fromSource/combineTopLevelAdjacentDocuments().
  * @return {array}
@@ -110,24 +129,24 @@ export function addBreadcrumbs(items, breadcrumbs = []) {
 export function shapeItems(items) {
   return items
     .map(item => {
-      const { type, title, path } = item;
+      const { type, title, path, depth } = item;
       if (type === "external") {
         const link = item.externalLink;
-        return { type, title, link };
+        return { type, title, link, depth };
       } else if (type === "folder" && title) {
         const isEmpty = !item.folder.length;
         const isActive = false;
         const folder = shapeItems(item.folder);
-        return { type, path, title, isEmpty, isActive, folder };
+        return { type, path, title, isEmpty, isActive, folder, depth };
       } else if (type === "folder" && !title) {
         const folder = shapeItems(item.folder);
-        return { type, path, folder };
+        return { type, path, folder, depth };
       } else if (type === "document") {
         const isEmpty = !Boolean(item.document);
         const isActive = false;
         const document = item.document;
         const breadcrumbs = item.breadcrumbs;
-        return { type, path, title, isEmpty, isActive, breadcrumbs, document };
+        return { type, path, title, isEmpty, isActive, breadcrumbs, document, depth };
       }
       return null;
     })

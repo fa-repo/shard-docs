@@ -44,7 +44,11 @@ render(
           folder: [
             { title: "Get started", document: <GetStarted /> },
             { title: "Source", document: <SchemaReference /> },
-            { title: "API", document: <ApiReference /> }
+            { title: "API", document: <ApiReference /> },
+            {
+              title: "Resources",
+              folder: [{ title: "Wikipedia", externalLink: "http://wikipedia.com" }]
+            }
           ]
         },
         {

@@ -11,11 +11,13 @@ const source = [
   { title: "Github", externalLink: "http://github.com" }
 ];
 
-test("fromSource() transforms data and returns tree", () =>
+test("fromSource() transforms data and returns tree", () =>{
+
   expect(fromSource(source).tree).toStrictEqual([
     {
       title: null,
       type: "folder",
+      depth: 0,
       folder: [
         {
           title: "Doc A",
@@ -25,6 +27,7 @@ test("fromSource() transforms data and returns tree", () =>
           document: null,
           isEmpty: true,
           isActive: false,
+          depth: 0
         },
         {
           title: "Doc B",
@@ -34,6 +37,7 @@ test("fromSource() transforms data and returns tree", () =>
           document: null,
           isEmpty: true,
           isActive: false,
+          depth: 0
         },
         {
           title: "Doc C",
@@ -43,6 +47,7 @@ test("fromSource() transforms data and returns tree", () =>
           document: null,
           isEmpty: true,
           isActive: false,
+          depth: 0
         }
       ]
     },
@@ -52,6 +57,7 @@ test("fromSource() transforms data and returns tree", () =>
       path: "/folder",
       isEmpty: false,
       isActive: false,
+      depth: 0,
       folder: [
         {
           title: "Doc D",
@@ -65,6 +71,7 @@ test("fromSource() transforms data and returns tree", () =>
           document: null,
           isEmpty: true,
           isActive: false,
+          depth: 1
         },
         {
           title: "Doc E",
@@ -78,15 +85,19 @@ test("fromSource() transforms data and returns tree", () =>
           document: null,
           isEmpty: true,
           isActive: false,
+          depth: 1
         }
       ]
     },
     {
       title: null,
       type: "folder",
-      folder: [{ title: "Github", type: "external", link: "http://github.com" }]
+      folder: [
+        { title: "Github", type: "external", link: "http://github.com", depth: 0 }
+      ],
+      depth: 0
     }
-  ])
+  ])}
 );
 
 test("fromSource() transforms data and returns documents in a flat array", () =>
@@ -99,6 +110,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
+      depth: 0
     },
     {
       title: "Doc B",
@@ -108,6 +120,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
+      depth: 0
     },
     {
       title: "Doc C",
@@ -117,6 +130,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
+      depth: 0
     },
     {
       title: "Doc D",
@@ -130,6 +144,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
+      depth: 1
     },
     {
       title: "Doc E",
@@ -143,6 +158,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
+      depth: 1
     }
   ])
 );

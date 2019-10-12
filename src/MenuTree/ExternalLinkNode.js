@@ -10,7 +10,7 @@ import { externalLinkTypes } from "../types";
 const ExternalLinkNode = ({ node }) => (
   <li className="shard-docs-menu-external">
     <a href={node.link} target="_blank">
-      {node.title} <ExternalIcon className="external-icon" />
+      <ExternalIcon className="external-icon" /> {node.title}
     </a>
   </li>
 );

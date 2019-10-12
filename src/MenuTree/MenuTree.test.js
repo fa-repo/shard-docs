@@ -36,8 +36,8 @@ describe("<MenuTree />", () => {
   it("renders folder", () => {
     const { wrapper } = mountMenuList({ tree });
 
-    expect(wrapper.find('MenuTree > FolderNode').at(1).find('li').first().text()).toBe('Folder')
-    expect(wrapper.find('MenuTree > FolderNode').at(1).find('li').length).toBe(3)
+    expect(wrapper.find('MenuTree > FolderNode').at(1).find('a').first().text()).toBe('Folder')
+    expect(wrapper.find('MenuTree > FolderNode').at(1).find('a').length).toBe(3)
   });
 
   it("renders discrete group", () => {
