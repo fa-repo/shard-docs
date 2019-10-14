@@ -1,7 +1,7 @@
 {
   "name": "@fa-repo/shard-docs",
   "version": "5.0.0-3",
-  "description": "A concise / extendable react component for handling documentation",
+  "description": "A doc manager written in React for organising and viewing MDX files.",
   "author": "fa-repo",
   "license": "",
   "repository": "fa-repo/shard-docs",

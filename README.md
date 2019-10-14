@@ -2,7 +2,7 @@
 
 # Shard Docs
 
-A simple engine for organising and viewing docs written in JSX.
+A doc manager written in React for organising and viewing MDX files.
 
 [![version][version-badge]][package] [![MIT License][license-badge]][license]
 
