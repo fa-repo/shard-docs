@@ -13,7 +13,7 @@ const Menu = props => {
   return (
     <div className="shard-docs-menu" data-show-on-mobile={props.showOnMobile}>
       {props.tree.map((node, i) => (
-        <MenuSection key={i} node={node} onNavigate={props.onNavigate} />
+        <MenuSection key={i} index={i} node={node} onNavigate={props.onNavigate} />
       ))}
     </div>
   );

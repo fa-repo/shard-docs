@@ -10,6 +10,10 @@
     background: rgba(0, 0, 0, 0.1);
   }
 
+  &.active {
+    color: #fff176;
+  }
+
   &[disabled] {
     opacity: 0.5;
     text-decoration: none !important;

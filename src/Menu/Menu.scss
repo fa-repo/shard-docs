@@ -5,17 +5,17 @@
   color: rgba(255, 255, 255, 0.5);
   list-style-type: none;
   line-height: normal;
-  width: 280px;
+  width: 100%;
+
+  @media (min-width: 1200px) {
+    width: 280px;
+  }
 
   &[data-show-on-mobile="false"] {
     display: none;
     @media (min-width: 1200px) {
       display: block;
     }
-  }
-
-  > .shard-docs-menu-section:first-child {
-    background: rgba(0, 0, 0, 0.1);
   }
 
   > .shard-docs-menu-section:last-child {
@@ -25,6 +25,10 @@
 
 .shard-docs-menu-section {
   border-bottom: thin solid rgba(0, 0, 0, 0.2);
+
+  &.collapsible.expanded {
+    background: rgba(0, 0, 0, 0.1);
+  }
 
   &-header a {
     padding: 10px 15px 10px 15px;
@@ -45,9 +49,9 @@
   }
 
   &-header svg {
-    height: 20px;
-    width: 20px;
-    margin: -3px -5px -3px auto;
+    height: 24px;
+    width: 24px;
+    margin: -4px -5px -4px auto;
   }
 }
 
@@ -57,14 +61,14 @@
   padding: 0;
 }
 
-.shard-docs-menu-section > ul > *:first-child {
-  margin-top: 10px;
+.shard-docs-menu-section > ul:first-of-type {
+  margin-top: 5px;
 }
 
 .shard-docs-menu-section > .shard-docs-menu-section-header + ul > *:first-child {
   margin-top: 0;
 }
 
-.shard-docs-menu-section > ul > *:last-child {
-  margin-bottom: 10px;
+.shard-docs-menu-section > ul:last-child {
+  margin-bottom: 15px;
 }

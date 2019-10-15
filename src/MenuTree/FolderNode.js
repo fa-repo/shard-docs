@@ -14,7 +14,7 @@ import sessionDB from "../utils/sessionDB";
 
 class FolderNode extends React.Component {
   state = {
-    sessionId: "fa-repo-shard-docs-folder-expanded" + this.props.node.path,
+    sessionId: "fa-repo-shard-docs-menu-folder-expanded" + this.props.node.path,
     expanded: true
   };
 

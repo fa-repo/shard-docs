@@ -1268,76 +1268,109 @@
     .shard-docs-description {
       display: block; } }
 
+.shard-docs-menu-document a,
+.shard-docs-menu-external a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  padding: 3px 0;
+  display: block;
+  cursor: pointer;
+  font-weight: 100; }
+  .shard-docs-menu-document a:hover,
+  .shard-docs-menu-external a:hover {
+    background: rgba(0, 0, 0, 0.1); }
+  .shard-docs-menu-document a.active,
+  .shard-docs-menu-external a.active {
+    color: #fff176; }
+  .shard-docs-menu-document a[disabled],
+  .shard-docs-menu-external a[disabled] {
+    opacity: 0.5;
+    text-decoration: none !important;
+    cursor: default; }
+  .shard-docs-menu-document a svg,
+  .shard-docs-menu-external a svg {
+    height: 16px;
+    width: 16px;
+    margin-right: 7px;
+    position: relative;
+    margin-top: -3px;
+    top: -1px; }
+
+.shard-docs-menu-external svg {
+  width: 14px !important; }
+
+.shard-docs-menu-folder {
+  padding: 0;
+  margin-top: 3px;
+  list-style-type: none; }
+  .shard-docs-menu-folder-header a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 3px 0;
+    display: flex;
+    cursor: pointer;
+    font-weight: 600; }
+  .shard-docs-menu-folder-header a:hover {
+    background: rgba(0, 0, 0, 0.1); }
+  .shard-docs-menu-folder-header svg {
+    width: 9px;
+    height: 9px;
+    margin: 4px;
+    margin-right: 8px; }
+
 .shard-docs-menu {
   margin: 0;
+  border-top: thin solid rgba(0, 0, 0, 0.2);
+  border-bottom: thin solid rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.5);
   list-style-type: none;
   line-height: normal;
-  width: 280px; }
+  width: 100%; }
+  @media (min-width: 1200px) {
+    .shard-docs-menu {
+      width: 280px; } }
   .shard-docs-menu[data-show-on-mobile="false"] {
     display: none; }
     @media (min-width: 1200px) {
       .shard-docs-menu[data-show-on-mobile="false"] {
         display: block; } }
-  .shard-docs-menu a {
-    color: rgba(255, 255, 255, 0.9);
+  .shard-docs-menu > .shard-docs-menu-section:last-child {
+    border-bottom: none; }
+
+.shard-docs-menu-section {
+  border-bottom: thin solid rgba(0, 0, 0, 0.2); }
+  .shard-docs-menu-section.collapsible.expanded {
+    background: rgba(0, 0, 0, 0.1); }
+  .shard-docs-menu-section-header a {
+    padding: 10px 15px 10px 15px;
+    display: flex;
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    padding: 3px 0;
-    display: block;
-    cursor: pointer; }
-    .shard-docs-menu a[disabled] {
-      opacity: 0.5;
-      text-decoration: none !important;
-      cursor: default; }
-  .shard-docs-menu a {
-    display: flex; }
-  .shard-docs-menu a svg {
-    height: 16px;
-    width: 16px;
-    margin-right: 7px; }
-  .shard-docs-menu > ul {
-    padding-left: 15px !important; }
-  .shard-docs-menu .shard-docs-menu-toggle-folder {
-    height: 20px;
-    width: 20px;
-    margin: 0px 10px -3px auto; }
-  .shard-docs-menu .shard-docs-menu-folder {
-    padding-left: 0;
-    list-style-type: none;
-    margin: 0; }
-  .shard-docs-menu > .shard-docs-menu-folder:first-child {
-    background: rgba(0, 0, 0, 0.1);
-    border-top: thin solid rgba(0, 0, 0, 0.2);
-    padding-top: 10px; }
-  .shard-docs-menu > .shard-docs-menu-folder {
-    border-bottom: thin solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 10px;
-    margin-bottom: 10px; }
-  .shard-docs-menu > .shard-docs-menu-folder > a {
+    text-transform: uppercase; }
+  .shard-docs-menu-section-header a:hover {
+    background: rgba(0, 0, 0, 0.1); }
+  .shard-docs-menu-section-header h3 {
+    margin: 0;
     font-size: 13px;
-    text-transform: uppercase;
-    padding-top: 0;
-    margin-bottom: 5px;
-    opacity: 0.8; }
-  .shard-docs-menu > .shard-docs-menu-folder > .shard-docs-menu-document a {
-    padding-left: 0 !important; }
-  .shard-docs-menu > .shard-docs-menu-folder > .shard-docs-menu-folder {
-    padding-left: 0 !important; }
-  .shard-docs-menu .shard-docs-menu-folder > a {
     font-weight: 600; }
-  .shard-docs-menu .shard-docs-menu-document,
-  .shard-docs-menu .shard-docs-menu-external {
-    margin: 0; }
-  .shard-docs-menu .shard-docs-menu-external > a > svg {
-    width: 14px; }
-  .shard-docs-menu > li:first-child > * {
-    margin-top: 0; }
-  .shard-docs-menu .active {
-    color: #fff176; }
-  .shard-docs-menu .shard-docs-menu-folder > .shard-docs-menu-folder > a svg {
-    display: none; }
-  .shard-docs-menu .shard-docs-menu-folder > .shard-docs-menu-folder li {
-    padding-left: 15px; }
+  .shard-docs-menu-section-header svg {
+    height: 24px;
+    width: 24px;
+    margin: -4px -5px -4px auto; }
+
+.shard-docs-menu-section > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+.shard-docs-menu-section > ul:first-of-type {
+  margin-top: 5px; }
+
+.shard-docs-menu-section > .shard-docs-menu-section-header + ul > *:first-child {
+  margin-top: 0; }
+
+.shard-docs-menu-section > ul:last-child {
+  margin-bottom: 15px; }
 
 .shard-docs-built-with-shard-docs {
   margin-top: auto;
