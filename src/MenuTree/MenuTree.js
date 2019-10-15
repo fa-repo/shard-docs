@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import DocumentNode from "./DocumentNode";
-import ExternalLinkNode from "./ExternalLinkNode";
+import ExternalLinkNode from "./LinkExternalNode";
 import FolderNode from "./FolderNode";
 import { treeTypes } from "../types";
+import "./MenuTree.scss";
 
 /**
  * MenuTree
@@ -31,6 +32,7 @@ MenuTree.propTypes = {
   tree: treeTypes,
   onNavigate: PropTypes.func
 };
+
 MenuTree.defaultProps = {
   tree: [],
   onNavigate: () => {}

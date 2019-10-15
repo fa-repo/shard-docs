@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ExternalIcon from "boxicons/svg/regular/bx-link-external.svg";
+import ExternalIcon from "../icons/LinkExternal";
 import { externalLinkTypes } from "../types";
 
 /**
@@ -9,8 +9,9 @@ import { externalLinkTypes } from "../types";
 
 const ExternalLinkNode = ({ node }) => (
   <li className="shard-docs-menu-external">
-    <a href={node.link} target="_blank">
-      <ExternalIcon className="external-icon" /> {node.title}
+    <a href={node.link} target="_blank" style={{ paddingLeft: node.depth * 15 + "px" }}>
+      <ExternalIcon />
+      {node.title}
     </a>
   </li>
 );
@@ -18,6 +19,7 @@ const ExternalLinkNode = ({ node }) => (
 ExternalLinkNode.propTypes = {
   node: externalLinkTypes
 };
+
 ExternalLinkNode.defaultProps = {
   node: {
     title: "",

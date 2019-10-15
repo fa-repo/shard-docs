@@ -27,7 +27,7 @@ test("fromSource() transforms data and returns tree", () =>{
           document: null,
           isEmpty: true,
           isActive: false,
-          depth: 0
+          depth: 1
         },
         {
           title: "Doc B",
@@ -37,7 +37,7 @@ test("fromSource() transforms data and returns tree", () =>{
           document: null,
           isEmpty: true,
           isActive: false,
-          depth: 0
+          depth: 1
         },
         {
           title: "Doc C",
@@ -47,7 +47,7 @@ test("fromSource() transforms data and returns tree", () =>{
           document: null,
           isEmpty: true,
           isActive: false,
-          depth: 0
+          depth: 1
         }
       ]
     },
@@ -93,7 +93,7 @@ test("fromSource() transforms data and returns tree", () =>{
       title: null,
       type: "folder",
       folder: [
-        { title: "Github", type: "external", link: "http://github.com", depth: 0 }
+        { title: "Github", type: "external", link: "http://github.com", depth: 1 }
       ],
       depth: 0
     }
@@ -110,7 +110,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
-      depth: 0
+      depth: 1
     },
     {
       title: "Doc B",
@@ -120,7 +120,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
-      depth: 0
+      depth: 1
     },
     {
       title: "Doc C",
@@ -130,7 +130,7 @@ test("fromSource() transforms data and returns documents in a flat array", () =>
       document: null,
       isEmpty: true,
       isActive: false,
-      depth: 0
+      depth: 1
     },
     {
       title: "Doc D",

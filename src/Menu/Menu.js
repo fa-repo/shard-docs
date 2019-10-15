@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import MenuTree from "../MenuTree";
 import { appTypes, treeTypes } from "../types";
+import MenuTree from "../MenuTree";
+import MenuSection from "./MenuSection";
 import "./Menu.scss";
 
 /**
@@ -11,7 +12,9 @@ import "./Menu.scss";
 const Menu = props => {
   return (
     <div className="shard-docs-menu" data-show-on-mobile={props.showOnMobile}>
-      <MenuTree tree={props.tree} onNavigate={props.onNavigate} />
+      {props.tree.map((node, i) => (
+        <MenuSection key={i} node={node} onNavigate={props.onNavigate} />
+      ))}
     </div>
   );
 };
@@ -22,7 +25,6 @@ Menu.propTypes = {
   onNavigate: PropTypes.func
 };
 Menu.defaultProps = {
-  app: {},
   tree: [],
   showOnMobile: false,
   onNavigate: () => {}

@@ -50,7 +50,7 @@ describe("<MenuTree />", () => {
     const { wrapper } = mountMenuList({ tree });
 
     expect(wrapper.find('MenuTree > FolderNode').at(2).find('li a').props().href).toBe('http://github.com')
-    expect(wrapper.find('MenuTree > FolderNode').at(2).find('li a').text()).toBe('Github ')
+    expect(wrapper.find('MenuTree > FolderNode').at(2).find('li a').text()).toBe('Github')
   });
 
   it("renders document item", () => {

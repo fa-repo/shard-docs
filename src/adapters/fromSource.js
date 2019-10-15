@@ -5,9 +5,9 @@ export default function fromSource(tree, basePath = "/") {
   tree = addTypes(tree);
   tree = addPaths(tree, basePath);
   tree = addBreadcrumbs(tree, [{ link: basePath, text: "~" }]);
-  tree = addDepth(tree);
   tree = shapeItems(tree, basePath);
   tree = combineTopLevelAdjacentItems(tree);
+  tree = addDepth(tree);
 
   return {
     tree,
