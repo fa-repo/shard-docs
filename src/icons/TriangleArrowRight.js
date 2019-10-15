@@ -7,18 +7,7 @@ import PropTypes from "prop-types";
  */
 
 const TriangleRightDown = props => (
-  <svg
-    version="1.1"
-    id="Layer_1"
-    xmlns="&ns_svg;"
-    xmlns:xlink="&ns_xlink;"
-    width="460.5"
-    height="531.74"
-    viewBox="0 0 460.5 531.74"
-    overflow="visible"
-    enable-background="new 0 0 460.5 531.74"
-    xml:space="preserve"
-  >
+  <svg viewBox="0 0 460.5 531.74">
     <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 " />
   </svg>
 );

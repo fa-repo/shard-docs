@@ -56,8 +56,8 @@ describe("<MenuTree />", () => {
   it("renders document item", () => {
     const { wrapper } = mountMenuList({ tree });
 
-    expect(wrapper.find('MenuTree > FolderNode').at(0).find('li a').first().text()).toBe('Doc A')
-    expect(wrapper.find('MenuTree > FolderNode').at(0).find('li a').first().props().href).toBe('/doc-a')
+    expect(wrapper.find('MenuTree > FolderNode').at(0).find('li a').first().text()).toBe('Doc A');
+    expect(wrapper.find('MenuTree > FolderNode').at(0).find('li a').first().props().href).toBe('/doc-a');
   });
 
   it("calls onNavigate", () => {
