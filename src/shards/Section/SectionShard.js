@@ -27,8 +27,8 @@ class SectionShard extends React.Component {
   }
 
   isExpanded = () => {
-    let expanded = localStorage.getItem(this.state.storageId);
-    return expanded === null ? this.state.expanded : expanded === "true";
+    let expanded = JSON.parse(localStorage.getItem(this.state.storageId));
+    return expanded === null ? this.state.expanded : Boolean(expanded);
   };
 
   toggle = () => {

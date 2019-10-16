@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import HeaderTitle from "./HeaderTitle";
 
 describe("<HeaderTitle />", () => {
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     const wrapper = mount(
       <MemoryRouter>
         <HeaderTitle/>

@@ -3,7 +3,7 @@ import documentTypes from "./document";
 import breadcrumbTypes from "./breadcrumb";
 
 export default PropTypes.shape({
-  type: PropTypes.oneOf(["document"]).isRequired,
+  type: PropTypes.oneOf(["document"]),
   path: PropTypes.string,
   title: PropTypes.string,
   isEmpty: PropTypes.bool,

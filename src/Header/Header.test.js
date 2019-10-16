@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import Header from "./Header";
 
 describe("<Header />", () => {
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     const wrapper = mount(<Header/>)
 
     expect(wrapper.find('.shard-docs-header').exists()).toBe(true)

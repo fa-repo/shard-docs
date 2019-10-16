@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import treeTypes from "./tree";
 
 export default PropTypes.shape({
-  type: PropTypes.oneOf(["folder"]).isRequired,
+  type: PropTypes.oneOf(["folder"]),
   path: PropTypes.string,
   title: PropTypes.string,
   isEmpty: PropTypes.bool,

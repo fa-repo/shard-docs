@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import folderTypes from "../types/folder";
+import { folderTypes } from "../types";
 import MenuTree from "../MenuTree";
 import sessionDB from "../utils/sessionDB";
 import classnames from "classnames";
@@ -61,6 +61,7 @@ MenuSection.propTypes = {
 };
 
 MenuSection.defaultProps = {
+  index: 0,
   node: {},
   onNavigate: () => {}
 };

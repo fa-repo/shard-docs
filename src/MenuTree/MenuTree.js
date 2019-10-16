@@ -20,8 +20,6 @@ const MenuTree = ({ tree, onNavigate }) => {
           return <ExternalLinkNode key={i} node={node} />;
         } else if (node.type === "folder") {
           return <FolderNode key={i} node={node} onNavigate={onNavigate} />;
-        } else {
-          return null;
         }
       })}
     </>

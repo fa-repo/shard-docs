@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import BuiltWithShardDocs from "./BuiltWithShardDocs";
 
 describe("<BuiltWithShardDocs />", () => {
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     const wrapper = mount(<BuiltWithShardDocs />)
     expect(wrapper.find('BuiltWithShardDocs').exists()).toBe(true)
   });

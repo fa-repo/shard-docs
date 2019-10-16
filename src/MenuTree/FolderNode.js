@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import folderTypes from "../types/folder";
+import { folderTypes } from "../types";
 import MenuTree from "./MenuTree";
 import classnames from "classnames";
 import { NavLink } from "react-router-dom";

@@ -20,7 +20,7 @@ describe("<Menu />", () => {
     return { wrapper, onNavigate }
   }
 
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     const { wrapper } = mountMenu();
 
     expect(wrapper.exists()).toBe(true)

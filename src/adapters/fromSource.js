@@ -90,15 +90,11 @@ export function addPaths(items, basePath) {
  * @param  {array} items Expects result of fromSource/ shapeItems().
  * @return {array}
  */
-export function addBreadcrumbs(items, breadcrumbs = []) {
+export function addBreadcrumbs(items, breadcrumbs) {
   return items.map(item => {
     const crumb = { text: item.title, link: item.path };
     if (item.type === "folder") {
-      if (item.title) {
-        item.folder = addBreadcrumbs(item.folder, [...breadcrumbs, crumb]);
-      } else {
-        item.folder = addBreadcrumbs(item.folder, breadcrumbs);
-      }
+      item.folder = addBreadcrumbs(item.folder, [...breadcrumbs, crumb]);
     } else if (item.type === "document") {
       return { ...item, breadcrumbs: [...breadcrumbs, crumb] };
     }
@@ -138,9 +134,6 @@ export function shapeItems(items) {
         const isActive = false;
         const folder = shapeItems(item.folder);
         return { type, path, title, isEmpty, isActive, folder, depth };
-      } else if (type === "folder" && !title) {
-        const folder = shapeItems(item.folder);
-        return { type, path, folder, depth };
       } else if (type === "document") {
         const isEmpty = !Boolean(item.document);
         const isActive = false;

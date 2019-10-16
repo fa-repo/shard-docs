@@ -10,7 +10,7 @@ const sourceCode = `
 `;
 
 describe("<CodeSampleShard />", () => {
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     const wrapper = mount(<CodeSampleShard />)
     expect(wrapper.find('CodeSampleShard').exists()).toBe(true)
   });
@@ -49,8 +49,19 @@ describe("<CodeSampleShard />", () => {
     expect(wrapper.find('.shard-docs-code-sample-shard-body h1').text()).toBe('Hello world')
   });
 
-  it("can toggle sourceCode", () => {
-    const wrapper = mount(<CodeSampleShard sourceCode={sourceCode} />);
+  it("renders example in an iframe", () => {
+    const wrapper = mount(<CodeSampleShard useIframe><h1>Hello world</h1></CodeSampleShard>);
+
+    expect(wrapper.find('Frame').exists()).toBe(true)
+  });
+
+  it("toggles sourceCode", () => {
+    const wrapper = mount(
+      <CodeSampleShard sourceCode={sourceCode} >
+        <h1>Hello world</h1>
+        <h2>Hello galaxy</h2>
+      </CodeSampleShard>
+    );
 
     expect(wrapper.find('.shard-docs-code-sample-shard-body .shard-docs-code-sample-shard-source-code').exists()).toBe(false)
 

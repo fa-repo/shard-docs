@@ -1275,10 +1275,10 @@
   padding: 3px 15px 3px 0;
   display: flex;
   cursor: pointer;
-  font-weight: 100; }
+  font-weight: 400; }
   .shard-docs-menu-document a:hover,
   .shard-docs-menu-external a:hover {
-    background: rgba(0, 0, 0, 0.1); }
+    color: white; }
   .shard-docs-menu-document a.active,
   .shard-docs-menu-external a.active {
     color: #fff176; }
@@ -1293,7 +1293,7 @@
     width: 16px;
     min-width: 16px;
     min-height: 16px;
-    margin-right: 7px;
+    margin-right: 5px;
     position: relative; }
 
 .shard-docs-menu-external svg {
@@ -1302,7 +1302,6 @@
 
 .shard-docs-menu-folder {
   padding: 0;
-  margin-top: 3px;
   list-style-type: none; }
   .shard-docs-menu-folder-header a {
     color: rgba(255, 255, 255, 0.9);
@@ -1310,53 +1309,54 @@
     padding: 3px 0;
     display: flex;
     cursor: pointer;
-    font-weight: 600; }
+    font-weight: 400; }
   .shard-docs-menu-folder-header a:hover {
-    background: rgba(0, 0, 0, 0.1); }
+    color: white; }
   .shard-docs-menu-folder-header svg {
     width: 9px;
     height: 9px;
     margin: 4px;
     margin-right: 8px; }
 
+.shard-docs-menu-section-header a {
+  padding: 10px 15px 10px 15px;
+  display: flex;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  text-transform: uppercase; }
+  .shard-docs-menu-section-header a:hover {
+    color: white; }
+
+.shard-docs-menu-section-header h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600; }
+
+.shard-docs-menu-section-header svg {
+  height: 24px;
+  width: 24px;
+  min-width: 24px;
+  min-height: 24px;
+  margin: -4px -5px -4px auto; }
+
 .shard-docs-menu-section {
   border-bottom: thin solid rgba(0, 0, 0, 0.2); }
-  .shard-docs-menu-section:not(.collapsible) {
-    padding-top: 10px; }
+  .shard-docs-menu-section:not(.collapsible) > ul:first-child {
+    margin-top: 10px; }
+  .shard-docs-menu-section:not(.collapsible) > ul:last-child {
+    margin-bottom: 10px; }
   .shard-docs-menu-section.collapsible.expanded {
     background: rgba(0, 0, 0, 0.1); }
-  .shard-docs-menu-section-header a {
-    padding: 10px 15px 10px 15px;
-    display: flex;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    text-transform: uppercase; }
-  .shard-docs-menu-section-header a:hover {
-    background: rgba(0, 0, 0, 0.1); }
-  .shard-docs-menu-section-header h3 {
+  .shard-docs-menu-section > ul {
+    list-style-type: none;
     margin: 0;
-    font-size: 13px;
-    font-weight: 600; }
-  .shard-docs-menu-section-header svg {
-    height: 24px;
-    width: 24px;
-    min-width: 24px;
-    min-height: 24px;
-    margin: -4px -5px -4px auto; }
-
-.shard-docs-menu-section > ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
-
-.shard-docs-menu-section > ul:first-of-type {
-  margin-top: 5px; }
-
-.shard-docs-menu-section > .shard-docs-menu-section-header + ul > *:first-child {
-  margin-top: 0; }
-
-.shard-docs-menu-section > ul:last-child {
-  margin-bottom: 15px; }
+    padding: 0; }
+  .shard-docs-menu-section > ul:first-of-type {
+    margin-top: 5px; }
+  .shard-docs-menu-section > .shard-docs-menu-section-header + ul > *:first-child {
+    margin-top: 0; }
+  .shard-docs-menu-section > ul:last-child {
+    margin-bottom: 15px; }
 
 .shard-docs-menu {
   margin: 0;

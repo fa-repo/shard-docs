@@ -27,35 +27,27 @@ describe("<MenuTree />", () => {
     return { wrapper, onNavigate }
   }
 
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     const { wrapper } = mountMenuList();
 
-    expect(wrapper.exists()).toBe(true)
+    expect(wrapper.exists()).toBe(true);
   });
 
-  it("renders folder", () => {
+  it("renders with tree data", () => {
     const { wrapper } = mountMenuList({ tree });
 
-    expect(wrapper.find('MenuTree > FolderNode').at(1).find('a').first().text()).toBe('Folder')
-    expect(wrapper.find('MenuTree > FolderNode').at(1).find('a').length).toBe(3)
-  });
+    // Renders discrete folder
+    expect(wrapper.find('MenuTree > FolderNode').at(0).find('li').length).toBe(3);
 
-  it("renders discrete group", () => {
-    const { wrapper } = mountMenuList({ tree });
+    // Renders folder
+    expect(wrapper.find('MenuTree > FolderNode').at(1).find('a').first().text()).toBe('Folder');
+    expect(wrapper.find('MenuTree > FolderNode').at(1).find('a').length).toBe(3);
 
-    expect(wrapper.find('MenuTree > FolderNode').at(0).find('li').length).toBe(3)
-  });
+    // Renders external link
+    expect(wrapper.find('MenuTree > FolderNode').at(2).find('li a').props().href).toBe('http://github.com');
+    expect(wrapper.find('MenuTree > FolderNode').at(2).find('li a').text()).toBe('Github');
 
-  it("renders external item", () => {
-    const { wrapper } = mountMenuList({ tree });
-
-    expect(wrapper.find('MenuTree > FolderNode').at(2).find('li a').props().href).toBe('http://github.com')
-    expect(wrapper.find('MenuTree > FolderNode').at(2).find('li a').text()).toBe('Github')
-  });
-
-  it("renders document item", () => {
-    const { wrapper } = mountMenuList({ tree });
-
+    // Renders document
     expect(wrapper.find('MenuTree > FolderNode').at(0).find('li a').first().text()).toBe('Doc A');
     expect(wrapper.find('MenuTree > FolderNode').at(0).find('li a').first().props().href).toBe('/doc-a');
   });

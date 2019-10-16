@@ -23,7 +23,7 @@ describe("<Sidebar />", () => {
     )
   };
 
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     const wrapper = mountSidebar();
 
     expect(wrapper.exists()).toBe(true);
@@ -59,5 +59,23 @@ describe("<Sidebar />", () => {
     const wrapper = mountSidebar({ hideBuiltWithShardDocs: true });
 
     expect(wrapper.find('.shard-docs-built-with-shard-docs').exists()).toBe(false);
+  });
+
+  it("can toggle sidebar", () => {
+    const wrapper = mountSidebar();
+
+    expect(wrapper.find('[data-show-on-mobile]').props()['data-show-on-mobile']).toBe(false)
+    wrapper.find('.shard-docs-header-toggle').simulate('click')
+    expect(wrapper.find('[data-show-on-mobile]').props()['data-show-on-mobile']).toBe(true)
+  });
+
+  it("closes sidebar menu when navigating", () => {
+    const wrapper = mountSidebar({ tree });
+
+    expect(wrapper.find('[data-show-on-mobile]').props()['data-show-on-mobile']).toBe(false)
+    wrapper.find('.shard-docs-header-toggle').simulate('click')
+    expect(wrapper.find('[data-show-on-mobile]').props()['data-show-on-mobile']).toBe(true)
+    wrapper.find('.shard-docs-menu DocumentNode a').simulate('click')
+    expect(wrapper.find('[data-show-on-mobile]').props()['data-show-on-mobile']).toBe(false)
   });
 });

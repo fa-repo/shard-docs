@@ -15,36 +15,13 @@ import "./CodeSampleShard.scss";
  */
 
 class CodeSampleShard extends React.Component {
-  static propTypes = {
-    title: PropTypes.string,
-    lang: PropTypes.string,
-    sourceCode: PropTypes.string,
-    repository: PropTypes.string,
-    useIframe: PropTypes.bool,
-    iframeHead: PropTypes.string,
-    iframeStyle: PropTypes.object
-  };
-
-  static defaultProps = {
-    title: "",
-    lang: "jsx",
-    sourceCode: "",
-    repository: "",
-    useIframe: false,
-    iframeHead: "",
-    iframeStyle: {}
-  };
-
   state = {
     displayCode: false,
     id: uniqid()
   };
 
-  toggleCode = () => this.setState({ displayCode: !this.state.displayCode });
-
-  handleToggleCode = e => {
-    e.preventDefault();
-    this.toggleCode();
+  toggleCode = () => {
+    this.setState({ displayCode: !this.state.displayCode });
   };
 
   render() {
@@ -103,5 +80,25 @@ class CodeSampleShard extends React.Component {
     );
   }
 }
+
+CodeSampleShard.propTypes = {
+  title: PropTypes.string,
+  lang: PropTypes.string,
+  sourceCode: PropTypes.string,
+  repository: PropTypes.string,
+  useIframe: PropTypes.bool,
+  iframeHead: PropTypes.string,
+  iframeStyle: PropTypes.object
+};
+
+CodeSampleShard.defaultProps = {
+  title: "",
+  lang: "jsx",
+  sourceCode: "",
+  repository: "",
+  useIframe: false,
+  iframeHead: "",
+  iframeStyle: {}
+};
 
 export default CodeSampleShard;

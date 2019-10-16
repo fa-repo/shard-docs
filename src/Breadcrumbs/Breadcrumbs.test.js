@@ -10,7 +10,7 @@ const breadcrumbs = [
 ];
 
 describe("<Breadcrumbs />", () => {
-  it("renders without crashing", () => {
+  it("renders with default props", () => {
     mount(<Breadcrumbs />);
   });
 
