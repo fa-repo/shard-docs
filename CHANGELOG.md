@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [5.0.0-4] - 2019-10-16
 ### Changed
 - Changed sidebar menu style
+- Changed favicon
 ### Fixed
 - Broken nested folders
 ### Added
