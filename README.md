@@ -11,10 +11,7 @@ A doc manager written in React for organising and viewing MDX files.
 
 <hr/>
 
-
-
-![Usage example](./example.jpg "Usage example")
-
+<image src="/example.jpg" alt="screenshot" style="box-shadow: 0 0 8px rgba(0,0,0,0.2), 0 0 20px rgba(0,0,0,0.3);border-radius: 8px;">
 
 ## Table of Contents
 
@@ -122,7 +119,7 @@ render(
 ## Source schema
 Data is composed in a way that describes the relationship of items to each other - like a tree structure. The structure of the data influences the paths generated for document and folder routes as well as how the sidebar menu is rendered.
 
-Each item has a common `title` property. The combination of the subsequent properties define their types.
+Each item has a common `title` property. The combination of subsequent properties define their types.
 
 ### Let's take a look at the different items:
 
