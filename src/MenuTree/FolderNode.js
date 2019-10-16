@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { folderTypes } from "../types";
+import folderTypes from "../types/folder";
 import MenuTree from "./MenuTree";
 import classnames from "classnames";
 import { NavLink } from "react-router-dom";
+import BaseLink from "@fa-repo/base-react/dist/link";
 import TriangleArrowDown from "../icons/TriangleArrowDown";
 import TriangleArrowRight from "../icons/TriangleArrowRight";
 import sessionDB from "../utils/sessionDB";
@@ -37,24 +38,14 @@ class FolderNode extends React.Component {
       <ul className="shard-docs-menu-folder">
         {node.title && (
           <li className="shard-docs-menu-folder-header">
-            <NavLink
-              className={classnames(node.isActive && "active")}
+            <BaseLink
               style={{ paddingLeft: node.depth * 15 + "px" }}
-              onClick={e => {
-                if (node.isEmpty) {
-                  e.preventDefault();
-                } else {
-                  onNavigate();
-                  this.toggleFolder();
-                }
-              }}
+              onClick={this.toggleFolder}
               disabled={node.isEmpty}
-              to={node.path}
-              exact
             >
               {this.state.expanded ? <TriangleArrowDown /> : <TriangleArrowRight />}
               {node.title}
-            </NavLink>
+            </BaseLink>
           </li>
         )}
         {this.state.expanded && <MenuTree tree={node.folder} onNavigate={onNavigate} />}

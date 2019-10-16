@@ -1,0 +1,32 @@
+.shard-docs-menu-section {
+  border-bottom: thin solid rgba(0, 0, 0, 0.2);
+
+  &:not(.collapsible) > ul:first-child {
+    margin-top: 10px;
+  }
+  &:not(.collapsible) > ul:last-child {
+    margin-bottom: 10px;
+  }
+
+  &.collapsible.expanded {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  > ul:first-of-type {
+    margin-top: 5px;
+  }
+
+  > .shard-docs-menu-section-header + ul > *:first-child {
+    margin-top: 0;
+  }
+
+  > ul:last-child {
+    margin-bottom: 15px;
+  }
+}

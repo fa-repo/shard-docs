@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { appTypes, treeTypes } from "../types";
 import MenuTree from "../MenuTree";
-import MenuSection from "./MenuSection";
+import MenuSection from "../MenuSection";
 import "./Menu.scss";
 
 /**
@@ -24,6 +24,7 @@ Menu.propTypes = {
   showOnMobile: PropTypes.bool,
   onNavigate: PropTypes.func
 };
+
 Menu.defaultProps = {
   tree: [],
   showOnMobile: false,

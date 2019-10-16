@@ -1,0 +1,27 @@
+.shard-docs-menu-section-header {
+  a {
+    padding: 10px 15px 10px 15px;
+    display: flex;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  svg {
+    height: 24px;
+    width: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    margin: -4px -5px -4px auto;
+  }
+}

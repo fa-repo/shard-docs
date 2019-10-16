@@ -2,12 +2,12 @@
 .shard-docs-menu-external a {
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  padding: 3px 0;
-  display: block;
+  padding: 3px 15px 3px 0;
+  display: flex;
   cursor: pointer;
-  font-weight: 100;
+  font-weight: 400;
   &:hover {
-    background: rgba(0, 0, 0, 0.1);
+    color: white;
   }
 
   &.active {
@@ -23,20 +23,20 @@
   svg {
     height: 16px;
     width: 16px;
+    min-width: 16px;
+    min-height: 16px;
     margin-right: 7px;
     position: relative;
-    margin-top: -3px;
-    top: -1px;
   }
 }
 
 .shard-docs-menu-external svg {
   width: 14px !important;
+  min-width: 14px !important;
 }
 
 .shard-docs-menu-folder {
   padding: 0;
-  margin-top: 3px;
   list-style-type: none;
 
   &-header a {
@@ -45,17 +45,17 @@
     padding: 3px 0;
     display: flex;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 400;
   }
 
   &-header a:hover {
-    background: rgba(0, 0, 0, 0.1);
+    color: white;
   }
 
   &-header svg {
     width: 9px;
     height: 9px;
     margin: 4px;
-    margin-right: 8px;
+    margin-right: 10px;
   }
 }
