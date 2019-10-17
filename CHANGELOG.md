@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.0.0-5] - 2019-10-17
+### Fixed
+- Fixed missing padding from bottom of last menu section on sidebar.
+### Change
+- Highlight the breadcrumb that matches current path depth rather than last crumb.
+
 ## [5.0.0-4] - 2019-10-16
 ### Changed
 - Changed sidebar menu style
@@ -102,8 +108,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CHANGELOG to document the development of @fa-repo/shard-docs.
 - Github release tagging
 
-[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-4...HEAD
-[5.0.0-4]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-4...v5.0.0-5
+[Unreleased]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-5...HEAD
+[5.0.0-5]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-4...v5.0.0-5
+[5.0.0-4]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-3...v5.0.0-4
 [5.0.0-3]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-2...v5.0.0-3
 [5.0.0-2]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-1...v5.0.0-2
 [5.0.0-1]: https://github.com/fa-repo/shard-docs/compare/v5.0.0-0...v5.0.0-1
