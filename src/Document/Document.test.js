@@ -4,9 +4,9 @@ import { mount } from "enzyme";
 import Document from "./Document";
 
 const breadcrumbs = [
-  { text: "~", link: "/" },
-  { text: "Examples", link: "/examples" },
-  { text: "Hello world", link: "/examples/hello-world" }
+  { text: "~", link: "/", isActive: false },
+  { text: "Examples", link: "/examples", isActive: false },
+  { text: "Hello world", link: "/examples/hello-world", isActive: false }
 ];
 
 const document = <>

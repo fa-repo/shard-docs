@@ -4,9 +4,9 @@ import { mount } from "enzyme";
 import Breadcrumbs from "./Breadcrumbs";
 
 const breadcrumbs = [
-  { text: "~", link: "/" },
-  { text: "Examples", link: "/examples" },
-  { text: "Hello world", link: "/examples/hello-world" }
+  { text: "~", link: "/", isActive: false },
+  { text: "Examples", link: "/examples", isActive: false },
+  { text: "Hello world", link: "/examples/hello-world", isActive: true }
 ];
 
 describe("<Breadcrumbs />", () => {
@@ -21,12 +21,15 @@ describe("<Breadcrumbs />", () => {
       </MemoryRouter>
     );
 
-    expect(wrapper.find("nav ol li a").length).toBe(3);
-    expect(wrapper.find("nav ol li a").at(0).props().href).toBe("/");
-    expect(wrapper.find("nav ol li a").at(1).props().href).toBe("/examples");
-    expect(wrapper.find("nav ol li a").at(2).props().href).toBe("/examples/hello-world");
-    expect(wrapper.find("nav ol li a").at(0).text()).toBe("~");
-    expect(wrapper.find("nav ol li a").at(1).text()).toBe("Examples");
-    expect(wrapper.find("nav ol li a").at(2).text()).toBe("Hello world");
+    expect(wrapper.find("nav a").length).toBe(3);
+    expect(wrapper.find("nav a").at(0).prop("href")).toBe("/");
+    expect(wrapper.find("nav a").at(1).prop("href")).toBe("/examples");
+    expect(wrapper.find("nav a").at(2).prop("href")).toBe("/examples/hello-world");
+    expect(wrapper.find("nav a").at(0).text()).toBe("~");
+    expect(wrapper.find("nav a").at(1).text()).toBe("Examples");
+    expect(wrapper.find("nav a").at(2).text()).toBe("Hello world");
+    expect(wrapper.find("nav a").at(0).prop("className")).toBe(undefined);
+    expect(wrapper.find("nav a").at(1).prop("className")).toBe(undefined);
+    expect(wrapper.find("nav a").at(2).prop("className")).toBe("active");
   });
 });

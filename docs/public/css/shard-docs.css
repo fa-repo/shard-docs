@@ -26,12 +26,12 @@
   .shard-docs-breadcrumbs ol li:not(:last-child):after {
     content: " / ";
     margin-right: 4px; }
-  .shard-docs-breadcrumbs ol li:last-child a {
-    font-weight: normal; }
   .shard-docs-breadcrumbs ol li a {
     color: black;
     text-decoration: none;
     font-weight: 600; }
+  .shard-docs-breadcrumbs ol li a.active {
+    font-weight: normal; }
   .shard-docs-breadcrumbs ol li a:hover {
     text-decoration: underline; }
 

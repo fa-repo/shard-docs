@@ -12,9 +12,9 @@ const documents = [
   {
     type: 'document',
     breadcrumbs: [
-      { text: "~", link: "/" },
-      { text: "Examples", link: "/examples" },
-      { text: "Hello world", link: "/examples/hello-world" }
+      { text: "~", link: "/", isActive: false },
+      { text: "Examples", link: "/examples", isActive: true },
+      { text: "Hello world", link: "/examples/hello-world", isActive: false }
     ],
     document: (
       <>

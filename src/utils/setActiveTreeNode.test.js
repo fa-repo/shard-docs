@@ -10,7 +10,9 @@ const tree = [
         title: "Doc A",
         type: "document",
         path: "/doc-a",
-        breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc A", link: "/doc-a" }],
+        breadcrumbs: [
+          { link: "/", text: "~", isActive: false },
+          { text: "Doc A", link: "/doc-a", isActive: false }],
         document: null,
         isEmpty: true
       },
@@ -18,7 +20,10 @@ const tree = [
         title: "Doc B",
         type: "document",
         path: "/doc-b",
-        breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc B", link: "/doc-b" }],
+        breadcrumbs: [
+          { link: "/", text: "~", isActive: false },
+          { text: "Doc B", link: "/doc-b", isActive: false }
+        ],
         document: null,
         isEmpty: true
       },
@@ -26,7 +31,10 @@ const tree = [
         title: "Doc C",
         type: "document",
         path: "/doc-c",
-        breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc C", link: "/doc-c" }],
+        breadcrumbs: [
+          { link: "/", text: "~", isActive: false },
+          { text: "Doc C", link: "/doc-c", isActive: false }
+        ],
         document: null,
         isEmpty: true
       }
@@ -46,7 +54,10 @@ test("setActiveTreeNode() correctly sets isActive", () => {
           title: "Doc A",
           type: "document",
           path: "/doc-a",
-          breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc A", link: "/doc-a" }],
+          breadcrumbs: [
+            { link: "/", text: "~", isActive: false },
+            { text: "Doc A", link: "/doc-a", isActive: false }
+          ],
           document: null,
           isEmpty: true,
           isActive: false
@@ -55,7 +66,10 @@ test("setActiveTreeNode() correctly sets isActive", () => {
           title: "Doc B",
           type: "document",
           path: "/doc-b",
-          breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc B", link: "/doc-b" }],
+          breadcrumbs: [
+            { link: "/", text: "~", isActive: false },
+            { text: "Doc B", link: "/doc-b", isActive: false }
+          ],
           document: null,
           isEmpty: true,
           isActive: true
@@ -64,7 +78,10 @@ test("setActiveTreeNode() correctly sets isActive", () => {
           title: "Doc C",
           type: "document",
           path: "/doc-c",
-          breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc C", link: "/doc-c" }],
+          breadcrumbs: [
+            { link: "/", text: "~", isActive: false },
+            { text: "Doc C", link: "/doc-c", isActive: false }
+          ],
           document: null,
           isEmpty: true,
           isActive: false
@@ -83,7 +100,10 @@ test("setActiveTreeNode() correctly sets isActive", () => {
           title: "Doc A",
           type: "document",
           path: "/doc-a",
-          breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc A", link: "/doc-a" }],
+          breadcrumbs: [
+            { link: "/", text: "~", isActive: false },
+            { text: "Doc A", link: "/doc-a", isActive: false }
+          ],
           document: null,
           isEmpty: true,
           isActive: false
@@ -92,7 +112,10 @@ test("setActiveTreeNode() correctly sets isActive", () => {
           title: "Doc B",
           type: "document",
           path: "/doc-b",
-          breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc B", link: "/doc-b" }],
+          breadcrumbs: [
+            { link: "/", text: "~", isActive: false },
+            { text: "Doc B", link: "/doc-b", isActive: false }
+          ],
           document: null,
           isEmpty: true,
           isActive: false
@@ -101,7 +124,10 @@ test("setActiveTreeNode() correctly sets isActive", () => {
           title: "Doc C",
           type: "document",
           path: "/doc-c",
-          breadcrumbs: [{ link: "/", text: "~" }, { text: "Doc C", link: "/doc-c" }],
+          breadcrumbs: [
+            { link: "/", text: "~", isActive: false },
+            { text: "Doc C", link: "/doc-c", isActive: false }
+          ],
           document: null,
           isEmpty: true,
           isActive: false

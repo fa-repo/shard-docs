@@ -19,14 +19,14 @@
     margin-right: 4px;
   }
 
-  ol li:last-child a {
-    font-weight: normal;
-  }
-
   ol li a {
     color: black;
     text-decoration: none;
     font-weight: 600;
+  }
+
+  ol li a.active {
+    font-weight: normal;
   }
 
   ol li a:hover {

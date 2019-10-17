@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import classnames from "classnames";
 import { NavLink } from "react-router-dom";
 import { breadcrumbTypes } from "../types";
 import "./Breadcrumbs.scss";
@@ -11,9 +12,19 @@ import "./Breadcrumbs.scss";
 const Breadcrumbs = ({ breadcrumbs }) => (
   <nav className="shard-docs-breadcrumbs">
     <ol>
-      {breadcrumbs.map(({ text, link }, i) => (
-        <li key={i}>{<NavLink to={link}>{text}</NavLink>}</li>
-      ))}
+      {breadcrumbs.map(({ text, link, isActive }, i) => {
+        const className = classnames(isActive && "active");
+
+        return (
+          <li key={i}>
+            {
+              <NavLink isActive={() => isActive} to={link}>
+                {text}
+              </NavLink>
+            }
+          </li>
+        );
+      })}
     </ol>
   </nav>
 );

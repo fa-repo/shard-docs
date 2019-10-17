@@ -4,8 +4,8 @@ import { withRouter, HashRouter, BrowserRouter, Route } from "react-router-dom";
 import Main from "../Main";
 import Sidebar from "../Sidebar";
 import fromSource from "../adapters/fromSource";
-import { sourceTypes } from "../types";
-import { setActiveTreeNode } from "../utils";
+import { sourceTypes, breadcrumbTypes } from "../types";
+import { setActiveTreeNode, filterDocuments, setActiveCrumb } from "../utils";
 import "./sanitize.css";
 import "./ShardDocs.scss";
 
@@ -19,32 +19,32 @@ class ShardDocs extends React.Component {
   static defaultProps = {};
 
   state = {
+    source: fromSource(this.props.source, this.props.basePath),
     tree: [],
     documents: []
   };
 
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    const { tree, documents } = this.state.source;
+    const path = this.props.location.pathname;
 
-    let { tree, documents } = fromSource(this.props.source, this.props.basePath);
-    tree = setActiveTreeNode(tree, this.props.location.pathname);
-
-    this.state = { tree, documents };
+    this.setState({
+      tree: setActiveTreeNode(tree, path),
+      documents: filterDocuments(documents, path).map(document => setActiveCrumb(document, path))
+    });
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { location } = this.props;
+    const { tree, documents } = this.state.source;
+    const path = this.props.location.pathname;
 
-    if (location.pathname !== prevProps.location.pathname) {
-      this.setState({ tree: setActiveTreeNode(this.state.tree, location.pathname) });
+    if (path !== prevProps.location.pathname) {
+      this.setState({
+        tree: setActiveTreeNode(tree, path),
+        documents: filterDocuments(documents, path).map(document => setActiveCrumb(document, path))
+      });
       window.scrollTo(0, 0);
     }
-  }
-
-  get showDocuments() {
-    const { location } = this.props;
-
-    return this.state.documents.filter(document => document.path.startsWith(location.pathname));
   }
 
   get pagination() {
@@ -91,8 +91,7 @@ class ShardDocs extends React.Component {
           tree={this.state.tree}
           hideBuiltWithShardDocs={this.props.hideBuiltWithShardDocs}
         />
-
-        <Main pagination={this.pagination} documents={this.showDocuments} />
+        <Main pagination={this.pagination} documents={this.state.documents} />
       </div>
     );
   }
