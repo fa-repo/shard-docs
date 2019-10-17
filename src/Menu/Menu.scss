@@ -1,7 +1,6 @@
 .shard-docs-menu {
   margin: 0;
   border-top: thin solid rgba(0, 0, 0, 0.2);
-  border-bottom: thin solid rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.5);
   list-style-type: none;
   line-height: normal;
@@ -16,9 +15,5 @@
     @media (min-width: 1200px) {
       display: block;
     }
-  }
-
-  > .shard-docs-menu-section:last-child {
-    border-bottom: none;
   }
 }
